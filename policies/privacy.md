@@ -51,9 +51,9 @@ Como se describió anteriormente, utilizamos su Información personal para propo
 
 Puede darse de baja de la publicidad dirigida mediante los siguientes enlaces:
 
-FACEBOOK: <https://www.facebook.com/settings/?tab=ads>
-GOOGLE: <https://adssettings.google.com/authenticated?hl=es>
-BING: <https://about.ads.microsoft.com/es-es/recursos/directivas/anuncios-personalizados>
+- FACEBOOK: <https://www.facebook.com/settings/?tab=ads>
+- GOOGLE: <https://adssettings.google.com/authenticated?hl=es>
+- BING: <https://about.ads.microsoft.com/es-es/recursos/directivas/anuncios-personalizados>
 
 Además, puede darse de baja de algunos de estos servicios visitando el portal de exclusión voluntaria de Digital Advertising Alliance en: ttp://optout.aboutads.info/.
 
