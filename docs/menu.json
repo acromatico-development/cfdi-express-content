@@ -1,47 +1,47 @@
 [
     {
         "title": "Onboarding y configuración",
-        "url": "/docs/onboarding",
+        "document": "onboarding.md",
         "completed": true
     },
     {
         "title": "Lista de Órdenes y Estatus",
-        "url": "/docs/ordenes-estatus",
+        "document": "ordenes-estatus.md",
         "completed": true
     },
     {
         "title": "Facturación desde el administrador de Shopify",
-        "url": "/docs/facturacion-desde-admin-shopify",
+        "document": "facturacion-desde-admin-shopify.md",
         "completed": false
     },
     {
         "title": "Códigos del SAT por producto",
-        "url": "/docs/codigos-sat-producto",
+        "document": "codigos-sat-producto.md",
         "completed": false
     },
     {
         "title": "Facturación desde el Checkout/Thank You Page",
-        "url": "/docs/facturacion-checkout-thank-you-page",
+        "document": "facturacion-checkout-thank-you-page.md",
         "completed": false
     },
     {
         "title": "Facturación desde la página de estado de orden",
-        "url": "/docs/facturacion-pagina-estado-de-orden",
+        "document": "facturacion-pagina-estado-de-orden.md",
         "completed": false
     },
     {
         "title": "Facturación desde el POS (Punto de Venta) de Shopify",
-        "url": "/docs/facturacion-pos-punto-de-venta-shopify",
+        "document": "facturacion-pos-punto-de-venta-shopify.md",
         "completed": false
     },
     {
         "title": "Uso de Flow para automatizaciones con CFDI Express",
-        "url": "/docs/uso-shopify-flow-automatizaciones-cfdi-express",
+        "document": "uso-shopify-flow-automatizaciones-cfdi-express.md",
         "completed": false
     },
     {
         "title": "Modo Flow en CFDI Express para usar tu propio PAC de Facturación",
-        "url": "/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacion",
+        "document": "modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacion.md",
         "completed": false
     }
 ]
