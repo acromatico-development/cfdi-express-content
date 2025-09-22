@@ -17,12 +17,12 @@
     {
         "title": "Facturación desde el administrador de Shopify",
         "document": "facturacion-desde-admin-shopify.md",
-        "completed": false
+        "completed": true
     },
     {
         "title": "Códigos del SAT por producto",
         "document": "codigos-sat-producto.md",
-        "completed": false
+        "completed": true
     },
     {
         "title": "Facturación desde el Checkout/Thank You Page",
