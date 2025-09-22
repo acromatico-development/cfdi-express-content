@@ -11,6 +11,8 @@ Para poder completar la configuración inicial de CFDI Express debes:
     - Formulario Modo Flow
       ![Formulario Flow](https://cdn.shopify.com/s/files/1/0804/5540/1763/files/Acr_2025-07-17_at_16.49.37_2x_4c1591ac-7bde-4864-9203-9259758c8113.png?v=1752792590)
 
+3. Después de haber hecho el onboarding, puedes modificar cualquiera de los datos configurados y definir el código de producto y código de servicio del SAT predeterminados en la sección de configuraciones de la aplicación. Ahí también podrás definir si quieres solicitar el CSF de los clientes cuando generan una factura.
+
 Puedes ver nuestro video introductorio si lo prefieres.
 
 - Embed:
