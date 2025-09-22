@@ -27,12 +27,12 @@
     {
         "title": "Facturación desde el Checkout/Thank You Page",
         "document": "facturacion-checkout-thank-you-page.md",
-        "completed": false
+        "completed": true
     },
     {
         "title": "Facturación desde la página de estado de orden",
         "document": "facturacion-pagina-estado-de-orden.md",
-        "completed": false
+        "completed": true
     },
     {
         "title": "Facturación desde el POS (Punto de Venta) de Shopify",
