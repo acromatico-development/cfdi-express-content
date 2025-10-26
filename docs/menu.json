@@ -1,5 +1,10 @@
 [
     {
+        "title": "",
+        "document": "onboarding.md",
+        "completed": true
+    },
+    {
         "title": "Onboarding y configuración",
         "document": "onboarding.md",
         "completed": true
