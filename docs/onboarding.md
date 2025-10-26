@@ -11,6 +11,32 @@ Para poder completar la configuración inicial de CFDI Express debes:
     - Formulario Modo Flow
       ![Formulario Flow](https://cdn.shopify.com/s/files/1/0804/5540/1763/files/Acr_2025-07-17_at_16.49.37_2x_4c1591ac-7bde-4864-9203-9259758c8113.png?v=1752792590)
 
+3. Después de haber hecho el onboarding, puedes modificar cualquiera de los datos configurados y definir el código de producto y código de servicio del SAT predeterminados en la sección de configuraciones de la aplicación. Ahí también podrás definir si quieres solicitar la Constancia de Situación Fiscal (CSF) de los clientes cuando generan una factura.
+
 Puedes ver nuestro video introductorio si lo prefieres.
 
-<iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/g7wiNKPqh8k?si=lBq_dIJUD5BsB2ZM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+- Embed:
+  <iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/g7wiNKPqh8k?si=lBq_dIJUD5BsB2ZM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+- Link:
+  https://www.youtube.com/watch?v=g7wiNKPqh8k
+
+## Información Requerida del SAT para Onboarding
+
+Para poder configurar CFDI Express, requieres los siguientes datos:
+
+- RFC
+- Razon Social
+- Código postal (El que aparece en tu Constancia de Situación Fiscal)
+- Régimen Fiscal (El que aparece en tu Constancia de Situación Fiscal)
+- Certificado de Sello Digital:
+  - Llave (archivo .key)
+  - Certificado (archivo .cer)
+  - Contraseña
+- Logo
+
+Si requieres generar tu certificado de sello digital y no sabes cómo puedes ver el siguiente video tutorial:
+
+- Embed:
+  <iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/e4W7Q5a0ULs?si=P2R7F6MM0SR7--HJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+- Link:
+  https://www.youtube.com/watch?v=e4W7Q5a0ULs
