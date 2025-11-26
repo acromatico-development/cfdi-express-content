@@ -1,3 +1,11 @@
+---
+title: "Facturación CFDI en Shopify"
+description: "Descubre cómo generar y gestionar el Comprobante Fiscal Digital por Internet (CFDI) directamente en Shopify con CFDI Express"
+image: "https://assets.acromatico.dev/assets/689cc71d-6965-44a2-9cb8-c5478c037304.jpg"
+author: "Rafael González"
+date: "2025-10-13"
+keywords: "CFDI, facturación, México, SAT"
+---
 # Facturación Electronica en Shopify 
 
 ## Descubre cómo generar y gestionar el Comprobante Fiscal Digital por Internet (CFDI) directamente en Shopify con CFDI Express
