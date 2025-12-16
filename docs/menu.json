@@ -1,52 +1,52 @@
 [
-    {
-        "title": "Introducción a CFDI Express",
-        "document": "index.md",
-        "completed": true
-    },
-    {
-        "title": "Onboarding y configuración",
-        "document": "onboarding.md",
-        "completed": true
-    },
-    {
-        "title": "Lista de Órdenes y Estatus",
-        "document": "ordenes-estatus.md",
-        "completed": true
-    },
-    {
-        "title": "Facturación desde el administrador de Shopify",
-        "document": "facturacion-desde-admin-shopify.md",
-        "completed": true
-    },
-    {
-        "title": "Códigos del SAT por producto",
-        "document": "codigos-sat-producto.md",
-        "completed": true
-    },
-    {
-        "title": "Facturación desde el Checkout/Thank You Page",
-        "document": "facturacion-checkout-thank-you-page.md",
-        "completed": true
-    },
-    {
-        "title": "Facturación desde la página de estado de orden",
-        "document": "facturacion-pagina-estado-de-orden.md",
-        "completed": true
-    },
-    {
-        "title": "Facturación desde el POS (Punto de Venta) de Shopify",
-        "document": "facturacion-pos-punto-de-venta-shopify.md",
-        "completed": false
-    },
-    {
-        "title": "Uso de Flow para automatizaciones con CFDI Express",
-        "document": "uso-shopify-flow-automatizaciones-cfdi-express.md",
-        "completed": false
-    },
-    {
-        "title": "Modo Flow en CFDI Express para usar tu propio PAC de Facturación",
-        "document": "modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacion.md",
-        "completed": false
-    }
+  {
+    "title": "Introducción a CFDI Express",
+    "document": "index.md",
+    "completed": true
+  },
+  {
+    "title": "Onboarding y configuración",
+    "document": "onboarding.md",
+    "completed": true
+  },
+  {
+    "title": "Lista de Órdenes y Estatus",
+    "document": "ordenes-estatus.md",
+    "completed": true
+  },
+  {
+    "title": "Facturación desde el administrador de Shopify",
+    "document": "facturacion-desde-admin-shopify.md",
+    "completed": true
+  },
+  {
+    "title": "Códigos del SAT por producto",
+    "document": "codigos-sat-producto.md",
+    "completed": true
+  },
+  {
+    "title": "Facturación desde el Checkout/Thank You Page",
+    "document": "facturacion-checkout-thank-you-page.md",
+    "completed": true
+  },
+  {
+    "title": "Facturación desde la página de estado de orden",
+    "document": "facturacion-pagina-estado-de-orden.md",
+    "completed": true
+  },
+  {
+    "title": "Facturación desde el POS (Punto de Venta) de Shopify",
+    "document": "facturacion-pos-punto-de-venta-shopify.md",
+    "completed": true
+  },
+  {
+    "title": "Uso de Flow para automatizaciones con CFDI Express",
+    "document": "uso-shopify-flow-automatizaciones-cfdi-express.md",
+    "completed": false
+  },
+  {
+    "title": "Modo Flow en CFDI Express para usar tu propio PAC de Facturación",
+    "document": "modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacion.md",
+    "completed": false
+  }
 ]
