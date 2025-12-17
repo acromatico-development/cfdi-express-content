@@ -25,7 +25,7 @@ La idea principal de esta nueva versión es:
 
 Si compras algo, si vendes, si das servicios, o si necesitas deducir impuestos: las facturas 4.0 serán algo de tu día a día.
 
-[Video de Sidekick](https://youtu.be/M7ImVfrJuH8?si=D-I69DK7Q_O3O7r4)
+[¿Qué son las facturas 4.0?](https://youtu.be/M7ImVfrJuH8?si=D-I69DK7Q_O3O7r4)
 
 ### ¿Qué cambió en la factura 4.0 con respecto al CFDI 3.3?
 
