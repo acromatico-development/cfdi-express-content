@@ -1,4 +1,4 @@
-# Configuración de códigos del SAT por producto
+# Configuración de códigos del SAT por producto y IEPS
 
 Para poder generar facturas 4.0, el SAT requiere que cada producto tenga un código de producto y un código de unidad. Estos códigos se pueden consultar desde la siguiente liga en el portal del SAT: [Códigos de Producto](http://pys.sat.gob.mx/PyS/catPyS.aspx).
 
