@@ -1,6 +1,6 @@
 ---
 title: CFDI Express ya es Built For Shopify | Facturación en Shopify"
-description: "Descubre cómo generar y gestionar el Comprobante Fiscal Digital por Internet (CFDI) directamente en Shopify con CFDI Express"
+description: "Desde los inicios de CFDI Express, nuestra misión ha sido automatizar y simplificar la facturación CFDI de los negocios en México. Es por esa razón que desde un inicio comenzamos siendo una aplicación de Shopify."
 image: "https://videos.acromatico.dev/api/images/assets/1d3a5728-36cf-42a0-9c44-79d025bc0c14.png?w=1600"
 author: "Rafael González"
 date: "2026-01-08"
@@ -10,7 +10,7 @@ keywords: "CFDI, facturación, México, SAT, Shopify"
 
 ![CFDI Express ya es Built For Shopify Celebration](https://videos.acromatico.dev/api/images/assets/1d3a5728-36cf-42a0-9c44-79d025bc0c14.png?w=2048)
 
-Desde los inicios de CFDI Express, nuestra misión ha sido automatizar y simplificar de la mejor manera posible la facturación CFDI de los negocios en México. Es por esa razón que desde un inicio comenzamos siendo una aplicación de Shopify. Shopify ya cuenta con muchas de las herramientas más básicas que un negocio moderno necesita para operar de manera eficiente y con los estándares más altos de cualquier aplicación para vender y operar un negocio u emprendimiento.
+Desde los inicios de CFDI Express, nuestra misión ha sido **automatizar y simplificar** de la mejor manera posible **la facturación CFDI de los negocios en México**. Es por esa razón que desde un inicio comenzamos siendo una aplicación de Shopify. Shopify ya cuenta con muchas de las herramientas más básicas que un negocio moderno necesita para operar de manera eficiente y con los estándares más altos de cualquier aplicación para vender y operar un negocio u emprendimiento.
 
 De entrada, ser parte de las aplicaciones listadas en la tienda de apps de Shopify no es nada sencillo. Shopify cuenta con una [lista de rigurosos requerimientos](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) que toda app que quiera vender a través de Shopify debe cumplir. Estándares de usabilidad, de velocidad y de beneficio para los usuarios y dueños de tiendas de Shopify son parte de estos requerimientos iniciales. En octubre del 2024, esto se logró. CFDI Express fue publicada en la tienda de aplicaciones de Shopify.
 
@@ -24,7 +24,7 @@ La respuesta de Shopify a todo este problema es el programa **Built for Shopify*
 
 Existe otra [lista mucho más detallada de lo que significa ser Built for Shopify](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) y para poder aplicar a este programa de entrada debes cumplir inicialmente con cada punto de esta lista minuciosa.
 
-## ¿Qué significa Built for Shopify para CFDI Express y sus clientes?
+## ¿Qué significa Built for Shopify para CFDI Express y sus usuarios?
 
 En el caso específico de CFDI Express, Built for Shopify significa que estamos buscando garantizar que CFDI Express cumpla con los estándares más altos que Shopify pide. Al haber seleccionado desde un inicio Shopify como base para construir esta aplicación, queremos garantizar a nuestros clientes que siempre mantendremos la aplicación actualizada, 100% integrada con lo más nuevo de Shopify y que se van a aprovechar todas las herramientas que el mismo Shopify nos da para poder **automatizar y facilitar la facturación CFDI en México**. Ese es nuestro propósito máximo y final con CFDI Express.
 
