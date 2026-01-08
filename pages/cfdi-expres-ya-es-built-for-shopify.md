@@ -16,6 +16,8 @@ De entrada, ser parte de las aplicaciones listadas en la tienda de apps de Shopi
 
 Poco más de un año más tarde, ahora nos hemos convertido en una aplicación **Built for Shopify**, el siguiente nivel de validación por Shopify para aplicaciones dentro de su tienda de apps.
 
+**Te presumimos nuestro badge de built for shopify:** [![Built for Shopify](https://videos.acromatico.dev/api/images/assets/a4376e68-18d5-47dd-8818-c34b7412afd4.png?w=300)](https://apps.shopify.com/cfdi-express)
+
 ## ¿Qué significa esto?
 
 Desde hace tiempo Shopify ha estado buscando la manera de garantizar que las aplicaciones que sus clientes instalen dentro de tiendas de Shopify sean seguras, rápidas, funcionen y se integren de la manera más nativa posible a todo el ecosistema de Shopify. Existió una época en la tienda de aplicaciones de Shopify en la que muchas de las aplicaciones que existían eran aplicaciones con malware que dañaban el rendimiento de los sitios o agregaban scripts malignos en los peores casos.
