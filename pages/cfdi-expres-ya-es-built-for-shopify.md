@@ -1,14 +1,14 @@
 ---
 title: CFDI Express ya es Built For Shopify | Facturación en Shopify"
 description: "Desde los inicios de CFDI Express, nuestra misión ha sido automatizar y simplificar la facturación CFDI de los negocios en México. Es por esa razón que desde un inicio comenzamos siendo una aplicación de Shopify."
-image: "https://videos.acromatico.dev/api/images/assets/1d3a5728-36cf-42a0-9c44-79d025bc0c14.png?w=1600"
+image: "https://videos.acromatico.dev/api/images/assets/6f84b380-2b0b-4713-8cf1-2c990110d860.png?w=1600"
 author: "Rafael González"
 date: "2026-01-08"
 keywords: "CFDI, facturación, México, SAT, Shopify"
 ---
 # CFDI Express ya es Built For Shopify ¿Qué Significa esto?
 
-![CFDI Express ya es Built For Shopify Celebration](https://videos.acromatico.dev/api/images/assets/1d3a5728-36cf-42a0-9c44-79d025bc0c14.png?w=2048)
+![CFDI Express ya es Built For Shopify Celebration](https://videos.acromatico.dev/api/images/assets/6f84b380-2b0b-4713-8cf1-2c990110d860.png?w=2048)
 
 Desde los inicios de CFDI Express, nuestra misión ha sido **automatizar y simplificar** de la mejor manera posible **la facturación CFDI de los negocios en México**. Es por esa razón que desde un inicio comenzamos siendo una aplicación de Shopify. Shopify ya cuenta con muchas de las herramientas más básicas que un negocio moderno necesita para operar de manera eficiente y con los estándares más altos de cualquier aplicación para vender y operar un negocio u emprendimiento.
 
@@ -30,4 +30,4 @@ Existe otra [lista mucho más detallada de lo que significa ser Built for Shopif
 
 En el caso específico de CFDI Express, Built for Shopify significa que estamos buscando garantizar que CFDI Express cumpla con los estándares más altos que Shopify pide. Al haber seleccionado desde un inicio Shopify como base para construir esta aplicación, queremos garantizar a nuestros clientes que siempre mantendremos la aplicación actualizada, 100% integrada con lo más nuevo de Shopify y que se van a aprovechar todas las herramientas que el mismo Shopify nos da para poder **automatizar y facilitar la facturación CFDI en México**. Ese es nuestro propósito máximo y final con CFDI Express.
 
-Estamos muy contentos de haber logrado este nuevo milestone y esperamos que cada uno de los usuarios de CFDiExpress pueda ver el resultado de siempre estar buscando mantener la aplicación actualizada y lo más integrada posible a todo el ecosistema de Shopify.Al final, estos milestones se deben traducir en más automatización y facilidad en la facturación CFDI para los negocios en México.
+Estamos muy contentos de haber logrado este nuevo milestone y esperamos que cada uno de los usuarios de CFDI Express pueda ver el resultado de siempre estar buscando mantener la aplicación actualizada y lo más integrada posible a todo el ecosistema de Shopify. Al final, estos milestones se deben traducir en más automatización y facilidad en la facturación CFDI para los negocios en México.
