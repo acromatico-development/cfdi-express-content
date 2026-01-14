@@ -36,7 +36,7 @@ Shopify no es solo una plataforma para tiendas en línea. Shopify ofrece un **po
 
 Si prefieres ver el proceso paso a paso, aquí te dejo el video tutorial completo:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6NfKkmSrw4M" title="Crea un Portal de Auto-Facturación en 5 Minutos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/6NfKkmSrw4M" title="Crea un Portal de Auto-Facturación en 5 Minutos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Paso 1: Sincroniza tus ventas en Shopify
 
