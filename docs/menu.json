@@ -40,6 +40,11 @@
     "completed": true
   },
   {
+    "title": "Facturación al Público en General (Manual y Automática)",
+    "document": "facturacion-al-publico-en-general-manual-y-automatica.md",
+    "completed": true
+  },
+  {
     "title": "Uso de Flow para automatizaciones con CFDI Express",
     "document": "uso-shopify-flow-automatizaciones-cfdi-express.md",
     "completed": false
