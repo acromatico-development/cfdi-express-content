@@ -12,5 +12,12 @@ Este botón, lo único que hace es prellenar el formulario con el RFC, razón so
 
 ## Automatización Recurrente para Facturación al Público en General global
 
+Gran parte de la mentalidad en CFDI Express es aprovechar muchas de las herramientas que Shopify nos da para facilitar el comercio y el operar tu negocio. CFDI Express busca integrarse tanto con Shopify al punto de que no notes que es una herramienta externa a Shopify y se sienta como parte nativa de la plataforma.
+
+Shopify tiene, dentro de sus herramientas, una aplicación que se llama Shopify Flow, la cual permite generar flujos de trabajo automatizados a partir de disparadores y acciones. CFDI Express cuenta con disparadores y acciones que se pueden utilizar en flujos de trabajo automatizados dentro de Shopify Flow. Una de las acciones que CFDI Express tiene es la acción de timbrado de CFDI. Esto permite que los usuarios de Flow en sus automatizaciones pueda definir puntos en los que las facturas CFDI se timbrarán automáticamente.
+
+También, uno de los triggers más utilizados en Flow es el trigger de recurrencia o el cron job. Este trigger permite disparar flujos automatizados de trabajo de manera recurrente en ciertos periodos de tiempo.
+
+Combinando el trigger de recurrencia con la acción de facturación automática y agregando ciertas condicionales podemos generar una automatización que cada cierto tiempo revise las órdenes que no están timbradas y las timbre al público en general. Sabemos que no es cualquier cosa diseñar estas automatizaciones incluso aunque Flow es una herramienta muy amigable. Por lo mismo hemos prediseñado una plantilla que puede servir como base para generar dicha automatización, descargarla y utilizarla como base para generar la automatización:
 
 [Plantilla de Automatización en Shopify Flow](https://acro.fyi/cfdi-publico-en-general)
