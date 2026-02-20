@@ -13,5 +13,4 @@ Este botón, lo único que hace es prellenar el formulario con el RFC, razón so
 ## Automatización Recurrente para Facturación al Público en General global
 
 
-
-https://acro.fyi/cfdi-publico-en-general
+[Plantilla de Automatización en Shopify Flow](https://acro.fyi/cfdi-publico-en-general)
