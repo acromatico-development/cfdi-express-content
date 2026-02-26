@@ -11,7 +11,7 @@ keywords: "facturas 4.0, facturación 4.0, factura electronica 4.0, facturar 4.0
 La facturación en México cambió en los últimos años, y si has intentado pedir o emitir una factura, seguramente llegaste a la famosa “Factura 4.0”.
 Esta versión puede ser considerada más estricta, más completa y está diseñada para que el SAT valide los datos de forma automática. Puede sonar complicado, pero no te preocupes, aquí lo entenderás paso a paso.
 
-## ¿Qué es la factura electronica 4.0?
+## ¿Qué es la factura electrónica 4.0?
 
 La factura 4.0 es la versión más reciente del Comprobante Fiscal Digital por Internet o mejor conocido como CFDI, el documento electrónico que se usa en México para registrar compras, ventas y servicios ante el SAT.
 
@@ -126,7 +126,7 @@ Los pasos básicos para cancelar una factura electrónica 4.0 primero hay que en
 
 Ten presente que en varios casos será necesario que el receptor apruebe la cancelación desde su cuenta del SAT, esto no aplica cuando el monto de la factura es menor a 5,000 pesos mexicanos o es el caso de un CFDI global. Adicionalmente las empresas y contribuyentes pueden recibir sanciones si cancela fuera del ejercicio fiscal correspondiente.
 
-En resumen  las facturas 4.0 pueden parecer estrictas, pero una vez que conoces la información clave es más sencillo. Lo más importante es tener tu Constancia de Situación Fiscal actualizada y capturar los datos exactamente como los tiene el SAT.
+En resumen las facturas 4.0 pueden parecer estrictas, pero una vez que conoces la información clave es más sencillo. Lo más importante es tener tu Constancia de Situación Fiscal actualizada y capturar los datos exactamente como los tiene el SAT.
 
 #### Con esta guía de facturas 4.0 ya puedes:
 

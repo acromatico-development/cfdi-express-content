@@ -7,7 +7,7 @@ CFDI Express es una [aplicación de Shopify](https://apps.shopify.com/cfdi-expre
 1. Para poder instalar el app de Shopify en tu tienda entra en la siguiente liga.
 [App de Shopify de CFDI Express](https://apps.shopify.com/cfdi-express)
 
-2. Dentro encontraras un botón para instalar la aplicación cómo se muestra en la imágen a continiación.
+2. Dentro encontraras un botón para instalar la aplicación cómo se muestra en la imagen a continuación.
 ![Botón de instalación de CFDI Express](https://cdn.shopify.com/s/files/1/0804/5540/1763/files/Acr_2025-07-17_at_16.10.16_2x_dde3f921-2e2f-4540-aa61-22040bde1ae3.png?v=1752790261)
 
 3. Al hacer click en el botón serás redireccionado al login de Shopify, inicia sesión con tu usuario y en la tienda donde quieras instalar el app.
@@ -31,3 +31,4 @@ CFDI Express es una [aplicación de Shopify](https://apps.shopify.com/cfdi-expre
 - [Facturación desde el POS (Punto de Venta) de Shopify](/docs/facturacion-pos-punto-de-venta-shopify)
 - [Uso de Flow para automatizaciones con CFDI Express](/docs/uso-shopify-flow-automatizaciones-cfdi-express)
 - [Modo Flow en CFDI Express para usar tu propio PAC de Facturación](/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacion)
+- [Facturación al Publico en General Manual y Automática](/docs/facturacion-al-publico-en-general-manual-y-automatica)

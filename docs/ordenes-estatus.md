@@ -1,14 +1,14 @@
-# Página de lista de ordenes con estatus
+# Página de lista de órdenes con estatus
 
-La página principal que se abre al iniciar el app de CFDI Express es la lista de ordenes con estatus. La tabla está páginada, cáda página tiene 20 ordenes ordenadas de la más nueva a la más antigua. Los encabezados de la tabla son: 
+La página principal que se abre al iniciar el app de CFDI Express es la lista de órdenes con estatus. La tabla está paginada, cada página tiene 20 órdenes ordenadas de la más nueva a la más antigua. Los encabezados de la tabla son: 
 
 - Orden: El número de orden de la tienda de Shopify (Ej. #1024)
 - Fecha: La fecha en la que se generó la orden en Shopify
 - Cliente: El correo del cliente que generó la orden de Shopify
 - Total: El total de la orden de compra de Shopify
-- Estado de Orden: El estádo de la orden, puede estár "Activa" o "Cerrada"
+- Estado de Orden: El estado de la orden, puede estar "Activa" o "Cerrada"
 - Estado de Pago: El estado del pago de la orden, puede estar "Pendiente", "Parcial" o "Pagado"
-- Estatus de Factura: El estado de facturación de la orden, puede estár "Pendiente", "Facturado" o "Cancelado"
+- Estatus de Factura: El estado de facturación de la orden, puede estar "Pendiente", "Facturado" o "Cancelado"
 
 ## Filtrado de Ordenes
 

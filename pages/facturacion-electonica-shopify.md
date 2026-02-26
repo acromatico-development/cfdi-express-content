@@ -6,21 +6,21 @@ author: "Rafael González"
 date: "2025-10-13"
 keywords: "CFDI, facturación, México, SAT"
 ---
-# Facturación Electronica en Shopify 
+# Facturación Electrónica en Shopify 
 
 ## Descubre cómo generar y gestionar el Comprobante Fiscal Digital por Internet (CFDI) directamente en Shopify con CFDI Express
 
-En México, Shopify ya es conocido por muchas marcas que lo utilizan como su sistema administrador de e-commerce, pero lo que no saben muchas de las tiendas que impelentan Shopify es que, Shopify es mucho mas que solo un sistema para gestionar tiendas en línea.
+En México, Shopify ya es conocido por muchas marcas que lo utilizan como su sistema administrador de e-commerce, pero lo que no saben muchas de las tiendas que implementan Shopify es que, Shopify es mucho más que solo un sistema para gestionar tiendas en línea.
 
-Shopify es mucho más que solo un sistema para tiendas en línea, incluso Tobi, el CEO de Shopify y quien desarrolló ya hace varios años la primer version de Shopify, ha mencionado su visión para la plataforma: Empoderar a los emprendedores.
+Shopify es mucho más que solo un sistema para tiendas en línea, incluso Tobi, el CEO de Shopify y quien desarrolló ya hace varios años la primera versión de Shopify, ha mencionado su visión para la plataforma: Empoderar a los emprendedores.
 
 [Video de Sidekick](https://youtu.be/HVvbY7A7lIQ?si=j4MifRZnWvDlVzyx)
 
 ### Modelo de Gestión de Negocio Clásico vs. Shopify
 
-Clásicamente, y cómo muchos de los emprendedores han gestionado sus negocios hasta la fecha, es a travez de ERPs comolejos y sistemas hechos a la medida, muchos de estos sistemas se centran en la administración del negocio y buscas integrar todos tus sistemas (e-commerce, facturación, inventarios, etc...) al ERP.
+Clásicamente, y cómo muchos de los emprendedores han gestionado sus negocios hasta la fecha, es a través de ERPs complejos y sistemas hechos a la medida, muchos de estos sistemas se centran en la administración del negocio y busca integrar todos tus sistemas (e-commerce, facturación, inventarios, etc...) al ERP.
 
-Como lo platicamos, Shopify se centra en hacerl la vida del emprendeor fácil, y ahi es donde Shopify brilla en comparación a los sistemas clásicos. Con shopify siempre vas a comenzar vendiendo, lo que inicialmente empuja a un emprendimiento siempre van a ser las ventas (no la administración) del mismo. Si un negocio vende, el emprendedor puede comenzar a preocuparse por los demas aspectos del mismo, ya sea inventarios, contabilidad, servicio al cliente, etc.
+Como lo platicamos, Shopify se centra en hacer la vida del emprendedor fácil, y ahí es donde Shopify brilla en comparación a los sistemas clásicos. Con shopify siempre vas a comenzar vendiendo, lo que inicialmente empuja a un emprendimiento siempre van a ser las ventas (no la administración) del mismo. Si un negocio vende, el emprendedor puede comenzar a preocuparse por los demás aspectos del mismo, ya sea inventarios, contabilidad, servicio al cliente, etc.
 
 Desde que abres una instancia de Shopify tienes cómo vender, conforme tu negocio crece puedes ir entrando en los diversos módulos de Shopify.
 
@@ -31,11 +31,11 @@ Desde que abres una instancia de Shopify tienes cómo vender, conforme tu negoci
 
 Esto nos lleva a la facturación electrónica:
 
-### ¿Quieres Facturación Electónica 4.0 de CFDIs en Shopify?
+### ¿Quieres Facturación Electrónica 4.0 de CFDIs en Shopify?
 
 Hemos desarrollado CFDI Express con ese propósito, contar con facturación electrónica en Shopify que se integré a cualquier flujo de negocio que ya opere en dicha plataforma. La idea es seguir ayudando a negocios mexicanos a seguir usando Shopify cómo su plataforma central y poder contar con facturación que cumpla la normativa Mexicana.
 
-Es tan sencillo cómo instalar el app desde la tienda de aplicaciones:
+Es tan sencillo como instalar el app desde la tienda de aplicaciones:
 
 ![CFDI Express en App Store de Shopify](https://cdn.shopify.com/s/files/1/0804/5540/1763/files/Shopify-App-Store-Badge-Final-White.png?v=1730390648)
 

@@ -1,6 +1,6 @@
 # Facturación desde el POS (Punto de Venta) de Shopify
 
-Una de las funcionalidades más poderozas y que diferencían a CFDI Express de otras herramientas de facturación en Shopify es la integración directa con el POS (Punto de Venta) de Shopify. Esto permite a los usuarios generar facturas electrónicas de forma automática y rápida desde el propio POS de Shopify, sin necesidad de salir de la plataforma.
+Una de las funcionalidades más poderosas y que diferencian a CFDI Express de otras herramientas de facturación en Shopify es la integración directa con el POS (Punto de Venta) de Shopify. Esto permite a los usuarios generar facturas electrónicas de forma automática y rápida desde el propio POS de Shopify, sin necesidad de salir de la plataforma.
 
 El formulario de facturación del POS de Shopify aparece automáticamente cuando un cliente realiza una compra en tienda física, el vendedor o cajero termina la venta en el POS y este muestra la página de confirmación de la venta, la cual incluye un botón para generar el CFDI tomando los datos del cliente y la venta.
 

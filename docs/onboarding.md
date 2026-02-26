@@ -7,7 +7,7 @@ Para poder completar la configuración inicial de CFDI Express debes:
 
 2. Llenar el formulario correspondiente al modo del app que seleccionaste.
     - Formulario Modo PAC
-      ![Formulari PAC](https://cdn.shopify.com/s/files/1/0804/5540/1763/files/Acr_2025-07-17_at_16.49.14_2x_ef94ccd8-a733-4925-a040-dcc9e5abf9a8.png?v=1752792575)
+      ![Formulario PAC](https://cdn.shopify.com/s/files/1/0804/5540/1763/files/Acr_2025-07-17_at_16.49.14_2x_ef94ccd8-a733-4925-a040-dcc9e5abf9a8.png?v=1752792575)
     - Formulario Modo Flow
       ![Formulario Flow](https://cdn.shopify.com/s/files/1/0804/5540/1763/files/Acr_2025-07-17_at_16.49.37_2x_4c1591ac-7bde-4864-9203-9259758c8113.png?v=1752792590)
 
@@ -25,7 +25,7 @@ Puedes ver nuestro video introductorio si lo prefieres.
 Para poder configurar CFDI Express, requieres los siguientes datos:
 
 - RFC
-- Razon Social
+- Razón Social
 - Código postal (El que aparece en tu Constancia de Situación Fiscal)
 - Régimen Fiscal (El que aparece en tu Constancia de Situación Fiscal)
 - Certificado de Sello Digital:
