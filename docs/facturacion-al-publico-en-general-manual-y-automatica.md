@@ -2,6 +2,12 @@
 
 Para tener una facturación ordenada y de acuerdo a lo que el SAT requiere, es importante que todas las órdenes o compras que se hayan hecho en nuestro negocio queden facturadas al final del año fiscal. Para poder lograr esto, los negocios que facturan órdenes / ventas a sus clientes deben definir ciertos periodos de tiempo en los que las órdenes / ventas que no se hayan facturado anteriormente se facturen al público en general, ya sea en un CFDI global o facturando cada orden / venta al público en general.
 
+### Video Tutorial
+
+Si prefieres ver un video tutorial puedes consultarlo aquí:
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/vDxG9X-TLJg?si=OYVLPnMLJaufAiuN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Botón de Facturación al Público en General Express
 
 En CFDI Express, contamos con un botón de facturación al público, en general express. Este botón se encuentra en la pantalla de facturación de la aplicación de CFDI Express dentro del Admin de Shopify. A continuación se muestra una captura de pantalla de dicho botón:
