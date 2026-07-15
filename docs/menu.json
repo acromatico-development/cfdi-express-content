@@ -10,6 +10,16 @@
     "completed": true
   },
   {
+    "title": "Configuraciones",
+    "document": "configuraciones.md",
+    "completed": true
+  },
+  {
+    "title": "Planes y Precios",
+    "document": "planes-y-precios.md",
+    "completed": true
+  },
+  {
     "title": "Lista de Órdenes y Estatus",
     "document": "ordenes-estatus.md",
     "completed": true
@@ -20,8 +30,28 @@
     "completed": true
   },
   {
+    "title": "Cancelación de CFDI y Acuse de Cancelación",
+    "document": "cancelacion-y-acuse.md",
+    "completed": true
+  },
+  {
+    "title": "Complementos de Pago (PPD)",
+    "document": "complementos-de-pago.md",
+    "completed": true
+  },
+  {
     "title": "Códigos del SAT por producto y IEPS",
     "document": "codigos-sat-producto.md",
+    "completed": true
+  },
+  {
+    "title": "Carga Masiva de Productos (CSV)",
+    "document": "carga-masiva-productos-csv.md",
+    "completed": true
+  },
+  {
+    "title": "Buscador de Códigos del SAT",
+    "document": "buscador-de-codigos-sat.md",
     "completed": true
   },
   {
@@ -35,6 +65,11 @@
     "completed": true
   },
   {
+    "title": "Formulario de Facturación (Theme App Block)",
+    "document": "formulario-de-facturacion-theme-block.md",
+    "completed": true
+  },
+  {
     "title": "Facturación desde el POS (Punto de Venta) de Shopify",
     "document": "facturacion-pos-punto-de-venta-shopify.md",
     "completed": true
@@ -45,13 +80,33 @@
     "completed": true
   },
   {
+    "title": "Facturación al Extranjero (RFC XEXX010101000)",
+    "document": "facturacion-al-extranjero.md",
+    "completed": true
+  },
+  {
     "title": "Uso de Flow para automatizaciones con CFDI Express",
     "document": "uso-shopify-flow-automatizaciones-cfdi-express.md",
-    "completed": false
+    "completed": true
   },
   {
     "title": "Modo Flow en CFDI Express para usar tu propio PAC de Facturación",
     "document": "modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacion.md",
-    "completed": false
+    "completed": true
+  },
+  {
+    "title": "Reportes de CFDIs y Complementos",
+    "document": "reportes.md",
+    "completed": true
+  },
+  {
+    "title": "Notificaciones por Correo",
+    "document": "notificaciones-por-correo.md",
+    "completed": true
+  },
+  {
+    "title": "Acción de Impresión de CFDI en el Admin",
+    "document": "accion-de-impresion-admin.md",
+    "completed": true
   }
 ]
