@@ -11,6 +11,9 @@ CFDI Express genera reportes en **CSV** con todas tus facturas y complementos de
 3. Haz clic en **Generar reporte**. El registro queda con estatus **Pendiente**.
 4. Cuando termina, el estatus cambia a **Completado** y aparece el botón de **descarga CSV**. Si algo falla, queda **Fallido**.
 
+<!-- TODO: captura — formulario de reporte (título + rango de fechas) y lista de reportes con badges de estatus -->
+![TODO: Formulario y lista de reportes](TODO-screenshot)
+
 ## Columnas del CSV
 
 Cada fila es un CFDI o complemento de pago. El reporte incluye columnas completas para cumplir los requerimientos contables del SAT:
@@ -30,3 +33,15 @@ Cada fila es un CFDI o complemento de pago. El reporte incluye columnas completa
 ## Métricas en el dashboard de Reportes
 
 La página de Reportes también muestra un resumen de uso: total de CFDIs generados, total de Constancias de Situación Fiscal (CSF) recibidas, total de reportes creados y un cálculo de "tiempo ahorrado" (basado en ~10 min por CFDI y ~30 min por reporte).
+
+<!-- TODO: captura — dashboard de métricas de Reportes (CFDIs totales, CSFs, reportes, tiempo ahorrado) -->
+![TODO: Dashboard de métricas de Reportes](TODO-screenshot)
+
+### Video Tutorial
+
+<!-- TODO: grabar tutorial de Reportes -->
+
+- Embed:
+  <iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/TODO_VIDEO_ID?si=TODO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+- Link:
+  https://www.youtube.com/watch?v=TODO_VIDEO_ID

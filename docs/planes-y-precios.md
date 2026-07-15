@@ -26,6 +26,9 @@ El registro del uso ocurre automáticamente cuando se timbra un CFDI (no se fact
 2. Selecciona el plan de destino (Plus, Pro, Enterprise) o usa los atajos para regresar a Standard.
 3. Se abrirá la confirmación de Shopify (suscripción recurrente + línea de uso). Acepta y quedarás en el nuevo plan.
 
+<!-- TODO: captura — sección de plan en Configuraciones y pantalla de confirmación de cambio de plan de Shopify -->
+![TODO: Cambio de plan en Shopify](TODO-screenshot)
+
 > Si tu tienda está en un plan **Discounted** o **VIP**, verás únicamente tu plan convenido y no podrás cambiar desde la app; contáctanos para ajustes.
 
 ## ¿Qué cuenta como un CFDI?

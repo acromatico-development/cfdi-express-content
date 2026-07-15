@@ -10,6 +10,9 @@ La página de **Configuraciones** del app de CFDI Express concentra todos los da
 - **Código Postal** (el de tu CSF)
 - **Logo** (se muestra en el CFDI y en los correos al cliente)
 
+<!-- TODO: captura — sección "Datos fiscales del emisor" con logo cargado -->
+![TODO: Datos fiscales del emisor](TODO-screenshot)
+
 ## Dirección fiscal completa (opcional)
 
 Activa el toggle **"Enable full address"** (`enableFullAddress`) para capturar los campos de dirección que aparecerán como dirección del emisor en el CFDI:
@@ -35,6 +38,9 @@ El toggle **"¿Ya tienes un PAC de facturación?"** controla el modo:
 - **Apagado = Modo PAC:** CFDI Express timbra con tu CSD vía Facturama. Se requiere CSD.
 - **Encendido = Modo Flow:** No se requiere CSD. Los datos fiscales se envían a tu propio PAC a través de Shopify Flow. Ver [Modo Flow](/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacion).
 
+<!-- TODO: captura — toggle "¿Ya tienes un PAC de facturación?" en Configuraciones -->
+![TODO: Toggle Modo PAC / Modo Flow](TODO-screenshot)
+
 ## Códigos del SAT predeterminados
 
 Puedes definir los códigos que se usarán cuando un producto no tenga código asignado:
@@ -56,6 +62,9 @@ Estas reglas controlan **cuándo** tus clientes pueden auto-facturarse desde la 
 
 > Si el periodo vence, el cliente debe solicitar la factura por otra vía y tú puedes facturar manualmente desde el [admin](/docs/facturacion-desde-admin-shopify) o automatizarlo con [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express).
 
+<!-- TODO: captura — reglas de periodo de facturación (no_limit / end_of_month / days_after_purchase) -->
+![TODO: Reglas de periodo de facturación](TODO-screenshot)
+
 ## Notificaciones
 
 - **`skipCfdiEmail`** — si lo activas, CFDI Express **no** envía el correo al cliente con el CFDI adjunto. Útil cuando tú reenvías la factura desde tu propio sistema.
@@ -75,3 +84,12 @@ Desde Configuraciones también puedes ver tu **plan actual** y, si corresponde, 
 
 - Los **datos fiscales, CSD, logo, dirección y modo** se guardan al pulsar guardar (vía `/api/csd` en Modo PAC o `/api/csd/flow` en Modo Flow).
 - Las **reglas de periodo y notificaciones** se guardan en automático vía `/api/invoicing-settings`.
+
+### Video Tutorial
+
+<!-- TODO: grabar tutorial de Configuraciones -->
+
+- Embed:
+  <iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/TODO_VIDEO_ID?si=TODO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+- Link:
+  https://www.youtube.com/watch?v=TODO_VIDEO_ID

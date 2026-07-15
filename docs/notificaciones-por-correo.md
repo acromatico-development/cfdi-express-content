@@ -11,6 +11,9 @@ Cuando se timbra un CFDI con éxito (en [Modo PAC](/docs/modo-flow-cfdi-express-
 - **Contenido:** HTML con tu logo y datos del CFDI.
 - **Adjunto:** `factura.zip` que contiene el **PDF** y el **XML** del CFDI.
 
+<!-- TODO: captura — vista previa del correo "Tu CFDI para la orden {Folio} ha sido generada" con logo y adjunto ZIP -->
+![TODO: Vista previa del correo CFDI Timbrado](TODO-screenshot)
+
 > Este correo **no se envía** si activaste `skipCfdiEmail` en [Configuraciones](/docs/configuraciones) (útil cuando tú reenvías la factura desde tu propio sistema). Esto aplica también a los [Complementos de Pago](/docs/complementos-de-pago).
 
 ### 2. Datos Fiscales Enviados (Modo Flow)
@@ -19,6 +22,9 @@ En [Modo Flow](/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturaci
 - **Asunto:** "Datos Fiscales Enviados a {tu negocio} para facturación"
 - **Contenido:** Confirmación de que sus datos fueron recibidos y que el CFDI será emitido por tu PAC.
 - **Adjunto:** Ninguno (el timbrado lo realiza tu PAC).
+
+<!-- TODO: captura — vista previa del correo "Datos Fiscales Enviados a {tu negocio}" en Modo Flow -->
+![TODO: Vista previa del correo Datos Fiscales Enviados](TODO-screenshot)
 
 ## Eventos de marketing (Klaviyo)
 

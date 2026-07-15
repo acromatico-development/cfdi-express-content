@@ -17,7 +17,13 @@ CFDI Express soporta facturar a **clientes extranjeros** usando el RFC genérico
     - RFC: `XEXX010101000`
     - Razón social del cliente
     - Régimen, código postal y uso CFDI correspondientes
+
+<!-- TODO: captura — botón "Facturar al Público en General Extranjero" en la pantalla de facturación -->
+![TODO: Botón Facturación al Extranjero](TODO-screenshot)
 3. CFDI Express habilita los **checkboxes "IVA 0%" por línea**. Marca los productos que deben ir a 0% (típicamente todos para exportación). El app recalcula los importes y genera la previsualización vía `/api/invoice-data`.
+
+<!-- TODO: captura — checkboxes "IVA 0%" por línea activados en una orden extranjera -->
+![TODO: Checkboxes IVA 0% por línea](TODO-screenshot)
 4. Verifica que los impuestos queden correctos y haz clic en **Generar CFDI**.
 
 ### Desde los formularios del cliente (Thank You Page / estado de orden / formulario de tema)
@@ -33,3 +39,12 @@ El formulario del cliente detecta el RFC `XEXX010101000` y despliega automática
 
 - La facturación al extranjero también dispara el disparador `cfdi-created` y envía el correo con el CFDI al cliente (salvo que `skipCfdiEmail` esté activo).
 - Si requieres configurar el uso de CFDI o régimen específico que tu SAT/contador recomienda para exportaciones, puedes ajustarlo en la emisión; consulta con tu contador el régimen correcto para tu caso.
+
+### Video Tutorial
+
+<!-- TODO: grabar tutorial de Facturación al Extranjero (IVA 0%) -->
+
+- Embed:
+  <iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/TODO_VIDEO_ID?si=TODO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+- Link:
+  https://www.youtube.com/watch?v=TODO_VIDEO_ID

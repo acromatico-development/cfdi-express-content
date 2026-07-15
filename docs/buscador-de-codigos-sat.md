@@ -14,12 +14,18 @@ No requiere iniciar sesión ni tener el app instalado; lo puedes usar para ti o 
 
 1. Escribe una descripción del producto o servicio en lenguaje natural (por ejemplo, "venta de zapatos de piel" o "servicios de consultoría en marketing").
 2. El buscador usa un modelo RAG (búsqueda semántica) sobre el catálogo del SAT y te regresa los códigos que mejor coinciden.
+
+<!-- TODO: captura — interfaz del buscador con un query y resultados de códigos SAT -->
+![TODO: Interfaz del buscador de códigos SAT](TODO-screenshot)
 3. Cada resultado te lleva a una **página de detalle del código** (`/codigos-sat/{código}`) que muestra:
     - Fechas de vigencia del código
     - Si lleva IVA e IEPS
     - Si aplica cuota al fronterizo
     - Complemento relacionado
     - PalabrasSimilares para refinar la búsqueda
+
+<!-- TODO: captura — página de detalle de un código SAT (vigencia, IVA/IEPS, fronterizo, complemento, similares) -->
+![TODO: Página de detalle de un código SAT](TODO-screenshot)
 
 ## Cuándo usarlo
 

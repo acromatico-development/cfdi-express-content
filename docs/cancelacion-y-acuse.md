@@ -6,6 +6,9 @@ CFDI Express permite **cancelar** un CFDI ya timbrado ante el SAT, y descargar e
 
 1. Abre la orden desde la [lista de órdenes](/docs/ordenes-estatus) o [facturación del admin](/docs/facturacion-desde-admin-shopify).
 2. Cuando la orden ya está facturada, aparece el botón **Cancelar Factura** (arriba a la derecha de la pantalla de facturación).
+
+<!-- TODO: captura — botón "Cancelar Factura" en la pantalla de facturación -->
+![TODO: Botón Cancelar Factura](TODO-screenshot)
 3. Selecciona el **motivo de cancelación** del SAT:
     - `01` — Comprobante emitido con errores con relación
     - `02` — Comprobante emitido sin errores con relación
@@ -29,6 +32,9 @@ Después de cancelar, CFDI Express te permite descargar el **acuse de cancelaci�
 1. En la pantalla de facturación de la orden, localiza el CFDI cancelado.
 2. Pulsa **Descargar Acuse**. CFDI Express obtiene el acuse desde Facturama y te entrega el PDF (y XML) para tu constancia contable.
 
+<!-- TODO: captura — botón "Descargar Acuse" sobre un CFDI cancelado -->
+![TODO: Botón Descargar Acuse](TODO-screenshot)
+
 El acuse se puede descargar cuando quieras desde la misma orden, incluso tiempo después de la cancelación.
 
 ## Re-facturar la orden
@@ -36,3 +42,12 @@ El acuse se puede descargar cuando quieras desde la misma orden, incluso tiempo 
 Después de cancelar, la orden queda libre para volver a facturarse (por ejemplo, con datos fiscales distintos). Simplemente ejecuta de nuevo el flujo de facturación (desde el [admin](/docs/facturacion-desde-admin-shopify) o desde los formularios del cliente). El nuevo CFDI tendrá un UUID distinto.
 
 > Nota: la cancelación **no envía un correo automático** al cliente. Si necesitas avisarle, descarga el acuse y reenvíaselo, o automatiza un correo con el disparador `cfdi-deleted` usando [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express).
+
+### Video Tutorial
+
+<!-- TODO: grabar tutorial de Cancelación y Acuse -->
+
+- Embed:
+  <iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/TODO_VIDEO_ID?si=TODO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+- Link:
+  https://www.youtube.com/watch?v=TODO_VIDEO_ID

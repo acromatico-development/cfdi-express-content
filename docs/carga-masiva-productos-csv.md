@@ -16,12 +16,19 @@ El archivo debe tener encabezados y una fila por producto, identificado por su *
 | `iva_override` | `true` / `false` — si usas IVA especial |
 | `iva_rate` | Tasa de IVA especial (ej. `0.0` para 0%, `0.16` para 16%) |
 
+<!-- TODO: captura — ejemplo del archivo CSV abierto en una hoja de cálculo con las columnas requeridas -->
+![TODO: Ejemplo de archivo CSV con las columnas](TODO-screenshot)
+
 > Si dejas vacías las columnas por producto, conservará el valor que ya tenga configurado. Si quieres **limpiar** todos los metafields de un producto, usa la acción `clear` en la página individual del producto ([Códigos del SAT por producto](/docs/codigos-sat-producto)).
 
 ## Cómo subir el CSV
 
 1. Entra a CFDI Express → **Productos**.
 2. Localiza el botón de **carga masiva (CSV)**.
+
+<!-- TODO: captura — botón de carga masiva CSV en la página de Productos -->
+![TODO: Botón de carga masiva CSV](TODO-screenshot)
+
 3. Sube tu archivo `.csv` con las columnas indicadas.
 4. CFDI Express encola un **trabajo en segundo plano** (BullMQ) que irá actualizando los metafields de los productos uno por uno mediante GraphQL de Shopify.
 
@@ -36,3 +43,12 @@ El archivo debe tener encabezados y una fila por producto, identificado por su *
 ## Limpieza por producto
 
 Si en algún momento requieres quitar todos los metafields de SAT de un producto en específico, abre el producto desde **Productos** y usa la acción **"clear"**, que eliminará todos los metafields asociados de ese producto.
+
+### Video Tutorial
+
+<!-- TODO: grabar tutorial de Carga Masiva de Productos (CSV) -->
+
+- Embed:
+  <iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/TODO_VIDEO_ID?si=TODO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+- Link:
+  https://www.youtube.com/watch?v=TODO_VIDEO_ID

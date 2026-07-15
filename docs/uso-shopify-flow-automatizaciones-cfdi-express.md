@@ -28,6 +28,9 @@ Estos eventos los dispara el app. Los usas como punto de partida de tus automati
 6. Agrega una **acción** de CFDI Express ("Crear CFDI") para timbrar las órdenes que cumplan la condición.
 7. (Opcional) Encadena un envío de correo, una etiqueta u otra acción de Shopify.
 
+<!-- TODO: captura — editor de Shopify Flow mostrando un workflow con trigger + query + condición + acción "Crear CFDI" -->
+![TODO: Workflow de Shopify Flow con acción Crear CFDI](TODO-screenshot)
+
 ## Facturación automática al Público en General
 
 La automatización más común combina el **disparador de recurrencia** con la **acción "Crear CFDI"** usando los datos del Público en General (`XAXX010101000`), para timbrar de forma periódica las órdenes que no fueron facturadas. Esto se detalla junto con los campos a usar y las plantillas en [Facturación al Público en General](/docs/facturacion-al-publico-en-general-manual-y-automatica).
@@ -49,6 +52,9 @@ Hemos prediseñado plantillas `.flow` que puedes importar y usar como base:
 4. Flow abrirá el workflow en modo edición; ajusta los parámetros del query de búsqueda de órdenes si quieres cambiar el periodo de espera.
 5. Activa el workflow.
 
+<!-- TODO: captura — botón "Importar" de Shopify Flow y workflow abierto en modo edición tras importar una plantilla -->
+![TODO: Importar plantilla .flow en Shopify Flow](TODO-screenshot)
+
 > Estas plantillas están diseñadas para facturar las órdenes **pagadas y no facturadas** generadas durante el día, hace más de 3 días, hace más de 10 días y al final del mes. Para expandir el tiempo de espera, edita los parámetros del query de búsqueda de órdenes en el editor de Flow. Si requieres una automatización más avanzada o que se integre con otras apps o acciones de Shopify Flow, contáctanos a través de [Acromático Development](https://acromatico.dev).
 
 ## Modo Flow: pasar los datos a tu propio PAC
@@ -63,3 +69,12 @@ Usa la acción "Eliminar CFDI" con el motivo del SAT:
 - `02` — Comprobante emitido sin errores con relación.
 - `03` — No se llevó a cabo la operación.
 - `04` — Operación nominativa relacionada con la facturación global.
+
+### Video Tutorial
+
+<!-- TODO: grabar tutorial de Shopify Flow con CFDI Express (triggers, acciones, plantillas) -->
+
+- Embed:
+  <iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/TODO_VIDEO_ID?si=TODO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+- Link:
+  https://www.youtube.com/watch?v=TODO_VIDEO_ID
