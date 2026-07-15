@@ -13,6 +13,7 @@ El cliente entra a la página donde agregaste el bloque y:
 
 <!-- TODO: captura — formulario de facturación visto por el cliente en el storefront (búsqueda por orden# + total) -->
 ![TODO: Formulario de Facturación en el storefront](TODO-screenshot)
+<!-- ENDTODO -->
 
 > El formulario pasa por el **App Proxy** de Shopify, que verifica la firma HMAC para asegurar que las peticiones vienen genuinamente de tu tienda.
 
@@ -25,6 +26,7 @@ El cliente entra a la página donde agregaste el bloque y:
 
 <!-- TODO: captura — selector de bloques del tema mostrando "Formulario de Facturación" de CFDI Express -->
 ![TODO: Selector de bloques con Formulario de Facturación](TODO-screenshot)
+<!-- ENDTODO -->
 
 5. Ajusta los **settings del bloque**:
     - **Título de la sección**
@@ -35,6 +37,7 @@ El cliente entra a la página donde agregaste el bloque y:
 
 <!-- TODO: captura — panel de settings del bloque (título, colores, textos) -->
 ![TODO: Settings del bloque Formulario de Facturación](TODO-screenshot)
+<!-- ENDTODO -->
 
 6. Guarda. El formulario quedará visible en esa página.
 
@@ -55,11 +58,12 @@ El cliente entra a la página donde agregaste el bloque y:
 - Si una orden ya está facturada, el formulario le indicará al cliente y le mostrará su folio anterior con su URL de descarga.
 - El formulario respeta el [Modo Flow](/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacion) si lo tienes activo.
 
-### Video Tutorial
-
 <!-- TODO: grabar tutorial del Formulario de Facturación (Theme App Block) -->
+
+### Video Tutorial
 
 - Embed:
   <iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/TODO_VIDEO_ID?si=TODO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 - Link:
   https://www.youtube.com/watch?v=TODO_VIDEO_ID
+<!-- ENDTODO -->

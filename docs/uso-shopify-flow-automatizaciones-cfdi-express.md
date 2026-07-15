@@ -30,6 +30,7 @@ Estos eventos los dispara el app. Los usas como punto de partida de tus automati
 
 <!-- TODO: captura — editor de Shopify Flow mostrando un workflow con trigger + query + condición + acción "Crear CFDI" -->
 ![TODO: Workflow de Shopify Flow con acción Crear CFDI](TODO-screenshot)
+<!-- ENDTODO -->
 
 ## Facturación automática al Público en General
 
@@ -54,6 +55,7 @@ Hemos prediseñado plantillas `.flow` que puedes importar y usar como base:
 
 <!-- TODO: captura — botón "Importar" de Shopify Flow y workflow abierto en modo edición tras importar una plantilla -->
 ![TODO: Importar plantilla .flow en Shopify Flow](TODO-screenshot)
+<!-- ENDTODO -->
 
 > Estas plantillas están diseñadas para facturar las órdenes **pagadas y no facturadas** generadas durante el día, hace más de 3 días, hace más de 10 días y al final del mes. Para expandir el tiempo de espera, edita los parámetros del query de búsqueda de órdenes en el editor de Flow. Si requieres una automatización más avanzada o que se integre con otras apps o acciones de Shopify Flow, contáctanos a través de [Acromático Development](https://acromatico.dev).
 
@@ -70,11 +72,12 @@ Usa la acción "Eliminar CFDI" con el motivo del SAT:
 - `03` — No se llevó a cabo la operación.
 - `04` — Operación nominativa relacionada con la facturación global.
 
-### Video Tutorial
-
 <!-- TODO: grabar tutorial de Shopify Flow con CFDI Express (triggers, acciones, plantillas) -->
+
+### Video Tutorial
 
 - Embed:
   <iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/TODO_VIDEO_ID?si=TODO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 - Link:
   https://www.youtube.com/watch?v=TODO_VIDEO_ID
+<!-- ENDTODO -->

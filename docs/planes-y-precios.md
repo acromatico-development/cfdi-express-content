@@ -28,6 +28,7 @@ El registro del uso ocurre automáticamente cuando se timbra un CFDI (no se fact
 
 <!-- TODO: captura — sección de plan en Configuraciones y pantalla de confirmación de cambio de plan de Shopify -->
 ![TODO: Cambio de plan en Shopify](TODO-screenshot)
+<!-- ENDTODO -->
 
 > Si tu tienda está en un plan **Discounted** o **VIP**, verás únicamente tu plan convenido y no podrás cambiar desde la app; contáctanos para ajustes.
 

@@ -9,6 +9,7 @@ CFDI Express permite **cancelar** un CFDI ya timbrado ante el SAT, y descargar e
 
 <!-- TODO: captura — botón "Cancelar Factura" en la pantalla de facturación -->
 ![TODO: Botón Cancelar Factura](TODO-screenshot)
+<!-- ENDTODO -->
 3. Selecciona el **motivo de cancelación** del SAT:
     - `01` — Comprobante emitido con errores con relación
     - `02` — Comprobante emitido sin errores con relación
@@ -34,6 +35,7 @@ Después de cancelar, CFDI Express te permite descargar el **acuse de cancelaci�
 
 <!-- TODO: captura — botón "Descargar Acuse" sobre un CFDI cancelado -->
 ![TODO: Botón Descargar Acuse](TODO-screenshot)
+<!-- ENDTODO -->
 
 El acuse se puede descargar cuando quieras desde la misma orden, incluso tiempo después de la cancelación.
 
@@ -43,11 +45,12 @@ Después de cancelar, la orden queda libre para volver a facturarse (por ejemplo
 
 > Nota: la cancelación **no envía un correo automático** al cliente. Si necesitas avisarle, descarga el acuse y reenvíaselo, o automatiza un correo con el disparador `cfdi-deleted` usando [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express).
 
-### Video Tutorial
-
 <!-- TODO: grabar tutorial de Cancelación y Acuse -->
+
+### Video Tutorial
 
 - Embed:
   <iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/TODO_VIDEO_ID?si=TODO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 - Link:
   https://www.youtube.com/watch?v=TODO_VIDEO_ID
+<!-- ENDTODO -->

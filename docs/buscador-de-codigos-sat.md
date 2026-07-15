@@ -17,6 +17,7 @@ No requiere iniciar sesión ni tener el app instalado; lo puedes usar para ti o 
 
 <!-- TODO: captura — interfaz del buscador con un query y resultados de códigos SAT -->
 ![TODO: Interfaz del buscador de códigos SAT](TODO-screenshot)
+<!-- ENDTODO -->
 3. Cada resultado te lleva a una **página de detalle del código** (`/codigos-sat/{código}`) que muestra:
     - Fechas de vigencia del código
     - Si lleva IVA e IEPS
@@ -26,6 +27,7 @@ No requiere iniciar sesión ni tener el app instalado; lo puedes usar para ti o 
 
 <!-- TODO: captura — página de detalle de un código SAT (vigencia, IVA/IEPS, fronterizo, complemento, similares) -->
 ![TODO: Página de detalle de un código SAT](TODO-screenshot)
+<!-- ENDTODO -->
 
 ## Cuándo usarlo
 

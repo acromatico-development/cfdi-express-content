@@ -9,6 +9,7 @@ Cuando una orden se factura con método de pago **PPD (Pago en Parcialidades o D
 
 <!-- TODO: captura — botón/enlace "Complementos" en la pantalla de facturación de una orden PPD -->
 ![TODO: Botón de acceso a Complementos de Pago](TODO-screenshot)
+<!-- ENDTODO -->
 
 ## Cómo generar un Complemento de Pago
 
@@ -25,6 +26,7 @@ Cuando una orden se factura con método de pago **PPD (Pago en Parcialidades o D
 
 <!-- TODO: captura — formulario de generación de complemento (fecha, forma de pago, monto, saldo insoluto, parcialidad) -->
 ![TODO: Formulario de nuevo Complemento de Pago](TODO-screenshot)
+<!-- ENDTODO -->
 5. Haz clic en **Generar Complemento**. El app:
     - Timbra el complemento en Facturama (PAC) usando tu CSD.
     - Empaqueta el PDF + XML en un ZIP y lo almacena.
@@ -48,11 +50,12 @@ Cada complemento registra: UUID, folio, fecha de pago, forma de pago, monto, nú
 
 En [Modo Flow](/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacion), la generación de complementos igual dispara el flujo `cfdi-flow-mode` con los datos del pago, para que tu PAC timbre el complemento. El control del saldo insoluto y parcialidad se basa en los complementos ya registrados en CFDI Express.
 
-### Video Tutorial
-
 <!-- TODO: grabar tutorial de Complementos de Pago (PPD) -->
+
+### Video Tutorial
 
 - Embed:
   <iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/TODO_VIDEO_ID?si=TODO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 - Link:
   https://www.youtube.com/watch?v=TODO_VIDEO_ID
+<!-- ENDTODO -->

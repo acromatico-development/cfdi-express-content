@@ -9,6 +9,7 @@ CFDI Express agrega una **acción de impresión** en la página de detalle de la
 
 <!-- TODO: captura — acción "Imprimir CFDI" / "Print CFDI" en la página de detalle de la orden -->
 ![TODO: Acción Imprimir CFDI en el Admin](TODO-screenshot)
+<!-- ENDTODO -->
 3. Si la orden ya cuenta con un CFDI (`url_cfdi` en metafield), se abrirá el **PDF del CFDI** listo para imprimir o guardar.
 4. Si la orden **no** tiene un CFDI generado, la acción mostrará el mensaje "Esta orden no tiene un CFDI generado".
 
@@ -20,11 +21,12 @@ CFDI Express agrega una **acción de impresión** en la página de detalle de la
 
 > Para regenerar o cancelar el CFDI usa el [flujo de facturación del admin](/docs/facturacion-desde-admin-shopify). La acción de impresión es de sólo lectura.
 
-### Video Tutorial
-
 <!-- TODO: grabar tutorial corto de la Acción de Impresión -->
+
+### Video Tutorial
 
 - Embed:
   <iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/TODO_VIDEO_ID?si=TODO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 - Link:
   https://www.youtube.com/watch?v=TODO_VIDEO_ID
+<!-- ENDTODO -->

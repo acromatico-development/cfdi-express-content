@@ -13,6 +13,7 @@ CFDI Express genera reportes en **CSV** con todas tus facturas y complementos de
 
 <!-- TODO: captura — formulario de reporte (título + rango de fechas) y lista de reportes con badges de estatus -->
 ![TODO: Formulario y lista de reportes](TODO-screenshot)
+<!-- ENDTODO -->
 
 ## Columnas del CSV
 
@@ -36,12 +37,14 @@ La página de Reportes también muestra un resumen de uso: total de CFDIs genera
 
 <!-- TODO: captura — dashboard de métricas de Reportes (CFDIs totales, CSFs, reportes, tiempo ahorrado) -->
 ![TODO: Dashboard de métricas de Reportes](TODO-screenshot)
-
-### Video Tutorial
+<!-- ENDTODO -->
 
 <!-- TODO: grabar tutorial de Reportes -->
+
+### Video Tutorial
 
 - Embed:
   <iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/TODO_VIDEO_ID?si=TODO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 - Link:
   https://www.youtube.com/watch?v=TODO_VIDEO_ID
+<!-- ENDTODO -->

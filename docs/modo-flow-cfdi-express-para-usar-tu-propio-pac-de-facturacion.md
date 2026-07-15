@@ -27,6 +27,7 @@ El timbrado real lo ejecuta tu PAC, usando la automatización que tú diseñes e
 
 <!-- TODO: captura — selector "Modo PAC / Modo Flow" en el onboarding -->
 ![TODO: Selector de modo PAC / Flow en onboarding](TODO-screenshot)
+<!-- ENDTODO -->
 2. Completa el formulario. En Modo Flow **no se requiere CSD** (no se pide `.cer`, `.key` ni contraseña), porque CFDI Express no timbrará; tú lo harás con tu propia CSD cargada en tu PAC.
 3. Sí se requiere tu RFC, razón social, régimen fiscal, código postal y logo (estos datos se comparten con el cliente y se incluyen en el disparador de Flow).
 4. Una vez finalizado el onboarding, puedes ajustar la configuración en cualquier momento desde [Configuraciones](/docs/configuraciones).
@@ -66,16 +67,18 @@ Puedes cambiar de modo cuando quieras desde [Configuraciones](/docs/configuracio
 
 <!-- TODO: captura — toggle "¿Ya tienes un PAC de facturación?" dentro de Configuraciones -->
 ![TODO: Toggle PAC/Flow en Configuraciones](TODO-screenshot)
+<!-- ENDTODO -->
 
 > Nota: cambiar de modo no afecta los CFDIs ya timbrados. Sólo aplica a las nuevas solicitudes de facturación.
 
 Si requieres ayuda configurando la automatización de Flow para tu PAC específico, contáctanos a través de [Acromático Development](https://acromatico.dev).
 
-### Video Tutorial
-
 <!-- TODO: grabar tutorial de Modo Flow (usar tu propio PAC) -->
+
+### Video Tutorial
 
 - Embed:
   <iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/TODO_VIDEO_ID?si=TODO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 - Link:
   https://www.youtube.com/watch?v=TODO_VIDEO_ID
+<!-- ENDTODO -->
