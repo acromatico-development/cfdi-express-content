@@ -30,6 +30,11 @@
     "completed": true
   },
   {
+    "title": "Facturación con Sidekick (IA)",
+    "document": "facturacion-con-sidekick-ia.md",
+    "completed": true
+  },
+  {
     "title": "Cancelación de CFDI y Acuse de Cancelación",
     "document": "cancelacion-y-acuse.md",
     "completed": true
