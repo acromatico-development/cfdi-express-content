@@ -4,6 +4,10 @@
     "cfdi-express": {
       "path": "/Users/rafaremo/Acromatico/clientes/acromatico/cfdi-express",
       "description": "CFDI Express Shopify app source code for Mexican electronic invoicing"
+    },
+    "cfdi-express-api": {
+      "path": "/home/rafa/Work/code/clientes/cfdi-express/cfdi-express-api",
+      "description": "CFDI Express API for Mexican electronic invoicing"
     }
   }
 }
