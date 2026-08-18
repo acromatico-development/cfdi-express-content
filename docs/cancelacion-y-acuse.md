@@ -24,6 +24,7 @@ CFDI Express permite **cancelar** un CFDI ya timbrado ante el SAT, y descargar e
 ## Restricciones al cancelar
 
 - **No se puede cancelar** un CFDI que tenga **[Complementos de Pago](/docs/complementos-de-pago) activos**. Cancela primero todos sus complementos y luego cancela el CFDI original.
+- **No se puede cancelar** un CFDI que tenga **[Notas de Crédito](/docs/notas-de-credito) activas**. Cancela primero todas sus Notas de Crédito y luego cancela el CFDI original.
 - La cancelación es definitiva ante el SAT; queda registrado en el historically de la app.
 
 ## Acuse de Cancelación

@@ -40,6 +40,11 @@
     "completed": true
   },
   {
+    "title": "Notas de Crédito (Devoluciones)",
+    "document": "notas-de-credito.md",
+    "completed": false
+  },
+  {
     "title": "Complementos de Pago (PPD)",
     "document": "complementos-de-pago.md",
     "completed": true

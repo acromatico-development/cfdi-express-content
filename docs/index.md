@@ -28,6 +28,7 @@ CFDI Express es una [aplicación de Shopify](https://apps.shopify.com/cfdi-expre
 - [Lista de Órdenes y Estatus](/docs/ordenes-estatus)
 - [Facturación desde el administrador de Shopify](/docs/facturacion-desde-admin-shopify)
 - [Cancelación de CFDI y Acuse de Cancelación](/docs/cancelacion-y-acuse)
+- [Notas de Crédito (Devoluciones)](/docs/notas-de-credito)
 - [Complementos de Pago (PPD)](/docs/complementos-de-pago)
 - [Códigos del SAT por producto y IEPS](/docs/codigos-sat-producto)
 - [Carga Masiva de Productos (CSV)](/docs/carga-masiva-productos-csv)
