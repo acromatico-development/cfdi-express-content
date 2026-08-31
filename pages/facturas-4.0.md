@@ -1,138 +1,231 @@
 ---
-title: "Facturas 4.0"
-description: "La factura 4.0 es la versión más reciente del Comprobante Fiscal Digital por Internet o mejor conocido como CFDI, el documento electrónico que se usa en México para registrar compras, ventas y servicios ante el SAT."
+title: "CFDI facturas 4.0: qué es, qué cambió y cómo emitirlas sin errores"
+description: "CFDI facturas 4.0 es la única versión válida del SAT desde abril 2023. Qué cambió vs 3.3, qué datos pide el receptor y cómo emitir o cancelar sin rechazos."
 image: "https://assets.acromatico.dev/assets/689cc71d-6965-44a2-9cb8-c5478c037304.jpg"
-author: "Arrigo Marín"
-date: "2025-12-16"
-keywords: "facturas 4.0, facturación 4.0, factura electronica 4.0, facturar 4.0"
+author: "Rafael González"
+date: "2026-08-31"
+keywords: "cfdi facturas 4.0, factura 4.0, cfdi 4.0, facturas 4.0, facturación 4.0, factura electrónica 4.0, SAT"
 ---
-# Facturas 4.0
+# ¿Qué es CFDI facturas 4.0? Qué cambió y cómo emitirlas sin errores
 
-La facturación en México cambió en los últimos años, y si has intentado pedir o emitir una factura, seguramente llegaste a la famosa “Factura 4.0”.
-Esta versión puede ser considerada más estricta, más completa y está diseñada para que el SAT valide los datos de forma automática. Puede sonar complicado, pero no te preocupes, aquí lo entenderás paso a paso.
+<!-- TODO: hero/OG más específico para este post (el actual funciona; no bloquear publicación). Prompt Gemini 16:9, paleta teal #055D5E + oro #FFD700, ilustración flat sin fotos de personas: factura/sello SAT + “CFDI 4.0”, tipografía Racing Sans One / Quicksand. Subir a videos.acromatico.dev y actualizar `image:` si se genera. -->
+<!-- ENDTODO -->
 
-## ¿Qué es la factura electrónica 4.0?
+**CFDI facturas 4.0** (también llamada factura 4.0 o CFDI 4.0) es la versión vigente del Comprobante Fiscal Digital por Internet. Desde el **1 de abril de 2023** es la única que el SAT acepta: la 3.3 ya no se puede timbrar.
 
-La factura 4.0 es la versión más reciente del Comprobante Fiscal Digital por Internet o mejor conocido como CFDI, el documento electrónico que se usa en México para registrar compras, ventas y servicios ante el SAT.
+En la práctica, el SAT valida al emitir que el RFC, el nombre, el régimen fiscal y el código postal del receptor coincidan con su Constancia de Situación Fiscal. Si no coinciden, la factura se rechaza. Aquí te dejo qué cambió, qué datos no pueden fallar y cómo cancelar con los motivos oficiales.
 
-En términos simples, las facturas 4.0 son la versión nueva de las facturas electrónicas un poco más estrictas y detalladas, que validan tus datos directamente con la base del SAT.
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/M7ImVfrJuH8" title="Qué es CFDI facturas 4.0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-La idea principal de esta nueva versión es:
+[Ver video: ¿Qué son las facturas 4.0?](https://youtu.be/M7ImVfrJuH8)
 
-- Evitar errores
-- Reducir fraudes
-- Operaciones registradas correctamente.
+## ¿Qué es la factura 4.0 (CFDI 4.0)?
 
-Si compras algo, si vendes, si das servicios, o si necesitas deducir impuestos: las facturas 4.0 serán algo de tu día a día.
+**Respuesta corta:** es el formato actual de factura electrónica en México. Toda venta, servicio o ingreso que debas comprobar ante el SAT se documenta con un CFDI 4.0: un XML timbrado, con sello digital, que el receptor puede descargar y validar.
 
-[¿Qué son las facturas 4.0?](https://youtu.be/M7ImVfrJuH8?si=D-I69DK7Q_O3O7r4)
+El SAT publica las reglas técnicas en el [Anexo 20, versión 4.0](http://omawww.sat.gob.mx/tramitesyservicios/Paginas/anexo_20.htm). Esa versión empezó a existir el 1 de enero de 2022 (convivió un tiempo con la 3.3) y, desde abril de 2023, es **la única válida**.
 
-### ¿Qué cambió en la factura 4.0 con respecto al CFDI 3.3?
+No es un “tipo extra” de factura ni un trámite aparte. Es la misma factura de siempre, con validaciones más estrictas: el SAT cruza los datos del receptor contra su padrón antes de dejar que el PAC timbre.
 
-El cambio más grande es que ahora el SAT es un poco más exigente con tus datos.
-Las facturas 4.0 requieren que el nombre del receptor, su régimen fiscal y su código postal coincidan exactamente con lo que aparece en su CSF o mejor conocida como la Constancia de Situación Fiscal.
+Si compras, vendes, das servicios o necesitas deducir, las facturas que pides y las que emites son CFDI 4.0.
 
-#### Los principales cambios entre CFDI 3.3 y facturas 4.0:
+## ¿Desde cuándo es obligatoria la factura 4.0?
 
-**Datos obligatorios del receptor  deben coincidir con la validación automática de datos**
+**Respuesta corta:** desde el **1 de abril de 2023**. A partir de esa fecha la versión 3.3 dejó de ser válida.
 
-Si algo no coincide entre los datos proporcionados y los que están en la Constancia de Situación Fiscal; ya sea un número en el código postal, un error en elegir el uso del CFDI adecuado, aunque sea un acento la factura electrónica será rechazada.
+El SAT lo dice así en su documentación del Anexo 20: la versión se actualizó a 4.0 el 1 de enero de 2022 y **desde el 1 de abril de 2023 es la única válida**.
 
-**Nuevos motivos de cancelación para las facturas**
+Aplica a personas físicas, personas morales, comercios, freelancers y plataformas digitales. Si alguien todavía intenta emitir en 3.3, ese comprobante no es válido.
 
-Antes, en la versión 3.3, cancelar una factura era más fácil:
-bastaba solo con realizar la cancelación, no necesitabas decir por qué, nadie tenía que aceptarla, y se podía borrar prácticamente sin control.
+## ¿Qué cambió en CFDI 4.0 respecto a la 3.3?
 
-Ahora cuando intentas cancelar un CFDI 4.0,tienes que justificar por qué cancelas, debes elegir un motivo específico, como si fuera una “razón oficial”.
+**Respuesta corta:** el SAT se puso más estricto con la identidad del receptor y con la cancelación. Los tipos de CFDI (ingreso, egreso, traslado, nómina, pago) no cambiaron; cambió **cómo se llenan** y **cuándo el timbrado los acepta**.
 
-Los motivos obligatorios que puedes seleccionar son pocos y están controlados:
+### Datos del receptor que ahora se validan
 
-- Comprobante emitido con errores sin relación
-- Comprobante emitido con errores y se relaciona con otra factura
-- No se llevó a cabo la operación
-- Operación nominativa relacionada con una factura global
+En 4.0 el nombre, el régimen fiscal y el código postal del domicilio fiscal del receptor son **obligatorios** y deben coincidir con la Constancia de Situación Fiscal (CSF). Un dígito mal en el CP, un uso de CFDI incompatible con el régimen o un nombre abreviado suelen terminar en rechazo al timbrar.
 
-El receptor debe aceptar la cancelación en varios casos cuando tú cancelas una factura 4.0
+### Cancelación con motivo oficial
 
-En resumen para cancelar una factura electrónica 4.0:
+Desde el esquema de cancelación vigente (alineado con la 4.0), ya no basta con “borrar” el comprobante. Tienes que elegir uno de cuatro motivos del SAT (claves 01 a 04). En muchos casos el receptor debe aceptar la solicitud en su Buzón Tributario.
 
-Necesitas un motivo, se requiere justificarlo, y es necesario a veces esperar a que la otra persona se meta al SAT y acepte. Esto impacta en tiempos, contabilidad y cierre de mes.
+### Otros campos que trajo el Anexo 20 versión 4.0
 
-#### ¿Desde cuándo es obligatoria la facturar 4.0?
+El SAT también incorporó, entre otros:
 
-La versión 4.0 se anunció en 2022, pero tuvo un periodo de transición.
-Desde abril de 2023, la factura 3.3 dejó oficialmente de ser válida y la 4.0 se convirtió en obligatoria para todos.
+- **Exportación:** hay que indicar si la operación es de exportación o no aplica.
+- **Información global** (periodicidad, meses y año) cuando facturas al público en general.
+- **Objeto del impuesto** en los conceptos.
 
-Esto aplica para:
+Lo operativo del día a día, para la mayoría de las ventas, sigue siendo: datos del receptor exactos + catálogos SAT vigentes (producto, unidad, forma de pago, uso de CFDI).
 
-- Personas físicas
-- Empresas
-- Comercios
-- Freelancers
-- Plataformas digitales
+## ¿Qué datos del receptor son obligatorios en la factura 4.0?
 
-Lo que quiere decir que si alguien sigue emitiendo 3.3 a partir de esa fecha ya no es fiscalmente correcta.
+**Respuesta corta:** RFC, nombre o razón social, régimen fiscal, código postal del domicilio fiscal y uso del CFDI. Pídelos en la Constancia de Situación Fiscal, no de memoria ni de una tarjeta de presentación.
 
-#### ¿Qué tipos de CFDI existen en facturación 4.0?
+El SAT exige que estos datos coincidan con su padrón (la lista de RFC inscritos no cancelados):
 
-Es muy importante mencionar que los tipos de factura no cambiaron; lo que cambió fue la forma de llenarlos.
+- **RFC completo y activo.** Un dígito de más o de menos tumba el timbrado.
+- **Nombre o razón social.** Tal como aparece en la CSF / Cédula de Identificación Fiscal: nombres, apellidos, espacios y signos. Si la constancia dice `JUAN CARLOS`, no pongas `JUAN C.`. Para personas morales, el artículo 29-A del CFF indica tomar el nombre de la constancia **sin incorporar el régimen de capital** (por ejemplo, sin `S.A. DE C.V.`).
+- **Régimen fiscal.** El que está en la constancia, no “el que siempre usamos”. Tiene que ser compatible con el tipo de persona (física o moral) y con el uso de CFDI.
+- **Código postal del domicilio fiscal.** El que el SAT tiene registrado, no el de la sucursal, el de entrega ni el “domicilio actual” si no se actualizó ante el SAT.
+- **Uso del CFDI.** Lo elige el receptor (gastos, compras, inversiones, etc.) y debe ser una clave del catálogo `c_UsoCFDI` compatible con su régimen. Si no lo es, el PAC rechaza el timbrado.
 
-Los CFDI más comunes son:
+La forma más segura de no fallar: pide la Constancia de Situación Fiscal actualizada (o la cédula de datos fiscales) y captura desde ahí.
 
-- CFDI de Ingreso:
-    Estos se aplican cuando vendes algo o brindas un servicio, podríamos decir que es “la factura típica".
-- CFDI de Egreso:
-    Aplicable en devoluciones, descuentos o cancelaciones.
-- CFDI de Traslado:
-    Se usa para mover mercancías sin venta.
-- CFDI de Recepción de Pagos o Complemento de pagos:
-    Se usan para registrar pagos en parcialidades o cuando no se liquida un pago al momento.
-- CFDI de Nómina:
-    La factura que reciben los trabajadores por su salario.
+## ¿Qué errores impiden emitir una factura 4.0?
 
-#### ¿Qué datos del receptor son obligatorios en la factura 4.0?
+**Respuesta corta:** cualquier diferencia entre lo que capturas y lo que el SAT tiene en su base. El comprobante no se emite; no “sale mal y luego se cancela”.
 
-Aquí viene la parte más importante para evitar errores. El SAT exige que los siguientes datos del cliente aparezcan idénticos a como salen en su Constancia de Situación Fiscal:
+Los rechazos más comunes:
 
-- RFC completo
-- Nombre completo
+- Nombre o razón social distinto al del padrón (abreviaturas, régimen de capital de más, un acento o un espacio que no está en la CSF).
+- RFC, régimen o código postal incorrectos, o un CP que el cliente ya cambió en la vida real pero no ante el SAT.
+- Uso de CFDI que no aplica al régimen del receptor.
+- RFC inactivo o cancelado.
+- Catálogos desactualizados (clave de producto, unidad, forma o método de pago que el SAT ya no admite).
 
-Con apellidos, tildes, doble nombre si lo hay y mayúsculas tal cual aparecen en el sistema del SAT. Si tu Constancia de Situación Fiscal dice “JUAN CARLOS”, no puedes poner “JUAN C.”
+Si el cliente te da datos “actuales” que todavía no están en el SAT, la factura 4.0 no pasa. Primero tiene que actualizar su situación fiscal.
 
-- Régimen fiscal
+## ¿Cómo se cancelan las facturas 4.0?
 
-El que aparece en la Constancia de Situación Fiscal, ningún otro será admitido por el sistema y puede provocar la cancelación de la factura.
+**Respuesta corta:** eliges un motivo oficial (01–04), envías la solicitud por el portal del SAT o por tu PAC, y en varios casos el receptor debe aceptar. El silencio de 3 días hábiles cuenta como aceptación.
 
-- Código postal del domicilio fiscal
+El SAT publica el proceso en su [minisitio de cancelación](https://www.sat.gob.mx/minisitio/Factura/cancela_procesocancelacion.htm). Los motivos son estos (nombres oficiales):
 
-No el del domicilio actual, ni el de la sucursal; es necesario que se coloque el que el SAT tiene registrado.
+| Clave | Motivo |
+| --- | --- |
+| 01 | Comprobantes emitidos con errores con relación |
+| 02 | Comprobantes emitidos con errores sin relación |
+| 03 | No se llevó a cabo la operación |
+| 04 | Operación nominativa relacionada en una factura global |
 
-- Uso del CFDI
+Con el motivo **01** primero emites el CFDI que sustituye (relación tipo 04, “Sustitución de CFDI previos”) y al cancelar indicas el folio (UUID) del nuevo comprobante.
 
-Esto es para qué usarás la factura: gastos, compras, inversiones, etc.
+Cuando la cancelación **requiere aceptación**, el receptor recibe un aviso en su Buzón Tributario y tiene **tres días hábiles** para aceptar o rechazar. Si no responde, el SAT la tiene por aceptada y la factura se cancela.
 
-Como puedes ver en realidad no han cambiado mucho pero es muy importante que no olvides que si alguno de estos datos no coincide exactamente con la base de datos que tiene el SAT, las facturas 4.0 se rechazan.
+### ¿Cuándo no se pide aceptación del receptor?
 
-#### ¿Qué errores impiden emitir una factura 4.0?
-Los errores más comunes incluyen el nombre o razón social mal escrita, emplear un código postal, RFC o régimen fiscal incorrecto. En otros casos donde estos datos están bien, el problema puede ser que se esté intentando usar un CFDI que no aplica para el régimen fiscal en cuestión y por último que la información proporcionada sea actual pero no se haya notificado al SAT y por lo tanto no coincida con sus datos
+El SAT lista supuestos en los que la cancelación es inmediata. Entre los más usados en un comercio:
 
-Si el SAT detecta cualquier diferencia entre los datos que le proporcionas y los que contiene su base de datos, las facturas electrónicas 4.0 no podrán ser emitidas.
+- CFDI con valor total de **$1,000.00**
+- Nómina, egreso o traslado
+- Operaciones con **público en general**
+- Receptor residente en el extranjero
+- Cancelación **dentro del día hábil siguiente** a la expedición
 
-#### ¿Cómo se cancelan las facturas 4.0?
+Hay más casos (RIF, retenciones, sector primario, etc.) en la misma página del SAT. El **motivo no decide** si se pide aceptación: lo decide el tipo de comprobante, el monto y la fecha.
 
-La cancelación también cambió, ahora debe hacerse con reglas específicas.
+El SAT también limita **hasta cuándo** puedes cancelar un CFDI (el CFF lo ata al ejercicio de emisión y a la declaración anual). Confirma el plazo vigente en el portal del SAT o con tu contador antes de dejar comprobantes “para después”.
 
-Los pasos básicos para cancelar una factura electrónica 4.0 primero hay que entrar al portal del SAT y buscar la factura que necesita ser cancelada; cuando la localices seleccionamos el motivo de la cancelación y ya podrás enviar las solicitud.
+## ¿Qué tipos de CFDI existen en facturación 4.0?
 
-Ten presente que en varios casos será necesario que el receptor apruebe la cancelación desde su cuenta del SAT, esto no aplica cuando el monto de la factura es menor a 5,000 pesos mexicanos o es el caso de un CFDI global. Adicionalmente las empresas y contribuyentes pueden recibir sanciones si cancela fuera del ejercicio fiscal correspondiente.
+**Respuesta corta:** los mismos de siempre. La 4.0 no inventó tipos nuevos; cambió las reglas de llenado.
 
-En resumen las facturas 4.0 pueden parecer estrictas, pero una vez que conoces la información clave es más sencillo. Lo más importante es tener tu Constancia de Situación Fiscal actualizada y capturar los datos exactamente como los tiene el SAT.
+- **Ingreso (I):** la factura típica cuando vendes o prestas un servicio. Puede ser PUE (pago en una sola exhibición) o PPD (parcialidades o diferido).
+- **Egreso (E):** devoluciones, descuentos o notas de crédito.
+- **Traslado (T):** mueves mercancía sin que haya venta.
+- **Pago (P):** complemento de recepción de pagos (REP), cuando la factura original fue PPD o no se liquidó al emitir.
+- **Nómina (N):** la que recibe el trabajador por su sueldo.
 
-#### Con esta guía de facturas 4.0 ya puedes:
+Para ventas al público en general se usa el RFC genérico `XAXX010101000` y los campos de información global. Para residentes en el extranjero, el RFC genérico `XEXX010101000`.
 
-- Pedir facturas sin errores
-- Emitirlas correctamente
-- Entender por qué a veces fallan
-- Saber cómo cancelarlas si es necesario.
+## Cómo emitir CFDI 4.0 en Shopify (sin hacerlo a mano)
 
-Pero si no quieres realizar este proceso repetitivo de manera manual y a la vez agilizar tus ventas; para ti hemos desarrollado CFDI Express, contar con facturación electrónica que se integré a cualquier flujo de negocio y además estamos integrados en Shopify, lo que te permite tener mejor control de tus ventas, inventarios y clientes.
+Cuando ya sabes **qué** pide el SAT, el cuello de botella suele ser el proceso: pedir la constancia, capturar sin typos, timbrar, mandar XML/PDF y, si hace falta, cancelar con motivo.
+
+Si vendes en Shopify, [CFDI Express](https://cfdi.express) timbra CFDI 4.0 desde el mismo flujo de la venta:
+
+- **Thank You Page** del checkout: el cliente captura sus datos fiscales al terminar de pagar. Guía: [facturación en la Thank You Page](https://cfdi.express/docs/facturacion-checkout-thank-you-page).
+- **POS:** el cajero factura en la confirmación de la venta en tienda. Guía: [facturación en Shopify POS](https://cfdi.express/docs/facturacion-pos-punto-de-venta-shopify).
+- **Shopify Flow:** automatizas timbrado, cancelación (motivos 01–04) y factura global al público en general. Guía: [automatizaciones con Flow](https://cfdi.express/docs/uso-shopify-flow-automatizaciones-cfdi-express).
+- **Portal de auto-facturación:** el cliente entra con su correo y se factura solo, aunque la venta haya sido en otro canal. Tutorial: [portal en 5 minutos](https://cfdi.express/blog/crea-un-portal-de-auto-facturacion-cfdi-en-5-minutos).
+
+También puedes [instalar la app en Shopify](https://apps.shopify.com/cfdi-express), [agendar una demo](https://cal.com/team/acromatico-development/cfdi-express) o escribir a [hola@cfdi.express](mailto:hola@cfdi.express).
+
+## Preguntas frecuentes
+
+### ¿Qué es CFDI facturas 4.0?
+
+Es el nombre con el que mucha gente busca la **factura electrónica vigente en México**: el CFDI versión 4.0 del SAT. Es el mismo documento que “factura 4.0” o “CFDI 4.0”.
+
+### ¿Sigue existiendo la factura 3.3?
+
+No para emitir. Desde el 1 de abril de 2023 el SAT solo acepta la versión 4.0. Los CFDI 3.3 que se timbraron cuando esa versión era válida siguen existiendo como historial; no puedes emitir unos nuevos.
+
+### ¿Qué necesito para emitir una factura 4.0 sin que la rechacen?
+
+La Constancia de Situación Fiscal del receptor (RFC, nombre, régimen y CP fiscal) y un uso de CFDI compatible con su régimen. Captura esos datos tal cual están en la constancia.
+
+### ¿Cómo cancelo un CFDI 4.0?
+
+Elige el motivo 01, 02, 03 o 04, envía la solicitud en el SAT o en tu PAC y, si aplica, espera la aceptación del receptor (3 días hábiles; el silencio acepta). El detalle está en la [guía de cancelación del SAT](https://www.sat.gob.mx/minisitio/Factura/cancela_procesocancelacion.htm). Si usas CFDI Express, el flujo está en [Cancelación y acuse](https://cfdi.express/docs/cancelacion-y-acuse).
+
+### ¿Toda cancelación pide que el cliente acepte?
+
+No. El SAT exceptúa, entre otros, montos de $1,000, público en general, nómina/egreso/traslado y la cancelación al día hábil siguiente. El resto, como regla general, sí pide aceptación.
+
+### Llegué buscando “todo CFDI 4.0”. ¿Esto es lo que necesito?
+
+Casi siempre esa búsqueda quiere el panorama completo de la **versión 4.0**: qué es, qué cambió y cómo facturar sin errores. Eso es esta guía. Comparar sistemas o PACs es otro artículo.
+
+### ¿Puedo emitir CFDI 4.0 desde Shopify?
+
+Sí. Con CFDI Express lo haces en checkout (Thank You Page), POS, admin, portal de auto-facturación o Flow, con validación de los datos que el SAT exige en 4.0.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es CFDI facturas 4.0?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CFDI facturas 4.0 es la versión vigente del Comprobante Fiscal Digital por Internet del SAT. Es el mismo documento que factura 4.0 o CFDI 4.0: desde el 1 de abril de 2023 es la única versión válida para emitir facturas electrónicas en México."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Sigue existiendo la factura 3.3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No para emitir. Desde el 1 de abril de 2023 el SAT solo acepta la versión 4.0. Los CFDI 3.3 timbrados cuando esa versión era válida siguen como historial; no puedes emitir unos nuevos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué datos del receptor son obligatorios en la factura 4.0?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RFC, nombre o razón social, régimen fiscal, código postal del domicilio fiscal y uso del CFDI. Deben coincidir con la Constancia de Situación Fiscal del receptor. Si no coinciden, el SAT rechaza el timbrado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se cancela un CFDI 4.0?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Debes elegir un motivo oficial del SAT (01 errores con relación, 02 errores sin relación, 03 no se llevó a cabo la operación, 04 operación nominativa en factura global) y enviar la solicitud por el portal del SAT o un PAC. En varios casos el receptor tiene 3 días hábiles para aceptar o rechazar; si no responde, se considera aceptada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Toda cancelación de factura 4.0 necesita aceptación del receptor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. El SAT no pide aceptación, entre otros casos, cuando el CFDI es de 1,000 pesos, es de nómina, egreso o traslado, es al público en general, o se cancela dentro del día hábil siguiente a su expedición."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo emitir CFDI 4.0 desde Shopify?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Con CFDI Express puedes timbrar CFDI 4.0 desde la Thank You Page del checkout, el POS, el admin, un portal de auto-facturación o Shopify Flow."
+      }
+    }
+  ]
+}
+</script>
