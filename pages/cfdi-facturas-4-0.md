@@ -1,23 +1,18 @@
 ---
 title: "CFDI facturas 4.0: qué es, qué cambió y cómo emitirlas sin errores"
 description: "CFDI facturas 4.0 es la única versión válida del SAT desde abril 2023. Qué cambió vs 3.3, qué datos pide el receptor y cómo emitir o cancelar sin rechazos."
-image: "https://assets.acromatico.dev/assets/689cc71d-6965-44a2-9cb8-c5478c037304.jpg"
+image: "https://assets.acromatico.dev/marketing/diego/blog/hero-cfdi-facturas-4.0.png"
 author: "Rafael González"
 date: "2026-08-31"
 keywords: "cfdi facturas 4.0, factura 4.0, cfdi 4.0, facturas 4.0, facturación 4.0, factura electrónica 4.0, SAT"
 ---
 # ¿Qué es CFDI facturas 4.0? Qué cambió y cómo emitirlas sin errores
 
-<!-- TODO: hero/OG más específico para este post (el actual funciona; no bloquear publicación). Prompt Gemini 16:9, paleta teal #055D5E + oro #FFD700, ilustración flat sin fotos de personas: factura/sello SAT + “CFDI 4.0”, tipografía Racing Sans One / Quicksand. Subir a videos.acromatico.dev y actualizar `image:` si se genera. -->
-<!-- ENDTODO -->
-
 **CFDI facturas 4.0** (también llamada factura 4.0 o CFDI 4.0) es la versión vigente del Comprobante Fiscal Digital por Internet. Desde el **1 de abril de 2023** es la única que el SAT acepta: la 3.3 ya no se puede timbrar.
 
 En la práctica, el SAT valida al emitir que el RFC, el nombre, el régimen fiscal y el código postal del receptor coincidan con su Constancia de Situación Fiscal. Si no coinciden, la factura se rechaza. Aquí te dejo qué cambió, qué datos no pueden fallar y cómo cancelar con los motivos oficiales.
 
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/M7ImVfrJuH8" title="Qué es CFDI facturas 4.0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-[Ver video: ¿Qué son las facturas 4.0?](https://youtu.be/M7ImVfrJuH8)
 
 ## ¿Qué es la factura 4.0 (CFDI 4.0)?
 
