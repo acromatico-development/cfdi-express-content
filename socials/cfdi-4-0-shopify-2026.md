@@ -48,7 +48,7 @@ No uses `assets.acromatico.dev/marketing/diego/blog/hero-cfdi-4-0-shopify-2026.p
 > Shopify cobra y arma el pedido. No emite el XML. Tienes tres caminos:
 >
 > 1. Una **app nativa** (admin, POS, Thank You Page)
-> 2. Un PAC / CSV, o [CFDI Express API](https://cfdi.express/api) si timbras fuera de Shopify
+> 2. Un PAC / CSV, o CFDI Express API (cfdi.express/api) si timbras fuera de Shopify
 > 3. El portal del SAT (un folio suelto, no un mes de pedidos)
 >
 > En el blog comparamos **CFDI Express, Facturama y Fiscal Pop** como apps de Shopify, con lo que cada una anuncia en público: Built for Shopify, POS, checkout, Flow, portal de autofacturación y modelo de precio. Si facturas desde otro sistema, la API es la de CFDI Express — este post es el camino de la app.
@@ -87,7 +87,7 @@ https://videos.acromatico.dev/api/images/assets/22e64387-cfbb-4ed3-87f4-edb87362
 ### Hilo opcional (desarrolla el post)
 
 1. Shopify no es PAC. Cobra y arma el pedido. El XML lo timbra un PAC. Tú eliges si eso pasa dentro de Shopify, en otro sistema o en el portal del SAT.
-2. Lo que el SAT pide en 4.0 no cambió: RFC, nombre, régimen, CP fiscal y uso de CFDI, tal cual la Constancia. Guía larga: https://cfdi.express/blog/cfdi-facturas-4-0
+2. Lo que el SAT pide en 4.0 no cambió: RFC, nombre, régimen, CP fiscal y uso de CFDI (datos fiscales, no el PDF de la Constancia). Guía larga: https://cfdi.express/blog/cfdi-facturas-4-0
 3. Tres caminos: app nativa (admin / POS / Thank You Page), PAC o CSV, o capturar folio por folio en el SAT. Si timbras fuera de Shopify, la API es la de CFDI Express (cfdi.express/api).
 4. Comparamos lo que cada ficha pública anuncia — sin inventar checks. Si te quedas en Shopify: https://apps.shopify.com/cfdi-express
 
@@ -137,7 +137,7 @@ https://videos.acromatico.dev/api/images/assets/22e64387-cfbb-4ed3-87f4-edb87362
 
 > En 2026 cada venta Shopify en México sigue siendo un CFDI 4.0.
 >
-> El SAT valida RFC, nombre, régimen y CP. Si no cuadran con la Constancia, no hay timbre.
+> El SAT valida RFC, nombre, régimen y CP contra su padrón. Si no cuadran, no hay timbre. Pedimos datos fiscales, no el PDF de la Constancia.
 >
 > Tres caminos:
 > 1. App nativa (admin, POS, checkout)

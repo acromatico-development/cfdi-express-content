@@ -10,7 +10,7 @@ keywords: "cfdi 4.0 shopify, facturación shopify, factura 4.0 shopify, app fact
 
 En 2026 cada venta de una tienda Shopify en México sigue siendo un **CFDI 4.0**. El SAT valida RFC, nombre, régimen y código postal del receptor contra su padrón. Si no coinciden, el comprobante no se timbra.
 
-Hacerlo a mano — copiar la Constancia, abrir el portal del SAT, exportar un CSV — no escala cuando vendes en línea, en piso de venta y a veces por WhatsApp el mismo día. Aquí te dejo qué pide el SAT en una venta de tienda, tres caminos reales para cumplir y una comparación de las apps que sí aparecen en Shopify.
+Hacerlo a mano — copiar datos fiscales, abrir el portal del SAT, exportar un CSV — no escala cuando vendes en línea, en piso de venta y a veces por WhatsApp el mismo día. Aquí te dejo qué pide el SAT en una venta de tienda, tres caminos reales para cumplir y una comparación de las apps que sí aparecen en Shopify.
 
 ## ¿Shopify emite CFDI 4.0 por sí solo?
 
@@ -20,7 +20,7 @@ Eso no cambió en 2026. Lo que sí cambió para muchas tiendas es el volumen: m�
 
 ## Qué pide el SAT en un CFDI 4.0 de tu tienda
 
-**Respuesta corta:** RFC, nombre o razón social, régimen fiscal, código postal del domicilio fiscal y uso de CFDI, tal como aparecen en la Constancia de Situación Fiscal. Para ventas sin factura nominativa, un CFDI global a público en general.
+**Respuesta corta:** RFC, nombre o razón social, régimen fiscal, código postal del domicilio fiscal y uso de CFDI. Son los mismos campos que aparecen en una Constancia de Situación Fiscal; el SAT los valida contra su padrón. Con esos datos debes poder intentar timbrar: el cliente no está obligado a entregarte el PDF. Para ventas sin factura nominativa, un CFDI global a público en general.
 
 No voy a repetir aquí toda la guía de la versión 4.0. Eso ya está en [CFDI facturas 4.0: qué es, qué cambió y cómo emitirlas](/blog/cfdi-facturas-4-0). Para una venta de Shopify te alcanza con esto:
 
@@ -29,7 +29,7 @@ No voy a repetir aquí toda la guía de la versión 4.0. Eso ya está en [CFDI f
 - **Público en general.** Quien no pide factura no se “olvida”. Esas ventas van a un CFDI global (RFC `XAXX010101000`) con la información global que marca el [Anexo 20, versión 4.0](http://omawww.sat.gob.mx/tramitesyservicios/Paginas/anexo_20.htm): periodicidad, meses y año.
 - **Cancelación con motivo.** Si te equivocaste, no “borras” el folio. Eliges un motivo 01–04. El detalle oficial está en la [guía de cancelación del SAT](https://www.sat.gob.mx/minisitio/Factura/cancela_procesocancelacion.htm).
 
-Pide la Constancia (o la cédula de datos fiscales) y captura desde ahí. De memoria o de una tarjeta de presentación es como se rechaza el timbre.
+Pide los **datos fiscales** (RFC, nombre o razón social, régimen, CP fiscal y uso de CFDI), no la Constancia en PDF. El cliente puede dictártelos, llenarlos en un formulario o, si quiere, compartir una cédula de datos fiscales. No está obligado a mandarte el archivo. Con esos campos ya puedes intentar el timbrado; si el SAT rechaza, no coinciden con el padrón.
 
 ## Tres caminos: app nativa, PAC / CSV o portal del SAT
 
@@ -74,11 +74,11 @@ Ninguna de las tres “gana” en todos los renglones. Facturama cobra un precio
 
 **Respuesta corta:** cargas tu CSD, asignas claves SAT a los productos y timbras desde el admin, el POS o la Thank You Page. El cliente no tiene que escribirte por WhatsApp para pedir la factura.
 
-El onboarding es el mismo en lo fiscal: RFC emisor, razón social, CP y régimen de tu Constancia, más el [Certificado de Sello Digital](/docs/onboarding) (`.cer`, `.key` y contraseña). Después eliges el canal.
+El onboarding es el mismo en lo fiscal: RFC emisor, razón social, CP y régimen (tus datos fiscales), más el [Certificado de Sello Digital](/docs/onboarding) (`.cer`, `.key` y contraseña). Después eliges el canal.
 
 ### Desde el Admin de Shopify
 
-Abres la app, buscas el pedido y capturas los datos de la Constancia del cliente. Si esa venta no pide factura nominativa, usas público en general (`XAXX010101000`). En CFDI Express el flujo está en [Facturación desde el admin](/docs/facturacion-desde-admin-shopify).
+Abres la app, buscas el pedido y capturas los **datos fiscales** del cliente. Si esa venta no pide factura nominativa, usas público en general (`XAXX010101000`). En CFDI Express el flujo está en [Facturación desde el admin](/docs/facturacion-desde-admin-shopify).
 
 ### Desde Shopify POS
 
@@ -98,7 +98,7 @@ Con [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express) automat
 
 ### El RFC “está bien” y el timbrado falla
 
-Casi nunca es el RFC. Es el nombre abreviado, el régimen que “siempre usamos”, el CP de envío o un uso de CFDI que no aplica a ese régimen. En 4.0 el SAT no perdona la diferencia con la Constancia. Pide el PDF actualizado; no copies de un pedido anterior.
+Casi nunca es el RFC. Es el nombre abreviado, el régimen que “siempre usamos”, el CP de envío o un uso de CFDI que no aplica a ese régimen. En 4.0 el SAT no perdona la diferencia con su padrón. Si rechaza el timbre, los datos no coinciden: pídele que confirme los campos, no que te mande la Constancia. No copies de un pedido anterior.
 
 ### Claves SAT de producto
 
