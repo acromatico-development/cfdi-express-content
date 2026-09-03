@@ -8,6 +8,8 @@ keywords: "cfdi 4.0 shopify, facturación shopify, factura 4.0 shopify, app fact
 ---
 # CFDI 4.0 en Shopify 2026: qué app elegir (y qué no)
 
+![CFDI 4.0 en Shopify](https://videos.acromatico.dev/api/images/assets/1d839620-c45b-444e-bdc1-160dd7b61efc.png)
+
 En 2026 cada venta de una tienda Shopify en México sigue siendo un **CFDI 4.0**. El SAT valida RFC, nombre, régimen y código postal del receptor contra su padrón. Si no coinciden, el comprobante no se timbra.
 
 Hacerlo a mano — copiar datos fiscales, abrir el portal del SAT, exportar un CSV — no escala cuando vendes en línea, en piso de venta y a veces por WhatsApp el mismo día. Aquí te dejo qué pide el SAT en una venta de tienda, tres caminos reales para cumplir y una comparación de las apps que sí aparecen en Shopify.
