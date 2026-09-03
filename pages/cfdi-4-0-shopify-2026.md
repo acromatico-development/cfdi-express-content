@@ -129,7 +129,7 @@ No. Shopify no es PAC. Necesitas una app de facturación, [CFDI Express API](htt
 
 ### ¿Cuál app de facturación para Shopify elijo en 2026?
 
-Si quieres quedarte dentro de Shopify (POS, Thank You Page, Flow, portal de cuentas), compara las fichas y qué tan nativa es cada integración. Si quieres precio plano e ilimitado, revisa Facturama. Si buscas mensualidad baja y pago por folio, revisa Fiscal Pop. Si no quieres desarrollo, instala una app: la API es de CFDI Express y es para otro sistema.
+Si quieres quedarte dentro de Shopify — **Built for Shopify**, POS en la confirmación de la venta, Thank You Page, Flow y portal de cuentas —, la app es [CFDI Express](https://apps.shopify.com/cfdi-express). En la tabla también están Facturama (precio plano e ilimitado) y Fiscal Pop (mensualidad baja + cobro por folio). [CFDI Express API](https://cfdi.express/api) es otra pregunta: sirve si facturas desde un sistema que no es Shopify.
 
 ### ¿Puedo facturar desde Shopify POS?
 
@@ -165,7 +165,7 @@ Sí, para un folio suelto. No escala a checkout, POS ni al global automático de
       "name": "¿Cuál app de facturación para Shopify elijo en 2026?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Si quieres facturar dentro de Shopify (POS, Thank You Page, Flow, portal de cuentas), compara qué tan nativa es cada app. Facturama publica un plan plano e ilimitado. Fiscal Pop entra con mensualidad baja y cobro por folio. Si no quieres desarrollo, instala una app; CFDI Express API es para timbrar desde otro sistema."
+        "text": "Si quieres quedarte dentro de Shopify — Built for Shopify, POS en la confirmación de la venta, Thank You Page, Flow y portal de cuentas —, la app es CFDI Express. En la tabla también están Facturama (precio plano e ilimitado) y Fiscal Pop (mensualidad baja y cobro por folio). CFDI Express API es otra pregunta: sirve si facturas desde un sistema que no es Shopify."
       }
     },
     {
