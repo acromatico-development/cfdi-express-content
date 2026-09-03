@@ -43,9 +43,9 @@ Eso es lo que buscas si no tienes un equipo de desarrollo y no quieres un segund
 
 ### 2. PAC genérico, CSV o API
 
-Exportas pedidos, los subes al portal de un PAC o conectas una API. [Facturapi](https://facturapi.io/) entra aquí: es una **API de facturación** (REST, dashboard, sandbox) para que un desarrollador integre el timbrado. No es el camino de “instala la app y factura mañana”. Sirve si ya tienes ingeniería; no sustituye una app de Shopify para el dueño de tienda o el contador.
+Exportas pedidos o los subes al portal de un PAC. Si el sistema no es Shopify y quieres timbrar por API, el camino es [CFDI Express API](https://cfdi.express/api): REST, sandbox y **~$1 MXN por timbre**, sin mensualidad. El anuncio está en [Lanzamos CFDI Express API](/blog/lanzamiento-cfdi-express-api). No es el camino de “instala la app y factura mañana”: sirve si ya tienes ingeniería o un sistema propio. No sustituye la app de Shopify para el dueño de tienda o el contador.
 
-El CSV o el portal web del PAC también funcionan. El costo oculto es el vaivén: pedido en Shopify, captura en otro lado, UUID que luego tienes que reconciliar.
+El CSV o el portal web de un PAC también funcionan. El costo oculto es el vaivén: pedido en Shopify, captura en otro lado, UUID que luego tienes que reconciliar.
 
 ### 3. Portal del SAT
 
@@ -66,7 +66,7 @@ Cifras y funciones de la tabla salen de fichas públicas (septiembre 2026). Si u
 | **Portal de autofacturación** | El cliente entra con su correo al portal de cuentas de Shopify. Tutorial: [portal en 5 minutos](/blog/crea-un-portal-de-auto-facturacion-cfdi-en-5-minutos). | Autofacturación desde la tienda o el checkout (misma ficha). | Página de autofacturación que agregas a la tienda (una línea de HTML), según [fiscalpop.com](https://fiscalpop.com/ecommerce/shopify/). |
 | **Modelo de precio** | Cobro en Shopify: mensualidad + uso por CFDI. El plan de entrada publicado en la [App Store](https://apps.shopify.com/cfdi-express) es **15 USD/mes + 0.10 USD por CFDI**; hay planes con cupo incluido. Prueba de 7 días. Detalle en [Planes y precios](/docs/planes-y-precios). | **13 USD/mes**, facturas, complementos de pago y cancelaciones ilimitadas dentro de la app, según [facturama.mx/shopify](https://facturama.mx/shopify). Prueba de 7 días. | **4 USD/mes + 0.10 USD por factura emitida**, según su [ficha](https://apps.shopify.com/fiscalpop). Prueba de 14 días. En su sitio, cancelaciones y notas de crédito no llevan cargo extra. |
 
-**Facturapi** no va en esta tabla: no es una app de Shopify. Si tu camino es API, es una opción de desarrollador. Si tu camino es la tienda, el canal es la [búsqueda de apps de Shopify](https://apps.shopify.com).
+Si necesitas timbrar desde un sistema que no es Shopify, CFDI Express también tiene [API](https://cfdi.express/api). Este artículo es de la app de Shopify.
 
 Ninguna de las tres “gana” en todos los renglones. Facturama cobra un precio plano e ilimitado. Fiscal Pop entra más barato al mes. CFDI Express es la que publica **Built for Shopify**, POS en la confirmación de la venta, Flow y el portal de cuentas en el mismo ecosistema.
 
@@ -125,11 +125,11 @@ El **01** pide primero el CFDI que sustituye (relación tipo 04) y, al cancelar,
 
 ### ¿Shopify factura CFDI 4.0 nativo?
 
-No. Shopify no es PAC. Necesitas una app de facturación, un PAC/API o el portal del SAT. La venta vive en Shopify; el timbre, en un PAC.
+No. Shopify no es PAC. Necesitas una app de facturación, [CFDI Express API](https://cfdi.express/api) si timbras desde otro sistema, o el portal del SAT. La venta vive en Shopify; el timbre, en un PAC.
 
 ### ¿Cuál app de facturación para Shopify elijo en 2026?
 
-Si quieres quedarte dentro de Shopify (POS, Thank You Page, Flow, portal de cuentas), compara las fichas y qué tan nativa es cada integración. Si quieres precio plano e ilimitado, revisa Facturama. Si buscas mensualidad baja y pago por folio, revisa Fiscal Pop. Si no quieres desarrollo, no elijas una API.
+Si quieres quedarte dentro de Shopify (POS, Thank You Page, Flow, portal de cuentas), compara las fichas y qué tan nativa es cada integración. Si quieres precio plano e ilimitado, revisa Facturama. Si buscas mensualidad baja y pago por folio, revisa Fiscal Pop. Si no quieres desarrollo, instala una app: la API es de CFDI Express y es para otro sistema.
 
 ### ¿Puedo facturar desde Shopify POS?
 
@@ -139,9 +139,9 @@ Sí, si la app lo trae. CFDI Express y Fiscal Pop lo documentan en POS. Facturam
 
 Las incluyes en un CFDI global a público en general (RFC `XAXX010101000`) en el periodo que hayas definido. No las dejes “para después del año”.
 
-### ¿Facturapi sirve para mi tienda Shopify?
+### ¿Y si no uso Shopify, tengo API?
 
-Como **API**, sí, si tienes quien la integre. No es una app de Shopify ni el camino de este artículo. Para el dueño de tienda o el contador, el canal es la App Store.
+Sí. [CFDI Express API](https://cfdi.express/api) timbra CFDI 4.0 desde cualquier sistema: REST, sandbox, **~$1 MXN por timbre**, sin mensualidad. Este post es el camino de la app. El de la API está en [el lanzamiento](/blog/lanzamiento-cfdi-express-api).
 
 ### ¿Puedo seguir usando el portal del SAT?
 
@@ -157,7 +157,7 @@ Sí, para un folio suelto. No escala a checkout, POS ni al global automático de
       "name": "¿Shopify factura CFDI 4.0 nativo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Shopify no es un PAC. Para emitir CFDI 4.0 necesitas una app de facturación de la Shopify App Store, un PAC o API, o el portal del SAT. La venta vive en Shopify; el timbre lo da el PAC."
+        "text": "No. Shopify no es un PAC. Para emitir CFDI 4.0 necesitas una app de facturación de la Shopify App Store, CFDI Express API si timbras desde otro sistema, o el portal del SAT. La venta vive en Shopify; el timbre lo da el PAC."
       }
     },
     {
@@ -165,7 +165,7 @@ Sí, para un folio suelto. No escala a checkout, POS ni al global automático de
       "name": "¿Cuál app de facturación para Shopify elijo en 2026?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Si quieres facturar dentro de Shopify (POS, Thank You Page, Flow, portal de cuentas), compara qué tan nativa es cada app. Facturama publica un plan plano e ilimitado. Fiscal Pop entra con mensualidad baja y cobro por folio. Una API como Facturapi no es el camino si no tienes desarrollo."
+        "text": "Si quieres facturar dentro de Shopify (POS, Thank You Page, Flow, portal de cuentas), compara qué tan nativa es cada app. Facturama publica un plan plano e ilimitado. Fiscal Pop entra con mensualidad baja y cobro por folio. Si no quieres desarrollo, instala una app; CFDI Express API es para timbrar desde otro sistema."
       }
     },
     {
@@ -186,10 +186,10 @@ Sí, para un folio suelto. No escala a checkout, POS ni al global automático de
     },
     {
       "@type": "Question",
-      "name": "¿Facturapi sirve para una tienda Shopify?",
+      "name": "¿Y si no uso Shopify, tengo API?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Facturapi es una API de facturación CFDI 4.0, no una app de Shopify. Sirve si tienes un desarrollador que integre el timbrado. Para el dueño de tienda o el contador, el camino es instalar una app desde la Shopify App Store."
+        "text": "Sí. CFDI Express API timbra CFDI 4.0 desde cualquier sistema: REST, sandbox, alrededor de 1 peso MXN por timbre, sin mensualidad. Este artículo es el camino de la app de Shopify. La API está en cfdi.express/api."
       }
     },
     {
@@ -206,6 +206,8 @@ Sí, para un folio suelto. No escala a checkout, POS ni al global automático de
 
 ## Instala la app y factura en el mismo flujo de la venta
 
-Si ya viste la tabla y quieres quedarte dentro de Shopify — checkout, POS, Flow y portal de cuentas —, [instala CFDI Express](https://apps.shopify.com/cfdi-express). Es la opción nativa de este comparativo, no un segundo sistema ni una API.
+Si ya viste la tabla y quieres quedarte dentro de Shopify — checkout, POS, Flow y portal de cuentas —, [instala CFDI Express](https://apps.shopify.com/cfdi-express). Es la opción nativa de este comparativo.
+
+Si facturas desde otro sistema, está la [API](https://cfdi.express/api).
 
 Para el marco SAT (datos del receptor, cancelación 01–04, global), vuelve a [CFDI facturas 4.0](/blog/cfdi-facturas-4-0). Si quieres ver el producto en tu tienda, [agenda una demo](https://cal.com/team/acromatico-development/cfdi-express) o escribe a [hola@cfdi.express](mailto:hola@cfdi.express).
