@@ -10,7 +10,7 @@ keywords: "cfdi facturas 4.0, factura 4.0, cfdi 4.0, facturas 4.0, facturación 
 
 **CFDI facturas 4.0** (también llamada factura 4.0 o CFDI 4.0) es la versión vigente del Comprobante Fiscal Digital por Internet. Desde el **1 de abril de 2023** es la única que el SAT acepta: la 3.3 ya no se puede timbrar.
 
-En la práctica, el SAT valida al emitir que el RFC, el nombre, el régimen fiscal y el código postal del receptor coincidan con su Constancia de Situación Fiscal. Si no coinciden, la factura se rechaza. Aquí te dejo qué cambió, qué datos no pueden fallar y cómo cancelar con los motivos oficiales.
+En la práctica, el SAT valida al emitir que el RFC, el nombre, el régimen fiscal y el código postal del receptor coincidan con su padrón (los datos fiscales inscritos). Si no coinciden, la factura se rechaza. Aquí te dejo qué cambió, qué datos no pueden fallar y cómo cancelar con los motivos oficiales.
 
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/M7ImVfrJuH8" title="Qué es CFDI facturas 4.0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -38,7 +38,7 @@ Aplica a personas físicas, personas morales, comercios, freelancers y plataform
 
 ### Datos del receptor que ahora se validan
 
-En 4.0 el nombre, el régimen fiscal y el código postal del domicilio fiscal del receptor son **obligatorios** y deben coincidir con la Constancia de Situación Fiscal (CSF). Un dígito mal en el CP, un uso de CFDI incompatible con el régimen o un nombre abreviado suelen terminar en rechazo al timbrar.
+En 4.0 el nombre, el régimen fiscal y el código postal del domicilio fiscal del receptor son **obligatorios** y deben coincidir con el padrón del SAT. Un dígito mal en el CP, un uso de CFDI incompatible con el régimen o un nombre abreviado suelen terminar en rechazo al timbrar.
 
 ### Cancelación con motivo oficial
 
@@ -56,17 +56,17 @@ Lo operativo del día a día, para la mayoría de las ventas, sigue siendo: dato
 
 ## ¿Qué datos del receptor son obligatorios en la factura 4.0?
 
-**Respuesta corta:** RFC, nombre o razón social, régimen fiscal, código postal del domicilio fiscal y uso del CFDI. Pídelos en la Constancia de Situación Fiscal, no de memoria ni de una tarjeta de presentación.
+**Respuesta corta:** RFC, nombre o razón social, régimen fiscal, código postal del domicilio fiscal y uso del CFDI. Pídele esos datos al cliente: puede dictártelos, llenarlos en un formulario o, si quiere, compartir su cédula de datos fiscales. No está obligado a enviarte el PDF de la Constancia de Situación Fiscal.
 
 El SAT exige que estos datos coincidan con su padrón (la lista de RFC inscritos no cancelados):
 
 - **RFC completo y activo.** Un dígito de más o de menos tumba el timbrado.
-- **Nombre o razón social.** Tal como aparece en la CSF / Cédula de Identificación Fiscal: nombres, apellidos, espacios y signos. Si la constancia dice `JUAN CARLOS`, no pongas `JUAN C.`. Para personas morales, el artículo 29-A del CFF indica tomar el nombre de la constancia **sin incorporar el régimen de capital** (por ejemplo, sin `S.A. DE C.V.`).
-- **Régimen fiscal.** El que está en la constancia, no “el que siempre usamos”. Tiene que ser compatible con el tipo de persona (física o moral) y con el uso de CFDI.
+- **Nombre o razón social.** Tal como está en el padrón: nombres, apellidos, espacios y signos. Si el SAT tiene `JUAN CARLOS`, no pongas `JUAN C.`. Para personas morales, el artículo 29-A del CFF indica tomar el nombre de la constancia **sin incorporar el régimen de capital** (por ejemplo, sin `S.A. DE C.V.`).
+- **Régimen fiscal.** El que el SAT tiene registrado, no “el que siempre usamos”. Tiene que ser compatible con el tipo de persona (física o moral) y con el uso de CFDI.
 - **Código postal del domicilio fiscal.** El que el SAT tiene registrado, no el de la sucursal, el de entrega ni el “domicilio actual” si no se actualizó ante el SAT.
 - **Uso del CFDI.** Lo elige el receptor (gastos, compras, inversiones, etc.) y debe ser una clave del catálogo `c_UsoCFDI` compatible con su régimen. Si no lo es, el PAC rechaza el timbrado.
 
-La forma más segura de no fallar: pide la Constancia de Situación Fiscal actualizada (o la cédula de datos fiscales) y captura desde ahí.
+Con esos campos debes poder intentar el timbrado. El SAT [aclara que la Constancia no es requisito](https://www.gob.mx/sat/prensa/aclara-sat-que-constancia-de-situacion-fiscal-no-es-requisito-para-emitir-factura-04-2026) para emitir el CFDI: el cliente no está obligado a mandarte el archivo. Si el SAT rechaza, los campos no coinciden con el padrón; confirma RFC, nombre, régimen y CP, no le pidas el PDF.
 
 ## ¿Qué errores impiden emitir una factura 4.0?
 
@@ -74,7 +74,7 @@ La forma más segura de no fallar: pide la Constancia de Situación Fiscal actua
 
 Los rechazos más comunes:
 
-- Nombre o razón social distinto al del padrón (abreviaturas, régimen de capital de más, un acento o un espacio que no está en la CSF).
+- Nombre o razón social distinto al del padrón (abreviaturas, régimen de capital de más, un acento o un espacio que el SAT no tiene registrado).
 - RFC, régimen o código postal incorrectos, o un CP que el cliente ya cambió en la vida real pero no ante el SAT.
 - Uso de CFDI que no aplica al régimen del receptor.
 - RFC inactivo o cancelado.
@@ -127,7 +127,7 @@ Para ventas al público en general se usa el RFC genérico `XAXX010101000` y los
 
 ## Cómo emitir CFDI 4.0 en Shopify (sin hacerlo a mano)
 
-Cuando ya sabes **qué** pide el SAT, el cuello de botella suele ser el proceso: pedir la constancia, capturar sin typos, timbrar, mandar XML/PDF y, si hace falta, cancelar con motivo.
+Cuando ya sabes **qué** pide el SAT, el cuello de botella suele ser el proceso: pedir los datos fiscales, capturar sin typos, timbrar, mandar XML/PDF y, si hace falta, cancelar con motivo.
 
 Si vendes en Shopify, [CFDI Express](https://cfdi.express) timbra CFDI 4.0 desde el mismo flujo de la venta:
 
@@ -150,7 +150,7 @@ No para emitir. Desde el 1 de abril de 2023 el SAT solo acepta la versión 4.0. 
 
 ### ¿Qué necesito para emitir una factura 4.0 sin que la rechacen?
 
-La Constancia de Situación Fiscal del receptor (RFC, nombre, régimen y CP fiscal) y un uso de CFDI compatible con su régimen. Captura esos datos tal cual están en la constancia.
+Los datos fiscales del receptor (RFC, nombre, régimen y CP fiscal) y un uso de CFDI compatible con su régimen. El cliente puede dictarlos, llenar un formulario o compartir su cédula de datos fiscales; no está obligado a enviarte la Constancia. Captura esos datos tal cual están en el padrón del SAT.
 
 ### ¿Cómo cancelo un CFDI 4.0?
 
@@ -194,7 +194,7 @@ Sí. Con CFDI Express lo haces en checkout (Thank You Page), POS, admin, portal 
       "name": "¿Qué datos del receptor son obligatorios en la factura 4.0?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "RFC, nombre o razón social, régimen fiscal, código postal del domicilio fiscal y uso del CFDI. Deben coincidir con la Constancia de Situación Fiscal del receptor. Si no coinciden, el SAT rechaza el timbrado."
+        "text": "RFC, nombre o razón social, régimen fiscal, código postal del domicilio fiscal y uso del CFDI. Deben coincidir con el padrón del SAT. El cliente puede dictarlos, llenar un formulario o compartir su cédula de datos fiscales; no está obligado a enviar la Constancia de Situación Fiscal. Si no coinciden, el SAT rechaza el timbrado."
       }
     },
     {
