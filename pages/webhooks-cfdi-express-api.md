@@ -1,15 +1,12 @@
 ---
 title: "Webhooks CFDI: notificaciones en tiempo real en CFDI Express API"
 description: "Deja de hacer polling: CFDI Express API envía webhooks firmados (invoice.stamped, cancelaciones, complementos de pago y nómina). Crea el endpoint y verifica CFDI-Signature."
-image: "https://videos.acromatico.dev/api/images/assets/PENDIENTE-webhooks-cfdi-express-api.png?w=1600"
+image: "https://videos.acromatico.dev/api/images/assets/04989632-9039-468c-be2e-0558d456a0b9.png"
 author: "Rafael González"
 date: "2026-09-12"
 keywords: "webhooks CFDI, webhooks API facturación México, CFDI Express webhooks, eventos invoice.stamped, notificaciones CFDI API, CFDI-Signature, webhook endpoints facturación, evitar polling CFDI, complementos de pago webhooks, nómina webhooks"
 ---
 # Lanzamos webhooks en CFDI Express API: deja de hacer polling
-
-<!-- TODO: imagen hero del post — generar con Gemini usando el prompt de media (sección "Imagen hero del blog") de socials/webhooks-cfdi-express-api.md; Mark/Diego la suben a videos.acromatico.dev y actualizan el campo `image:` del frontmatter (PENDIENTE-webhooks-cfdi-express-api). -->
-<!-- ENDTODO -->
 
 Si ya integraste la [API de CFDI Express](https://cfdi.express/api), conoces el flujo: mandas `POST /v1/invoices`, llega el XML y el PDF, y tu sistema sigue con lo suyo. El problema aparece **después** del request: ¿el SAT ya timbró? ¿la cancelación ya tiene acuse? ¿el complemento de pago ya quedó sellado?
 
