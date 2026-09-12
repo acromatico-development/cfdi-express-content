@@ -14,20 +14,27 @@ Recursos oficiales para enlazar:
 
 ## Cómo usar este pack
 
-1. Genera la imagen de cada red con **Gemini** (gemini.google.com) pegando el prompt de la sección **Media**.
+1. **No regeneres el hero.** Ya está publicado. Usa las URLs de abajo (HTTPS, sin query).
 2. Publica con el **Texto** sugerido, adaptándolo a tu tono si hace falta.
-3. **Imagen hero del blog**: usa el prompt de más abajo, súbela a `videos.acromatico.dev` y reemplaza el placeholder `PENDIENTE-webhooks-cfdi-express-api` del frontmatter. Mark/Diego hacen el reemplazo.
+3. Si el CMS tiene campo `og:image` aparte del hero, usa el recorte OG. Si no, el `image` del frontmatter (1600×900) es el que ya lleva el post.
 4. El CTA principal es **docs + dashboard** (developers). No empujes la app de Shopify ni webhooks de Shopify: este anuncio es de **webhooks de salida de la API**.
 
 ---
 
 ## Imagen hero del blog
 
-**Prompt (Gemini):**
+**Ya publicada (usar esta, no generar otra):**
+
+| Uso | Medida | URL (sin query) |
+| --- | --- | --- |
+| Hero / `image` del frontmatter | 1600×900 | https://videos.acromatico.dev/api/images/assets/04989632-9039-468c-be2e-0558d456a0b9.png |
+| OG / compartir (`og:image`) | 1200×630 | https://videos.acromatico.dev/api/images/assets/9eb00d7b-05d5-44d3-bcf2-d380e6f1865b.png |
+
+**Prompt Gemini (solo si hubiera que rehacer una variante):**
 
 > Crea una imagen wide 16:9 (1600×900) estilo ilustración flat/moderna para un blog de developers sobre webhooks de facturación electrónica en México. Fondo teal oscuro #055D5E con una cuadrícula sutil. Al centro, un nodo de API (círculo blanco con «{ }») dispara tres flechas doradas #FFD700 hacia la derecha, cada una llegando a una tarjeta: factura con sello SAT, reloj de complemento de pago y documento de nómina. A la izquierda, un servidor con un check y el texto «POST firmado». Texto grande en tipografía Racing Sans One / Quicksand: «Webhooks CFDI — sin polling». Subtítulo pequeño: «CFDI Express API · CFDI-Signature». Estilo minimalista, profesional B2B, alto contraste, sin fotografías de stock, sin logos de otras marcas.
 
-**Aspecto:** 16:9 · 1600×900 · subir a `videos.acromatico.dev` y copiar la URL al campo `image:` del blog.
+**Aspecto:** 16:9 · 1600×900.
 
 ---
 
@@ -61,7 +68,10 @@ Recursos oficiales para enlazar:
 
 ### Media
 
-**Prompt (Gemini):**
+**Usar:** recorte OG 1200×630
+https://videos.acromatico.dev/api/images/assets/9eb00d7b-05d5-44d3-bcf2-d380e6f1865b.png
+
+**Prompt Gemini (variante, solo si se necesita otra toma):**
 
 > Crea una imagen horizontal 1200×627 (1.91:1) estilo ilustración corporativa B2B. Fondo teal oscuro #055D5E degradado a un azul noche. Al centro, un diagrama de tres nodos conectados por líneas doradas #FFD700: «API CFDI Express» → «POST /webhooks» → «Tu ERP». Debajo, tres pills blancas con el texto exacto: invoice.stamped · payment.stamped · nomina.stamped. Esquina superior: logo de CFDI Express (recibo). Texto principal en Quicksand/Racing Sans One: «Webhooks CFDI. Sin polling.» Estilo flat, alto contraste, sin gente, sin fotos de stock.
 
@@ -91,7 +101,10 @@ Recursos oficiales para enlazar:
 
 ### Media
 
-**Prompt (Gemini):**
+**Usar:** hero 1600×900
+https://videos.acromatico.dev/api/images/assets/04989632-9039-468c-be2e-0558d456a0b9.png
+
+**Prompt Gemini (variante):**
 
 > Crea una imagen horizontal 1600×900 (16:9) impactante para X. Fondo teal oscuro #055D5E. Izquierda: un icono de reloj tachado (anti-polling) en gris #D7D7D7. Derecha: un rayo dorado #FFD700 que conecta un nodo «{ }» con una factura blanca sellada. Texto grande en Racing Sans One: «Webhooks CFDI». Texto menor en Quicksand: «invoice.stamped → tu backend». Estilo flat vector, alto contraste, minimalista, sin fotografías.
 
@@ -117,7 +130,10 @@ Recursos oficiales para enlazar:
 
 ### Media
 
-**Prompt (Gemini):**
+**Usar:** recorte OG 1200×630
+https://videos.acromatico.dev/api/images/assets/9eb00d7b-05d5-44d3-bcf2-d380e6f1865b.png
+
+**Prompt Gemini (variante):**
 
 > Crea una imagen horizontal 1200×630 (1.91:1) para Facebook. Fondo teal oscuro #055D5E con nodos y llaves de código «{ }» dispersos en gris #D7D7D7. Al centro, una factura blanca con sello dorado #FFD700 y una notificación tipo campana que dice «invoice.stamped». Arriba el texto: «Tu sistema se entera al instante». Abajo: «Webhooks · CFDI Express API». Tipografía Racing Sans One / Quicksand. Estilo flat, profesional, sin fotos.
 
@@ -163,9 +179,9 @@ Recursos oficiales para enlazar:
 
 ## Checklist de publicación
 
-- [ ] Generar imágenes con Gemini y revisar ortografía del texto en la imagen (`invoice.stamped`, `CFDI-Signature`, sin acentos rotos).
+- [ ] Usar las URLs publicadas (hero 1600×900 / OG 1200×630), sin query string. Instagram feed/historia sigue el prompt Gemini (no hay recorte 1:1 publicado).
 - [ ] Esperar el merge del post antes de pegar https://cfdi.express/blog/webhooks-cfdi-express-api (si aún no está live, usa https://cfdi.express/api y https://api.cfdi.express/docs).
 - [ ] Verificar enlaces: docs, dash, landing API. No enlazar webhooks de Shopify ni `app/routes/webhooks.tsx`.
-- [ ] Hero del blog: Mark/Diego reemplazan `PENDIENTE-webhooks-cfdi-express-api` en `videos.acromatico.dev`.
+- [ ] Hero del blog: ya está en el frontmatter (`04989632-9039-468c-be2e-0558d456a0b9.png`). No regenerar.
 - [ ] Programar: LinkedIn y Facebook primero (mañana), X al mediodía, Instagram por la tarde/noche.
 - [ ] Responder los primeros comentarios el día del anuncio (sobre todo dudas de firma y de `sk_test_` vs `sk_live_`).
