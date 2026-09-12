@@ -1,15 +1,12 @@
 ---
 title: "Facturas de nómina CFDI: timbra Nómina 1.2 desde la API de CFDI Express"
 description: "Timbra facturas de nómina CFDI 4.0 + complemento Nómina 1.2 con POST /v1/nominas. Tú mandas percepciones y el empleado; la API calcula los totales SAT. $1 MXN por timbre."
-image: "https://videos.acromatico.dev/api/images/assets/PENDIENTE-facturas-de-nomina-cfdi-express-api.png?w=1600"
+image: "https://videos.acromatico.dev/api/images/assets/818cfae7-c2b4-4f32-bd6a-617ce0e877a7.png"
 author: "Rafael González"
 date: "2026-09-12"
 keywords: "facturas de nómina, CFDI nómina 1.2, timbrar nómina API, CFDI Express nómina, complemento nómina SAT, recibo de nómina electrónico, API nómina México, percepciones deducciones, registro patronal IMSS, CFDI 4.0 nómina, UsoCFDI CN01, tipoNomina, recibo de nómina API"
 ---
 # Facturas de nómina CFDI: ya se timbran desde la API de CFDI Express
-
-<!-- TODO: Diego — generar hero estilo humano/Pixar CFDI Express (integrador con hoodie teal, recibo de nómina y sello SAT). Prompt en socials/facturas-de-nomina-cfdi-express-api.md, sección "Imagen hero del blog". Subir a videos.acromatico.dev. Mark reemplaza el placeholder PENDIENTE del frontmatter. -->
-<!-- ENDTODO -->
 
 Si ya integraste facturas de ingreso con la [API de CFDI Express](https://cfdi.express/api), conoces el patrón: mandas el negocio, el servidor arma el CFDI 4.0 y el SAT lo sella. Faltaba la pieza que más duele en RH y en un ERP de nómina: el **recibo de nómina electrónico**.
 
