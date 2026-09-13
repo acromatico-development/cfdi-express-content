@@ -4,7 +4,7 @@ description: "Timbra facturas de nómina CFDI 4.0 + complemento Nómina 1.2 con 
 image: "https://videos.acromatico.dev/api/images/assets/818cfae7-c2b4-4f32-bd6a-617ce0e877a7.png"
 author: "Rafael González"
 date: "2026-09-12"
-keywords: "facturas de nómina, CFDI nómina 1.2, timbrar nómina API, CFDI Express nómina, complemento nómina SAT, recibo de nómina electrónico, API nómina México, percepciones deducciones, registro patronal IMSS, CFDI 4.0 nómina, UsoCFDI CN01, tipoNomina, recibo de nómina API"
+keywords: "facturas de nómina, CFDI nómina 1.2, timbrar nómina API, CFDI Express nómina, complemento nómina SAT, recibo de nómina electrónico, API nómina México, percepciones deducciones, registro patronal IMSS, CFDI 4.0 nómina, UsoCFDI CN01, tipoNomina, recibo de nómina API, MCP nómina, agente IA CFDI"
 ---
 # Facturas de nómina CFDI: ya se timbran desde la API de CFDI Express
 
@@ -149,11 +149,22 @@ OpenAPI no publica una tarifa aparte para nómina. Un recibo consume el **mismo 
 
 En la [landing de la API](https://cfdi.express/api) el precio publicado sigue siendo **$1 MXN por timbre** en producción, con descuento por volumen, sandbox ilimitado con `sk_test_` y recargas de **$100 a $50,000 MXN** por Stripe. Un empleado × un periodo = un timbre. La `Idempotency-Key` evita que un retry te cobre el doble.
 
+## También desde un agente de IA
+
+Además de `POST /v1/nominas`, puedes pedirle a un agente (Claude, ChatGPT, Cursor u otro) conectado al [servidor MCP de CFDI Express](https://api.cfdi.express/mcp) que **timbre o cancele un recibo de nómina** en lenguaje natural. El MCP ya incluye esas herramientas — junto a las de facturas y pagos — así que no tienes que armar el JSON a mano si estás en el chat.
+
+- **claude.ai / ChatGPT:** OAuth en `https://api.cfdi.express/mcp`.
+- **Claude Code / Cursor:** la misma URL con tu API key (`sk_test_` o `sk_live_`).
+- **Sandbox:** `https://api.cfdi.express/mcp/test` timbra contra el SAT de pruebas, gratis.
+
+La [landing de la API](https://cfdi.express/api) y [cfdi.express/agente](https://cfdi.express/agente) tienen el setup. Si tu agente escribe la integración REST, el skill `npx skills add CFDI-Express/skills` deja los endpoints a la mano.
+
 ## Empieza hoy
 
 1. Abre las [docs interactivas](https://api.cfdi.express/docs) y prueba `POST /v1/nominas` con `sk_test_`.
 2. Crea (o entra a) tu cuenta en [dash.cfdi.express](https://dash.cfdi.express).
 3. Si tu nómina ya corre en un ERP o un motor de RH, apunta la corrida a un recibo por empleado y deja los totales al servidor.
+4. ¿Prefieres no escribir el JSON? Conecta el [MCP](https://api.cfdi.express/mcp) a Claude, ChatGPT o Cursor y pide el recibo en español.
 
 ¿Aún no tienes la API? El contexto está en [Lanzamos CFDI Express API](/blog/lanzamiento-cfdi-express-api). ¿Quieres verlo en una llamada? [Agenda una demo](https://cal.com/team/acromatico-development/cfdi-express) o escribe a [hola@cfdi.express](mailto:hola@cfdi.express).
 
