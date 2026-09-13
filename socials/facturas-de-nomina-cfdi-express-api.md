@@ -5,6 +5,8 @@ Corresponde al blog post: [`pages/facturas-de-nomina-cfdi-express-api.md`](../pa
 Recursos oficiales para enlazar:
 - Post (tras el merge): https://cfdi.express/blog/facturas-de-nomina-cfdi-express-api
 - Landing API: https://cfdi.express/api
+- MCP (agentes de IA): https://api.cfdi.express/mcp
+- Agente (sin código): https://cfdi.express/agente
 - Docs interactivas: https://api.cfdi.express/docs
 - Dashboard (llaves `sk_test_` / `sk_live_`): https://dash.cfdi.express
 - Post relacionado (lanzamiento de la API): https://cfdi.express/blog/lanzamiento-cfdi-express-api
@@ -57,11 +59,14 @@ Recursos oficiales para enlazar:
 >
 > No es la app de Shopify. Es la API para tu ERP, tu motor de RH o la nómina que ya operas.
 >
+> ¿Lo quieres en chat? Conecta el MCP (https://api.cfdi.express/mcp) a Claude, ChatGPT o Cursor y pide timbrar o cancelar el recibo de nómina en español. Misma cuenta, mismo saldo.
+>
 > 📘 Docs: https://api.cfdi.express/docs
 > 🔑 Sandbox: https://dash.cfdi.express
 > 🧾 Historia de la API: https://cfdi.express/api
+> 🤖 MCP: https://api.cfdi.express/mcp
 >
-> #CFDI #FacturacionElectronica #SAT #CFDIExpress #Nomina #API #DesarrolloDeSoftware #RecursosHumanos #Fintech
+> #CFDI #FacturacionElectronica #SAT #CFDIExpress #Nomina #API #MCP #DesarrolloDeSoftware #RecursosHumanos #Fintech
 
 ### Media
 
@@ -94,6 +99,7 @@ https://videos.acromatico.dev/api/images/assets/a5b5900b-d85a-4866-bf65-15ee719b
 3. Empleado como Constancia (mayúsculas, sin acentos). Régimen 605. Registro patronal + NSS según contrato. Catálogos: GET /v1/catalogs/nomina/{catalog}.
 4. Idempotency-Key obligatoria. 201 en ≤20 s o 202 bajo carga. Webhooks: nomina.stamped / stamp_failed / cancelled.
 5. Mismo saldo que el resto de la API. Docs: https://api.cfdi.express/docs · llaves: https://dash.cfdi.express · contexto: https://cfdi.express/api
+6. ¿Sin JSON? Conecta https://api.cfdi.express/mcp a Claude, ChatGPT o Cursor y pide el recibo de nómina en lenguaje natural. También cancela.
 
 ### Media
 
@@ -118,9 +124,12 @@ https://videos.acromatico.dev/api/images/assets/818cfae7-c2b4-4f32-bd6a-617ce0e8
 >
 > Sirve para el ERP o el sistema de RH que ya usas — no es un extra de Shopify. Mismo saldo de siempre: **$1 MXN por timbre**, sandbox gratis.
 >
+> También lo puedes pedir en español a Claude, ChatGPT o Cursor: conecta el MCP (https://api.cfdi.express/mcp) y el agente timbra o cancela el recibo de nómina.
+>
 > Docs: https://api.cfdi.express/docs
 > Dashboard: https://dash.cfdi.express
 > Landing: https://cfdi.express/api
+> MCP: https://api.cfdi.express/mcp
 >
 > #CFDI #FacturacionElectronica #SAT #CFDIExpress #Nomina
 
@@ -150,6 +159,7 @@ https://videos.acromatico.dev/api/images/assets/a5b5900b-d85a-4866-bf65-15ee719b
 > ✅ La API calcula los totales SAT
 > ✅ Catálogos Nómina 1.2 incluidos
 > ✅ $1 MXN por timbre · sandbox gratis
+> ✅ También por MCP: pídeselo a Claude, ChatGPT o Cursor
 >
 > Para tu ERP o tu nómina — no es la app de Shopify.
 >
@@ -181,7 +191,7 @@ https://videos.acromatico.dev/api/images/assets/a5b5900b-d85a-4866-bf65-15ee719b
 - [ ] Hero del blog: ya está en el frontmatter (`818cfae7-c2b4-4f32-bd6a-617ce0e877a7.png`). No regenerar ni añadir `?w=`.
 - [ ] Banner email (`8f54950f-5e4f-4d7a-99ec-2220f88ebcd4.png`): Mark lo pone en Klaviyo. No va en el frontmatter.
 - [ ] Esperar el merge del post antes de pegar https://cfdi.express/blog/facturas-de-nomina-cfdi-express-api (si aún no está live, usa docs + dash + landing).
-- [ ] Verificar enlaces: docs, dash, landing API, post de lanzamiento, post de webhooks.
+- [ ] Verificar enlaces: docs, dash, landing API, MCP (`/mcp`), agente (`/agente`), post de lanzamiento, post de webhooks.
 - [ ] No enlazar la app de Shopify ni hablar de planes USD de la tienda: este pack es **API de nómina**.
 - [ ] Programar: LinkedIn y Facebook primero (mañana), X al mediodía, Instagram por la tarde/noche.
 - [ ] Responder comentarios de integradores (totales SAT, registro patronal, 201 vs 202, `Idempotency-Key`).
