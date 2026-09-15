@@ -1,16 +1,16 @@
 ---
-title: "CFDI facturas 4.0: qué es, qué cambió y cómo emitirlas sin errores"
-description: "CFDI facturas 4.0 es la única versión válida del SAT desde abril 2023. Qué cambió vs 3.3, qué datos pide el receptor y cómo emitir o cancelar sin rechazos."
+title: "CFDI facturas 4.0: qué es y cómo emitirlas sin rechazos SAT"
+description: "CFDI facturas 4.0 es la única válida desde abril 2023. El SAT valida RFC, nombre, régimen y CP del receptor; pide datos fiscales, no el PDF de la Constancia."
 image: "https://assets.acromatico.dev/marketing/diego/blog/hero-cfdi-facturas-4.0.png"
 author: "Rafael González"
 date: "2026-08-31"
-keywords: "cfdi facturas 4.0, factura 4.0, cfdi 4.0, facturas 4.0, facturación 4.0, factura electrónica 4.0, SAT"
+keywords: "cfdi facturas 4.0, factura 4.0, cfdi 4.0, facturas 4.0, facturación 4.0, factura electrónica 4.0, datos fiscales SAT"
 ---
-# ¿Qué es CFDI facturas 4.0? Qué cambió y cómo emitirlas sin errores
+# CFDI facturas 4.0: la única válida desde 2023 (datos que el SAT valida)
 
-**CFDI facturas 4.0** (también llamada factura 4.0 o CFDI 4.0) es la versión vigente del Comprobante Fiscal Digital por Internet. Desde el **1 de abril de 2023** es la única que el SAT acepta: la 3.3 ya no se puede timbrar.
+**CFDI facturas 4.0** (factura 4.0 o CFDI 4.0) es la única versión que el SAT acepta desde el **1 de abril de 2023**. Si el RFC, el nombre, el régimen o el CP del receptor no coinciden con el padrón, el timbrado se rechaza.
 
-En la práctica, el SAT valida al emitir que el RFC, el nombre, el régimen fiscal y el código postal del receptor coincidan con su padrón (los datos fiscales inscritos). Si no coinciden, la factura se rechaza. Aquí te dejo qué cambió, qué datos no pueden fallar y cómo cancelar con los motivos oficiales.
+No pidas el PDF de la Constancia: basta con los datos fiscales. Aquí va qué es, qué cambió vs 3.3, qué campos validan y cómo cancelar con los motivos oficiales.
 
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/M7ImVfrJuH8" title="Qué es CFDI facturas 4.0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -142,7 +142,7 @@ También puedes [instalar la app en Shopify](https://apps.shopify.com/cfdi-expre
 
 ### ¿Qué es CFDI facturas 4.0?
 
-Es el nombre con el que mucha gente busca la **factura electrónica vigente en México**: el CFDI versión 4.0 del SAT. Es el mismo documento que “factura 4.0” o “CFDI 4.0”.
+Es la **factura electrónica vigente** en México: el CFDI versión 4.0 del SAT, el mismo documento que “factura 4.0”. Desde el 1 de abril de 2023 es la única válida para emitir; la 3.3 ya no se timbra.
 
 ### ¿Sigue existiendo la factura 3.3?
 
