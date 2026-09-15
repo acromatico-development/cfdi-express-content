@@ -16,26 +16,30 @@ Recursos oficiales para enlazar:
 
 ## Cómo usar este pack
 
-1. **Aún no hay hero en CDN.** Genera las piezas con **Gemini** (prompts de abajo, estilo Pixar / humano con hoodie teal). Diego las sustituye después en `videos.acromatico.dev`. Hasta entonces, el post lleva el placeholder `PENDIENTE-facturama-vs-cfdi-express.png`.
+1. **No regeneres el hero.** Diego ya subió el arte. Usa las URLs de abajo (HTTPS, **sin query**).
 2. Publica con el **Texto** sugerido. El CTA principal es **instalar la app de Shopify**. La API va como mención corta, no como gancho.
-3. Es un comparativo **justo**: no insultes a Facturama, no inventes precios, no digas que CFDI Express es “siempre más barata”.
-4. No publiques el link del blog hasta que el post esté en `https://cfdi.express/blog/facturama-vs-cfdi-express` (después del merge).
-
-<!-- TODO: Diego — generar hero 1600×900, recorte OG 1200×630 y cuadrado 1080×1080 con los prompts de este pack; subir a videos.acromatico.dev; reemplazar el placeholder del frontmatter en pages/facturama-vs-cfdi-express.md. -->
-<!-- ENDTODO -->
+3. Si el CMS tiene campo `og:image` aparte del hero, usa el recorte 1200×630. Si no, el `image` del frontmatter (hero, sin query) es el que ya lleva el post.
+4. Es un comparativo **justo**: no insultes a Facturama, no inventes precios, no digas que CFDI Express es “siempre más barata”.
+5. No publiques el link del blog hasta que el post esté en `https://cfdi.express/blog/facturama-vs-cfdi-express` (después del merge).
 
 ---
 
 ## Imagen hero del blog
 
-**Placeholder actual (frontmatter):**
-`https://videos.acromatico.dev/api/images/assets/PENDIENTE-facturama-vs-cfdi-express.png?w=1600`
+**Ya publicada (usar esta, no generar otra).** Copy en artes: «Facturama vs CFDI Express» / «¿Cuál app de CFDI en Shopify?». Slug: `facturama-vs-cfdi-express`.
 
-**Prompt (Gemini) — Diego reemplaza después:**
+| Uso | Medida | URL (sin query) |
+| --- | --- | --- |
+| Hero / `image` del frontmatter | 1600×900 | https://videos.acromatico.dev/api/images/assets/36f08aff-62db-455f-9adf-9534ef945755.png |
+| OG / compartir (`og:image`, Meta / LinkedIn) | 1200×630 | https://videos.acromatico.dev/api/images/assets/80a0b692-d5d9-4053-9c71-48b8c63be468.png |
+
+Si el sitio solo usa el `image` del frontmatter para OG, está bien: el hero ya está en el post. El recorte 1200×630 sigue documentado aquí para compartir en Meta y LinkedIn.
+
+**Prompt Gemini (solo si hubiera que rehacer una variante; el arte oficial es el de Diego):**
 
 > Ilustración 3D estilo Pixar / personaje humano amigable (no foto real, no stock) para el hero de un blog B2B de facturación en México. Personaje: dueño de tienda Shopify mexicano, unos 32 años, piel morena clara, cabello corto oscuro, hoodie oversized color teal oscuro #055D5E con un pequeño recibo bordado en el pecho. Está de tres cuartos, sonrisa confiada, sosteniendo dos facturas blancas lado a lado (sello circular dorado #FFD700 en cada una) como si comparara opciones; no uses logos de marcas ajenas. Fondo estudio suave en teal #055D5E, acentos dorados #FFD700, gris #D7D7D7. Texto grande en tipografía Racing Sans One, blanco, ortografía exacta: «Facturama vs CFDI Express». Subtítulo en Quicksand, acento dorado: «¿Cuál app de CFDI en Shopify?». Iluminación cinematográfica, alto contraste, sin fotografías, sin logos de ChatGPT/Claude/Shopify App Store.
 
-**Aspecto:** 16:9 · 1600×900. Subir a `videos.acromatico.dev` y copiar la URL al campo `image:` del blog.
+**Aspecto:** 16:9 · 1600×900.
 
 ---
 
@@ -59,7 +63,10 @@ Recursos oficiales para enlazar:
 
 ### Media
 
-**Prompt (Gemini):**
+**Usar:** recorte OG de Diego (1200×630)
+https://videos.acromatico.dev/api/images/assets/80a0b692-d5d9-4053-9c71-48b8c63be468.png
+
+**Prompt Gemini (variante, solo si se necesita otra toma):**
 
 > Imagen horizontal 1200×627 (1.91:1) estilo Pixar / humano para LinkedIn B2B. Dueño de tienda con hoodie oversized teal #055D5E, dos facturas blancas en las manos, sello dorado #FFD700. Fondo teal oscuro #055D5E. Texto exacto en Racing Sans One / Quicksand, blanco y dorado: «Facturama vs CFDI Express» y «App de CFDI en Shopify». Sin fotos de stock, sin logos de otras marcas. Alto contraste, profesional.
 
@@ -86,7 +93,10 @@ Recursos oficiales para enlazar:
 
 ### Media
 
-**Prompt (Gemini):**
+**Usar:** hero 1600×900
+https://videos.acromatico.dev/api/images/assets/36f08aff-62db-455f-9adf-9534ef945755.png
+
+**Prompt Gemini (variante):**
 
 > Imagen 1600×900 (16:9) para X, estilo Pixar / humano. Close-up del dueño de tienda con hoodie teal #055D5E, dos facturas, sello dorado #FFD700. Fondo teal #055D5E. Texto exacto Racing Sans One: «Facturama vs CFDI Express». Texto menor Quicksand: «¿Cuál app de CFDI en Shopify?». Sin fotos.
 
@@ -110,7 +120,10 @@ Recursos oficiales para enlazar:
 
 ### Media
 
-**Prompt (Gemini):**
+**Usar:** recorte OG 1200×630
+https://videos.acromatico.dev/api/images/assets/80a0b692-d5d9-4053-9c71-48b8c63be468.png
+
+**Prompt Gemini (variante):**
 
 > Imagen 1200×630 (1.91:1) para Facebook. Ilustración 3D estilo Pixar: dueño de hoodie teal #055D5E y una contadora con tablet, comparando dos facturas. Sello dorado #FFD700. Texto exacto: «Facturama vs CFDI Express» / «CFDI 4.0 en Shopify». Fondo teal #055D5E. Sin fotos reales.
 
@@ -138,7 +151,10 @@ Recursos oficiales para enlazar:
 
 ### Media (feed cuadrado)
 
-**Prompt (Gemini):**
+No hay recorte 1080×1080 en CDN. **Usar el OG 1200×630** (o recortar el hero al cuadrado):
+https://videos.acromatico.dev/api/images/assets/80a0b692-d5d9-4053-9c71-48b8c63be468.png
+
+**Prompt Gemini (variante, solo si se necesita un 1:1):**
 
 > Imagen cuadrada 1080×1080 estilo Pixar / humano para feed. El dueño de tienda con hoodie teal #055D5E al centro, dos facturas blancas y sello dorado #FFD700. Fondo teal oscuro #055D5E. Texto grande blanco, Racing Sans One, exacto: «Facturama vs CFDI Express». Texto menor Quicksand: «¿Cuál app de CFDI en Shopify?». Alto contraste, sin fotos de stock, sin hashtags pintados en la imagen.
 
@@ -146,7 +162,7 @@ Recursos oficiales para enlazar:
 
 ### Media (historia opcional)
 
-**Prompt (Gemini):**
+**Usar el OG** y enmarcar en 1080×1920 con fondo #055D5E, o generar:
 
 > Historia vertical 1080×1920, estilo Pixar. Fondo teal #055D5E con halo dorado #FFD700. Arriba: wordmark CFDI Express. Centro: dueño de hoodie teal con dos facturas. Texto grande exacto: «Facturama vs CFDI Express». Texto menor: «App de CFDI en Shopify». CTA: «Lee el comparativo». Deja el tercio superior e inferior limpios para la UI de Instagram. Sin fotos reales.
 
@@ -156,7 +172,7 @@ Recursos oficiales para enlazar:
 
 ## Checklist de publicación
 
-- [ ] Hero todavía es placeholder hasta que Diego suba el arte; no publicar OG roto.
+- [ ] Usar las URLs de Diego (hero / OG), **sin query string**.
 - [ ] No publicar hasta que el post esté en `https://cfdi.express/blog/facturama-vs-cfdi-express` (después del merge).
 - [ ] CTA principal = App Store de Shopify. API solo como mención para integradores.
 - [ ] Tono justo: no “Facturama es mala”; no “siempre más baratos”.

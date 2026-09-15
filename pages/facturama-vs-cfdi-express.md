@@ -1,15 +1,14 @@
 ---
 title: "Facturama vs CFDI Express: ¿cuál app de CFDI elegir en Shopify?"
 description: "Compara Facturama vs CFDI Express en Shopify 2026: precio, CFDI 4.0, POS, Flow y autofacturación. Guía justa para dueños de tienda y contadores en México."
-image: "https://videos.acromatico.dev/api/images/assets/PENDIENTE-facturama-vs-cfdi-express.png?w=1600"
+image: "https://videos.acromatico.dev/api/images/assets/36f08aff-62db-455f-9adf-9534ef945755.png"
 author: "Rafael González"
 date: "2026-09-15"
 keywords: "facturama vs cfdi express, facturama shopify, alternativa facturama, app cfdi shopify, app facturación Shopify, CFDI 4.0 Shopify"
 ---
 # Facturama vs CFDI Express: ¿cuál app de CFDI elegir en Shopify?
 
-<!-- TODO: imagen hero del post — generar con Gemini usando el prompt de la sección "Imagen hero del blog" en socials/facturama-vs-cfdi-express.md (estilo Pixar / humano con hoodie teal), subirla a videos.acromatico.dev y reemplazar el placeholder PENDIENTE-facturama-vs-cfdi-express.png en el campo `image:` del frontmatter. Diego sustituye el arte después. -->
-<!-- ENDTODO -->
+![Facturama vs CFDI Express](https://videos.acromatico.dev/api/images/assets/36f08aff-62db-455f-9adf-9534ef945755.png?w=1600)
 
 Si vendes en Shopify en México, cada pedido sigue siendo un **CFDI 4.0**. Shopify cobra y arma la orden; no timbra el XML. Tienes que elegir una app de facturación. En 2026 las dos que más te van a aparecer en la App Store — y en la conversación con tu contador — son [Facturama](https://apps.shopify.com/facturama) y [CFDI Express](https://apps.shopify.com/cfdi-express).
 
