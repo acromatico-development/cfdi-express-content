@@ -1,15 +1,14 @@
 ---
 title: "Facturapi vs CFDI Express API: ¿cuál API de CFDI elegir?"
 description: "Compara Facturapi vs CFDI Express API en 2026: precio público (mensualidad + $0.60/timbre vs $1/timbre sin cuota), MCP, sandbox y multi-RFC."
-image: "https://videos.acromatico.dev/api/images/assets/PENDIENTE-facturapi-vs-cfdi-express-api.png?w=1600"
+image: "https://videos.acromatico.dev/api/images/assets/c2fef6a6-b267-4c8b-995d-8dbd14f76b7e.png"
 author: "Rafael González"
 date: "2026-09-15"
 keywords: "facturapi vs cfdi express, alternativa facturapi, api cfdi mexico, api facturacion electronica, mcp facturacion"
 ---
 # Facturapi vs CFDI Express API: ¿cuál API de CFDI elegir?
 
-<!-- TODO: Diego — generar hero Pixar/humano (hoodie teal #055D5E, sin logos de terceros) con el prompt de socials/facturapi-vs-cfdi-express-api.md (sección "Imagen hero del blog"), subir a videos.acromatico.dev y reemplazar el campo `image:` del frontmatter (quitar PENDIENTE y `?w=`). Copy en artes: «Facturapi vs CFDI Express API» / «¿Cuál API de CFDI elegir?» -->
-<!-- ENDTODO -->
+![Facturapi vs CFDI Express API](https://videos.acromatico.dev/api/images/assets/c2fef6a6-b267-4c8b-995d-8dbd14f76b7e.png?w=960&format=webp)
 
 Si estás armando un SaaS, un ERP o un marketplace que tiene que **timbrar CFDI 4.0 en México**, eliges una **API REST**, no una app de Shopify. En 2026 dos nombres que te van a aparecer en esa búsqueda son [Facturapi](https://www.facturapi.io/) y [CFDI Express API](https://cfdi.express/api).
 

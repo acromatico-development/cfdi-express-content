@@ -19,29 +19,30 @@ Recursos oficiales para enlazar:
 
 ## Cómo usar este pack
 
-1. **Hero pendiente.** Diego genera el arte con el prompt de abajo (Pixar / humano, hoodie teal, **sin logos de Facturapi ni de terceros**), lo sube a `videos.acromatico.dev` y sustituye el `PENDIENTE-…` del frontmatter. Hasta entonces no publiques el recorte como si ya estuviera en CDN.
+1. **No regeneres el hero.** Diego ya subió el arte. Usa las URLs de abajo (HTTPS, **sin query**).
 2. Publica con el **Texto** sugerido. El CTA principal es **API + dashboard** (`cfdi.express/api`, `dash.cfdi.express`). La app de Shopify va como mención corta (“otro producto”), no como gancho.
-3. Es un comparativo **justo**: no insultes a Facturapi, no inventes precios, no digas que CFDI Express es “siempre más barata”. Califica “según pricing público, septiembre 2026”.
-4. No publiques el link del blog hasta que el post esté en `https://cfdi.express/blog/facturapi-vs-cfdi-express-api` (después del merge). Mientras, usa la landing de la API.
-5. Si el CMS tiene `og:image` aparte, pide a Diego un recorte 1200×630 del mismo arte.
+3. Si el CMS tiene campo `og:image` aparte del hero, usa el recorte 1200×630. Si no, el `image` del frontmatter (hero, sin query) es el que ya lleva el post.
+4. Es un comparativo **justo**: no insultes a Facturapi, no inventes precios, no digas que CFDI Express es “siempre más barata”. Califica “según pricing público, septiembre 2026”.
+5. No publiques el link del blog hasta que el post esté en `https://cfdi.express/blog/facturapi-vs-cfdi-express-api` (después del merge). Mientras, usa la landing de la API.
 
 ---
 
 ## Imagen hero del blog
 
-**Placeholder en frontmatter (hasta que Diego suba el archivo):**
+**Ya publicada (usar esta, no generar otra).** Copy en artes (lo que Diego usó): «Facturapi vs / CFDI Express» / «Comparativa justa de APIs». Slug: `facturapi-vs-cfdi-express-api`.
 
-`https://videos.acromatico.dev/api/images/assets/PENDIENTE-facturapi-vs-cfdi-express-api.png?w=1600`
+| Uso | Medida | URL (sin query) |
+| --- | --- | --- |
+| Hero / `image` del frontmatter | 1600×900 | https://videos.acromatico.dev/api/images/assets/c2fef6a6-b267-4c8b-995d-8dbd14f76b7e.png |
+| OG / compartir (`og:image`, Meta / LinkedIn) | 1200×630 | https://videos.acromatico.dev/api/images/assets/44396a79-56b0-4e31-b468-23215aa4bf1e.png |
 
-Copy en artes: «Facturapi vs CFDI Express API» / «¿Cuál API de CFDI elegir?». Slug: `facturapi-vs-cfdi-express-api`.
+Si el sitio solo usa el `image` del frontmatter para OG, está bien: el hero ya está en el post. El recorte 1200×630 sigue documentado aquí para compartir en Meta y LinkedIn.
 
-**Prompt (Gemini) — Diego, este es el oficial del hero:**
+**Prompt Gemini (solo si hubiera que rehacer una variante; el arte oficial es el de Diego):**
 
-> Ilustración 3D estilo Pixar / personaje humano amigable (no foto real, no stock) para el hero de un blog B2B de developers en México. Personaje: integrador mexicano de unos 30 años, piel morena clara, cabello corto oscuro, hoodie oversized color teal oscuro #055D5E con un pequeño recibo bordado en el pecho, audífonos colgando del cuello. Está de tres cuartos, sonrisa confiada, sosteniendo dos facturas blancas lado a lado (sello circular dorado #FFD700 en cada una) como si comparara dos APIs; detrás, nodos de API y llaves «{ }» discretas. No uses logos de marcas ajenas (nada de Facturapi, Stripe, Shopify, ChatGPT ni Claude). Fondo estudio suave en teal #055D5E, acentos dorados #FFD700, gris #D7D7D7. Texto grande en tipografía Racing Sans One, blanco, ortografía exacta: «Facturapi vs CFDI Express API». Subtítulo en Quicksand, acento dorado: «¿Cuál API de CFDI elegir?». Iluminación cinematográfica, alto contraste, sin fotografías.
+> Ilustración 3D estilo Pixar / personaje humano amigable (no foto real, no stock) para el hero de un blog B2B de developers en México. Personaje: integrador mexicano de unos 30 años, piel morena clara, cabello corto oscuro, hoodie oversized color teal oscuro #055D5E con un pequeño recibo bordado en el pecho, audífonos colgando del cuello. Está de tres cuartos, sonrisa confiada, sosteniendo dos facturas blancas lado a lado (sello circular dorado #FFD700 en cada una) como si comparara dos APIs; detrás, nodos de API y llaves «{ }» discretas. No uses logos de marcas ajenas (nada de Facturapi, Stripe, Shopify, ChatGPT ni Claude). Fondo estudio suave en teal #055D5E, acentos dorados #FFD700, gris #D7D7D7. Texto grande en tipografía Racing Sans One, blanco, ortografía exacta: «Facturapi vs / CFDI Express». Subtítulo en Quicksand, acento dorado: «Comparativa justa de APIs». Iluminación cinematográfica, alto contraste, sin fotografías.
 
-**Aspecto:** 16:9 · 1600×900 · subir a `videos.acromatico.dev` y copiar la URL al campo `image:` del blog (sin `?w=`).
-
-**Recorte OG (pedir a Diego junto con el hero):** 1200×630 (1.91:1), mismo personaje y mismo copy.
+**Aspecto:** 16:9 · 1600×900.
 
 ---
 
@@ -68,11 +69,12 @@ Copy en artes: «Facturapi vs CFDI Express API» / «¿Cuál API de CFDI elegir?
 
 ### Media
 
-**Usar:** recorte OG 1200×630 (cuando Diego lo suba). Hasta entonces, generar con el prompt.
+**Usar:** recorte OG de Diego (1200×630)
+https://videos.acromatico.dev/api/images/assets/44396a79-56b0-4e31-b468-23215aa4bf1e.png
 
-**Prompt (Gemini):**
+**Prompt Gemini (variante, solo si se necesita otra toma):**
 
-> Imagen horizontal 1200×627 (1.91:1) estilo Pixar / humano para LinkedIn B2B. Integrador con hoodie oversized teal #055D5E, dos facturas blancas en las manos, sello dorado #FFD700, nodos de API «{ }» al fondo. Fondo teal oscuro #055D5E. Texto exacto en Racing Sans One / Quicksand, blanco y dorado: «Facturapi vs CFDI Express API» y «¿Cuál API de CFDI elegir?». Sin fotos de stock, sin logos de otras marcas. Alto contraste, profesional.
+> Imagen horizontal 1200×627 (1.91:1) estilo Pixar / humano para LinkedIn B2B. Integrador con hoodie oversized teal #055D5E, dos facturas blancas en las manos, sello dorado #FFD700, nodos de API «{ }» al fondo. Fondo teal oscuro #055D5E. Texto exacto en Racing Sans One / Quicksand, blanco y dorado: «Facturapi vs / CFDI Express» y «Comparativa justa de APIs». Sin fotos de stock, sin logos de otras marcas. Alto contraste, profesional.
 
 **Aspecto:** 1200×627 (horizontal, 1.91:1).
 
@@ -98,11 +100,12 @@ Copy en artes: «Facturapi vs CFDI Express API» / «¿Cuál API de CFDI elegir?
 
 ### Media
 
-**Usar:** hero 1600×900 (cuando Diego lo suba).
+**Usar:** hero 1600×900
+https://videos.acromatico.dev/api/images/assets/c2fef6a6-b267-4c8b-995d-8dbd14f76b7e.png
 
-**Prompt (Gemini):**
+**Prompt Gemini (variante):**
 
-> Imagen 1600×900 (16:9) para X, estilo Pixar / humano. Close-up del integrador con hoodie teal #055D5E, dos facturas, sello dorado #FFD700, un nodo «{ }» discreto. Fondo teal #055D5E. Texto exacto Racing Sans One: «Facturapi vs CFDI Express API». Texto menor Quicksand: «¿Cuál API de CFDI elegir?». Sin fotos, sin logos ajenos.
+> Imagen 1600×900 (16:9) para X, estilo Pixar / humano. Close-up del integrador con hoodie teal #055D5E, dos facturas, sello dorado #FFD700, un nodo «{ }» discreto. Fondo teal #055D5E. Texto exacto Racing Sans One: «Facturapi vs / CFDI Express». Texto menor Quicksand: «Comparativa justa de APIs». Sin fotos, sin logos ajenos.
 
 **Aspecto:** 1600×900 (16:9).
 
@@ -129,11 +132,12 @@ Copy en artes: «Facturapi vs CFDI Express API» / «¿Cuál API de CFDI elegir?
 
 ### Media
 
-**Usar:** recorte OG 1200×630 (cuando Diego lo suba).
+**Usar:** recorte OG 1200×630
+https://videos.acromatico.dev/api/images/assets/44396a79-56b0-4e31-b468-23215aa4bf1e.png
 
-**Prompt (Gemini):**
+**Prompt Gemini (variante):**
 
-> Imagen 1200×630 (1.91:1) para Facebook. Ilustración 3D estilo Pixar: integrador de hoodie teal #055D5E y una compañera developer con laptop (`POST /v1/invoices` apenas legible, sin logos). Dos facturas, sello dorado #FFD700. Texto exacto: «Facturapi vs CFDI Express API» / «¿Cuál API de CFDI elegir?». Fondo teal #055D5E. Sin fotos reales, sin logos de terceros.
+> Imagen 1200×630 (1.91:1) para Facebook. Ilustración 3D estilo Pixar: integrador de hoodie teal #055D5E y una compañera developer con laptop (`POST /v1/invoices` apenas legible, sin logos). Dos facturas, sello dorado #FFD700. Texto exacto: «Facturapi vs / CFDI Express» / «Comparativa justa de APIs». Fondo teal #055D5E. Sin fotos reales, sin logos de terceros.
 
 **Aspecto:** 1200×630 (1.91:1).
 
@@ -161,19 +165,20 @@ Copy en artes: «Facturapi vs CFDI Express API» / «¿Cuál API de CFDI elegir?
 
 ### Media (feed cuadrado)
 
-No hay recorte 1080×1080 en CDN todavía. Generar 1:1 o recortar el hero:
+No hay recorte 1080×1080 en CDN. **Usar el OG 1200×630** (o recortar el hero al cuadrado):
+https://videos.acromatico.dev/api/images/assets/44396a79-56b0-4e31-b468-23215aa4bf1e.png
 
-**Prompt (Gemini):**
+**Prompt Gemini (variante, solo si se necesita un 1:1):**
 
-> Imagen cuadrada 1080×1080 estilo Pixar / humano para feed. El integrador con hoodie teal #055D5E al centro, dos facturas blancas y sello dorado #FFD700. Fondo teal oscuro #055D5E. Texto grande blanco, Racing Sans One, exacto: «Facturapi vs CFDI Express API». Texto menor Quicksand: «¿Cuál API de CFDI elegir?». Alto contraste, sin fotos de stock, sin logos de otras marcas, sin hashtags pintados en la imagen.
+> Imagen cuadrada 1080×1080 estilo Pixar / humano para feed. El integrador con hoodie teal #055D5E al centro, dos facturas blancas y sello dorado #FFD700. Fondo teal oscuro #055D5E. Texto grande blanco, Racing Sans One, exacto: «Facturapi vs / CFDI Express». Texto menor Quicksand: «Comparativa justa de APIs». Alto contraste, sin fotos de stock, sin logos de otras marcas, sin hashtags pintados en la imagen.
 
 **Aspecto:** 1080×1080 (1:1) para feed.
 
 ### Media (historia opcional)
 
-**Prompt (Gemini):**
+**Usar el OG** y enmarcar en 1080×1920 con fondo #055D5E, o generar:
 
-> Historia vertical 1080×1920, estilo Pixar. Fondo teal #055D5E con halo dorado #FFD700. Arriba: wordmark CFDI Express. Centro: integrador de hoodie teal con dos facturas. Texto grande exacto: «Facturapi vs CFDI Express API». Texto menor: «¿Cuál API de CFDI elegir?». CTA: «Lee el comparativo». Deja el tercio superior e inferior limpios para la UI de Instagram. Sin fotos reales, sin logos ajenos.
+> Historia vertical 1080×1920, estilo Pixar. Fondo teal #055D5E con halo dorado #FFD700. Arriba: wordmark CFDI Express. Centro: integrador de hoodie teal con dos facturas. Texto grande exacto: «Facturapi vs / CFDI Express». Texto menor: «Comparativa justa de APIs». CTA: «Lee el comparativo». Deja el tercio superior e inferior limpios para la UI de Instagram. Sin fotos reales, sin logos ajenos.
 
 **Aspecto:** 1080×1920 (historia).
 
@@ -181,12 +186,13 @@ No hay recorte 1080×1080 en CDN todavía. Generar 1:1 o recortar el hero:
 
 ## Checklist de publicación
 
-- [ ] Esperar a que Diego suba hero 1600×900 y OG 1200×630 a `videos.acromatico.dev`; actualizar `image:` del post (quitar `PENDIENTE` y `?w=`).
+- [x] Diego subió hero 1600×900 y OG 1200×630 a `videos.acromatico.dev`. Frontmatter `image:` = URL CDN **sin query** y **sin PENDIENTE**.
+- [ ] Usar las URLs de Diego (hero / OG), **sin query string**.
 - [ ] No publicar el URL del blog hasta `https://cfdi.express/blog/facturapi-vs-cfdi-express-api` (después del merge). Mientras: `https://cfdi.express/api`.
 - [ ] CTA principal = landing API + dashboard. App Shopify solo como “otro producto / no mezclar USD”.
 - [ ] Tono justo: no “Facturapi es mala”; no “siempre más baratos”. Calificar pricing público sep. 2026.
 - [ ] Cifras alineadas al post: Facturapi ~$299 + $0.60; CFDI Express API ~$1, $0 cuota; cruce ~750; escenarios 100 / 500 / 2000.
-- [ ] Ortografía en artes: «Facturapi vs CFDI Express API» / «¿Cuál API de CFDI elegir?»
+- [ ] Ortografía en artes (Diego): «Facturapi vs / CFDI Express» / «Comparativa justa de APIs»
 - [ ] Sin logos de Facturapi ni de terceros en las imágenes.
 - [ ] LinkedIn y Facebook primero; X al mediodía; Instagram por la tarde.
 - [ ] Responder comentarios el día de publicación (sobre todo “¿cuál es más barata?” y “¿esto es Facturama?”).
