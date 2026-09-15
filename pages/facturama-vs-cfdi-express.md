@@ -20,7 +20,7 @@ Cifras de fichas públicas, **septiembre 2026**. Si una app no anuncia una integ
 
 ## Tabla rápida: Facturama vs CFDI Express
 
-**Respuesta corta:** las dos timbran CFDI 4.0 desde Shopify. Facturama publica un plan plano e ilimitado dentro de la app. CFDI Express publica mensualidad + uso, POS nativo, Flow y el distintivo Built for Shopify.
+**Respuesta corta:** las dos timbran CFDI 4.0 desde Shopify. Facturama publica un plan plano e ilimitado dentro de la app. CFDI Express publica mensualidad + uso, POS nativo, notas de crédito (egreso), Flow con **disparadores y acciones**, y el distintivo Built for Shopify.
 
 |  | [Facturama](https://apps.shopify.com/facturama) | [CFDI Express](https://apps.shopify.com/cfdi-express) |
 | --- | --- | --- |
@@ -28,7 +28,8 @@ Cifras de fichas públicas, **septiembre 2026**. Si una app no anuncia una integ
 | **Modelo de cobro** | Mensualidad plana. En [facturama.mx/shopify](https://facturama.mx/shopify) anuncian facturas, complementos de pago y cancelaciones **ilimitadas** dentro de la app. | Suscripción en Shopify Billing + uso (pay-as-you-go) o cupo incluido según el plan. |
 | **Built for Shopify** | App en la App Store. Su ficha **no anuncia** el distintivo Built for Shopify. | Sí. Historia: [CFDI Express ya es Built for Shopify](/blog/cfdi-expres-ya-es-built-for-shopify). |
 | **POS** | No lista Shopify POS en “Works with”. En su página de Shopify hablan de un **link de autofacturación** desde el punto de venta. | Formulario en la confirmación de [Shopify POS](/docs/facturacion-pos-punto-de-venta-shopify). La ficha lista Shopify POS. |
-| **Flow / automatización** | No aparece Shopify Flow en su ficha pública ni en su página de Shopify (septiembre 2026). | Disparadores y acciones: timbrar, cancelar con motivos 01–04 y [global al público en general](/docs/uso-shopify-flow-automatizaciones-cfdi-express). La ficha lista Shopify Flow. |
+| **Flow (disparadores y acciones)** | No aparece Shopify Flow en su ficha pública ni en su página de Shopify (septiembre 2026). No publican disparadores ni acciones. | **Disparadores y acciones**, no solo “que existe Flow”. Disparadores cuando se timbra o se cancela un CFDI y cuando sale un reporte; acciones **Crear CFDI** (timbrar, incluido el [global](/docs/facturacion-al-publico-en-general-manual-y-automatica)) y **Eliminar CFDI** (cancelar con motivos 01–04). Encadenas un reembolso o devolución de Shopify con esos pasos. Guía: [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express). La ficha lista Shopify Flow. |
+| **Notas de crédito (egreso)** | Su ficha de Shopify lista tipo de documento **Invoices**; **no publica** notas de crédito ni CFDI de egreso en esa ficha (septiembre 2026). En [facturama.mx](https://facturama.mx) el portal de la marca sí menciona notas de crédito: eso es el PAC/web, no lo damos por hecho dentro de la app de Shopify. | Sí: CFDI de egreso por **devolución, reembolso o descuento**, sin cancelar la factura original. Guía: [Notas de crédito](/docs/notas-de-credito). La ficha de App Store lista **Credit notes**. |
 | **Autofacturación** | Autofactura desde la tienda o el checkout, según su [ficha](https://apps.shopify.com/facturama) y [facturama.mx/shopify](https://facturama.mx/shopify). | Bloque en [Thank You Page](/docs/facturacion-checkout-thank-you-page) y [página de estado de la orden](/docs/facturacion-pagina-estado-de-orden); [portal de autofacturación](/blog/crea-un-portal-de-auto-facturacion-cfdi-en-5-minutos) con cuentas de Shopify. |
 | **Factura global** | Factura global a ventas al público en general, según ficha y landing. | Facturación global automática (y manual) al público en general. |
 | **Works with (ficha)** | Checkout. | Customer accounts, Shopify POS, Shopify Flow, Shopify Admin. |
@@ -59,7 +60,7 @@ Otra cosa justa: Facturama es una **marca PAC/portal**, no únicamente un listad
 
 ## Fortalezas de CFDI Express
 
-**Respuesta corta:** la factura sale del mismo flujo de Shopify — Thank You, estado de orden, POS, Flow, portal de cuentas — y puedes crecer a planes de cupo o a la API si el día de mañana sales de la tienda.
+**Respuesta corta:** la factura sale del mismo flujo de Shopify — Thank You, estado de orden, POS, notas de crédito, Flow (disparadores y acciones), portal de cuentas — y puedes crecer a planes de cupo o a la API si el día de mañana sales de la tienda.
 
 CFDI Express nació como app de Shopify ([Built for Shopify](/blog/cfdi-expres-ya-es-built-for-shopify)) y se publica así en la [App Store](https://apps.shopify.com/cfdi-express):
 
@@ -67,16 +68,18 @@ CFDI Express nació como app de Shopify ([Built for Shopify](/blog/cfdi-expres-y
 - Facturación en **Shopify POS** (formulario en la confirmación de la venta, no un link aparte).
 - **Factura global** automática al público en general.
 - Facturación **parcial / PPD**.
-- Automatizaciones con **Shopify Flow**.
+- **Notas de crédito** (la ficha lista *Credit notes*).
+- Automatizaciones con **Shopify Flow** (la ficha lo lista; en docs hay disparadores **y** acciones).
 - Envío de PDF y XML por correo; reportes; personalización del PDF.
 
 En operación, eso se traduce a lo que ya documentamos:
 
 - El cajero no saca al cliente de Shopify POS. Guía: [facturación en POS](/docs/facturacion-pos-punto-de-venta-shopify).
 - Si se le olvidó en el checkout, factura en el estado de la orden o en el [portal de autofacturación](/blog/crea-un-portal-de-auto-facturacion-cfdi-en-5-minutos).
+- **Notas de crédito (CFDI de egreso)** para devoluciones, reembolsos o descuentos: las emites desde la orden **sin cancelar** la factura original. Guía: [Notas de crédito](/docs/notas-de-credito).
 - Cancelas con **motivos 01–04** del SAT y acuse. Guía: [Cancelación y acuse](/docs/cancelacion-y-acuse).
 - Los **complementos de pago** (PPD) van en el mismo admin. Guía: [Complementos de pago](/docs/complementos-de-pago).
-- Flow puede timbrar, cancelar y armar el global de lo que nadie facturó. Guía: [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express).
+- **Shopify Flow no es un check de “Works with”**: hay **disparadores** (CFDI timbrado, CFDI cancelado, reporte listo) **y acciones** (Crear CFDI / Eliminar CFDI). Con eso automatizas timbrado, cancelación con motivo, el global de lo que nadie facturó y los pasos de CFDI que rodean una devolución — por ejemplo, un reembolso de Shopify que dispara cancelar o volver a timbrar, más avisar a contabilidad cuando sale el comprobante. Guía: [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express).
 
 La calificación en App Store (septiembre 2026) es **5.0 con 23 reseñas**. Facturama tiene más reseñas (31) y más años. Un 5.0 con menos volumen no sustituye una década de listado; sí te dice que, en esa muestra, las tiendas que ya la usan están contentas.
 
@@ -84,7 +87,7 @@ El modelo de precio no es el de $13 plano: empiezas en Basic y, si el volumen cr
 
 ## Escenarios de precio (ilustrativos)
 
-**Respuesta corta:** con las fichas públicas de Shopify, el plan de **$13 ilimitado** de Facturama sale más barato en estos ejemplos si su “ilimitado” aplica a tu volumen. CFDI Express **no** es “siempre más barata”. Elige por flujo (POS, Flow, Built for Shopify), no por una frase de ahorro.
+**Respuesta corta:** con las fichas públicas de Shopify, el plan de **$13 ilimitado** de Facturama sale más barato en estos ejemplos si su “ilimitado” aplica a tu volumen. CFDI Express **no** es “siempre más barata”. Elige por flujo (POS, notas de crédito, Flow con disparadores y acciones, Built for Shopify), no por una frase de ahorro.
 
 Cifras en **USD**, como las publica Shopify Billing. No incluyen impuestos de la tienda ni tipo de cambio a MXN. Asumimos un mes de **CFDIs timbrados** (ingresos; si también cancelas o emites complementos, el uso de CFDI Express puede moverse: la ficha dice **$0.10 USD por factura generada/cancelada**). Facturama, según su landing, no cobra extra por esos movimientos **dentro de la app**.
 
@@ -104,7 +107,7 @@ Notas para no mezclar peras con manzanas:
 
 ## ¿Cuándo elegir Facturama y cuándo CFDI Express?
 
-**Respuesta corta:** Facturama si quieres precio plano, autofacturación en checkout/tienda y una marca que tu equipo ya conoce. CFDI Express si la factura tiene que vivir en POS, Flow y cuentas de Shopify — o si más adelante vas a timbrar fuera de la tienda.
+**Respuesta corta:** Facturama si quieres precio plano, autofacturación en checkout/tienda y una marca que tu equipo ya conoce. CFDI Express si la factura tiene que vivir en POS, notas de crédito, Flow (disparadores y acciones) y cuentas de Shopify — o si más adelante vas a timbrar fuera de la tienda.
 
 ### Elige Facturama si…
 
@@ -118,7 +121,8 @@ Notas para no mezclar peras con manzanas:
 
 - Quieres una app **Built for Shopify**, con Thank You, estado de orden, admin y [portal de cuentas](/blog/crea-un-portal-de-auto-facturacion-cfdi-en-5-minutos).
 - Tienes **piso de venta**: el cajero factura en la confirmación de Shopify POS.
-- Quieres **Flow**: global automático, timbrado o cancelación con motivo SAT sin CSV.
+- Quieres **Flow de verdad**: **disparadores y acciones** para timbrar, cancelar con motivo SAT, armar el global y encadenar devoluciones/reembolsos — no solo un renglón de “Works with Flow”.
+- Usas **notas de crédito** (egreso) en devoluciones, reembolsos o descuentos, sin tener que cancelar y re-facturar siempre.
 - Usas **PPD**, complementos de pago y cancelación con acuse en el mismo admin.
 - Aceptas mensualidad + uso (o un plan de cupo) a cambio de ese flujo — sabiendo que, en la tabla de arriba, **no** sales más barato que $13 ilimitado.
 - Más adelante puedes necesitar timbrar **fuera** de Shopify: la [API](https://cfdi.express/api) es el mismo stack, otro producto.
@@ -135,7 +139,7 @@ Este artículo es de **apps de Shopify**. Lo siguiente es solo para integradores
 
 ### ¿Facturama o CFDI Express?
 
-Las dos son apps de CFDI 4.0 en Shopify. **Facturama** destaca por trayectoria (App Store desde 2017), marca PAC/portal y **$13 USD/mes** con plan ilimitado según su ficha y landing. **CFDI Express** destaca por **Built for Shopify**, POS nativo, Flow, Thank You / estado de orden / portal de cuentas, y planes que crecen con el volumen. Si lo único que miras es el cargo mensual publicado, Facturama es más barata en los escenarios de arriba. Si miras el flujo de la venta (caja, automatización, cuentas de Shopify), CFDI Express es la que publica esas integraciones.
+Las dos son apps de CFDI 4.0 en Shopify. **Facturama** destaca por trayectoria (App Store desde 2017), marca PAC/portal y **$13 USD/mes** con plan ilimitado según su ficha y landing. **CFDI Express** destaca por **Built for Shopify**, POS nativo, notas de crédito (egreso), Flow con disparadores y acciones, Thank You / estado de orden / portal de cuentas, y planes que crecen con el volumen. Si lo único que miras es el cargo mensual publicado, Facturama es más barata en los escenarios de arriba. Si miras el flujo de la venta (caja, devoluciones, automatización, cuentas de Shopify), CFDI Express es la que publica esas integraciones.
 
 ### ¿Shopify emite CFDI 4.0 solo?
 
@@ -144,6 +148,10 @@ No. Shopify no es PAC. Necesitas una app, un PAC/API o el portal del SAT. Compar
 ### ¿Cuál es más barata?
 
 Depende de qué estés comprando. En la **app de Shopify**, el $13 ilimitado de Facturama (según su página pública, septiembre 2026) sale más bajo que Basic $15 + $0.10 por CFDI o que Plus $99. Eso no incluye paquetes de folios de facturama.mx ni la [API de CFDI Express](https://cfdi.express/api) (~$1 MXN/timbre, sin mensualidad). No hay un “siempre más barato” sin el escenario.
+
+### ¿CFDI Express emite notas de crédito y se puede automatizar una devolución?
+
+Sí. En CFDI Express timbras un **CFDI de egreso** (nota de crédito) por devolución, reembolso o descuento **sin cancelar** la factura original. Guía: [Notas de crédito](/docs/notas-de-credito). **Shopify Flow** no es solo un disparador: hay **disparadores y acciones** para timbrar, cancelar con motivo SAT y el global; puedes encadenar el reembolso o la devolución de Shopify con esos pasos de CFDI. Guía: [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express). En la ficha de **Facturama** en Shopify (septiembre 2026) no aparecen notas de crédito como tipo de documento ni Shopify Flow.
 
 ### ¿Facturama factura en Shopify POS?
 
@@ -171,7 +179,7 @@ Entonces no estás eligiendo entre estas dos apps. Para sistemas propios, [CFDI 
       "name": "¿Facturama o CFDI Express?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Las dos son apps de CFDI 4.0 en Shopify. Facturama destaca por trayectoria (App Store desde 2017), marca PAC/portal y 13 USD al mes con plan ilimitado según su ficha y landing (septiembre 2026). CFDI Express destaca por Built for Shopify, POS nativo, Shopify Flow, Thank You / estado de orden / portal de cuentas, y planes que crecen con el volumen. Si solo comparas el cargo mensual publicado, Facturama sale más barata en escenarios de bajo y alto volumen. Si priorizas el flujo de la venta (caja, automatización, cuentas de Shopify), CFDI Express es la que publica esas integraciones."
+        "text": "Las dos son apps de CFDI 4.0 en Shopify. Facturama destaca por trayectoria (App Store desde 2017), marca PAC/portal y 13 USD al mes con plan ilimitado según su ficha y landing (septiembre 2026). CFDI Express destaca por Built for Shopify, POS nativo, notas de crédito (egreso), Shopify Flow con disparadores y acciones, Thank You / estado de orden / portal de cuentas, y planes que crecen con el volumen. Si solo comparas el cargo mensual publicado, Facturama sale más barata en escenarios de bajo y alto volumen. Si priorizas el flujo de la venta (caja, devoluciones, automatización, cuentas de Shopify), CFDI Express es la que publica esas integraciones."
       }
     },
     {
@@ -188,6 +196,14 @@ Entonces no estás eligiendo entre estas dos apps. Para sistemas propios, [CFDI 
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "En la app de Shopify, el plan de 13 USD ilimitado de Facturama (según su página pública, septiembre 2026) sale más bajo que el Basic de CFDI Express (15 USD más 0.10 USD por CFDI) o el Plus a 99 USD. Eso no incluye paquetes de folios de facturama.mx ni CFDI Express API (alrededor de 1 MXN por timbre, sin mensualidad). No hay un siempre más barato sin el escenario de volumen y de producto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿CFDI Express emite notas de crédito y se puede automatizar una devolución?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. En CFDI Express timbras un CFDI de egreso (nota de crédito) por devolución, reembolso o descuento sin cancelar la factura original. Shopify Flow incluye disparadores y acciones para timbrar, cancelar con motivo SAT y el global; puedes encadenar un reembolso o una devolución de Shopify con esos pasos. En la ficha de Facturama en Shopify (septiembre 2026) no aparecen notas de crédito como tipo de documento ni Shopify Flow."
       }
     },
     {
@@ -212,7 +228,7 @@ Entonces no estás eligiendo entre estas dos apps. Para sistemas propios, [CFDI 
 
 ## Instala CFDI Express (o cotiza la API si no es Shopify)
 
-Si el comparativo te dejó en el lado nativo — checkout, POS, Flow y portal de cuentas — [instala CFDI Express](https://apps.shopify.com/cfdi-express). Prueba de 7 días.
+Si el comparativo te dejó en el lado nativo — checkout, POS, notas de crédito, Flow y portal de cuentas — [instala CFDI Express](https://apps.shopify.com/cfdi-express). Prueba de 7 días.
 
 Si facturas desde un sistema o un agente, no desde la app: [CFDI Express API](https://cfdi.express/api).
 
