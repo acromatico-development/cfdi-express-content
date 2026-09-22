@@ -1,6 +1,6 @@
 ---
 title: "Facturapi vs CFDI Express API: ¿cuál API de CFDI elegir?"
-description: "Compara Facturapi vs CFDI Express API en 2026: precio público (mensualidad + $0.60/timbre vs $1/timbre sin cuota), MCP, sandbox y multi-RFC."
+description: "Compara Facturapi vs CFDI Express API en 2026: precio público (mensualidad + $0.60/timbre vs $1/timbre sin cuota), MCP, skill para agentes, sandbox y multi-RFC."
 image: "https://videos.acromatico.dev/api/images/assets/c2fef6a6-b267-4c8b-995d-8dbd14f76b7e.png"
 author: "Rafael González"
 date: "2026-09-15"
@@ -12,7 +12,7 @@ keywords: "facturapi vs cfdi express, alternativa facturapi, api cfdi mexico, ap
 
 Si estás armando un SaaS, un ERP o un marketplace que tiene que **timbrar CFDI 4.0 en México**, eliges una **API REST**, no una app de Shopify. En 2026 dos nombres que te van a aparecer en esa búsqueda son [Facturapi](https://www.facturapi.io/) y [CFDI Express API](https://cfdi.express/api).
 
-Este post es un comparativo **justo, para developers e integradores**. Facturapi es una marca madura: docs largas, SDKs, multi-RFC y un precio por timbre más bajo **si** pagas la mensualidad. CFDI Express API es pay-as-you-go, saldo prepagado, convenciones estilo Stripe y un servidor MCP para agentes. Ninguna “gana” en todos los renglones.
+Este post es un comparativo **justo, para developers e integradores**. Facturapi es una marca madura: docs largas, SDKs, multi-RFC y un precio por timbre más bajo **si** pagas la mensualidad. CFDI Express API es pay-as-you-go, saldo prepagado, convenciones estilo Stripe y un servidor MCP para agentes. También hay un skill (`npx skills add CFDI-Express/skills`) para que una IA integre el API en cualquier lado — Cursor, Claude Code y clientes compatibles. Ninguna “gana” en todos los renglones.
 
 Si lo que buscas es **app de Shopify** (checkout, POS, Flow), ese duelo es otro: [Facturama vs CFDI Express](/blog/facturama-vs-cfdi-express). Aquí nos quedamos en **API**.
 
@@ -32,7 +32,8 @@ Cifras de sitios públicos, **septiembre 2026**. Donde hay precio, lo marcamos c
 | **MCP / agentes** | No anuncian servidor MCP en su material público (septiembre 2026). | Sí: [https://api.cfdi.express/mcp](https://api.cfdi.express/mcp) (OAuth en claude.ai/ChatGPT; API key en Cursor/Claude Code). |
 | **Nómina** | Documentada en su API (`type: "N"` + complemento nómina). | `POST /v1/nominas` (CFDI 4.0 + Nómina 1.2). Guía: [Facturas de nómina](/blog/facturas-de-nomina-cfdi-express-api). |
 | **Carta Porte** | La marcan en home (“CFDI 4.0 y Carta Porte”) y documentan el complemento `carta_porte`. | **No la anunciamos** en la [landing de la API](https://cfdi.express/api) ni en este sitio (septiembre 2026). No la damos por hecha. |
-| **Docs / SDK** | Docs en [docs.facturapi.io](https://docs.facturapi.io). SDKs que ellos comercializan: Node, .NET, PHP (también ejemplos Java / cURL). | [Docs interactivas Scalar](https://api.cfdi.express/docs) + OpenAPI. Skill `npx skills add CFDI-Express/skills`. REST con `curl`; no publicamos SDKs oficiales por lenguaje. |
+| **Docs / SDK** | Docs en [docs.facturapi.io](https://docs.facturapi.io). SDKs que ellos comercializan: Node, .NET, PHP (también ejemplos Java / cURL). | [Docs interactivas Scalar](https://api.cfdi.express/docs) + OpenAPI. REST con `curl`; no publicamos SDKs oficiales por lenguaje. |
+| **Skill / integración con IA** | No anuncian un skill público (septiembre 2026). | `npx skills add CFDI-Express/skills`. La IA integra el API en tu stack. |
 
 Facturapi no es “solo la API”: en el mismo sitio venden **Facturación Web**, **E-Receipts + autofactura** y **Descarga masiva SAT**, a menudo **por organización**. Ese ecosistema no es el precio “API-only”. No mezcles esas líneas al cotizar.
 
@@ -63,12 +64,17 @@ Si tu equipo ya conoce sus SDKs, necesitas **Carta Porte documentada**, o tu vol
 
 ## Fortalezas de CFDI Express API
 
-**Respuesta corta:** **$0 de mensualidad** en el producto API, saldo prepagado, DX estilo Stripe, webhooks, nómina, multi-merchant/CSD, y **MCP** para que un agente timbre. Si además vendes en Shopify, hay app hermana — otro SKU.
+**Respuesta corta:** **$0 de mensualidad** en el producto API, saldo prepagado, DX estilo Stripe, un **skill** para que la IA integre el API, webhooks, nómina, multi-merchant/CSD, y **MCP** para que un agente timbre. Si además vendes en Shopify, hay app hermana — otro SKU.
 
 La misma infraestructura que timbra las tiendas Shopify de CFDI Express está expuesta como API pública. El anuncio está en [Lanzamos CFDI Express API](/blog/lanzamiento-cfdi-express-api).
 
+### Skill: la IA integra el API
+
+Las docs y los SDKs son la experiencia de desarrollador clásica. Facturapi las tiene excelentes — Node, .NET, PHP — y un equipo que prefiere leer endpoints sigue bien servido ahí. El skill de CFDI Express es otro camino, y lo vemos como una ventaja grande: con `npx skills add CFDI-Express/skills` un agente en Cursor, Claude Code u otro cliente compatible integra el API en tu stack, sin que tú recorras cada endpoint. Tú describes el flujo; la IA arma la integración.
+
 Lo que publicamos (landing + este blog, septiembre 2026):
 
+- **Skill de agente:** `npx skills add CFDI-Express/skills`. La IA integra el API en tu stack (Cursor, Claude Code y clientes compatibles).
 - **~$1 MXN por timbre**, recargas de **$100 a $50,000 MXN** con tarjeta (Stripe). Sin mínimos ni contrato del producto API.
 - Sandbox ilimitado con `sk_test_`. Producción con `sk_live_`.
 - Idempotencia (`Idempotency-Key`), errores `problem+json`, docs Scalar.
@@ -76,10 +82,10 @@ Lo que publicamos (landing + este blog, septiembre 2026):
 - [Webhooks de salida](/blog/webhooks-cfdi-express-api) (`CFDI-Signature`, `whsec_…`).
 - [Nómina 1.2](/blog/facturas-de-nomina-cfdi-express-api) por `POST /v1/nominas`.
 - Varios emisores por cuenta; CSD validado (vigencia, llave↔cert, RFC) y cifrado AES-256-GCM. No inventamos un límite de merchants.
-- **MCP** en `https://api.cfdi.express/mcp` (y `/mcp/test` contra sandbox). Factura, pago y nómina en lenguaje natural.
+- **MCP** en `https://api.cfdi.express/mcp` (y `/mcp/test` contra sandbox). Factura, pago y nómina en lenguaje natural. El skill integra; el MCP opera.
 - Confiabilidad que sí medimos y publicamos: **35 timbres concurrentes** sin dobles timbres, **p95 1.57 s**, reembolso automático si el SAT rechaza.
 
-Si tu volumen es bajo o irregular, **no quieres $299 fijos** aunque un mes no timbres, o quieres pegar Claude/ChatGPT/Cursor al SAT, este es el hueco que cubrimos. No es “Facturapi pero más barato siempre”: es **otro modelo** (prepago + MCP + $0 fijo).
+Si tu volumen es bajo o irregular, **no quieres $299 fijos** aunque un mes no timbres, o quieres que un agente integre el API (skill) y timbre por MCP, este es el hueco que cubrimos. No es “Facturapi pero más barato siempre”: es **otro modelo** (prepago + skill + MCP + $0 fijo). Las docs y SDKs de Facturapi siguen siendo una opción seria si tu equipo prefiere integrar a mano.
 
 ## Escenarios de precio (ilustrativos)
 
@@ -111,7 +117,7 @@ Lectura honesta:
 
 ## ¿Cuándo elegir Facturapi y cuándo CFDI Express API?
 
-**Respuesta corta:** Facturapi si quieres docs/SDK maduros, Carta Porte publicada, dashboard de su ecosistema o el $0.60 a volumen con mensualidad. CFDI Express API si quieres **$0 fijo**, prepago, MCP o el mismo stack que la app de Shopify.
+**Respuesta corta:** Facturapi si quieres docs/SDK maduros, Carta Porte publicada, dashboard de su ecosistema o el $0.60 a volumen con mensualidad. CFDI Express API si quieres **$0 fijo**, prepago, el camino nativo para IA (skill + MCP) o el mismo stack que la app de Shopify.
 
 ### Elige Facturapi si…
 
@@ -125,7 +131,7 @@ Lectura honesta:
 
 - Quieres **sin mensualidad** del producto API y pagar solo lo que timbras.
 - El volumen es **bajo, irregular o de arranque** (los ~$299 fijos no caben en el modelo).
-- Vas a facturar desde un **agente** (Claude, ChatGPT, Cursor): [MCP](https://api.cfdi.express/mcp).
+- Quieres el camino **nativo para IA**: el skill `npx skills add CFDI-Express/skills` para que un agente integre el API en tu stack, y [MCP](https://api.cfdi.express/mcp) para facturar desde Claude, ChatGPT o Cursor.
 - Quieres DX **estilo Stripe** (`sk_test_` / `sk_live_`, idempotencia, Scalar) y webhooks de factura / pago / nómina.
 - También operas (o vas a operar) **Shopify**: la [app](https://apps.shopify.com/cfdi-express) es hermana, **otro precio**; la API unifica el timbrado fuera de la tienda.
 - Carta Porte **no** está en tu alcance (nosotros no la publicamos aún).
@@ -160,7 +166,7 @@ Sí en los dos, con matices. Facturapi: modo test y prueba de **14 días** sin t
 
 ### ¿Puedo conectar un agente de IA?
 
-En CFDI Express API, sí: [MCP](https://api.cfdi.express/mcp). Facturapi, en septiembre 2026, **no** anuncia MCP en su material público; su camino publicado es REST + SDK.
+En CFDI Express API, sí: [MCP](https://api.cfdi.express/mcp) para operar, y el skill `npx skills add CFDI-Express/skills` para que la IA integre el API en tu stack (Cursor, Claude Code, etc.). Facturapi, en septiembre 2026, **no** anuncia MCP ni un skill público; su camino publicado es REST + SDK.
 
 ### ¿Y si también vendo en Shopify?
 
@@ -216,7 +222,7 @@ App de CFDI Express para la tienda; API para el resto de canales. Precios distin
       "name": "¿Puedo conectar un agente de IA a la API?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En CFDI Express API sí, con el servidor MCP en https://api.cfdi.express/mcp. Facturapi no anuncia un servidor MCP en su material público a septiembre 2026; su integración publicada es REST y SDKs."
+        "text": "En CFDI Express API sí: servidor MCP en https://api.cfdi.express/mcp para operar, y el skill npx skills add CFDI-Express/skills para que la IA integre el API en tu stack (Cursor, Claude Code y clientes compatibles). Facturapi no anuncia MCP ni un skill público a septiembre 2026; su integración publicada es REST y SDKs."
       }
     }
   ]

@@ -52,7 +52,7 @@ Si el sitio solo usa el `image` del frontmatter para OG, está bien: el hero ya 
 
 > Si tu SaaS, ERP o marketplace tiene que **timbrar CFDI 4.0**, no estás eligiendo una app de Shopify. Estás eligiendo una **API REST**.
 >
-> Publicamos un comparativo justo: **Facturapi vs CFDI Express API**. Facturapi es una marca madura — docs, SDKs (Node, .NET, PHP), multi-RFC, Carta Porte documentada — y su pricing público (septiembre 2026) anda en **~$299 MXN/mes + ~$0.60 MXN por timbre**. CFDI Express API es **~$1 MXN por timbre**, saldo prepagado, **sin mensualidad** del producto API, webhooks, nómina y servidor **MCP** para agentes.
+> Publicamos un comparativo justo: **Facturapi vs CFDI Express API**. Facturapi es una marca madura — docs, SDKs (Node, .NET, PHP), multi-RFC, Carta Porte documentada — y su pricing público (septiembre 2026) anda en **~$299 MXN/mes + ~$0.60 MXN por timbre**. CFDI Express API es **~$1 MXN por timbre**, saldo prepagado, **sin mensualidad** del producto API, webhooks, nómina, servidor **MCP** para agentes y el skill `npx skills add CFDI-Express/skills` para que la IA integre el API en tu stack.
 >
 > Cuenta ilustrativa (lista, sin descuentos): a 100 timbres/mes gana el prepago; a 2,000, si pagas la mensualidad, gana el $0.60. El cruce está cerca de **750 timbres/mes**. **No somos siempre más baratos.**
 >
