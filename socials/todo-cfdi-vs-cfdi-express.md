@@ -19,21 +19,26 @@ Recursos oficiales para enlazar:
 
 ## Cómo usar este pack
 
-1. **Diego todavía no sube el arte.** Este post se abrió sin `image:` de CDN a propósito: no hay UUID inventado. Genera hero y OG con los prompts de abajo (estilo Pixar, humano, hoodie teal) y súbelos a `videos.acromatico.dev`.
-2. Medidas: **hero 1600×900** (frontmatter `image:` y cuerpo) y **OG 1200×630**. Paleta: teal `#055D5E`, acento dorado `#FFD700`, gris `#D7D7D7`.
-3. Al subir, actualiza el frontmatter `image:` (URL sin query) y sustituye el comentario `<!-- HERO: Diego Pixar hoodie-teal; update frontmatter image + ![] after CDN -->` por el `![]()` del hero, como en Facturama y Facturapi.
-4. Publica con el **Texto** sugerido. El CTA principal, para quien tiene tienda, es **instalar la app**. El portal de Todo CFDI se menciona con respeto y con link a su sitio, no como ataque. La API va como mención corta.
-5. Es un comparativo **justo**: no insultes a Captura Digital, no inventes precios, no digas que CFDI Express es “siempre más barata”. Califica “según páginas públicas, 23 de septiembre de 2026”.
-6. No publiques el link del blog hasta que el post esté en `https://cfdi.express/blog/todo-cfdi-vs-cfdi-express` (después del merge). **No merges hasta que Rafael revise y el hero/OG estén en el CDN.**
+1. **No regeneres el hero.** Diego ya subió el arte. Usa las URLs de abajo (HTTPS, **sin query**).
+2. El `image` del frontmatter es el **hero 1600×900** (mismo patrón que el post de webhooks). El recorte **OG 1200×630** es para redes y para un `og:image` aparte, si el CMS lo tiene. Si no hay campo OG, el hero del frontmatter es el que ya lleva el post.
+3. Publica con el **Texto** sugerido. El CTA principal, para quien tiene tienda, es **instalar la app**. El portal de Todo CFDI se menciona con respeto y con link a su sitio, no como ataque. La API va como mención corta.
+4. Es un comparativo **justo**: no insultes a Captura Digital, no inventes precios, no digas que CFDI Express es “siempre más barata”. Califica “según páginas públicas, 23 de septiembre de 2026”.
+5. No publiques el link del blog hasta que el post esté en `https://cfdi.express/blog/todo-cfdi-vs-cfdi-express` (después del merge). **No mergear hasta que Rafael revise.**
 
 ---
 
-## Brief para Diego (hero + OG)
+## Imagen hero del blog
 
-| Uso | Medida | Estado |
+**Ya publicada (usar esta, no generar otra).** Copy en artes: «Todo CFDI vs CFDI Express» / «¿Portal de timbres o app de Shopify?». Slug: `todo-cfdi-vs-cfdi-express`.
+
+| Uso | Medida | URL (sin query) |
 | --- | --- | --- |
-| Hero / `image` del frontmatter | 1600×900 | Pendiente de CDN. Al subir, pegar la URL en `pages/todo-cfdi-vs-cfdi-express.md`. |
-| OG / compartir (`og:image`, Meta / LinkedIn) | 1200×630 | Pendiente de CDN. Documentar la URL aquí, en la fila de cada red. |
+| Hero / `image` del frontmatter | 1600×900 | https://videos.acromatico.dev/api/images/assets/50fbed95-9333-4e03-8410-0a395a930d19.png |
+| OG / compartir (`og:image`, Meta / LinkedIn) | 1200×630 | https://videos.acromatico.dev/api/images/assets/e1d2ec84-510a-4413-a9f7-7387e202a8a3.png |
+
+El frontmatter `image` usa el hero, sin query, igual que en el post de webhooks. El OG queda para los packs de redes y para usarlo después si el sitio separa `og:image`.
+
+Si el sitio solo usa el `image` del frontmatter para OG, está bien: el hero ya está en el post. El recorte 1200×630 sigue documentado aquí para compartir en Meta y LinkedIn.
 
 Copy en el arte, ortografía exacta:
 - Título: «Todo CFDI vs CFDI Express»
@@ -41,7 +46,7 @@ Copy en el arte, ortografía exacta:
 
 Personaje: humano estilo Pixar (no foto, no stock), hoodie oversized teal `#055D5E`. Sin logos de Captura Digital, Todo CFDI, Shopify ni de otras marcas.
 
-**Prompt Gemini — hero 1600×900:**
+**Prompt Gemini (solo si hubiera que rehacer una variante; el arte oficial es el de Diego) — hero 1600×900:**
 
 > Ilustración 3D estilo Pixar / personaje humano amigable (no foto real, no stock) para el hero de un blog B2B de facturación en México. Personaje: comerciante mexicano de unos 34 años, piel morena clara, cabello corto oscuro, hoodie oversized color teal oscuro #055D5E con un pequeño recibo bordado en el pecho. Está de tres cuartos, sonrisa confiada, con una factura blanca en una mano (sello circular dorado #FFD700) y un mostrador de tienda muy simple al fondo, como si comparara un portal de timbres con una app de tienda. No uses logos de marcas ajenas (nada de Captura Digital, Todo CFDI, Shopify, SAT ni App Store). Fondo estudio suave en teal #055D5E, acentos dorados #FFD700, gris #D7D7D7. Texto grande en tipografía Racing Sans One, blanco, ortografía exacta: «Todo CFDI vs CFDI Express». Subtítulo en Quicksand, acento dorado: «¿Portal de timbres o app de Shopify?». Iluminación cinematográfica, alto contraste, sin fotografías.
 
@@ -52,14 +57,6 @@ Personaje: humano estilo Pixar (no foto, no stock), hoodie oversized teal `#055D
 > Imagen horizontal 1200×630 (1.91:1) estilo Pixar / humano para Open Graph. El mismo comerciante con hoodie oversized teal #055D5E, una factura blanca con sello dorado #FFD700. Fondo teal oscuro #055D5E. Texto exacto en Racing Sans One, blanco: «Todo CFDI vs CFDI Express». Subtítulo en Quicksand, dorado #FFD700: «¿Portal de timbres o app de Shopify?». Sin fotos de stock, sin logos de otras marcas. Alto contraste, profesional. Deja aire para que el título no se corte en el recorte de LinkedIn.
 
 **Aspecto:** 1200×630 (1.91:1).
-
----
-
-## Imagen hero del blog
-
-Pendiente. Cuando Diego publique, reemplaza esta nota con la URL sin query y úsala también en el frontmatter.
-
-**Prompt:** el del brief de arriba (hero 1600×900).
 
 ---
 
@@ -83,9 +80,10 @@ Pendiente. Cuando Diego publique, reemplaza esta nota con la URL sin query y ús
 
 ### Media
 
-**Usar (cuando exista):** OG 1200×630 de Diego. Hoy: generar con el prompt del brief.
+**Usar:** recorte OG de Diego (1200×630)
+https://videos.acromatico.dev/api/images/assets/e1d2ec84-510a-4413-a9f7-7387e202a8a3.png
 
-**Prompt Gemini (variante LinkedIn, 1200×627):**
+**Prompt Gemini (variante, solo si se necesita otra toma):**
 
 > Imagen horizontal 1200×627 (1.91:1) estilo Pixar / humano para LinkedIn B2B. Comerciante con hoodie oversized teal #055D5E, factura blanca, sello dorado #FFD700. Fondo teal oscuro #055D5E. Texto exacto en Racing Sans One / Quicksand, blanco y dorado: «Todo CFDI vs CFDI Express» y «¿Portal de timbres o app de Shopify?». Sin fotos de stock, sin logos de otras marcas. Alto contraste, profesional.
 
@@ -112,9 +110,10 @@ Pendiente. Cuando Diego publique, reemplaza esta nota con la URL sin query y ús
 
 ### Media
 
-**Usar (cuando exista):** hero 1600×900.
+**Usar:** hero 1600×900
+https://videos.acromatico.dev/api/images/assets/50fbed95-9333-4e03-8410-0a395a930d19.png
 
-**Prompt Gemini (variante):**
+**Prompt Gemini (variante, solo si se necesita otra toma):**
 
 > Imagen 1600×900 (16:9) para X, estilo Pixar / humano. Close-up del comerciante con hoodie teal #055D5E, factura blanca, sello dorado #FFD700. Fondo teal #055D5E. Texto exacto Racing Sans One: «Todo CFDI vs CFDI Express». Texto menor Quicksand: «¿Portal de timbres o app de Shopify?». Sin fotos, sin logos ajenos.
 
@@ -140,9 +139,10 @@ Pendiente. Cuando Diego publique, reemplaza esta nota con la URL sin query y ús
 
 ### Media
 
-**Usar (cuando exista):** OG 1200×630.
+**Usar:** recorte OG 1200×630
+https://videos.acromatico.dev/api/images/assets/e1d2ec84-510a-4413-a9f7-7387e202a8a3.png
 
-**Prompt Gemini (variante):**
+**Prompt Gemini (variante, solo si se necesita otra toma):**
 
 > Imagen 1200×630 (1.91:1) para Facebook. Ilustración 3D estilo Pixar: comerciante de hoodie teal #055D5E comparando una factura con sello dorado #FFD700. Texto exacto: «Todo CFDI vs CFDI Express» / «¿Portal de timbres o app de Shopify?». Fondo teal #055D5E. Sin fotos reales, sin logos de terceros.
 
@@ -170,13 +170,18 @@ Pendiente. Cuando Diego publique, reemplaza esta nota con la URL sin query y ús
 
 ### Media (feed cuadrado)
 
-No hay recorte 1080×1080. Cuando exista el OG, úsalo o recorta el hero. Mientras, generar:
+No hay recorte 1080×1080 en CDN. **Usar el OG 1200×630** (o recortar el hero al cuadrado):
+https://videos.acromatico.dev/api/images/assets/e1d2ec84-510a-4413-a9f7-7387e202a8a3.png
+
+**Prompt Gemini (variante, solo si se necesita un 1:1):**
 
 > Imagen cuadrada 1080×1080 estilo Pixar / humano para feed. El comerciante con hoodie teal #055D5E al centro, factura blanca y sello dorado #FFD700. Fondo teal oscuro #055D5E. Texto grande blanco, Racing Sans One, exacto: «Todo CFDI vs CFDI Express». Texto menor Quicksand: «¿Portal de timbres o app de Shopify?». Alto contraste, sin fotos de stock, sin logos de otras marcas, sin hashtags pintados en la imagen.
 
 **Aspecto:** 1080×1080 (1:1).
 
 ### Media (historia opcional)
+
+**Usar el OG** y enmarcar en 1080×1920 con fondo #055D5E, o generar:
 
 > Historia vertical 1080×1920, estilo Pixar. Fondo teal #055D5E con halo dorado #FFD700. Arriba: wordmark CFDI Express. Centro: comerciante de hoodie teal con una factura. Texto grande exacto: «Todo CFDI vs CFDI Express». Texto menor: «¿Portal de timbres o app de Shopify?». CTA: «Lee el comparativo». Deja el tercio superior e inferior limpios para la UI de Instagram. Sin fotos reales, sin logos ajenos.
 
@@ -186,9 +191,8 @@ No hay recorte 1080×1080. Cuando exista el OG, úsalo o recorta el hero. Mientr
 
 ## Checklist de publicación
 
-- [ ] Diego genera hero **1600×900** y OG **1200×630** (Pixar, humano, hoodie teal `#055D5E`).
-- [ ] Subir al CDN y poner la URL **sin query** en `image:` del frontmatter.
-- [ ] Sustituir el comentario HERO del cuerpo por `![]()`.
+- [x] Diego subió hero 1600×900 y OG 1200×630 a `videos.acromatico.dev`. Frontmatter `image:` = hero **sin query**. El OG queda para redes / `og:image` opcional.
+- [ ] Usar las URLs de Diego (hero / OG), **sin query string**.
 - [ ] Rafael revisa el post antes del merge. **No mergear:** en este repo el merge publica en vivo.
 - [ ] No publicar el URL del blog hasta `https://cfdi.express/blog/todo-cfdi-vs-cfdi-express`.
 - [ ] CTA principal para tiendas = App Store. Portal de Captura Digital citado con link, sin descalificar. API solo como producto aparte.
