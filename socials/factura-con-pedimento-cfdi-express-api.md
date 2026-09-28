@@ -8,6 +8,8 @@ Recursos oficiales para enlazar:
 - Docs interactivas: https://api.cfdi.express/docs
 - OpenAPI en vivo: https://api.cfdi.express/openapi.json
 - Dashboard (llaves `sk_test_` / `sk_live_`): https://dash.cfdi.express
+- MCP (agentes de IA): https://api.cfdi.express/mcp
+- Agente (sin código): https://cfdi.express/agente
 - Anexo 20 (RMF 2022, PDF): http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo20_2022.pdf
 - Post relacionado (datos fiscales del receptor): https://cfdi.express/blog/cfdi-facturas-4-0
 - Post relacionado (lanzamiento de la API): https://cfdi.express/blog/lanzamiento-cfdi-express-api
@@ -20,7 +22,7 @@ Recursos oficiales para enlazar:
 1. **No regeneres el hero.** Diego ya subió el arte. Usa las URLs de abajo (HTTPS, **sin query**).
 2. El `image` del frontmatter es el **hero 1600×900**. El recorte **OG 1200×630** es para redes y para un `og:image` aparte, si el CMS lo tiene. Si no hay campo OG, el hero del frontmatter es el que ya lleva el post.
 3. Publica con el **Texto** sugerido. El CTA principal es **docs + dashboard**. Este anuncio es de la **API pública** (`items[].pedimentos` en facturas y notas de crédito), no de la app de Shopify.
-4. El pedimento va en el **concepto**, en venta de **primera mano** de mercancía importada. No digas que toda factura de importación lo lleva, ni que el MCP lo arma: el servidor MCP no expone el campo.
+4. El pedimento va en el **concepto**, en venta de **primera mano** de mercancía importada. No digas que toda factura de importación lo lleva. El MCP **sí** lo acepta, con el mismo `items[].pedimentos`, en `create_invoice` y `create_credit_note`.
 5. Pide **datos fiscales** (RFC, nombre o razón social, régimen y CP). No pidas el PDF de la Constancia de Situación Fiscal.
 6. No publiques el link del blog hasta que el post esté en `https://cfdi.express/blog/factura-con-pedimento-cfdi-express-api` (después del merge). **No mergear hasta que Rafael revise.**
 
@@ -67,15 +69,16 @@ Personaje: humano estilo Pixar (no foto, no stock), playera blanca y overshirt v
 >
 > En CFDI Express API el campo es `items[].pedimentos`, opcional, en `POST /v1/invoices` y en `POST /v1/credit_notes`. Acepta el número con o sin espacios (de 1 a 100 por concepto) y lo emite en la forma del SAT. Los duplicados se descartan. La aduana, la patente y el consecutivo siguen siendo validación del SAT: la API publica el patrón, no esos catálogos.
 >
-> Una reventa no lleva pedimento solo porque el producto algún día se importó. Y el servidor MCP no expone este campo: va en el JSON del REST.
+> Una reventa no lleva pedimento solo porque el producto algún día se importó. El mismo campo está en el MCP: `create_invoice` y `create_credit_note`. Puedes decirle al agente: «Factura 2 laptops importadas a `<cliente>` con el pedimento 25 47 3807 5001234». El número es el ejemplo de la spec; `<cliente>` es un hueco para los datos fiscales reales.
 >
 > Del receptor, pide datos fiscales (RFC, nombre o razón social, régimen y CP).
 >
 > Guía: https://cfdi.express/blog/factura-con-pedimento-cfdi-express-api
 > Docs: https://api.cfdi.express/docs
 > Sandbox: https://dash.cfdi.express
+> MCP: https://api.cfdi.express/mcp
 >
-> #CFDI #FacturacionElectronica #SAT #CFDIExpress #Pedimento #Importacion #CFDI40 #API #ComercioExterior
+> #CFDI #FacturacionElectronica #SAT #CFDIExpress #Pedimento #Importacion #CFDI40 #API #MCP #ComercioExterior
 
 ### Media
 
@@ -106,8 +109,9 @@ https://videos.acromatico.dev/api/images/assets/77e7112a-a6bd-4763-8e00-76293fb3
 1. InformacionAduanera es opcional en el concepto. El Anexo 20 la describe para la venta de primera mano de mercancía importada. Si el nodo va, NumeroPedimento es obligatorio. En una reventa, no corresponde.
 2. Formato: 2 (año de validación) + 2 (aduana) + 4 (patente) + 7 (último dígito del año en curso, con las salvedades del anexo, y 6 de folio progresivo). Entre grupos, dos espacios. Longitud 21.
 3. Errores de siempre: un solo espacio en el XML (18 caracteres), guiones, dígitos de menos, o poner el pedimento a nivel factura. En la API, con o sin espacios se acepta; el XML sale con los dos espacios. Guiones o longitud mala → 400.
-4. POST /v1/invoices y POST /v1/credit_notes. Campo opcional items[].pedimentos, 1 a 100 por concepto, duplicados se descartan. Idempotency-Key obligatoria. El MCP no trae este campo.
-5. La API no consulta c_Aduana ni c_PatenteAduanal. Eso lo valida el SAT. Docs: https://api.cfdi.express/docs · llaves: https://dash.cfdi.express
+4. POST /v1/invoices y POST /v1/credit_notes, y las mismas herramientas del MCP: create_invoice y create_credit_note. Campo opcional items[].pedimentos, 1 a 100 por concepto, duplicados se descartan. Idempotency-Key obligatoria en el REST.
+5. Por chat: conecta https://api.cfdi.express/mcp y pide «Factura 2 laptops importadas a <cliente> con el pedimento 25 47 3807 5001234». El número es de ejemplo. <cliente> se llena con datos fiscales reales.
+6. El contrato publicado no incluye la consulta a c_Aduana ni a c_PatenteAduanal. Eso lo valida el SAT. Docs: https://api.cfdi.express/docs · llaves: https://dash.cfdi.express · MCP: https://api.cfdi.express/mcp
 
 ### Media
 
@@ -130,7 +134,7 @@ https://videos.acromatico.dev/api/images/assets/9b42be87-d026-4d28-a6fe-6f0f2c87
 >
 > En CFDI 4.0 el número va en el concepto (información aduanera), cuando vendes de primera mano mercancía que tú importaste. Son 15 dígitos escritos con dos espacios entre año, aduana, patente y consecutivo: 21 caracteres.
 >
-> Si timbras por API, el campo es items[].pedimentos. Lo puedes mandar con o sin espacios; CFDI Express lo deja en la forma del SAT. También en la nota de crédito.
+> Si timbras por API, el campo es items[].pedimentos. Lo puedes mandar con o sin espacios; CFDI Express lo deja en la forma del SAT. También en la nota de crédito. Y se lo puedes pedir a un agente: conecta el MCP (https://api.cfdi.express/mcp) y dile la factura con el pedimento de cada concepto.
 >
 > Pide datos fiscales (RFC, nombre, régimen y CP). La guía está aquí: https://cfdi.express/blog/factura-con-pedimento-cfdi-express-api
 >
@@ -161,17 +165,18 @@ https://videos.acromatico.dev/api/images/assets/77e7112a-a6bd-4763-8e00-76293fb3
 > Venta de primera mano de mercancía importada.
 > 15 dígitos. 21 caracteres. Dos espacios entre grupos.
 >
-> En la API:
+> En la API y en el MCP:
 > items[].pedimentos
-> POST /v1/invoices y notas de crédito
+> POST /v1/invoices, notas de crédito, create_invoice y create_credit_note
 > Con o sin espacios. Hasta 100 por concepto.
+> También se lo pides a Claude, ChatGPT o Cursor.
 >
 > Pide datos fiscales (RFC, nombre, régimen y CP).
 >
 > Guía en bio → cfdi.express/blog/factura-con-pedimento-cfdi-express-api
 > Docs: api.cfdi.express/docs
 >
-> #CFDI #CFDI40 #FacturacionElectronica #SAT #CFDIExpress #Pedimento #Importacion #ComercioExterior #Aduana #NumeroPedimento #InformacionAduanera #FacturaElectronica #API #Mexico #PyME #Importadores #Anexo20 #Factura40 #DesarrolloDeSoftware #ERP #Integraciones #SATMexico #Logistica #ComercioInternacional #PrimeraMano
+> #CFDI #CFDI40 #FacturacionElectronica #SAT #CFDIExpress #Pedimento #Importacion #ComercioExterior #Aduana #NumeroPedimento #InformacionAduanera #FacturaElectronica #API #MCP #Mexico #PyME #Importadores #Anexo20 #Factura40 #DesarrolloDeSoftware #ERP #Integraciones #SATMexico #Logistica #ComercioInternacional #PrimeraMano #AgenteIA
 
 ### Media (feed cuadrado)
 
@@ -200,7 +205,7 @@ https://videos.acromatico.dev/api/images/assets/77e7112a-a6bd-4763-8e00-76293fb3
 - [ ] Usar las URLs de Diego (hero / OG), **sin query string**.
 - [ ] Rafael revisa el post antes del merge. **No mergear:** en este repo el merge publica en vivo.
 - [ ] No publicar el URL del blog hasta `https://cfdi.express/blog/factura-con-pedimento-cfdi-express-api`.
-- [ ] CTA principal = docs + dashboard. No empujar la app de Shopify ni decir que el MCP timbra pedimentos.
+- [ ] CTA principal = docs + dashboard. La app de Shopify no es el anuncio. El MCP sí timbra pedimentos: `create_invoice` y `create_credit_note` con `items[].pedimentos`. El ejemplo «2 laptops… `<cliente>`» usa el pedimento de la spec, no un cliente real.
 - [ ] Datos fiscales (RFC, nombre, régimen, CP). No pedir el PDF de la Constancia de Situación Fiscal.
 - [ ] Cifras alineadas al post: 15 dígitos, 21 caracteres, dos espacios, 1–100 por concepto, patrón del OpenAPI, $1 MXN por timbre solo como precio publicado de la API (no hay tarifa aparte para pedimento).
 - [ ] Sin códigos de error del SAT inventados. El 400 y el 422 son los de la spec (validación / rechazo SAT o reuso de Idempotency-Key).

@@ -1,10 +1,10 @@
 ---
 title: "Factura con pedimento en CFDI 4.0: cuándo va y cómo emitirla por API"
-description: "Número de pedimento en CFDI 4.0: cuándo va la información aduanera en una venta de primera mano y cómo mandarla en items[].pedimentos."
+description: "Número de pedimento en CFDI 4.0: cuándo va la información aduanera en una venta de primera mano y cómo mandarla por API o por MCP."
 image: "https://videos.acromatico.dev/api/images/assets/9b42be87-d026-4d28-a6fe-6f0f2c878dec.png"
 author: "Rafael González"
 date: "2026-09-27"
-keywords: "factura con pedimento, cómo facturar mercancía de importación, número de pedimento en CFDI 4.0, información aduanera CFDI, InformacionAduanera, NumeroPedimento, pedimento SAT, venta de primera mano, CFDI Express API"
+keywords: "factura con pedimento, cómo facturar mercancía de importación, número de pedimento en CFDI 4.0, información aduanera CFDI, InformacionAduanera, NumeroPedimento, pedimento SAT, venta de primera mano, CFDI Express API, MCP pedimento, agente IA CFDI"
 ---
 # Factura con pedimento en CFDI 4.0: cuándo va y cómo emitirla por API
 
@@ -12,7 +12,7 @@ keywords: "factura con pedimento, cómo facturar mercancía de importación, nú
 
 Si vendes mercancía importada y el cliente te pide **factura con pedimento**, el número no va en la cabecera del CFDI. Va en el concepto, nodo `InformacionAduanera`, atributo `NumeroPedimento`.
 
-Este post es para quien timbra con la [API de CFDI Express](https://cfdi.express/api): cuándo aplica, cómo se escriben los 21 caracteres que pide el SAT y el campo `items[].pedimentos` de `POST /v1/invoices` y `POST /v1/credit_notes`. Las reglas del comprobante salen del [Anexo 20 de la RMF 2022](http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo20_2022.pdf) (estándar CFDI 4.0). El contrato del campo sale del OpenAPI en vivo, `https://api.cfdi.express/openapi.json`.
+Este post es para quien timbra con la [API de CFDI Express](https://cfdi.express/api): cuándo aplica, cómo se escriben los 21 caracteres que pide el SAT y el campo `items[].pedimentos` de `POST /v1/invoices` y `POST /v1/credit_notes`. El mismo campo está en el [servidor MCP](https://api.cfdi.express/mcp), en `create_invoice` y `create_credit_note`. Las reglas del comprobante salen del [Anexo 20 de la RMF 2022](http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/Anexo20_2022.pdf) (estándar CFDI 4.0). El contrato del campo sale del OpenAPI en vivo, `https://api.cfdi.express/openapi.json`, y de las herramientas del MCP.
 
 Pide **datos fiscales** del receptor (RFC, nombre o razón social, régimen fiscal y código postal). Qué cruza el SAT contra el padrón está en [CFDI facturas 4.0](/blog/cfdi-facturas-4-0).
 
@@ -168,18 +168,32 @@ curl https://api.cfdi.express/v1/credit_notes \
 
 La API no documenta que copie sola los pedimentos de la factura original. Si el concepto de la nota debe llevarlos, van en su `items[]`.
 
-El campo está en ese REST. El servidor MCP no lo expone: un agente conectado a `https://api.cfdi.express/mcp` no arma el pedimento por ti.
+## También desde un agente de IA
+
+El mismo `items[].pedimentos` va por REST y por el [servidor MCP de CFDI Express](https://api.cfdi.express/mcp). `create_invoice` (incluye facturas globales) y `create_credit_note` lo aceptan con el contrato de la API: arreglo opcional, de 1 a 100 strings, 15 dígitos con o sin espacios, emitidos en 21 caracteres, un nodo por pedimento y duplicados descartados. La herramienta lo describe para la venta de primera mano de mercancía importada.
+
+Le hablas en español. El número de abajo es el ejemplo de la spec, y `<cliente>` es un hueco: el agente necesita los datos fiscales reales del receptor (RFC, nombre o razón social, régimen y código postal).
+
+```text
+Factura 2 laptops importadas a <cliente> con el pedimento 25 47 3807 5001234
+```
+
+- **claude.ai / ChatGPT:** OAuth en `https://api.cfdi.express/mcp`.
+- **Claude Code / Cursor:** la misma URL con tu API key (`sk_test_` o `sk_live_`).
+- **Sandbox:** `https://api.cfdi.express/mcp/test` timbra contra el SAT de pruebas, gratis.
+
+La [landing de la API](https://cfdi.express/api) y [cfdi.express/agente](https://cfdi.express/agente) tienen el setup.
 
 ## Qué valida la API y qué sigue en el SAT
 
-**Respuesta corta:** la API normaliza la forma. Que la aduana, la patente y el consecutivo existan, y que la venta sea de primera mano, lo cruza el SAT.
+**Respuesta corta:** la API y el MCP normalizan la forma con el mismo contrato. Que la aduana, la patente y el consecutivo existan, y que la venta sea de primera mano, lo cruza el SAT.
 
-| | API (`items[].pedimentos`) | SAT (Anexo 20) |
+| | API y MCP (`items[].pedimentos`) | SAT (Anexo 20) |
 | --- | --- | --- |
 | Forma | Patrón de 15 dígitos, con o sin espacios. Emite 21 caracteres y dos espacios entre grupos. | Longitud 21 y el patrón con dos espacios. |
 | Cuándo | Opcional. Si lo mandas, de 1 a 100 strings por concepto. | Nodo opcional. Si existe, `NumeroPedimento` es requerido. |
 | Repetidos | Los duplicados se descartan. | Un nodo de información aduanera por pedimento. |
-| Catálogos | El OpenAPI no documenta consulta a `c_Aduana`, `c_PatenteAduanal` ni `c_NumPedimentoAduana`. | Posiciones 5–6, 9–12 y los últimos 6 dígitos contra esos catálogos. |
+| Catálogos | El contrato publicado no documenta consulta a `c_Aduana`, `c_PatenteAduanal` ni `c_NumPedimentoAduana`. | Posiciones 5–6, 9–12 y los últimos 6 dígitos contra esos catálogos. |
 | Fondo de la operación | No decide si tu venta es de primera mano ni si el CFDI lleva complemento de comercio exterior. | El nodo va en la venta de primera mano nacional y no se registra si el CFDI trae ese complemento. |
 
 Un string que no cumple el patrón se queda en **400**. Un número con la forma correcta y una aduana o patente que el SAT no reconoce puede terminar en **422** («SAT rejection or idempotency key reuse»). Ese 422 también cubre reusar una `Idempotency-Key` con otro body: no leas todo 422 como “el pedimento está mal”. El OpenAPI no publica un código de error del SAT específico para `NumeroPedimento`.
@@ -208,12 +222,17 @@ Sí, en `POST /v1/credit_notes`, el mismo arreglo `items[].pedimentos`. Mándalo
 
 El campo es opcional. Un `POST /v1/invoices` que hoy no lo envía sigue igual. Lo agregas solo en el concepto que corresponda.
 
+### ¿Lo puedo pedir desde un agente, sin escribir el JSON?
+
+Sí. En el MCP, `create_invoice` y `create_credit_note` reciben el mismo `items[].pedimentos`. Una instrucción en español alcanza, con el pedimento de cada concepto y los datos fiscales del receptor. El ejemplo de arriba usa el número de la spec, no un pedimento real.
+
 ## Empieza hoy
 
 1. Abre las [docs interactivas](https://api.cfdi.express/docs) y prueba `POST /v1/invoices` con `sk_test_` y un `pedimentos` de ejemplo.
 2. Crea o entra a tu cuenta en [dash.cfdi.express](https://dash.cfdi.express).
 3. En producción, arma los 15 dígitos desde el pedimento real (año, aduana, patente, consecutivo) y déjale a la API los dos espacios.
-4. Si aún no tienes la API, el contexto está en [Lanzamos CFDI Express API](/blog/lanzamiento-cfdi-express-api) y en la [landing](https://cfdi.express/api).
+4. ¿Sin JSON? Conecta el [MCP](https://api.cfdi.express/mcp) y pide la factura con el pedimento en español.
+5. Si aún no tienes la API, el contexto está en [Lanzamos CFDI Express API](/blog/lanzamiento-cfdi-express-api) y en la [landing](https://cfdi.express/api).
 
 ¿Quieres ver el JSON en una llamada? [Agenda una demo](https://cal.com/team/acromatico-development/cfdi-express) o escribe a [hola@cfdi.express](mailto:hola@cfdi.express).
 
