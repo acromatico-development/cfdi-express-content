@@ -98,7 +98,7 @@ Copy propuesto para el arte nuevo, ortografía exacta:
 2. En CFDI Express: Productos → Configuración Producto → Pedimentos de importación. La variante se edita en Shopify, campo Pedimentos de importación.
 3. En la factura, la columna solo aparece si algún concepto ya trae pedimentos. No se agregan ahí por primera vez. El envío no lleva.
 4. Autofacturación, POS, Flow y factura global toman los del producto o la variante. La nota de crédito de la app no los incluye.
-5. Formato: 15 dígitos, se guardan como 21 caracteres con dos espacios. Máximo 100 por concepto. La app no valida que la aduana y la patente existan en el SAT; el SAT puede rechazar.
+5. Formato: 15 dígitos, se guardan como 21 caracteres con dos espacios. Máximo 100 por concepto. En el XML va como InformacionAduanera / NumeroPedimento y se imprime en el PDF. La app no valida que la aduana y la patente existan en el SAT; el SAT puede rechazar.
 6. Guía: https://cfdi.express/docs/pedimentos-de-importacion · App: https://apps.shopify.com/cfdi-express · Si timbras por API: https://cfdi.express/blog/factura-con-pedimento-cfdi-express-api
 
 ### Media
@@ -192,7 +192,7 @@ https://videos.acromatico.dev/api/images/assets/9b42be87-d026-4d28-a6fe-6f0f2c87
 - [ ] CTA = docs + instalar la app. La API queda como enlace aparte.
 - [ ] Datos fiscales (RFC, nombre, régimen, CP). No pedir el PDF de la Constancia de Situación Fiscal.
 - [ ] Cifras alineadas al post: 15 dígitos, 21 caracteres, dos espacios, máximo 100, una sola lista (factura si cambió, si no variante, si no producto). La columna de la factura no aparece si nadie tiene pedimentos. La nota de crédito de la app no lleva pedimento.
-- [ ] Sin decir que el PDF imprime el pedimento.
+- [ ] El pedimento va en el XML (`InformacionAduanera` / `NumeroPedimento`) y se imprime en el PDF de la factura.
 - [ ] Ortografía del arte nuevo: «Factura con pedimento» / «En tu tienda Shopify».
 - [ ] Sin logos del SAT ni de terceros en las imágenes.
 - [ ] LinkedIn y Facebook primero; X al mediodía; Instagram por la tarde.

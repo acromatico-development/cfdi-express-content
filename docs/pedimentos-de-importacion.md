@@ -79,7 +79,7 @@ La barra de esa pantalla dice **Facturar** y **Descartar**. El resto del flujo e
 
 Un artículo sin producto ni variante solo puede llevar pedimento si la columna ya está visible y lo escribes en esa fila.
 
-La factura toma hasta 50 líneas de la orden. Una línea reembolsada o en cero pesos no se factura, así que tampoco lleva pedimento.
+Una línea reembolsada o en cero pesos no se factura, así que tampoco lleva pedimento.
 
 ## Carga masiva (CSV)
 
@@ -146,7 +146,7 @@ Si un valor guardado no es un pedimento válido, al armar la factura ese valor s
 
 La app manda los pedimentos del concepto. En el XML, cada uno queda en el concepto como información aduanera: nodo `InformacionAduanera`, atributo `NumeroPedimento`, en los 21 caracteres. Hay un nodo por pedimento.
 
-Esta guía no describe el PDF. El número que aquí se documenta es el del XML.
+Ese mismo número se imprime en el PDF de la factura.
 
 ## Preguntas frecuentes
 

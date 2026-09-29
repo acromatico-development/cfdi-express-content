@@ -15,7 +15,7 @@ keywords: "factura con pedimento Shopify, cómo poner número de pedimento en fa
 
 Si un cliente te pide **factura con pedimento** y vendes en Shopify, el número no se captura en la cabecera del CFDI. Va en el producto importado, y de ahí sale en cada concepto de la factura.
 
-Esta guía es para la app de Shopify [CFDI Express](https://apps.shopify.com/cfdi-express): en qué pantalla se escribe, cuándo gana la variante y qué ves en el XML. El paso a paso largo está en [Pedimentos de importación](/docs/pedimentos-de-importacion).
+Esta guía es para la app de Shopify [CFDI Express](https://apps.shopify.com/cfdi-express): en qué pantalla se escribe, cuándo gana la variante y qué ves en el XML y en el PDF. El paso a paso largo está en [Pedimentos de importación](/docs/pedimentos-de-importacion).
 
 Si no ves el bloque **Pedimentos de importación** en el producto, actualiza la app. El campo solo aparece cuando el proveedor de facturación es CFDI Express. Si la tienda sigue en Facturama, no se muestra. No está atado a un plan.
 
@@ -103,13 +103,13 @@ La app no consulta los catálogos de aduana y patente del SAT. Si el SAT rechaza
 
 ## Qué queda en el CFDI
 
-**Respuesta corta:** en el XML, dentro del concepto, como información aduanera.
+**Respuesta corta:** en el XML del concepto, como información aduanera, y también en el PDF de la factura.
 
-Cada pedimento es un nodo `InformacionAduanera` con `NumeroPedimento` de 21 caracteres. Esta guía habla del XML. No describe si el PDF lo imprime.
+Cada pedimento es un nodo `InformacionAduanera` con `NumeroPedimento` de 21 caracteres. Ese mismo número se imprime en el PDF.
 
 La [nota de crédito de la app](/docs/notas-de-credito) no lleva pedimento. Ni desde la orden ni con la acción de Flow **Crear Nota de Crédito**. Esa nota va en un solo concepto genérico (clave `84111506`, unidad `ACT`).
 
-La factura considera hasta 50 líneas de la orden. Una línea reembolsada o en ceros no se factura.
+Una línea reembolsada o en ceros no se factura, así que tampoco lleva pedimento.
 
 ## Preguntas frecuentes
 
