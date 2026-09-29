@@ -14,7 +14,7 @@ Recursos oficiales para enlazar:
 
 ## Cómo usar este pack
 
-1. **Hero y OG son temporales.** Usan la misma URL del post `factura-con-pedimento-cfdi-express-api`, sin query. Ese arte dice «CFDI 4.0 por API». No lo publiques como pieza final de comerciantes: el diseñador hará una imagen propia. Los prompts de abajo son para esa pieza.
+1. **Usa el arte publicado.** No lo regeneres. El `image` del frontmatter es el hero 1600×900, sin query (la plantilla también lo usa como `og:image`). En este pack, LinkedIn, X, Facebook e Instagram usan el OG 1200×630, sin query. En el cuerpo del post el hero lleva `?w=1600`.
 2. Publica con el **Texto** sugerido. El CTA es **instalar o actualizar la app** y la guía de docs. La API se menciona al final, como camino aparte.
 3. El pedimento va en el producto o en la variante, para venta de **primera mano**. En la factura la columna solo aparece si algún concepto ya los trae. No se mezclan producto y variante.
 4. Pide **datos fiscales** (RFC, nombre o razón social, régimen y CP). No pidas el PDF de la Constancia de Situación Fiscal.
@@ -25,16 +25,16 @@ Recursos oficiales para enlazar:
 
 ## Imagen hero del blog
 
-**Temporal (no es el arte final).** Slug: `factura-con-pedimento-shopify`.
+**Publicada. Usar estas URLs, sin query.** Slug: `factura-con-pedimento-shopify`.
 
-| Uso | Medida pedida | URL temporal (sin query) |
+| Uso | Medida | URL (sin query) |
 | --- | --- | --- |
-| Hero / `image` del frontmatter | 1600×900 | https://videos.acromatico.dev/api/images/assets/9b42be87-d026-4d28-a6fe-6f0f2c878dec.png |
-| OG / compartir (`og:image`, Meta / LinkedIn) | 1200×630 | https://videos.acromatico.dev/api/images/assets/9b42be87-d026-4d28-a6fe-6f0f2c878dec.png |
+| Hero / `image` del frontmatter (la plantilla lo usa también como `og:image`) | 1600×900 | https://videos.acromatico.dev/api/images/assets/1ba3e371-618e-4ab3-91c9-b716a968a0fe.png |
+| OG / redes de este pack | 1200×630 | https://videos.acromatico.dev/api/images/assets/a4f6e1ec-2b71-45d5-8a26-f22224c23956.png |
 
-El frontmatter `image` usa esa URL, sin query. En el cuerpo del post la misma URL lleva `?w=1600`. Cuando exista el arte de comerciantes, sustituir hero y OG. El copy de la pieza nueva no debe decir «por API».
+No hay un campo OG aparte en el frontmatter. El cuerpo del post usa el hero con `?w=1600`.
 
-Copy propuesto para el arte nuevo, ortografía exacta:
+Copy en el arte, ortografía exacta:
 - Título: «Factura con pedimento»
 - Subtítulo: «En tu tienda Shopify»
 
@@ -72,7 +72,7 @@ Copy propuesto para el arte nuevo, ortografía exacta:
 
 ### Media
 
-**Temporal:** https://videos.acromatico.dev/api/images/assets/9b42be87-d026-4d28-a6fe-6f0f2c878dec.png
+**Usar (OG, sin query):** https://videos.acromatico.dev/api/images/assets/a4f6e1ec-2b71-45d5-8a26-f22224c23956.png
 
 **Prompt Gemini (pieza de comerciantes, 1200×627):**
 
@@ -103,7 +103,7 @@ Copy propuesto para el arte nuevo, ortografía exacta:
 
 ### Media
 
-**Temporal:** https://videos.acromatico.dev/api/images/assets/9b42be87-d026-4d28-a6fe-6f0f2c878dec.png
+**Usar (OG, sin query):** https://videos.acromatico.dev/api/images/assets/a4f6e1ec-2b71-45d5-8a26-f22224c23956.png
 
 **Prompt Gemini (pieza nueva):**
 
@@ -133,7 +133,7 @@ Copy propuesto para el arte nuevo, ortografía exacta:
 
 ### Media
 
-**Temporal:** https://videos.acromatico.dev/api/images/assets/9b42be87-d026-4d28-a6fe-6f0f2c878dec.png
+**Usar (OG, sin query):** https://videos.acromatico.dev/api/images/assets/a4f6e1ec-2b71-45d5-8a26-f22224c23956.png
 
 **Prompt Gemini (pieza nueva):**
 
@@ -167,8 +167,8 @@ Copy propuesto para el arte nuevo, ortografía exacta:
 
 ### Media (feed cuadrado)
 
-No hay recorte 1080×1080. **Temporal:** el mismo hero, hasta que exista el arte cuadrado:
-https://videos.acromatico.dev/api/images/assets/9b42be87-d026-4d28-a6fe-6f0f2c878dec.png
+No hay recorte 1080×1080. **Usar el OG, sin query:**
+https://videos.acromatico.dev/api/images/assets/a4f6e1ec-2b71-45d5-8a26-f22224c23956.png
 
 **Prompt Gemini (1:1, pieza nueva):**
 
@@ -186,7 +186,7 @@ https://videos.acromatico.dev/api/images/assets/9b42be87-d026-4d28-a6fe-6f0f2c87
 
 ## Checklist de publicación
 
-- [ ] Hero y OG temporales = URL del post de API, **sin query**. El arte dice «CFDI 4.0 por API». Sustituir antes de publicar en redes.
+- [x] Hero 1600×900 en el frontmatter `image`, sin query. OG 1200×630 en este pack, sin query. El cuerpo del post usa el hero con `?w=1600`.
 - [ ] Rafael revisa el post antes del merge. **No mergear:** en este repo el merge publica en vivo.
 - [ ] No publicar el URL del blog hasta `https://cfdi.express/blog/factura-con-pedimento-shopify`.
 - [ ] CTA = docs + instalar la app. La API queda como enlace aparte.

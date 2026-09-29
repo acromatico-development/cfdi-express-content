@@ -1,17 +1,14 @@
 ---
 title: "Factura con pedimento en Shopify: cómo ponerlo en el CFDI"
 description: "Cómo poner el número de pedimento en una factura de Shopify si vendes mercancía de importación de primera mano: producto, variante y factura."
-image: "https://videos.acromatico.dev/api/images/assets/9b42be87-d026-4d28-a6fe-6f0f2c878dec.png"
+image: "https://videos.acromatico.dev/api/images/assets/1ba3e371-618e-4ab3-91c9-b716a968a0fe.png"
 author: "Rafael González"
 date: "2026-09-29"
 keywords: "factura con pedimento Shopify, cómo poner número de pedimento en factura, pedimento aduanal Shopify, número de pedimento CFDI, información aduanera, CFDI Express, mercancía de importación"
 ---
 # Factura con pedimento en Shopify: cómo ponerlo en el CFDI
 
-<!-- TODO: hero temporal. Misma URL que el post factura-con-pedimento-cfdi-express-api. El diseñador hará una imagen propia para comerciantes de Shopify. El arte actual dice «CFDI 4.0 por API». -->
-<!-- ENDTODO -->
-
-![Factura con pedimento](https://videos.acromatico.dev/api/images/assets/9b42be87-d026-4d28-a6fe-6f0f2c878dec.png?w=1600)
+![Comerciante con cajas de importación y una factura con número de pedimento](https://videos.acromatico.dev/api/images/assets/1ba3e371-618e-4ab3-91c9-b716a968a0fe.png?w=1600)
 
 Si un cliente te pide **factura con pedimento** y vendes en Shopify, el número no se captura en la cabecera del CFDI. Va en el producto importado, y de ahí sale en cada concepto de la factura.
 
