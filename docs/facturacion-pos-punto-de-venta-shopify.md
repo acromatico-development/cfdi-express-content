@@ -23,6 +23,8 @@ Para configurar la integración con el POS de Shopify, sigue estos pasos:
 
 Eso es todo, ahora puedes generar facturas electrónicas desde el POS de Shopify.
 
+**CFDI / Factura** (después de la venta) y **CFDI / Factura (Órdenes)** incluyen los pedimentos que ya están en el producto o en la variante. Esas pantallas no tienen un campo para editarlos. Guía: [Pedimentos de importación](/docs/pedimentos-de-importacion).
+
 ## Video Tutorial
 
 - Embed:

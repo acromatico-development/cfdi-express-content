@@ -11,6 +11,8 @@ El cliente entra a la página donde agregaste el bloque y:
 3. El cliente captura RFC, razón social, régimen, código postal, uso CFDI, método de pago, dirección completa (si lo habilitaste) y la CSF (si `enableCsfUpload` está activo).
 4. Al enviar, CFDI Express timbra el CFDI (o dispara Modo Flow) y envía el CFDI por correo al cliente.
 
+El bloque no tiene un campo de pedimento. Si el producto o la variante ya los tienen, van en el concepto. Guía: [Pedimentos de importación](/docs/pedimentos-de-importacion).
+
 <!-- TODO: captura — formulario de facturación visto por el cliente en el storefront (búsqueda por orden# + total) -->
 ![TODO: Formulario de Facturación en el storefront](TODO-screenshot)
 <!-- ENDTODO -->

@@ -15,8 +15,9 @@ Estos eventos los dispara el app. Los usas como punto de partida de tus automati
 
  Estas acciones aparecen dentro de tus flujos de Flow como pasos que ejecuta CFDI Express:
 
-- **"Crear CFDI"** (`cfdi-create-action`) — timbra un CFDI a partir de una referencia de orden y los datos fiscales que proporciones (RFC, razón social, régimen, código postal, método de pago, uso CFDI, correo y dirección opcional). Devuelve la `download_url` del ZIP.
+- **"Crear CFDI"** (`cfdi-create-action`) — timbra un CFDI a partir de una referencia de orden y los datos fiscales que proporciones (RFC, razón social, régimen, código postal, método de pago, uso CFDI, correo y dirección opcional). Devuelve la `download_url` del ZIP. Si el producto o la variante tienen [pedimentos de importación](/docs/pedimentos-de-importacion), esta acción los incluye. No tiene un campo para editarlos.
 - **"Eliminar CFDI"** (`cfdi-delete-action`) — cancela un CFDI dado su `order_reference` y un **motivo** de cancelación del SAT (`01`, `02`, `03` o `04`).
+- **"Crear Nota de Crédito"** — no incluye pedimentos. El detalle está en [Notas de crédito](/docs/notas-de-credito).
 
 ## Cómo crear una automatización con Flow
 

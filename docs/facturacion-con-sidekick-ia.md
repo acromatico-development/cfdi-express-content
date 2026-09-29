@@ -21,6 +21,8 @@ Sidekick es el asistente de inteligencia artificial integrado en Shopify. Con la
 
 4. Confirma los datos de facturación si Sidekick te los solicita y la factura se generará automáticamente.
 
+**Generar factura CFDI** abre el formulario del admin y rellena datos fiscales. No escribe pedimentos. Si el producto o la variante ya los tienen, salen al oprimir **Facturar**. Guía: [Pedimentos de importación](/docs/pedimentos-de-importacion).
+
 Puedes ver nuestro video tutorial para ver cómo funciona paso a paso.
 
 - Embed:
