@@ -16,6 +16,8 @@ En CFDI Express, contamos con un botón de facturación al público, en general 
 
 Este botón, lo único que hace es prellenar el formulario con el RFC, razón social, código postal, uso del CFDI y correo necesarios para poder generar una factura al público en general. Uno debe manualmente seleccionar el método de pago y proceder a generar la factura para que dicha factura sea timbrada al público en general.
 
+**Facturar al Publico en General** y **Facturar al Publico en General Extranjero** no borran los pedimentos del producto o de la variante. Siguen en cada concepto, también en la factura global. Guía: [Pedimentos de importación](/docs/pedimentos-de-importacion).
+
 ## Automatización Recurrente para Facturación al Público en General global
 
 Gran parte de la mentalidad en CFDI Express es aprovechar muchas de las herramientas que Shopify nos da para facilitar el comercio y el operar tu negocio. CFDI Express busca integrarse tanto con Shopify al punto de que no notes que es una herramienta externa a Shopify y se sienta como parte nativa de la plataforma.

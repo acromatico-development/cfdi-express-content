@@ -7,7 +7,9 @@ Para poder completar una factura desde el admin de Shopify, sigue los siguientes
 
 2. Busca la orden que deseas facturar en el buscador de órdenes de CFDI Express y da click en la orden que desees facturar. Para más información de cómo usar el buscador de órdenes, consulta nuestra documentación de [órdenes y estatus](/docs/ordenes-estatus).
 
-3. Dentro de la orden a facturar, llena los datos de facturación con los datos fiscales del cliente que tienes de la constancia de situación fiscal. O que el cliente te ha provisto de alguna manera. Da clic en facturar. Puedes facturar al público en general llenando los datos de facturación de público en general:  RFC genérico XAXX010101000 y el nombre "PÚBLICO EN GENERAL", con régimen fiscal "616 – Sin Obligaciones Fiscales" y el código postal del emisor.
+3. Dentro de la orden a facturar, llena los datos de facturación con los datos fiscales del cliente. Da clic en facturar. Puedes facturar al público en general llenando los datos de facturación de público en general:  RFC genérico XAXX010101000 y el nombre "PÚBLICO EN GENERAL", con régimen fiscal "616 – Sin Obligaciones Fiscales" y el código postal del emisor.
+
+Si el producto o la variante ya tienen pedimentos de importación, la tabla **Productos** muestra la columna **Pedimentos**. Esa columna no aparece si ningún concepto los trae. La guía está en [Pedimentos de importación](/docs/pedimentos-de-importacion).
 ![Datos de Facturación](https://cdn.shopify.com/s/files/1/0804/5540/1763/files/Acr_2025-09-22_at_15.50.44.png?v=1758577857)
 
 4. Para cancelar una factura después de haberla timbrado, puedes dar clic en el botón "Cancelar Factura" que se encuentra arriba a la derecha dentro de la orden ya facturada. Esto generará una constancia de cancelación que podrás descargar en todo momento desde la misma orden, y podrás nuevamente facturar la orden con otros datos fiscales.

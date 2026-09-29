@@ -71,6 +71,12 @@ Cada Nota de Crédito emitida tiene disponible un botón **"Descargar"** que te 
 ![TODO: Descarga de Nota de Crédito](TODO-screenshot)
 <!-- ENDTODO -->
 
+## Pedimentos
+
+La nota de crédito que generas en esta pantalla, y la acción de Shopify Flow **Crear Nota de Crédito**, no incluyen pedimentos. El CFDI de egreso va en un solo concepto genérico (clave `84111506`, unidad `ACT`). Quien timbra la nota por API usa otro contrato: ahí el concepto sí puede llevar pedimentos. Está en [Pedimentos de importación](/docs/pedimentos-de-importacion).
+
+Los pedimentos de una factura de ingreso se configuran en el producto, la variante o la columna de esa factura. Esa guía está en [Pedimentos de importación](/docs/pedimentos-de-importacion).
+
 ## ¿Qué cuenta como un uso?
 
 Cada **Nota de Crédito timbrada** registra un cargo de uso igual que cualquier otro CFDI, de acuerdo a tu [plan](/docs/planes-y-precios). La **cancelación** de una Nota de Crédito ajusta el uso (decrementa el cargo, igual que las cancelaciones de CFDI de ingreso).

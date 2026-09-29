@@ -15,12 +15,13 @@ El archivo debe tener encabezados y una fila por producto, identificado por su *
 | `ieps_rate` | Tasa de IEPS (ej. `0.08` para 8%) |
 | `iva_override` | `true` / `false` — si usas IVA especial |
 | `iva_rate` | Tasa de IVA especial (ej. `0.0` para 0%, `0.16` para 16%) |
+| `pedimentos` | Números de pedimento del producto, separados con `;`. Opcional. Ver [Pedimentos de importación](/docs/pedimentos-de-importacion) |
 
 <!-- TODO: captura — ejemplo del archivo CSV abierto en una hoja de cálculo con las columnas requeridas -->
 ![TODO: Ejemplo de archivo CSV con las columnas](TODO-screenshot)
 <!-- ENDTODO -->
 
-> Si dejas vacías las columnas por producto, conservará el valor que ya tenga configurado. Si quieres **limpiar** todos los metafields de un producto, usa la acción `clear` en la página individual del producto ([Códigos del SAT por producto](/docs/codigos-sat-producto)).
+> Si dejas vacías las columnas de códigos por producto, conservará el valor que ya tenga configurado. La columna `pedimentos` es distinta: una celda vacía borra los pedimentos del producto; si el archivo no trae esa columna, no se modifican. El detalle está en [Pedimentos de importación](/docs/pedimentos-de-importacion). Si quieres **limpiar** todos los metafields de un producto, usa la acción `clear` en la página individual del producto ([Códigos del SAT por producto](/docs/codigos-sat-producto)). **Limpiar códigos** también borra los pedimentos.
 
 ## Cómo subir el CSV
 

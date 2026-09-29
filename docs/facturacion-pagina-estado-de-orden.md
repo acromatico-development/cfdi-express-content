@@ -16,6 +16,8 @@ Además de la [Thank You Page](/docs/facturacion-checkout-thank-you-page), CFDI 
 5. Arrastre el formulario a la posición que desees para colocarlo.
 ![Posicionamiento de formulario](https://cdn.shopify.com/s/files/1/0804/5540/1763/files/Acr_2025-09-22_at_16.22.08.png?v=1758579760)
 
+El **Formulario de autofacturación** no pide el número de pedimento. Si el producto o la variante ya lo tienen, la factura lo incluye. Guía: [Pedimentos de importación](/docs/pedimentos-de-importacion).
+
 > Diferencia con la Thank You Page: la Thank You Page aparece una sola vez, justo tras pagar. La Order Status Page queda disponible cuando el cliente regresa a consultar el estado de su orden, por lo que es ideal para los clientes que no facturaron de inmediato. Ambas respetan las [reglas de periodo de facturación](/docs/configuraciones) que configuraste.
 
 - Embed:

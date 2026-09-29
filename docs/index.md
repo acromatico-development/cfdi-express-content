@@ -31,6 +31,7 @@ CFDI Express es una [aplicación de Shopify](https://apps.shopify.com/cfdi-expre
 - [Notas de Crédito (Devoluciones)](/docs/notas-de-credito)
 - [Complementos de Pago (PPD)](/docs/complementos-de-pago)
 - [Códigos del SAT por producto y IEPS](/docs/codigos-sat-producto)
+- [Pedimentos de importación](/docs/pedimentos-de-importacion)
 - [Carga Masiva de Productos (CSV)](/docs/carga-masiva-productos-csv)
 - [Buscador de Códigos del SAT](/docs/buscador-de-codigos-sat)
 - [Facturación desde el Checkout/Thank You Page](/docs/facturacion-checkout-thank-you-page)

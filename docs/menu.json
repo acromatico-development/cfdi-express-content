@@ -55,6 +55,11 @@
     "completed": true
   },
   {
+    "title": "Pedimentos de importación",
+    "document": "pedimentos-de-importacion.md",
+    "completed": true
+  },
+  {
     "title": "Carga Masiva de Productos (CSV)",
     "document": "carga-masiva-productos-csv.md",
     "completed": true

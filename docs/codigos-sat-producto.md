@@ -6,6 +6,8 @@ En CFDI Express, existe un código de producto y un código de unidad predetermi
 
 Si se requiere, se puede configurar un código de producto y un código de unidad por producto que sobreescriba el código predeterminado, esto se puede realizar desde la página de productos -> Seleccionas el producto a editar. Dentro de la página de edición del producto, puedes encontrar los campos para configurar el código de producto, el código de unidad, si el producto lleva IEPS, la tasa de IEPS y si el producto lleva IVA especial con la tasa de IVA especial.
 
+En esa misma pantalla, el bloque **Pedimentos de importación** guarda el número de pedimento de mercancía importada de primera mano. La guía está en [Pedimentos de importación](/docs/pedimentos-de-importacion).
+
 Puedes consultar nuestro video tutorial si lo prefieres:
 
 - Embed:

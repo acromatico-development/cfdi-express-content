@@ -14,6 +14,9 @@ Uno de los formularios más utilizados en CFDI Express es el de la Thank You Pag
 [Bloque de Formulario de Thankyou Page](https://cdn.shopify.com/s/files/1/0804/5540/1763/files/Acr_2025-09-22_at_16.20.15.png?v=1758579662)
 
 5. Arrastre el formulario a la posición que desees para colocarlo.
+
+El **Formulario de autofacturación** no pide el número de pedimento. Si el producto o la variante ya lo tienen, la factura lo incluye. Guía: [Pedimentos de importación](/docs/pedimentos-de-importacion).
+
 ![Posicionamiento de formulario](https://cdn.shopify.com/s/files/1/0804/5540/1763/files/Acr_2025-09-22_at_16.22.08.png?v=1758579760)
 
 - Embed:
