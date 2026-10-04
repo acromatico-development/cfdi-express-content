@@ -87,7 +87,7 @@ https://videos.acromatico.dev/api/images/assets/80a0b692-d5d9-4053-9c71-48b8c63b
 ### Hilo opcional (desarrolla el post)
 
 1. Shopify no es PAC. Eliges app. Facturama está en la Store desde 2017 (developer EXPRESION EN SOFTWARE). CFDI Express, Built for Shopify (Acromático). Fichas: apps.shopify.com/facturama y apps.shopify.com/cfdi-express
-2. Precio (sep. 2026): Facturama $13 USD/mes, plan ilimitado según su landing. CFDI Express Basic $15 + $0.10 por factura generada/cancelada; Plus $99 con 1,500 incluidos. En esos escenarios el plano de $13 sale más barato. No digas “siempre más barato”.
+2. Precio (oct. 2026, fuente cfdi.express): Facturama $13 USD/mes, plan ilimitado según su landing. CFDI Express Basic $15 + $0.10 por factura timbrada; Plus $99 con 1,500 incluidos y excedente $0.08; Pro $250 con 5,000 y excedente $0.06; Enterprise $500 con 13,000 y excedente $0.04. En los escenarios chicos el plano de $13 sale más barato. No digas “siempre más barato”.
 3. Flujo: Facturama publica autofactura en checkout/tienda + global. CFDI Express publica Thank You, POS nativo, Flow, portal de cuentas. Calificaciones App Store: 4.2 (31) vs 5.0 (23) — ellos tienen más reseñas.
 4. Dueño de tienda / contador: elige por canal (online vs piso) y por si necesitas automatizar el global. Integradores: cfdi.express/api (~$1 MXN/timbre), producto aparte. Guía: https://cfdi.express/blog/facturama-vs-cfdi-express
 
