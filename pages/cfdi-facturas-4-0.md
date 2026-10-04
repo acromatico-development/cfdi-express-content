@@ -154,7 +154,7 @@ Los datos fiscales del receptor (RFC, nombre, régimen y CP fiscal) y un uso de 
 
 ### ¿Cómo cancelo un CFDI 4.0?
 
-Elige el motivo 01, 02, 03 o 04, envía la solicitud en el SAT o en tu PAC y, si aplica, espera la aceptación del receptor (3 días hábiles; el silencio acepta). El detalle está en la [guía de cancelación del SAT](https://www.sat.gob.mx/minisitio/Factura/cancela_procesocancelacion.htm). Si usas CFDI Express, el flujo está en [Cancelación y acuse](https://cfdi.express/docs/cancelacion-y-acuse).
+Ante el SAT eliges el motivo 01, 02, 03 o 04, envías la solicitud en el portal del SAT o en tu PAC y, si aplica, esperas la aceptación del receptor (3 días hábiles; el silencio acepta). El detalle está en la [guía de cancelación del SAT](https://www.sat.gob.mx/minisitio/Factura/cancela_procesocancelacion.htm). En la app de CFDI Express, por ahora se cancela con el motivo 02; elegir el motivo se está trabajando. El flujo está en [Cancelación y acuse](https://cfdi.express/docs/cancelacion-y-acuse).
 
 ### ¿Toda cancelación pide que el cliente acepte?
 
@@ -202,7 +202,7 @@ Sí. Con CFDI Express lo haces en checkout (Thank You Page), POS, admin, portal 
       "name": "¿Cómo se cancela un CFDI 4.0?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Debes elegir un motivo oficial del SAT (01 errores con relación, 02 errores sin relación, 03 no se llevó a cabo la operación, 04 operación nominativa en factura global) y enviar la solicitud por el portal del SAT o un PAC. En varios casos el receptor tiene 3 días hábiles para aceptar o rechazar; si no responde, se considera aceptada."
+        "text": "Ante el SAT debes elegir un motivo oficial (01 errores con relación, 02 errores sin relación, 03 no se llevó a cabo la operación, 04 operación nominativa en factura global) y enviar la solicitud por el portal del SAT o un PAC. En varios casos el receptor tiene 3 días hábiles para aceptar o rechazar; si no responde, se considera aceptada. En la app de CFDI Express, por ahora se cancela con el motivo 02; elegir el motivo se está trabajando."
       }
     },
     {

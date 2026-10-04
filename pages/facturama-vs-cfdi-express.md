@@ -77,7 +77,7 @@ En operación, eso se traduce a lo que ya documentamos:
 - El cajero no saca al cliente de Shopify POS. Guía: [facturación en POS](/docs/facturacion-pos-punto-de-venta-shopify).
 - Si se le olvidó en el checkout, factura en el estado de la orden o en el [portal de autofacturación](/blog/crea-un-portal-de-auto-facturacion-cfdi-en-5-minutos).
 - **Notas de crédito (CFDI de egreso)** para devoluciones, reembolsos o descuentos: las emites desde la orden **sin cancelar** la factura original. Guía: [Notas de crédito](/docs/notas-de-credito).
-- Cancelas con **motivos 01–04** del SAT y acuse. Guía: [Cancelación y acuse](/docs/cancelacion-y-acuse).
+- Por ahora cancelas con el motivo **02** y acuse. Elegir el motivo se está trabajando. Guía: [Cancelación y acuse](/docs/cancelacion-y-acuse).
 - Los **complementos de pago** (PPD) van en el mismo admin. Guía: [Complementos de pago](/docs/complementos-de-pago).
 - **Shopify Flow no es un check de “Works with”**: hay **disparadores** (CFDI timbrado, CFDI cancelado, reporte listo) **y acciones** (Crear CFDI / Eliminar CFDI). Con eso automatizas timbrado, cancelación con motivo, el global de lo que nadie facturó y los pasos de CFDI que rodean una devolución — por ejemplo, un reembolso de Shopify que dispara cancelar o volver a timbrar, más avisar a contabilidad cuando sale el comprobante. Guía: [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express).
 

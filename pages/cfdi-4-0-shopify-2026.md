@@ -29,7 +29,7 @@ No voy a repetir aquí toda la guía de la versión 4.0. Eso ya está en [CFDI f
 - **Receptor nominativo.** El SAT cruza RFC, nombre, régimen y CP fiscal. Un `S.A. DE C.V.` de más, un CP de sucursal o un uso de CFDI incompatible con el régimen tumba el timbrado.
 - **Conceptos con catálogo SAT.** Cada producto o servicio lleva clave de producto/servicio y unidad vigentes. Shopify no las trae solas: las configuras en la app o en el producto.
 - **Público en general.** Quien no pide factura no se “olvida”. Esas ventas van a un CFDI global (RFC `XAXX010101000`) con la información global que marca el [Anexo 20, versión 4.0](http://omawww.sat.gob.mx/tramitesyservicios/Paginas/anexo_20.htm): periodicidad, meses y año.
-- **Cancelación con motivo.** Si te equivocaste, no “borras” el folio. Eliges un motivo 01–04. El detalle oficial está en la [guía de cancelación del SAT](https://www.sat.gob.mx/minisitio/Factura/cancela_procesocancelacion.htm).
+- **Cancelación con motivo.** Si te equivocaste, no “borras” el folio. Ante el SAT hay cuatro motivos, 01–04. El detalle oficial está en la [guía de cancelación del SAT](https://www.sat.gob.mx/minisitio/Factura/cancela_procesocancelacion.htm). En la app de CFDI Express, por ahora se cancela con el motivo 02; elegir el motivo se está trabajando.
 
 Pide los **datos fiscales** (RFC, nombre o razón social, régimen, CP fiscal y uso de CFDI), no la Constancia en PDF. El cliente puede dictártelos, llenarlos en un formulario o, si quiere, compartir una cédula de datos fiscales. No está obligado a mandarte el archivo. Con esos campos ya puedes intentar el timbrado; si el SAT rechaza, no coinciden con el padrón.
 
@@ -121,7 +121,7 @@ Los nombres oficiales del SAT:
 | 03 | No se llevó a cabo la operación |
 | 04 | Operación nominativa relacionada en una factura global |
 
-El **01** pide primero el CFDI que sustituye (relación tipo 04) y, al cancelar, el UUID nuevo. El **04** es el de “el cliente pidió factura después de que ya iba en el global”. El motivo no decide si el receptor debe aceptar; eso lo marcan tipo, monto y fecha. En CFDI Express el flujo está en [Cancelación y acuse](/docs/cancelacion-y-acuse).
+El **01** pide primero el CFDI que sustituye (relación tipo 04) y, al cancelar, el UUID nuevo. El **04** es el de “el cliente pidió factura después de que ya iba en el global”. El motivo no decide si el receptor debe aceptar; eso lo marcan tipo, monto y fecha. En la app de CFDI Express, por ahora se cancela con el motivo 02; elegir el motivo se está trabajando. El flujo está en [Cancelación y acuse](/docs/cancelacion-y-acuse).
 
 ## Preguntas frecuentes
 
