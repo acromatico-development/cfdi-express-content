@@ -15,7 +15,7 @@ Recursos oficiales para enlazar:
 
 ## Cómo usar este pack
 
-1. **Arte pendiente.** Diego genera el hero 1600×900 y el OG 1200×630 con los prompts de abajo y los sube a videos.acromatico.dev. Después se reemplaza el placeholder `PENDIENTE-facturar-shopify-pos.png` del frontmatter `image` (sin query) y el del cuerpo del post (con `?w=1600`). En este pack, LinkedIn, X, Facebook e Instagram usan el OG, sin query.
+1. **Usa el arte publicado.** No lo regeneres. El `image` del frontmatter es el hero 1600×900, sin query (la plantilla también lo usa como `og:image`). En este pack, LinkedIn, X, Facebook e Instagram usan el OG 1200×630, sin query. En el cuerpo del post el hero lleva `?w=1600`.
 2. Publica con el **Texto** sugerido. El CTA es **instalar la app** y la guía de docs del POS. El video tutorial va como apoyo.
 3. Dentro del POS hay dos accesos: **«CFDI / Factura»** al terminar la venta y **«CFDI / Factura (Órdenes)»** en el detalle de una orden. Si la orden ya tiene factura, el segundo muestra sus datos y permite cancelarla.
 4. Lo que nadie facturó va a **público en general**, a mano o con Shopify Flow. Ver el post de factura global.
@@ -26,12 +26,12 @@ Recursos oficiales para enlazar:
 
 ## Imagen hero del blog
 
-**Pendiente (Diego).** Slug: `facturar-shopify-pos`.
+**Publicada. Usar estas URLs, sin query.** Slug: `facturar-shopify-pos`.
 
 | Uso | Medida | URL (sin query) |
 | --- | --- | --- |
-| Hero / `image` del frontmatter (la plantilla lo usa también como `og:image`) | 1600×900 | PENDIENTE |
-| OG / redes de este pack | 1200×630 | PENDIENTE |
+| Hero / `image` del frontmatter (la plantilla lo usa también como `og:image`) | 1600×900 | https://videos.acromatico.dev/api/images/assets/ef0123eb-5472-4d13-834d-7887c2fb7281.png |
+| OG / redes de este pack | 1200×630 | https://videos.acromatico.dev/api/images/assets/88b3726e-9bd9-43e3-a261-566552a9500f.png |
 
 No hay un campo OG aparte en el frontmatter. El cuerpo del post usa el hero con `?w=1600`.
 
@@ -75,7 +75,7 @@ Instala la app: https://apps.shopify.com/cfdi-express
 
 ### Media
 
-**Usar (OG, sin query):** PENDIENTE (Diego)
+**Usar (OG, sin query):** https://videos.acromatico.dev/api/images/assets/88b3726e-9bd9-43e3-a261-566552a9500f.png
 
 **Prompt Gemini (pieza de comerciantes, 1200×627):**
 
@@ -104,7 +104,7 @@ Instala la app: https://apps.shopify.com/cfdi-express
 
 ### Media
 
-**Usar (OG, sin query):** PENDIENTE (Diego)
+**Usar (OG, sin query):** https://videos.acromatico.dev/api/images/assets/88b3726e-9bd9-43e3-a261-566552a9500f.png
 
 **Prompt Gemini (pieza nueva):**
 
@@ -134,7 +134,7 @@ App: https://apps.shopify.com/cfdi-express
 
 ### Media
 
-**Usar (OG, sin query):** PENDIENTE (Diego)
+**Usar (OG, sin query):** https://videos.acromatico.dev/api/images/assets/88b3726e-9bd9-43e3-a261-566552a9500f.png
 
 **Prompt Gemini (pieza nueva):**
 
@@ -163,7 +163,8 @@ App: https://apps.shopify.com/cfdi-express
 
 ### Media (feed cuadrado)
 
-**Usar:** PENDIENTE (Diego). Si no hay recorte 1080×1080, usar el OG, sin query.
+No hay recorte 1080×1080. **Usar el OG, sin query:**
+https://videos.acromatico.dev/api/images/assets/88b3726e-9bd9-43e3-a261-566552a9500f.png
 
 **Prompt Gemini (1:1, pieza nueva):**
 
@@ -181,7 +182,7 @@ App: https://apps.shopify.com/cfdi-express
 
 ## Checklist de publicación
 
-- [ ] Diego genera el hero 1600×900 y el OG 1200×630. Se reemplaza `PENDIENTE-facturar-shopify-pos.png` en el frontmatter `image` (sin query) y en el cuerpo (con `?w=1600`). Las URLs del OG se ponen en este pack, sin query.
+- [x] Hero 1600×900 en el frontmatter `image`, sin query. OG 1200×630 en este pack, sin query. El cuerpo del post usa el hero con `?w=1600`.
 - [ ] Rafael revisa el post antes del merge. **No mergear:** en este repo el merge publica en vivo.
 - [ ] No publicar el URL del blog hasta que esté vivo en `https://cfdi.express/blog/facturar-shopify-pos`.
 - [ ] CTA = instalar la app + docs del POS. El video tutorial va como apoyo.

@@ -1,17 +1,14 @@
 ---
 title: "Factura global en Shopify: cómo hacerla en CFDI 4.0"
 description: "Cómo hacer la factura global en Shopify con CFDI Express: ventas sin factura a público en general, mes y año del periodo y timbrado automático con Flow."
-image: "https://videos.acromatico.dev/api/images/assets/PENDIENTE-factura-global-shopify.png?w=1600"
+image: "https://videos.acromatico.dev/api/images/assets/5610df24-f40c-4880-bb64-419d22326362.png"
 author: "Rafael González"
 date: "2026-10-04"
 keywords: "factura global shopify, cómo hacer factura global en shopify, factura global cfdi 4.0, público en general shopify, XAXX010101000, ventas sin factura shopify, información global periodicidad, CFDI Express"
 ---
-<!-- TODO: Diego genera el hero 16:9 (1600×900) y el recorte OG con el prompt de socials/factura-global-shopify.md, lo sube a videos.acromatico.dev y reemplaza el placeholder del frontmatter y la imagen de abajo. -->
-<!-- ENDTODO -->
-
 # Factura global en Shopify: cómo hacerla en CFDI 4.0
 
-![Factura global en Shopify con CFDI Express](https://videos.acromatico.dev/api/images/assets/PENDIENTE-factura-global-shopify.png?w=1600)
+![Factura global en Shopify con CFDI Express](https://videos.acromatico.dev/api/images/assets/5610df24-f40c-4880-bb64-419d22326362.png?w=1600)
 
 Cada venta de tu tienda Shopify lleva CFDI, la pida el cliente o no. Las que nadie facturó van a **público en general**: RFC `XAXX010101000`, con la información global (periodicidad, mes y año) que pide el CFDI 4.0.
 

@@ -1,17 +1,14 @@
 ---
 title: "Facturar en Shopify POS: CFDI 4.0 en tu tienda física"
 description: "Cómo facturar ventas de Shopify POS con CFDI Express: CFDI en caja, ventas pasadas desde la orden, autofactura del cliente y global de lo no facturado."
-image: "https://videos.acromatico.dev/api/images/assets/PENDIENTE-facturar-shopify-pos.png?w=1600"
+image: "https://videos.acromatico.dev/api/images/assets/ef0123eb-5472-4d13-834d-7887c2fb7281.png"
 author: "Rafael González"
 date: "2026-10-04"
 keywords: "facturar shopify pos, cfdi shopify pos, factura shopify pos, facturación punto de venta shopify, autofactura tienda física, factura global ventas pos, CFDI 4.0, CFDI Express"
 ---
-<!-- TODO: Diego genera el hero 16:9 (1600×900) y el recorte OG con el prompt de socials/facturar-shopify-pos.md, lo sube a videos.acromatico.dev y reemplaza el placeholder del frontmatter y la imagen de abajo. -->
-<!-- ENDTODO -->
-
 # Facturar en Shopify POS: CFDI 4.0 en tu tienda física
 
-![Cajero facturando una venta en Shopify POS con CFDI Express](https://videos.acromatico.dev/api/images/assets/PENDIENTE-facturar-shopify-pos.png?w=1600)
+![Cajero facturando una venta en Shopify POS con CFDI Express](https://videos.acromatico.dev/api/images/assets/ef0123eb-5472-4d13-834d-7887c2fb7281.png?w=1600)
 
 En tienda física la factura se pide en caja, con fila detrás. O llega tres días después por WhatsApp. Shopify POS cobra y registra la orden, pero no timbra CFDI.
 
