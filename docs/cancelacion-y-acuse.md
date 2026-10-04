@@ -10,12 +10,8 @@ CFDI Express permite **cancelar** un CFDI ya timbrado ante el SAT, y descargar e
 <!-- TODO: captura — botón "Cancelar Factura" en la pantalla de facturación -->
 ![TODO: Botón Cancelar Factura](TODO-screenshot)
 <!-- ENDTODO -->
-3. Selecciona el **motivo de cancelación** del SAT:
-    - `01` — Comprobante emitido con errores con relación
-    - `02` — Comprobante emitido sin errores con relación
-    - `03` — No se llevó a cabo la operación
-    - `04` — Operación nominativa relacionada con la facturación global
-4. Confirma la cancelación. CFDI Express:
+3. Confirma la cancelación. Por ahora CFDI Express cancela con el motivo `02` (comprobante emitido con errores sin relación). Elegir el motivo se está trabajando; hoy no se elige en el admin.
+4. CFDI Express:
     - Cancela el CFDI en Facturama ante el SAT.
     - Marca el CFDI con estatus **Cancelado** y actualiza el metafield `$app.facturado` a falso.
     - Ajusta el uso facturado (decrementa el cargo por uso del CFDI cancelado).

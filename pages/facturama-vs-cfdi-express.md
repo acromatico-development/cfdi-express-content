@@ -24,7 +24,7 @@ Cifras de fichas públicas, **septiembre 2026**. Si una app no anuncia una integ
 
 |  | [Facturama](https://apps.shopify.com/facturama) | [CFDI Express](https://apps.shopify.com/cfdi-express) |
 | --- | --- | --- |
-| **Precio Shopify (ficha)** | **$13 USD/mes**, “Plan ilimitado”. Prueba de 7 días. | **Basic $15 USD/mes + $0.10 USD** por factura generada/cancelada (en [Planes y precios](/docs/planes-y-precios) ese plan de entrada se llama Standard). Plus $99 (1,500 CFDIs), Pro $250, Enterprise $350 con excedente más bajo. Prueba de 7 días. Fuente también: [App Store](https://apps.shopify.com/cfdi-express). |
+| **Precio Shopify (ficha)** | **$13 USD/mes**, “Plan ilimitado”. Prueba de 7 días. | **Basic $15 USD/mes + $0.10 USD** por factura timbrada (en [Planes y precios](/docs/planes-y-precios) ese plan de entrada se llama Standard). Plus $99 (1,500 CFDIs, excedente $0.08), Pro $250 (5,000 CFDIs, excedente $0.06), Enterprise $500 (13,000 CFDIs, excedente $0.04). Prueba de 7 días. Fuente: [cfdi.express](https://cfdi.express). |
 | **Modelo de cobro** | Mensualidad plana. En [facturama.mx/shopify](https://facturama.mx/shopify) anuncian facturas, complementos de pago y cancelaciones **ilimitadas** dentro de la app. | Suscripción en Shopify Billing + uso (pay-as-you-go) o cupo incluido según el plan. |
 | **Built for Shopify** | App en la App Store. Su ficha **no anuncia** el distintivo Built for Shopify. | Sí. Historia: [CFDI Express ya es Built for Shopify](/blog/cfdi-expres-ya-es-built-for-shopify). |
 | **POS** | No lista Shopify POS en “Works with”. En su página de Shopify hablan de un **link de autofacturación** desde el punto de venta. | Formulario en la confirmación de [Shopify POS](/docs/facturacion-pos-punto-de-venta-shopify). La ficha lista Shopify POS. |
@@ -77,7 +77,7 @@ En operación, eso se traduce a lo que ya documentamos:
 - El cajero no saca al cliente de Shopify POS. Guía: [facturación en POS](/docs/facturacion-pos-punto-de-venta-shopify).
 - Si se le olvidó en el checkout, factura en el estado de la orden o en el [portal de autofacturación](/blog/crea-un-portal-de-auto-facturacion-cfdi-en-5-minutos).
 - **Notas de crédito (CFDI de egreso)** para devoluciones, reembolsos o descuentos: las emites desde la orden **sin cancelar** la factura original. Guía: [Notas de crédito](/docs/notas-de-credito).
-- Cancelas con **motivos 01–04** del SAT y acuse. Guía: [Cancelación y acuse](/docs/cancelacion-y-acuse).
+- Por ahora cancelas con el motivo **02** y acuse. Elegir el motivo se está trabajando. Guía: [Cancelación y acuse](/docs/cancelacion-y-acuse).
 - Los **complementos de pago** (PPD) van en el mismo admin. Guía: [Complementos de pago](/docs/complementos-de-pago).
 - **Shopify Flow no es un check de “Works with”**: hay **disparadores** (CFDI timbrado, CFDI cancelado, reporte listo) **y acciones** (Crear CFDI / Eliminar CFDI). Con eso automatizas timbrado, cancelación con motivo, el global de lo que nadie facturó y los pasos de CFDI que rodean una devolución — por ejemplo, un reembolso de Shopify que dispara cancelar o volver a timbrar, más avisar a contabilidad cuando sale el comprobante. Guía: [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express).
 
@@ -89,7 +89,7 @@ El modelo de precio no es el de $13 plano: empiezas en Basic y, si el volumen cr
 
 **Respuesta corta:** con las fichas públicas de Shopify, el plan de **$13 ilimitado** de Facturama sale más barato en estos ejemplos si su “ilimitado” aplica a tu volumen. CFDI Express **no** es “siempre más barata”. Elige por flujo (POS, notas de crédito, Flow con disparadores y acciones, Built for Shopify), no por una frase de ahorro.
 
-Cifras en **USD**, como las publica Shopify Billing. No incluyen impuestos de la tienda ni tipo de cambio a MXN. Asumimos un mes de **CFDIs timbrados** (ingresos; si también cancelas o emites complementos, el uso de CFDI Express puede moverse: la ficha dice **$0.10 USD por factura generada/cancelada**). Facturama, según su landing, no cobra extra por esos movimientos **dentro de la app**.
+Cifras en **USD**, como las publica Shopify Billing. No incluyen impuestos de la tienda ni tipo de cambio a MXN. Asumimos un mes de **CFDIs timbrados** (ingresos; si también cancelas o emites complementos, el uso de CFDI Express puede moverse: en [cfdi.express](https://cfdi.express) el plan de entrada es **$0.10 USD por factura timbrada**). Facturama, según su landing, no cobra extra por esos movimientos **dentro de la app**.
 
 | Volumen ilustrativo | Facturama ($13/mes, plan ilimitado en la app) | CFDI Express (plan publicado) |
 | --- | --- | --- |
@@ -102,7 +102,7 @@ Lectura honesta: **si lo único que comparas es el cargo mensual de la app de Sh
 Notas para no mezclar peras con manzanas:
 
 - El **$13** de Facturama es la app de Shopify. Su portal en facturama.mx tiene **paquetes de folios** aparte; no los uses como si fueran el plan de $13, ni al revés.
-- En Pro, [Planes y precios](/docs/planes-y-precios) lista **5,000 CFDIs** incluidos a $250 USD/mes; la ficha de App Store lista **6,000**. Confirma el cupo en la suscripción al instalar. Enterprise: $350 USD/mes y 8,000 incluidos (ambas fuentes), excedente $0.04.
+- Pro: **$250 USD/mes** con **5,000 CFDIs** incluidos y excedente de $0.06. Enterprise: **$500 USD/mes** con **13,000 CFDIs** incluidos y excedente de $0.04. Es lo que publica [cfdi.express](https://cfdi.express) y [Planes y precios](/docs/planes-y-precios).
 - Nadie aquí inventó el precio de una API de Facturama. Si cotizas timbrado fuera de Shopify, ve su sitio; el producto nuestro en ese caso es [CFDI Express API](https://cfdi.express/api), no “Facturapi”.
 
 ## ¿Cuándo elegir Facturama y cuándo CFDI Express?

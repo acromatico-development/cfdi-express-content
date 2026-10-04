@@ -29,7 +29,7 @@ No voy a repetir aquí toda la guía de la versión 4.0. Eso ya está en [CFDI f
 - **Receptor nominativo.** El SAT cruza RFC, nombre, régimen y CP fiscal. Un `S.A. DE C.V.` de más, un CP de sucursal o un uso de CFDI incompatible con el régimen tumba el timbrado.
 - **Conceptos con catálogo SAT.** Cada producto o servicio lleva clave de producto/servicio y unidad vigentes. Shopify no las trae solas: las configuras en la app o en el producto.
 - **Público en general.** Quien no pide factura no se “olvida”. Esas ventas van a un CFDI global (RFC `XAXX010101000`) con la información global que marca el [Anexo 20, versión 4.0](http://omawww.sat.gob.mx/tramitesyservicios/Paginas/anexo_20.htm): periodicidad, meses y año.
-- **Cancelación con motivo.** Si te equivocaste, no “borras” el folio. Eliges un motivo 01–04. El detalle oficial está en la [guía de cancelación del SAT](https://www.sat.gob.mx/minisitio/Factura/cancela_procesocancelacion.htm).
+- **Cancelación con motivo.** Si te equivocaste, no “borras” el folio. Ante el SAT hay cuatro motivos, 01–04. El detalle oficial está en la [guía de cancelación del SAT](https://www.sat.gob.mx/minisitio/Factura/cancela_procesocancelacion.htm). En la app de CFDI Express, por ahora se cancela con el motivo 02; elegir el motivo se está trabajando.
 
 Pide los **datos fiscales** (RFC, nombre o razón social, régimen, CP fiscal y uso de CFDI), no la Constancia en PDF. El cliente puede dictártelos, llenarlos en un formulario o, si quiere, compartir una cédula de datos fiscales. No está obligado a mandarte el archivo. Con esos campos ya puedes intentar el timbrado; si el SAT rechaza, no coinciden con el padrón.
 
@@ -108,7 +108,7 @@ Shopify trae título, SKU y precio. El Anexo 20 pide **clave de producto o servi
 
 ### La factura global de fin de mes
 
-Las ventas que el cliente no facturó no se van a “sin comprobante”. Van a un CFDI global a público en general, con periodicidad y mes. Si dejas el mes abierto, tu contador (y el SAT) te lo cobran después. Decide el periodo — diario, semanal o mensual — y apégate a él. Si usas Flow, no dependas de acordarte el día 1.
+Las ventas que el cliente no facturó no se van a “sin comprobante”. Van a un CFDI global a público en general, con periodicidad y mes. En CFDI Express la periodicidad es mensual (`04`) y sale un CFDI por orden: tú eliges el mes y el año. Si dejas el mes abierto, tu contador (y el SAT) te lo cobran después. Si usas Flow, no dependas de acordarte el día 1.
 
 ### Cancelación: motivos 01 a 04
 
@@ -121,7 +121,7 @@ Los nombres oficiales del SAT:
 | 03 | No se llevó a cabo la operación |
 | 04 | Operación nominativa relacionada en una factura global |
 
-El **01** pide primero el CFDI que sustituye (relación tipo 04) y, al cancelar, el UUID nuevo. El **04** es el de “el cliente pidió factura después de que ya iba en el global”. El motivo no decide si el receptor debe aceptar; eso lo marcan tipo, monto y fecha. En CFDI Express el flujo está en [Cancelación y acuse](/docs/cancelacion-y-acuse).
+El **01** pide primero el CFDI que sustituye (relación tipo 04) y, al cancelar, el UUID nuevo. El **04** es el de “el cliente pidió factura después de que ya iba en el global”. El motivo no decide si el receptor debe aceptar; eso lo marcan tipo, monto y fecha. En la app de CFDI Express, por ahora se cancela con el motivo 02; elegir el motivo se está trabajando. El flujo está en [Cancelación y acuse](/docs/cancelacion-y-acuse).
 
 ## Preguntas frecuentes
 
@@ -139,7 +139,7 @@ Sí, si la app lo trae. CFDI Express y Fiscal Pop lo documentan en POS. Facturam
 
 ### ¿Qué hago con las ventas que nadie facturó?
 
-Las incluyes en un CFDI global a público en general (RFC `XAXX010101000`) en el periodo que hayas definido. No las dejes “para después del año”.
+En CFDI Express van a público en general (RFC `XAXX010101000`), un CFDI por orden, con periodicidad mensual (`04`). Tú eliges el mes y el año. No las dejes “para después del año”.
 
 ### ¿Y si no uso Shopify, tengo API?
 
@@ -183,7 +183,7 @@ Sí, para un folio suelto. No escala a checkout, POS ni al global automático de
       "name": "¿Qué hago con las ventas de Shopify que nadie facturó?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Deben ir a un CFDI global a público en general (RFC XAXX010101000) en el periodo que definas — diario, semanal o mensual — con la información global que pide el SAT. No las dejes sin comprobante."
+        "text": "En CFDI Express van a un CFDI global a público en general (RFC XAXX010101000), un CFDI por orden, con periodicidad mensual (04). Tú eliges el mes y el año. No las dejes sin comprobante."
       }
     },
     {

@@ -12,7 +12,7 @@ Para poder completar una factura desde el admin de Shopify, sigue los siguientes
 Si el producto o la variante ya tienen pedimentos de importación, la tabla **Productos** muestra la columna **Pedimentos**. Esa columna no aparece si ningún concepto los trae. La guía está en [Pedimentos de importación](/docs/pedimentos-de-importacion).
 ![Datos de Facturación](https://cdn.shopify.com/s/files/1/0804/5540/1763/files/Acr_2025-09-22_at_15.50.44.png?v=1758577857)
 
-4. Para cancelar una factura después de haberla timbrado, puedes dar clic en el botón "Cancelar Factura" que se encuentra arriba a la derecha dentro de la orden ya facturada. Esto generará una constancia de cancelación que podrás descargar en todo momento desde la misma orden, y podrás nuevamente facturar la orden con otros datos fiscales.
+4. Para cancelar una factura después de haberla timbrado, puedes dar clic en el botón "Cancelar Factura" que se encuentra arriba a la derecha dentro de la orden ya facturada. Por ahora se cancela con el motivo `02` (comprobante emitido con errores sin relación); elegir el motivo se está trabajando. Esto generará una constancia de cancelación que podrás descargar en todo momento desde la misma orden, y podrás nuevamente facturar la orden con otros datos fiscales.
 ![Descarga de acuses de cancelación](https://cdn.shopify.com/s/files/1/0804/5540/1763/files/Acr_2025-09-22_at_15.51.47.png?v=1758577929)
 
 Puedes ver nuestro video introductorio si lo prefieres.

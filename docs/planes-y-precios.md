@@ -9,7 +9,7 @@ CFDI Express ofrece varios planes conforme al volumen de facturación de tu nego
 | **Standard** | $15 USD/mes + $0.10 USD por CFDI | — (pay-as-you-go) | $0.10 USD |
 | **Plus** | $99 USD/mes | 1,500 | $0.08 USD |
 | **Pro** | $250 USD/mes | 5,000 | $0.06 USD |
-| **Enterprise** | $350 USD/mes | 8,000 | $0.04 USD |
+| **Enterprise** | $500 USD/mes | 13,000 | $0.04 USD |
 
 > Todos los nuevos comercios disponen de una **prueba de 7 días** en el plan Standard. Existen también planes **Discounted** y **VIP** para tiendas convenidas con CFDI Express.
 
