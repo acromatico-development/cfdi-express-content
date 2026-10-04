@@ -50,8 +50,7 @@ Si todavía no implementas Shopify POS en tu tienda, Acromático Development, el
    - **Régimen fiscal**, **método de pago** y **uso del CFDI**, con buscador
 4. Oprime **Generar CFDI**.
 
-<!-- TODO: captura — formulario "Generar CFDI" de CFDI / Factura en Shopify POS (iPad) -->
-<!-- ENDTODO -->
+<!-- PENDIENTE CAPTURA: Formulario «Generar CFDI» de CFDI / Factura en Shopify POS (iPad) -->
 
 Lo que hace la app:
 
@@ -73,8 +72,7 @@ Al cliente pídele **datos fiscales**, no el PDF de la Constancia. Si el SAT rec
 
 Desde esa misma pantalla el cajero puede **Cancelar CFDI**. Pide una segunda confirmación y cancela ante el SAT con motivo `02` (comprobante emitido con errores sin relación). Después, la orden queda libre para facturarse otra vez con los datos correctos.
 
-<!-- TODO: captura — "CFDI / Factura (Órdenes)" en el detalle de una orden en Shopify POS, con factura activa y botón "Cancelar CFDI" -->
-<!-- ENDTODO -->
+<!-- PENDIENTE CAPTURA: «CFDI / Factura (Órdenes)» en el detalle de una orden en Shopify POS, con factura activa y botón «Cancelar CFDI» -->
 
 Si la factura tiene notas de crédito o complementos de pago activos, la cancelación no procede. Esos casos se resuelven desde el admin: [Notas de crédito](/docs/notas-de-credito) y [Cancelación y acuse](/docs/cancelacion-y-acuse).
 
@@ -96,8 +94,7 @@ Necesitas el canal de tienda en línea con un tema publicado. El total tiene que
 
 Las ventas de Shopify POS aparecen en el portal de cuentas del cliente: Shopify concentra las órdenes de todos los canales de venta. Si agregaste el formulario a la [página de estado de orden](/docs/facturacion-pagina-estado-de-orden), el cliente entra a su cuenta y factura desde ahí. Aplica la [regla de periodo de facturación](/docs/configuraciones) que configures. La guía completa, incluido el QR en el ticket del POS, está en [Crea un portal de auto-facturación CFDI en 5 minutos](/blog/crea-un-portal-de-auto-facturacion-cfdi-en-5-minutos).
 
-<!-- TODO: captura — ticket de Shopify POS con QR hacia la página de facturación -->
-<!-- ENDTODO -->
+<!-- PENDIENTE CAPTURA: Ticket de Shopify POS con QR hacia la página de facturación -->
 
 ## Ventas de POS que nadie facturó: factura global
 

@@ -58,8 +58,7 @@ Si necesitas un solo CFDI global que agrupe muchas ventas, ese camino es la [API
 6. En **Método de Pago** elige la forma de pago SAT de esa venta. Este campo no se llena solo.
 7. Oprime **Generar CFDI**. Puedes descargar el ZIP con PDF y XML desde la misma orden.
 
-<!-- TODO: captura — pantalla "CFDI para orden" con el botón "Facturar al Publico en General" y los campos "Mes de la Factura Global" / "Año de la Factura Global" -->
-<!-- ENDTODO -->
+<!-- PENDIENTE CAPTURA: Pantalla «CFDI para orden» con botón «Facturar al Publico en General» y campos Mes/Año de la Factura Global -->
 
 Sirve para pocas órdenes o para corregir una en particular. Si son decenas al día, automatízalo.
 
@@ -83,8 +82,7 @@ La plantilla define **cuándo** se timbra. El CFDI sigue saliendo con periodicid
 3. Revisa la acción **Crear CFDI** antes de activar (siguiente sección).
 4. Activa el workflow.
 
-<!-- TODO: captura — workflow importado en Shopify Flow: horario → buscar órdenes → para cada orden → Crear CFDI -->
-<!-- ENDTODO -->
+<!-- PENDIENTE CAPTURA: Workflow importado en Shopify Flow: horario, buscar órdenes, para cada orden, Crear CFDI -->
 
 ### Qué revisar antes de activarla
 
