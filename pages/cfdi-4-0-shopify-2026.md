@@ -108,7 +108,7 @@ Shopify trae título, SKU y precio. El Anexo 20 pide **clave de producto o servi
 
 ### La factura global de fin de mes
 
-Las ventas que el cliente no facturó no se van a “sin comprobante”. Van a un CFDI global a público en general, con periodicidad y mes. Si dejas el mes abierto, tu contador (y el SAT) te lo cobran después. Decide el periodo — diario, semanal o mensual — y apégate a él. Si usas Flow, no dependas de acordarte el día 1.
+Las ventas que el cliente no facturó no se van a “sin comprobante”. Van a un CFDI global a público en general, con periodicidad y mes. En CFDI Express la periodicidad es mensual (`04`) y sale un CFDI por orden: tú eliges el mes y el año. Si dejas el mes abierto, tu contador (y el SAT) te lo cobran después. Si usas Flow, no dependas de acordarte el día 1.
 
 ### Cancelación: motivos 01 a 04
 
@@ -139,7 +139,7 @@ Sí, si la app lo trae. CFDI Express y Fiscal Pop lo documentan en POS. Facturam
 
 ### ¿Qué hago con las ventas que nadie facturó?
 
-Las incluyes en un CFDI global a público en general (RFC `XAXX010101000`) en el periodo que hayas definido. No las dejes “para después del año”.
+En CFDI Express van a público en general (RFC `XAXX010101000`), un CFDI por orden, con periodicidad mensual (`04`). Tú eliges el mes y el año. No las dejes “para después del año”.
 
 ### ¿Y si no uso Shopify, tengo API?
 
@@ -183,7 +183,7 @@ Sí, para un folio suelto. No escala a checkout, POS ni al global automático de
       "name": "¿Qué hago con las ventas de Shopify que nadie facturó?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Deben ir a un CFDI global a público en general (RFC XAXX010101000) en el periodo que definas — diario, semanal o mensual — con la información global que pide el SAT. No las dejes sin comprobante."
+        "text": "En CFDI Express van a un CFDI global a público en general (RFC XAXX010101000), un CFDI por orden, con periodicidad mensual (04). Tú eliges el mes y el año. No las dejes sin comprobante."
       }
     },
     {

@@ -91,7 +91,7 @@ La plantilla define **cuándo** se timbra. El CFDI sigue saliendo con periodicid
 
 ### Qué revisar antes de activarla
 
-Las plantillas son una base. Ajusta esto a tu tienda:
+Las plantillas son una base. Antes de activarlas revisa cuatro cosas: el código postal, la forma de pago, el correo de aviso y el mes de la factura global. Ajusta esto a tu tienda:
 
 - **Código Postal.** Pon el de tu negocio, el de tu Constancia. Es el lugar de expedición.
 - **Metodo de Pago.** La plantilla trae una forma de pago de ejemplo. Cámbiala por la que corresponda a tus ventas.
@@ -132,7 +132,7 @@ Por eso conviene alinear las dos piezas. Si tu regla es **Fin del mes de compra*
 
 Estos caminos existen hoy en CFDI Express:
 
-1. **Cancelar y volver a facturar.** En la orden oprime **Cancelar CFDI**. La orden queda libre para timbrar el CFDI con los datos fiscales del cliente. Detalle en [Cancelación y acuse](/docs/cancelacion-y-acuse).
+1. **Cancelar y volver a facturar.** En la orden oprime **Cancelar CFDI**. Por ahora la app cancela con el motivo `02` (comprobante emitido con errores sin relación); elegir el motivo se está trabajando. La orden queda libre para timbrar el CFDI con los datos fiscales del cliente. Detalle en [Cancelación y acuse](/docs/cancelacion-y-acuse).
 2. **Nota de crédito y nueva factura.** Si una [nota de crédito](/docs/notas-de-credito) cubre el 100% del CFDI, la app te deja generar una nueva factura de esa orden. El CFDI original sigue vigente ante el SAT, compensado por la nota.
 3. **Cancelar desde Flow.** La acción **Eliminar CFDI** de Flow recibe el motivo de cancelación SAT (`01`, `02`, `03` o `04`). El `04` es el de operación nominativa relacionada en una factura global.
 

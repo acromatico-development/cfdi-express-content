@@ -18,7 +18,7 @@ Recursos oficiales para enlazar:
 1. **Arte pendiente.** Diego genera el hero 1600×900 y el OG 1200×630 con los prompts de abajo y los sube a videos.acromatico.dev. Después se reemplaza el placeholder `PENDIENTE-factura-global-shopify.png` del frontmatter `image` (sin query) y el del cuerpo del post (con `?w=1600`). En este pack, LinkedIn, X, Facebook e Instagram usan el OG, sin query.
 2. Publica con el **Texto** sugerido. El CTA es **instalar la app** y la guía de docs.
 3. En la app, la factura a público en general es **un CFDI por orden**, con periodicidad **mensual** y el mes y año que elijas. No prometas "un solo CFDI con todas las ventas" ni periodicidad diaria o semanal.
-4. Lo automático va con **Shopify Flow** (plantillas de fin de día, 3 días, 10 días y fin de mes). Antes de activarlas se revisan código postal, forma de pago y correo.
+4. Lo automático va con **Shopify Flow** (plantillas de fin de día, 3 días, 10 días y fin de mes). Antes de activarlas se revisan código postal, forma de pago, correo y el mes de la factura global.
 5. Pide **datos fiscales** (RFC, nombre o razón social, régimen y CP). No pidas el PDF de la Constancia de Situación Fiscal.
 6. No publiques el link del blog hasta que el post esté en `https://cfdi.express/blog/factura-global-shopify` (después del merge). **No mergear hasta que Rafael revise.**
 
@@ -100,7 +100,7 @@ Instala la app: https://apps.shopify.com/cfdi-express
 ### Hilo opcional
 
 1. A mano: abre la orden → «Facturar al Publico en General» → revisa mes, año y forma de pago → Generar CFDI.
-2. Con Flow: plantillas de fin de día, 3 días, 10 días o fin de mes. Antes de activarlas revisa CP, forma de pago y correo.
+2. Con Flow: plantillas de fin de día, 3 días, 10 días o fin de mes. Antes de activarlas revisa CP, forma de pago, correo y el mes.
 3. Alinea el global con el plazo de autofactura de tus clientes. Si corre muy pronto, no alcanzan a pedir la suya.
 4. ¿Un cliente pide factura después del global? Lo resuelves con nota de crédito o cancelación y una nueva factura. Decídelo con tu contador.
 5. Instala la app: https://apps.shopify.com/cfdi-express

@@ -63,7 +63,7 @@ Con CFDI Express facturas dentro de Shopify POS:
 
 → **Al cobrar.** El cajero abre «CFDI / Factura», captura RFC, razón social, CP, régimen y uso de CFDI, y genera el CFDI.
 → **Días después.** Busca la orden en el POS y abre «CFDI / Factura (Órdenes)». Si ya tiene factura, ahí ves sus datos y puedes cancelarla.
-→ **Autofactura.** El cliente busca su orden por número y total en la página de facturación de tu tienda en línea.
+→ **Autofactura.** El cliente busca su orden por número y total en la página de facturación de tu tienda en línea, o entra a su portal de cuentas. Las ventas de POS aparecen ahí: Shopify concentra las órdenes de todos los canales.
 → **Lo que nadie facturó.** Va a público en general, a mano o con Shopify Flow.
 
 El cliente recibe su factura por correo. Y no necesitas el PDF de su Constancia: solo sus datos fiscales.
@@ -98,7 +98,7 @@ Instala la app: https://apps.shopify.com/cfdi-express
 
 1. Al cobrar: «CFDI / Factura» → datos fiscales → Generar CFDI. La factura le llega al cliente por correo.
 2. Ventas pasadas: «CFDI / Factura (Órdenes)» en el detalle de la orden. Si ya hay factura, puedes cancelarla ahí.
-3. Autofactura: una página con el Formulario de Facturación; el cliente busca su orden por número y total.
+3. Autofactura: una página con el Formulario de Facturación (número de orden y total), o el portal de cuentas. Las ventas de POS aparecen en la cuenta del cliente.
 4. Lo no facturado va a público en general, a mano o con Shopify Flow.
 5. Video del POS: https://youtu.be/UjpmQC0FTXA · App: https://apps.shopify.com/cfdi-express
 
@@ -126,7 +126,7 @@ En la guía te explicamos:
 ✅ Cómo activar CFDI Express en tu POS
 ✅ Cómo facturar al momento de la venta
 ✅ Cómo facturar una venta de días pasados
-✅ Cómo dejar que el cliente se autofacture
+✅ Cómo dejar que el cliente se autofacture (página de facturación o su cuenta: Shopify junta las órdenes de todos los canales)
 ✅ Qué hacer con las ventas que nadie facturó
 
 👉 https://cfdi.express/blog/facturar-shopify-pos
@@ -152,7 +152,7 @@ App: https://apps.shopify.com/cfdi-express
 >
 > ✅ CFDI 4.0 al terminar la venta
 > ✅ Ventas pasadas desde el detalle de la orden
-> ✅ Autofactura con número de orden y total
+> ✅ Autofactura con número de orden y total, o desde su cuenta
 > ✅ Público en general para lo que nadie facturó
 >
 > Guía en bio → cfdi.express/blog/facturar-shopify-pos

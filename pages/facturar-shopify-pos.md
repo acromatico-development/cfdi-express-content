@@ -97,7 +97,7 @@ Necesitas el canal de tienda en línea con un tema publicado. El total tiene que
 
 ### Portal de cuentas de cliente
 
-Si la venta quedó ligada a un cliente con correo y agregaste el formulario a la [página de estado de orden](/docs/facturacion-pagina-estado-de-orden), puede entrar a su portal de cuentas y facturar desde ahí. Aplica la [regla de periodo de facturación](/docs/configuraciones) que configures. La guía completa, incluido el QR en el ticket del POS, está en [Crea un portal de auto-facturación CFDI en 5 minutos](/blog/crea-un-portal-de-auto-facturacion-cfdi-en-5-minutos).
+Las ventas de Shopify POS aparecen en el portal de cuentas del cliente: Shopify concentra las órdenes de todos los canales de venta. Si agregaste el formulario a la [página de estado de orden](/docs/facturacion-pagina-estado-de-orden), el cliente entra a su cuenta y factura desde ahí. Aplica la [regla de periodo de facturación](/docs/configuraciones) que configures. La guía completa, incluido el QR en el ticket del POS, está en [Crea un portal de auto-facturación CFDI en 5 minutos](/blog/crea-un-portal-de-auto-facturacion-cfdi-en-5-minutos).
 
 <!-- TODO: captura — ticket de Shopify POS con QR hacia la página de facturación -->
 <!-- ENDTODO -->
@@ -130,7 +130,7 @@ Sí. Busca la orden en el POS y abre **CFDI / Factura (Órdenes)**. También pue
 
 ### ¿El cliente puede autofacturar una compra de tienda física?
 
-Sí. Con el bloque **Formulario de Facturación** en tu tienda en línea busca su orden por número y total. Si la venta quedó ligada a su correo, también puede hacerlo desde su portal de cuentas.
+Sí. Con el bloque **Formulario de Facturación** en tu tienda en línea busca su orden por número y total. También puede hacerlo desde su portal de cuentas: las ventas de POS aparecen ahí porque Shopify concentra las órdenes de todos los canales.
 
 ### ¿Cómo cancelo una factura desde el POS?
 
@@ -170,7 +170,7 @@ Sí. CFDI Express manda el PDF y el XML al correo que captura el cajero, salvo q
       "name": "¿El cliente puede autofacturar una compra de tienda física?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. Con el bloque Formulario de Facturación de CFDI Express en tu tienda en línea, el cliente busca su orden por número y total. Si la venta quedó ligada a su correo, también puede hacerlo desde su portal de cuentas."
+        "text": "Sí. Con el bloque Formulario de Facturación de CFDI Express en tu tienda en línea, el cliente busca su orden por número y total. También puede hacerlo desde su portal de cuentas: las ventas de POS aparecen ahí porque Shopify concentra las órdenes de todos los canales."
       }
     },
     {
