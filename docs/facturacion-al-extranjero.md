@@ -1,3 +1,8 @@
+---
+title: "RFC genérico extranjero XEXX010101000: cómo facturarlo"
+description: "Factura a clientes del extranjero con el RFC genérico XEXX010101000 e IVA 0%: cuándo usarlo y cómo emitir el CFDI desde Shopify, paso a paso."
+keywords: "rfc genérico extranjero, XEXX010101000, factura a extranjero, cfdi extranjero shopify, iva 0% extranjero"
+---
 # Facturación al Extranjero (RFC XEXX010101000)
 
 CFDI Express soporta facturar a **clientes extranjeros** usando el RFC genérico del SAT para operaciones con extranjeros: **`XEXX010101000`**. Esto aplica cuando un cliente fuera de México solicita factura y el SAT exige IVA al **0%** en esos comprobantes.
