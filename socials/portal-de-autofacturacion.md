@@ -17,7 +17,7 @@ Recursos oficiales para enlazar:
 
 ## Cómo usar este pack
 
-1. La captura del formulario (PNG 3330×1660, página de estado del pedido) **todavía no tiene URL**. En el post, el frontmatter y el cuerpo dicen `__IMAGE_URL__`. Súbela a `videos.acromatico.dev` y reemplaza ese token antes de publicar en redes.
+1. **Usa la captura publicada.** Hero y cuerpo del post: `https://videos.acromatico.dev/api/images/assets/ed3a2e3d-fc9b-4021-a336-5c8a1898f904.png?w=1600&format=webp`. Es el formulario real en la página de estado del pedido. No la regeneres.
 2. Publica con el **Texto** sugerido. El CTA es instalar la app y seguir el tutorial de 5 minutos.
 3. No pidas el número de orden: el formulario vive en la página de gracias y en el estado del pedido.
 4. La factura global de CFDI Express es **mensual (04)**. El periodo de autofacturación (sin límite, fin de mes o X días) decide hasta cuándo el cliente puede facturar antes de ese cierre.
@@ -25,11 +25,13 @@ Recursos oficiales para enlazar:
 
 ## Imagen hero del blog
 
-**Pendiente de subir.** Slug: `portal-de-autofacturacion`.
+**Publicada.** Slug: `portal-de-autofacturacion`.
 
-La pieza de hero es la captura real del formulario en la página de estado del pedido (aviso «¿Requieres Factura (CFDI)?», campos de razón social, RFC, régimen, código postal, uso del CFDI y el botón «Generar CFDI y enviar por correo»). No la regeneres con ilustración: es el producto.
+Frontmatter y cuerpo usan la misma URL:
 
-Cuando esté en el CDN, el frontmatter queda sin query y el cuerpo usa la misma URL con `?w=1600`. Hoy ambas dicen `__IMAGE_URL__`.
+https://videos.acromatico.dev/api/images/assets/ed3a2e3d-fc9b-4021-a336-5c8a1898f904.png?w=1600&format=webp
+
+Es la captura real del formulario en la página de estado del pedido (aviso «¿Requieres Factura (CFDI)?», campos de razón social, RFC, régimen, código postal, uso del CFDI y el botón «Generar CFDI y enviar por correo»). No la regeneres con ilustración: es el producto.
 
 **Prompt Gemini — hero 1600×900 (solo si hace falta una pieza de apoyo, no sustituye la captura):**
 
@@ -57,7 +59,9 @@ Instala la app: https://apps.shopify.com/cfdi-express
 
 ### Media
 
-Usa la captura del formulario cuando `__IMAGE_URL__` ya sea una URL de `videos.acromatico.dev`. Recorte 1200×627 (1.91:1), con el aviso «¿Requieres Factura (CFDI)?» y el botón «Generar CFDI y enviar por correo» visibles.
+Usa la captura publicada. Recorte 1200×627 (1.91:1), con el aviso «¿Requieres Factura (CFDI)?» y el botón «Generar CFDI y enviar por correo» visibles.
+
+https://videos.acromatico.dev/api/images/assets/ed3a2e3d-fc9b-4021-a336-5c8a1898f904.png?w=1600&format=webp
 
 **Prompt Gemini de apoyo (1200×627), si la captura no entra en el recorte:**
 
@@ -79,7 +83,9 @@ Instala CFDI Express: https://apps.shopify.com/cfdi-express
 
 ### Media
 
-Captura del formulario en 1600×900, o el hero cuando esté publicado. Si aún no hay URL, no adjuntes una imagen rota.
+La captura publicada, 1600×900:
+
+https://videos.acromatico.dev/api/images/assets/ed3a2e3d-fc9b-4021-a336-5c8a1898f904.png?w=1600&format=webp
 
 ## Facebook
 
@@ -122,7 +128,7 @@ Link en bio → cfdi.express/blog/portal-de-autofacturacion
 
 ## Checklist de publicación
 
-- [ ] Reemplazar `__IMAGE_URL__` en `pages/portal-de-autofacturacion.md` (frontmatter y cuerpo) con la URL del CDN.
+- [x] Hero publicado en frontmatter y cuerpo: `https://videos.acromatico.dev/api/images/assets/ed3a2e3d-fc9b-4021-a336-5c8a1898f904.png?w=1600&format=webp`
 - [ ] No publicar hasta `https://cfdi.express/blog/portal-de-autofacturacion`.
 - [ ] CTA a la app de Shopify en cada red.
 - [ ] No prometer un portal externo ni pedir número de orden.

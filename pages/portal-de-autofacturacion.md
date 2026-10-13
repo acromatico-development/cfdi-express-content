@@ -1,7 +1,7 @@
 ---
 title: "Portal de autofacturación para Shopify | CFDI Express"
 description: "Portal de autofacturación en Shopify: tu cliente genera su CFDI 4.0 desde la página de su pedido, con RFC, régimen y CP validados. Sin portal aparte."
-image: "__IMAGE_URL__"
+image: "https://videos.acromatico.dev/api/images/assets/ed3a2e3d-fc9b-4021-a336-5c8a1898f904.png?w=1600&format=webp"
 author: "Rafael González"
 date: "2026-10-12"
 keywords: "autofacturación, portal de autofacturación, autofactura shopify, portal de facturación para clientes, formulario de facturación shopify, CFDI 4.0, CFDI Express"
@@ -12,10 +12,7 @@ Tu cliente no debería escribirte para pedir su factura. Con [CFDI Express](http
 
 No tienes que montar un portal aparte ni pedirle el número de orden: el formulario ya sabe de qué pedido se trata.
 
-![Formulario de autofacturación CFDI Express en la página de estado del pedido de Shopify, con campos de razón social, RFC, régimen fiscal, código postal y uso del CFDI](__IMAGE_URL__)
-
-<!-- TODO: la captura del formulario (PNG 3330×1660) no está publicada. Este repo no guarda binarios de posts y la app usa la URL absoluta del frontmatter. Subir el PNG a videos.acromatico.dev y reemplazar __IMAGE_URL__ en el frontmatter y en el cuerpo. -->
-<!-- ENDTODO -->
+![Formulario de autofacturación CFDI Express en la página de estado del pedido de Shopify, con campos de razón social, RFC, régimen fiscal, código postal y uso del CFDI](https://videos.acromatico.dev/api/images/assets/ed3a2e3d-fc9b-4021-a336-5c8a1898f904.png?w=1600&format=webp)
 
 ## ¿Qué es un portal de autofacturación?
 
