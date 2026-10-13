@@ -17,7 +17,7 @@ Recursos oficiales para enlazar:
 
 ## Cómo usar este pack
 
-1. **Usa la captura publicada.** Hero y cuerpo del post: `https://videos.acromatico.dev/api/images/assets/ed3a2e3d-fc9b-4021-a336-5c8a1898f904.png?w=1600&format=webp`. Es el formulario real en la página de estado del pedido. No la regeneres.
+1. **Usa la captura publicada.** Hero y cuerpo del post: `https://videos.acromatico.dev/api/images/assets/2d967aef-e2e4-44dc-82bf-4c13016c30bf.png?w=1600&format=webp`. Es el formulario real en la página de estado del pedido. No la regeneres.
 2. Publica con el **Texto** sugerido. El CTA es instalar la app y seguir el tutorial de 5 minutos.
 3. No pidas el número de orden: el formulario vive en la página de gracias y en el estado del pedido.
 4. La factura global de CFDI Express es **mensual (04)**. El periodo de autofacturación (sin límite, fin de mes o X días) decide hasta cuándo el cliente puede facturar antes de ese cierre.
@@ -29,7 +29,7 @@ Recursos oficiales para enlazar:
 
 Frontmatter y cuerpo usan la misma URL:
 
-https://videos.acromatico.dev/api/images/assets/ed3a2e3d-fc9b-4021-a336-5c8a1898f904.png?w=1600&format=webp
+https://videos.acromatico.dev/api/images/assets/2d967aef-e2e4-44dc-82bf-4c13016c30bf.png?w=1600&format=webp
 
 Es la captura real del formulario en la página de estado del pedido (aviso «¿Requieres Factura (CFDI)?», campos de razón social, RFC, régimen, código postal, uso del CFDI y el botón «Generar CFDI y enviar por correo»). No la regeneres con ilustración: es el producto.
 
@@ -61,7 +61,7 @@ Instala la app: https://apps.shopify.com/cfdi-express
 
 Usa la captura publicada. Recorte 1200×627 (1.91:1), con el aviso «¿Requieres Factura (CFDI)?» y el botón «Generar CFDI y enviar por correo» visibles.
 
-https://videos.acromatico.dev/api/images/assets/ed3a2e3d-fc9b-4021-a336-5c8a1898f904.png?w=1600&format=webp
+https://videos.acromatico.dev/api/images/assets/2d967aef-e2e4-44dc-82bf-4c13016c30bf.png?w=1600&format=webp
 
 **Prompt Gemini de apoyo (1200×627), si la captura no entra en el recorte:**
 
@@ -85,7 +85,7 @@ Instala CFDI Express: https://apps.shopify.com/cfdi-express
 
 La captura publicada, 1600×900:
 
-https://videos.acromatico.dev/api/images/assets/ed3a2e3d-fc9b-4021-a336-5c8a1898f904.png?w=1600&format=webp
+https://videos.acromatico.dev/api/images/assets/2d967aef-e2e4-44dc-82bf-4c13016c30bf.png?w=1600&format=webp
 
 ## Facebook
 
@@ -128,7 +128,7 @@ Link en bio → cfdi.express/blog/portal-de-autofacturacion
 
 ## Checklist de publicación
 
-- [x] Hero publicado en frontmatter y cuerpo: `https://videos.acromatico.dev/api/images/assets/ed3a2e3d-fc9b-4021-a336-5c8a1898f904.png?w=1600&format=webp`
+- [x] Hero publicado en frontmatter y cuerpo: `https://videos.acromatico.dev/api/images/assets/2d967aef-e2e4-44dc-82bf-4c13016c30bf.png?w=1600&format=webp`
 - [ ] No publicar hasta `https://cfdi.express/blog/portal-de-autofacturacion`.
 - [ ] CTA a la app de Shopify en cada red.
 - [ ] No prometer un portal externo ni pedir número de orden.
