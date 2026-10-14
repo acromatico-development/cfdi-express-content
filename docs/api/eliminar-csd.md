@@ -90,16 +90,35 @@ Devuelve el recurso Merchant completo, con `csd` en `null`.
 - No se puede deshacer. Para restaurarlo, vuelve a subir el `.cer` y el `.key`.
 - Sin CSD, ese comercio no puede timbrar facturas, notas de crédito, nóminas ni complementos de pago, ni cancelar CFDIs.
 - El comercio no se borra. Los CFDIs ya timbrados no cambian.
+- A partir de la **v1.35.0**, `DELETE /v1/merchants/{id}` también borra el CSD de ese comercio. Si vuelves a crear el RFC, se restaura el mismo comercio (mismo `id`, historial y folios), sin CSD.
 
 ## Dashboard
 
 La opción «Eliminar CSD» solo aparece en el menú de acciones si el comercio tiene CSD. El diálogo se titula «Eliminar CSD — {RFC}» y explica que se borran el certificado {serial} y su llave privada. Los botones son Cancelar y Eliminar CSD; este último va en rojo.
+
+## v1.35.0
+
+A partir de la versión **v1.35.0** de la API, borrar un comercio también borra su CSD, y volver a crear un RFC eliminado restaura ese mismo comercio.
+
+### Borrar el comercio
+
+`DELETE /v1/merchants/{id}` borra el comercio y también su CSD.
+
+[Eliminar CSD](https://cfdi.express/docs/api/eliminar-csd) (`DELETE /v1/merchants/{id}/csd`) borra el certificado y su llave privada cifrada, y deja el comercio. Los CFDIs ya timbrados no cambian.
+
+### Restaurar un RFC eliminado
+
+Si vuelves a crear un RFC que habías borrado, se restaura el mismo comercio, con su `id`, su historial y sus folios. Antes, esa operación fallaba con un error 500.
+
+El comercio vuelve sin CSD. Para timbrar hay que subir el certificado de nuevo con [POST /v1/merchants/{id}/csd](https://cfdi.express/docs/api/subir-csd). Hasta entonces no puede timbrar facturas, notas de crédito, nóminas ni complementos de pago, ni cancelar CFDIs. Qué se elimina del certificado está en [Eliminar CSD](https://cfdi.express/docs/api/eliminar-csd).
 
 ## Relacionados
 
 - [POST /v1/merchants/{id}/csd](https://cfdi.express/docs/api/subir-csd) — Subir CSD
 - [PUT /v1/merchants/{id}/csd](https://cfdi.express/docs/api/reemplazar-csd) — Reemplazar CSD
 - [GET /v1/merchants/{id}/csd](https://cfdi.express/docs/api/obtener-csd) — Consultar CSD
+- [DELETE /v1/merchants/{id}](https://cfdi.express/docs/api/eliminar-emisor) — Eliminar comercio
+- [POST /v1/merchants](https://cfdi.express/docs/api/crear-emisor) — Crear comercio
 
 ---
 
