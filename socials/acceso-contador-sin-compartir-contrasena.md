@@ -16,21 +16,24 @@ Recursos oficiales para enlazar:
 
 ## Cómo usar este pack
 
-1. **Usa el arte publicado.** No lo regeneres. El `image` del frontmatter es el hero y el OG: 1200×627, sin query (la plantilla también lo usa como `og:image`). En este pack, LinkedIn, X, Facebook e Instagram usan la misma URL, sin query. En el cuerpo del post el hero lleva `?w=1600`.
-2. Publica cada red con el **Texto** sugerido.
-3. El CTA principal es **invitar desde Equipo** en el dashboard y leer la guía. La API se menciona como la misma cuenta, sin pedir que cambien las API keys.
+1. Genera la imagen hero con el prompt de abajo (Gemini) y súbela a `videos.acromatico.dev`.
+2. Sustituye en el frontmatter de `pages/acceso-contador-sin-compartir-contrasena.md` la URL `PENDIENTE-acceso-contador-sin-compartir-contrasena.png` por el asset publicado, sin dejar el placeholder.
+3. Publica cada red con el **Texto** sugerido. El hero 16:9 va al blog; LinkedIn y Facebook usan 1.91:1; X usa 16:9; Instagram feed es 1:1.
+4. El CTA principal es **invitar desde Equipo** en el dashboard y leer la guía. La API se menciona como la misma cuenta, sin pedir que cambien las API keys.
 
 ---
 
 ## Imagen hero del blog
 
-**Publicada. Usar esta URL, sin query.** Es el hero y el OG. Título en el arte: «Factura en equipo».
+**Pendiente.** El frontmatter apunta a:
 
-| Uso | Medida | URL (sin query) |
-| --- | --- | --- |
-| Hero / `image` del frontmatter (la plantilla lo usa también como `og:image`) | 1200×627 | https://videos.acromatico.dev/api/images/assets/9f9ca7e5-b1c5-4075-b19e-945498b79d13.jpg |
+`https://videos.acromatico.dev/api/images/assets/PENDIENTE-acceso-contador-sin-compartir-contrasena.png?w=1600`
 
-No hay un campo OG aparte ni un recorte 1600×900. La misma pieza cubre el hero del post y el Open Graph. El cuerpo del post usa el hero con `?w=1600`. Alt: «Factura en equipo: página de Equipo de CFDI Express con miembros invitados».
+**Prompt Gemini:**
+
+> Crea una imagen wide 16:9 (1600×900), ilustración flat y moderna, profesional B2B, alto contraste, sin fotografías de stock y sin logos de otras marcas. Fondo teal oscuro #055D5E. A la izquierda, una tarjeta blanca de “Dueño” con un candado dorado #FFD700 cerrado y el texto “Tu cuenta”. A la derecha, una tarjeta blanca de “Contador” con un sello de factura y una palomita. Entre las dos, un sobre de invitación blanco con el texto “/invite”. Tipografía Racing Sans One en el título y Quicksand en el resto. Título exacto, en blanco: “Acceso para tu contador”. Subtítulo exacto: “Sin compartir tu contraseña”. Pie pequeño en gris #D7D7D7: “CFDI Express · Equipo”.
+
+**Aspecto:** 16:9 · 1600×900.
 
 ---
 
@@ -66,8 +69,9 @@ Post: https://cfdi.express/blog/acceso-contador-sin-compartir-contrasena
 
 ### Media
 
-**Usar:** hero/OG 1200×627, sin query
-https://videos.acromatico.dev/api/images/assets/9f9ca7e5-b1c5-4075-b19e-945498b79d13.jpg
+**Prompt Gemini:**
+
+> Crea una imagen horizontal 1200×627 (1.91:1), ilustración flat B2B, sin fotos de stock. Fondo teal oscuro #055D5E. Centro: dos personas estilizadas, sin rostros realistas, una con una llave dorada #FFD700 y otra con una factura blanca. Un tercer elemento, un sobre, dice “Invitación · 7 días”. Título en Racing Sans One, blanco, texto exacto: “Tu contador, en tu workspace”. Subtítulo en Quicksand: “Tú conservas el saldo”. Acento dorado #FFD700, gris #D7D7D7, alto contraste, marca CFDI Express sugerida con un recibo simple, sin logos ajenos.
 
 **Aspecto:** 1200×627 (1.91:1).
 
@@ -93,10 +97,11 @@ Lo invitas por correo. El enlace vence en 7 días y se acepta con ese mismo corr
 
 ### Media
 
-**Usar:** la misma pieza 1200×627, sin query
-https://videos.acromatico.dev/api/images/assets/9f9ca7e5-b1c5-4075-b19e-945498b79d13.jpg
+**Prompt Gemini:**
 
-**Aspecto:** 1200×627 (1.91:1).
+> Crea una imagen horizontal 1600×900 (16:9) para X. Fondo teal oscuro #055D5E. A la izquierda un candado dorado #FFD700. A la derecha una factura blanca con sello y el texto “Solo lectura”. Título grande en Racing Sans One, blanco, texto exacto: “Sin tu contraseña”. Línea menor en Quicksand: “Invita a tu contador · CFDI Express”. Estilo flat, minimalista, alto contraste, sin fotografías.
+
+**Aspecto:** 1600×900 (16:9).
 
 ---
 
@@ -119,10 +124,11 @@ Dashboard: https://dash.cfdi.express
 
 ### Media
 
-**Usar:** hero/OG 1200×627, sin query
-https://videos.acromatico.dev/api/images/assets/9f9ca7e5-b1c5-4075-b19e-945498b79d13.jpg
+**Prompt Gemini:**
 
-**Aspecto:** 1200×627 (1.91:1).
+> Crea una imagen horizontal 1200×630 (1.91:1) para Facebook. Fondo teal oscuro #055D5E con una cuadrícula sutil en gris #D7D7D7. Al centro, un sobre blanco abierto y una factura con sello dorado #FFD700. Texto principal en Racing Sans One, blanco, exacto: “Invita a tu contador”. Texto secundario en Quicksand: “Tu contraseña se queda contigo”. Estilo ilustración flat, profesional, sin fotos de personas reales, sin logos de terceros.
+
+**Aspecto:** 1200×630 (1.91:1).
 
 ---
 
@@ -148,21 +154,27 @@ Guía en el enlace de la bio (cfdi.express/docs/equipo-y-workspaces).
 
 ### Media (feed cuadrado)
 
-No hay recorte 1080×1080. **Usar la misma pieza 1200×627:**
-https://videos.acromatico.dev/api/images/assets/9f9ca7e5-b1c5-4075-b19e-945498b79d13.jpg
+**Prompt Gemini:**
+
+> Crea una imagen cuadrada 1080×1080, ilustración flat, fondo teal oscuro #055D5E. Centro: un recibo blanco con sello dorado #FFD700 y, al lado, un sobre con el texto exacto “Equipo”. Título en Racing Sans One, blanco: “Tu contador entra”. Subtítulo en Quicksand: “Sin tu contraseña”. Pie en gris #D7D7D7: “CFDI Express”. Alto contraste, minimalista, sin fotografías, sin logos ajenos.
+
+**Aspecto:** 1080×1080 (1:1) para feed.
 
 ### Media (historia opcional)
 
-No hay recorte 1080×1920. **Usar la misma pieza 1200×627:**
-https://videos.acromatico.dev/api/images/assets/9f9ca7e5-b1c5-4075-b19e-945498b79d13.jpg
+**Prompt Gemini:**
+
+> Crea una imagen vertical 1080×1920 para historia de Instagram. Fondo teal oscuro #055D5E. Deja el tercio superior y el inferior despejados para la interfaz de Instagram. Al centro, un candado dorado #FFD700 junto a una factura blanca. Texto grande en Racing Sans One, blanco, exacto: “Invita a tu contador”. Texto menor en Quicksand: “7 días · mismo correo”. Estilo flat, sin fotos.
+
+**Aspecto:** 1080×1920 (historia).
 
 ---
 
 ## Checklist de publicación
 
-- [x] Hero/OG 1200×627 en el frontmatter `image`, sin query. El cuerpo del post usa la misma URL con `?w=1600` y el alt «Factura en equipo: página de Equipo de CFDI Express con miembros invitados».
-- [x] Placeholder `PENDIENTE-…` y el bloque `<!-- TODO -->` / `<!-- ENDTODO -->` ya no están en el post.
-- [ ] Publicar y usar https://cfdi.express/blog/acceso-contador-sin-compartir-contrasena cuando la URL del post responda. Mientras tanto, enlazar la guía y el dashboard.
-- [x] La guía https://cfdi.express/docs/equipo-y-workspaces ya está en el repo (PR #22).
+- [ ] Generar el hero 1600×900, subirlo a videos.acromatico.dev y reemplazar `PENDIENTE-acceso-contador-sin-compartir-contrasena` en el frontmatter del post.
+- [ ] Quitar el bloque `<!-- TODO -->` / `<!-- ENDTODO -->` del post cuando el hero ya esté publicado.
+- [ ] Publicar el post y usar https://cfdi.express/blog/acceso-contador-sin-compartir-contrasena solo cuando la URL responda. Mientras tanto, enlazar la guía y el dashboard.
+- [ ] Confirmar que la guía https://cfdi.express/docs/equipo-y-workspaces ya está en línea (sale en el otro PR).
 - [ ] Revisar que el copy diga: invitación por correo, 7 días, mismo correo, facturación en solo lectura, saldo y facturación del dueño, API keys sin cambio, conexiones existentes ligadas al workspace propio.
 - [ ] CTA en cada red: dashboard o guía.
