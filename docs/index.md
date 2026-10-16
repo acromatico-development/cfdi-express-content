@@ -45,3 +45,7 @@ CFDI Express es una [aplicación de Shopify](https://apps.shopify.com/cfdi-expre
 - [Reportes de CFDIs y Complementos](/docs/reportes)
 - [Notificaciones por Correo](/docs/notificaciones-por-correo)
 - [Acción de Impresión de CFDI en el Admin](/docs/accion-de-impresion-admin)
+
+### Cuenta y equipo
+
+- [Equipo y workspaces](/docs/equipo-y-workspaces)

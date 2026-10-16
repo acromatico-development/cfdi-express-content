@@ -123,5 +123,10 @@
     "title": "Acción de Impresión de CFDI en el Admin",
     "document": "accion-de-impresion-admin.md",
     "completed": true
+  },
+  {
+    "title": "Equipo y workspaces",
+    "document": "equipo-y-workspaces.md",
+    "completed": true
   }
 ]
