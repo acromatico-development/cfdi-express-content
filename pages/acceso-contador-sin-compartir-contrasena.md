@@ -1,15 +1,14 @@
 ---
 title: "Cómo darle acceso a tu contador a tu facturación sin compartir tu contraseña"
 description: "Invita a tu contador a tu workspace de CFDI Express por correo. Entra con su acceso, opera el workspace y las API keys; el saldo y la facturación se quedan contigo."
-image: "https://videos.acromatico.dev/api/images/assets/PENDIENTE-acceso-contador-sin-compartir-contrasena.png?w=1600"
+image: "https://videos.acromatico.dev/api/images/assets/9f9ca7e5-b1c5-4075-b19e-945498b79d13.jpg"
 author: "Rafael González"
 date: "2026-10-16"
 keywords: "acceso contador facturación, compartir cuenta CFDI, workspace CFDI Express, invitar miembro dashboard, equipo facturación electrónica, API keys contador, sin compartir contraseña, x-account-id"
 ---
 # Cómo darle acceso a tu contador a tu facturación sin compartir tu contraseña
 
-<!-- TODO: imagen hero del post — generar con Gemini usando el prompt de media (sección "Imagen hero del blog") de socials/acceso-contador-sin-compartir-contrasena.md, subirla a videos.acromatico.dev y actualizar el campo `image:` del frontmatter -->
-<!-- ENDTODO -->
+![Factura en equipo: página de Equipo de CFDI Express con miembros invitados](https://videos.acromatico.dev/api/images/assets/9f9ca7e5-b1c5-4075-b19e-945498b79d13.jpg?w=1600)
 
 Tu contador te pide el XML, el saldo o que revises una factura que no cuadra. La salida rápida es pasarle el usuario y la contraseña de tu cuenta. Con eso también le pasas comprar saldo, cambiar la facturación y entrar a todo lo demás con tu nombre.
 
