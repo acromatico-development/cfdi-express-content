@@ -4,6 +4,8 @@ Una de las funcionalidades más poderosas y que diferencian a CFDI Express de ot
 
 El formulario de facturación del POS de Shopify aparece automáticamente cuando un cliente realiza una compra en tienda física, el vendedor o cajero termina la venta en el POS y este muestra la página de confirmación de la venta, la cual incluye un botón para generar el CFDI tomando los datos del cliente y la venta.
 
+Si el cliente pide la factura al pagar, regresa días después o no la pide, los tres casos están en [cómo facturar en Shopify POS](/blog/facturar-shopify-pos).
+
 ## Configuración
 
 > Antes de configurar la integración con el POS de Shopify, asegúrate de haber configurado correctamente el POS de Shopify en tu tienda, si requieres ayuda para implementar Shopify POS no dudes en contactarnos [aquí](https://cal.com/team/acromatico-development/exploration).
@@ -21,7 +23,7 @@ Para configurar la integración con el POS de Shopify, sigue estos pasos:
    ![Agregar CFDI Express POS App](https://videos.acromatico.dev/api/images/assets/4e9d69fc-914b-40f2-b83d-1c03d2053e41.png)
    ![CFDI Express POS App agregada](https://videos.acromatico.dev/api/images/assets/58a15159-2cc2-4cd8-a7fa-403c2a0d1a11.png)
 
-Eso es todo, ahora puedes generar facturas electrónicas desde el POS de Shopify.
+Eso es todo, ahora puedes generar facturas electrónicas desde el POS de Shopify. El recorrido de la factura en caja, de una orden ya cerrada y de la factura global está en [facturar ventas de Shopify POS con CFDI 4.0](/blog/facturar-shopify-pos).
 
 **CFDI / Factura** (después de la venta) y **CFDI / Factura (Órdenes)** incluyen los pedimentos que ya están en el producto o en la variante. Esas pantallas no tienen un campo para editarlos. Guía: [Pedimentos de importación](/docs/pedimentos-de-importacion).
 

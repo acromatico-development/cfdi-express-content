@@ -84,7 +84,7 @@ Abres la app, buscas el pedido y capturas los **datos fiscales** del cliente. Si
 
 ### Desde Shopify POS
 
-Al cerrar la venta en piso, el cajero factura en la confirmación (o, en otras apps, desde el detalle del pedido). No sales a otro sistema ni le pides al cliente que “luego se meta a un link” si la app trae el formulario en el POS. Guía de CFDI Express: [facturación en Shopify POS](/docs/facturacion-pos-punto-de-venta-shopify).
+Al cerrar la venta en piso, el cajero factura en la confirmación (o, en otras apps, desde el detalle del pedido). No sales a otro sistema ni le pides al cliente que “luego se meta a un link” si la app trae el formulario en el POS. Guía de CFDI Express: [facturación en Shopify POS](/docs/facturacion-pos-punto-de-venta-shopify). El paso a paso de caja, de una orden ya cerrada y del global de lo no facturado está en [cómo facturar ventas de Shopify POS](/blog/facturar-shopify-pos).
 
 ### Desde el checkout (Thank You Page)
 

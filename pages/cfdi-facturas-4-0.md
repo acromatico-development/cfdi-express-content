@@ -1,6 +1,6 @@
 ---
-title: "CFDI facturas 4.0: qué es y cómo emitirlas sin rechazos SAT"
-description: "CFDI facturas 4.0 es la única válida desde abril 2023. El SAT valida RFC, nombre, régimen y CP del receptor; pide datos fiscales, no el PDF de la Constancia."
+title: "CFDI facturas 4.0: los datos que el SAT exige al timbrar"
+description: "CFDI facturas 4.0 es la única válida desde abril de 2023. El SAT cruza RFC, nombre, régimen y CP del receptor. Lleva esos datos fiscales y omite el PDF."
 image: "https://assets.acromatico.dev/marketing/diego/blog/hero-cfdi-facturas-4.0.png"
 author: "Rafael González"
 date: "2026-08-31"
