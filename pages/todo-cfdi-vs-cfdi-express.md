@@ -1,12 +1,12 @@
 ---
-title: "Todo CFDI vs CFDI Express: ¿portal de timbres o app de Shopify?"
-description: "Compara Todo CFDI 4.0 (Captura Digital) y CFDI Express en 2026: paquetes de timbres, módulos sectoriales y la app de Shopify. Guía justa, con precios públicos."
+title: "Todo CFDI 4.0: precios públicos del portal de timbres"
+description: "Todo CFDI es el portal de timbres de Captura Digital (CFDI 4.0). Lista precios públicos por paquete y cuándo una venta en Shopify se timbra con una app."
 image: "https://videos.acromatico.dev/api/images/assets/50fbed95-9333-4e03-8410-0a395a930d19.png"
 author: "Rafael González"
 date: "2026-09-23"
 keywords: "todo cfdi, todo cfdi 4.0, captura digital, alternativa todo cfdi, app cfdi shopify, todocfdi, facturación electrónica méxico"
 ---
-# Todo CFDI vs CFDI Express: ¿portal de timbres o app de Shopify?
+# Todo CFDI 4.0: precios públicos del portal de timbres
 
 ![Todo CFDI vs CFDI Express](https://videos.acromatico.dev/api/images/assets/50fbed95-9333-4e03-8410-0a395a930d19.png?w=1600)
 
