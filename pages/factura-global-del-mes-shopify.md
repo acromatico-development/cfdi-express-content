@@ -1,17 +1,14 @@
 ---
 title: "Cómo hacer la factura global del mes en Shopify (público en general)"
 description: "Qué es la factura global del mes en CFDI 4.0, el RFC de público en general y la periodicidad, y cómo agruparla en Shopify con CFDI Express."
-image: "https://videos.acromatico.dev/api/images/assets/PENDIENTE-factura-global-del-mes-shopify.png?w=1600"
+image: "https://videos.acromatico.dev/api/images/assets/e43c88f5-c1d1-4c3e-9fac-aef5329048d2.png"
 author: "Rafael González"
 date: "2026-10-21"
 keywords: "factura global del mes, factura global shopify, público en general, XAXX010101000, periodicidad cfdi 4.0, facturación global mensual, CFDI Express"
 ---
 # Cómo hacer la factura global del mes en Shopify (público en general)
 
-![Factura global del mes en Shopify, ventas a público en general](https://videos.acromatico.dev/api/images/assets/PENDIENTE-factura-global-del-mes-shopify.png?w=1600)
-
-<!-- TODO: generar la imagen hero con el prompt de socials/factura-global-del-mes-shopify.md (Gemini), subirla a videos.acromatico.dev y sustituir PENDIENTE-factura-global-del-mes-shopify.png. En el frontmatter va sin query, porque la plantilla la usa como og:image. En el cuerpo se queda con ?w=1600. -->
-<!-- ENDTODO -->
+![Factura global del mes en Shopify, ventas a público en general](https://videos.acromatico.dev/api/images/assets/e43c88f5-c1d1-4c3e-9fac-aef5329048d2.png?w=1600)
 
 Cada venta de tu tienda Shopify lleva comprobante, la pida el cliente o no. Las que nadie facturó a su nombre van a **público en general**. En CFDI 4.0 ese comprobante es una factura global: lleva el RFC genérico y el periodo al que corresponden esas ventas.
 
