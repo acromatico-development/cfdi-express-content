@@ -13,7 +13,7 @@ CFDI Express ofrece varios planes conforme al volumen de facturación de tu nego
 
 > Todos los nuevos comercios disponen de una **prueba de 7 días** en el plan Standard. Existen también planes **Discounted** y **VIP** para tiendas convenidas con CFDI Express.
 
-La **facturación global mensual** (juntar ventas a público en general en facturas de hasta 1,000 órdenes) está en **Plus**, **Pro** y **Enterprise**. La guía está en [Facturación global mensual](/docs/facturacion-global-mensual). Facturar cada orden al público en general se documenta en [Facturación al público en general](/docs/facturacion-al-publico-en-general-manual-y-automatica).
+La **facturación global mensual** (juntar ventas a público en general en facturas de hasta 1,000 órdenes) está en **Plus**, **Pro** y **Enterprise**. La guía está en [Facturación global mensual](/docs/facturacion-global-mensual). El plan **Standard** (Básico) sigue incluyendo la facturación al público en general orden por orden: un CFDI por orden, a mano o con la plantilla de Shopify Flow. Esa guía está en [Facturación al público en general](/docs/facturacion-al-publico-en-general-manual-y-automatica).
 
 ## ¿Cómo se cobra?
 

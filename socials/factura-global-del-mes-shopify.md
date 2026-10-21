@@ -196,6 +196,6 @@ App: apps.shopify.com/cfdi-express
 - [ ] No publicar el URL del blog hasta que esté vivo en `https://cfdi.express/blog/factura-global-del-mes-shopify`.
 - [ ] CTA = guía de facturación global mensual + instalar la app.
 - [ ] Datos alineados al post: planes Plus, Pro y Enterprise; app 3.26.0; hasta 1,000 órdenes; solo pagadas, MXN y sin factura; folio y UUID; sin duplicar; aviso para nota de crédito; CSV y Excel con IVA 0/8/16% e IEPS; acción y disparador de Flow. Periodicidad mensual (`04`). RFC `XAXX010101000`.
-- [ ] No prometer la corrida en Standard ni un CFDI por orden como si fuera esta función. Ese camino es el otro post.
+- [ ] No prometer la corrida agrupada en el plan Básico (Standard). Ese plan sigue con un CFDI por orden, a mano o con la plantilla de Shopify Flow. No presentes ese camino como si fuera la factura global del mes.
 - [ ] Ortografía del arte: «Factura global del mes» / «Público en general en Shopify» / «PÚBLICO EN GENERAL».
 - [ ] Sin logos del SAT ni de terceros en las imágenes.

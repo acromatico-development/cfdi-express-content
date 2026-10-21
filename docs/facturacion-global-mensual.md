@@ -13,7 +13,7 @@ El camino de un CFDI por orden (el botón **Facturar al Publico en General** y l
 
 ## Requisitos y planes
 
-La facturación global mensual está en los planes **Plus**, **Pro** y **Enterprise**. No está en Standard. Los precios y el cambio de plan están en [Planes y precios](/docs/planes-y-precios).
+Agrupar órdenes en la factura global del mes está en los planes **Plus**, **Pro** y **Enterprise**. El plan **Básico** (en [Planes y precios](/docs/planes-y-precios) se llama **Standard**) sigue facturando al público en general **un CFDI por orden**, a mano o con la plantilla de Shopify Flow, como hasta ahora.
 
 Antes de lanzarla:
 
@@ -94,7 +94,7 @@ Ese archivo es el de las órdenes de la factura global. El CSV de CFDIs y comple
 
 ### ¿En qué planes está?
 
-En Plus, Pro y Enterprise. En Standard no aparece. El cambio de plan está en [Planes y precios](/docs/planes-y-precios).
+Agrupar órdenes está en Plus, Pro y Enterprise. En el plan Básico (Standard) esa corrida no aparece: ahí el público en general sigue siendo un CFDI por orden, con el botón **Facturar al Publico en General** y con la plantilla de Shopify Flow. El cambio de plan está en [Planes y precios](/docs/planes-y-precios).
 
 ### ¿Qué órdenes junta?
 

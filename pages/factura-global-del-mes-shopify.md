@@ -79,7 +79,7 @@ La acción **Crear CFDI** es distinta: timbra **un CFDI por orden**. Las plantil
 - Una orden que esta misma corrida ya metió en una factura global tampoco vuelve a entrar. Puedes lanzarla de nuevo: lo ya facturado se queda fuera.
 - Si pasan de 1,000, salen varias facturas globales, cada una con hasta 1,000 órdenes.
 
-En Standard esta corrida no está. Ahí el cierre sigue siendo un CFDI por orden, a mano o con las plantillas de Flow. Está en [Facturación al público en general](/docs/facturacion-al-publico-en-general-manual-y-automatica).
+En el plan Básico (en [Planes y precios](/docs/planes-y-precios) se llama Standard) esta corrida no está. Ahí se sigue facturando al público en general un CFDI por orden, a mano o con la plantilla de Shopify Flow, como hasta ahora. La guía está en [Facturación al público en general](/docs/facturacion-al-publico-en-general-manual-y-automatica).
 
 Las ventas de mostrador también son órdenes de Shopify. Si están pagadas, en MXN y sin factura, entran igual que las de la tienda en línea. Cómo se factura en caja está en [Facturar en Shopify POS](/blog/facturar-shopify-pos).
 
@@ -113,7 +113,7 @@ Mensual, clave `04`. Esta corrida de la app no cambia la periodicidad a diaria, 
 
 ### ¿En qué planes está?
 
-En Plus, Pro y Enterprise, desde la versión 3.26.0 de la app. En Standard se sigue facturando un CFDI por orden.
+Agrupar en la factura global del mes está en Plus, Pro y Enterprise, desde la versión 3.26.0. En el plan Básico (Standard) se sigue facturando al público en general un CFDI por orden, a mano o con la plantilla de Shopify Flow.
 
 ### ¿Se puede facturar dos veces la misma orden?
 
@@ -157,7 +157,7 @@ La app muestra un aviso para que emitas la nota de crédito. No la genera sola. 
       "name": "¿En qué planes de CFDI Express está la factura global del mes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En Plus, Pro y Enterprise, desde la versión 3.26.0 de la app. En Standard se sigue facturando un CFDI por orden."
+        "text": "Agrupar en la factura global del mes está en Plus, Pro y Enterprise, desde la versión 3.26.0. En el plan Básico (Standard) se sigue facturando al público en general un CFDI por orden, a mano o con la plantilla de Shopify Flow."
       }
     },
     {
@@ -186,6 +186,6 @@ La app muestra un aviso para que emitas la nota de crédito. No la genera sola. 
 2. Lanza una corrida de prueba desde **Facturación global**, o arma el workflow con la acción del mismo nombre.
 3. Baja el CSV o el Excel y revísalo con tu contador. Si una orden se reembolsa después, emite la nota de crédito.
 
-Si todavía facturas orden por orden, sigue en [Factura global en Shopify](/blog/factura-global-shopify). Si también vendes en tienda física, el cierre de caja está en [Facturar en Shopify POS](/blog/facturar-shopify-pos).
+Si facturas un CFDI por orden, con el botón o con la plantilla de Flow, la guía sigue en [Factura global en Shopify](/blog/factura-global-shopify). Si también vendes en tienda física, el cierre de caja está en [Facturar en Shopify POS](/blog/facturar-shopify-pos).
 
 ¿Quieres ver la corrida con las órdenes de tu tienda? [Agenda una demo](https://cal.com/team/acromatico-development/cfdi-express) o escribe a [hola@cfdi.express](mailto:hola@cfdi.express). Instala la app en [Shopify](https://apps.shopify.com/cfdi-express).
