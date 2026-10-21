@@ -95,6 +95,11 @@
     "completed": true
   },
   {
+    "title": "Facturación global mensual",
+    "document": "facturacion-global-mensual.md",
+    "completed": true
+  },
+  {
     "title": "Facturación al Extranjero (RFC XEXX010101000)",
     "document": "facturacion-al-extranjero.md",
     "completed": true

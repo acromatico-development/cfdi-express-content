@@ -2,6 +2,8 @@
 
 Para tener una facturación ordenada y de acuerdo a lo que el SAT requiere, es importante que todas las órdenes o compras que se hayan hecho en nuestro negocio queden facturadas al final del año fiscal. Para poder lograr esto, los negocios que facturan órdenes / ventas a sus clientes deben definir ciertos periodos de tiempo en los que las órdenes / ventas que no se hayan facturado anteriormente se facturen al público en general, ya sea en un CFDI global o facturando cada orden / venta al público en general.
 
+En los planes **Plus**, **Pro** y **Enterprise**, desde la versión **3.26.0**, también puedes agrupar esas ventas en facturas globales de hasta 1,000 órdenes. Se lanza a mano desde el primer elemento del menú, **Facturación global**, o con la acción del mismo nombre en Shopify Flow. La guía está en [Facturación global mensual](/docs/facturacion-global-mensual). Lo de abajo sigue siendo el botón por orden y las plantillas que timbran un CFDI por orden.
+
 ### Video Tutorial
 
 Si prefieres ver un video tutorial puedes consultarlo aquí:

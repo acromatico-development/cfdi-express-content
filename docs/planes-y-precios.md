@@ -13,6 +13,8 @@ CFDI Express ofrece varios planes conforme al volumen de facturación de tu nego
 
 > Todos los nuevos comercios disponen de una **prueba de 7 días** en el plan Standard. Existen también planes **Discounted** y **VIP** para tiendas convenidas con CFDI Express.
 
+La **facturación global mensual** (juntar ventas a público en general en facturas de hasta 1,000 órdenes) está en **Plus**, **Pro** y **Enterprise**. La guía está en [Facturación global mensual](/docs/facturacion-global-mensual). Facturar cada orden al público en general se documenta en [Facturación al público en general](/docs/facturacion-al-publico-en-general-manual-y-automatica).
+
 ## ¿Cómo se cobra?
 
 - **Standard / Discounted / VIP**: cada CFDI timbrado genera un cargo de uso de **$0.10 USD** (pay-as-you-go) además de la suscripción mensual.

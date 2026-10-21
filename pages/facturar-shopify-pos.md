@@ -98,11 +98,13 @@ Las ventas de Shopify POS aparecen en el portal de cuentas del cliente: Shopify 
 
 ## Ventas de POS que nadie facturó: factura global
 
-**Respuesta corta:** van a público en general (`XAXX010101000`), una orden por CFDI, a mano desde el admin o automático con Shopify Flow.
+**Respuesta corta:** van a público en general (`XAXX010101000`). Puedes timbrar una orden por CFDI, o —en Plus, Pro y Enterprise— juntarlas en la factura global del mes.
 
 En el admin abre la orden y oprime **Facturar al Publico en General**. Para no hacerlo una por una, importa una plantilla de [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express): busca las órdenes pagadas y no facturadas, sin filtrar canal, así que también toma las del POS.
 
-Elige cuándo corre según el plazo que le das al cliente para autofacturarse. El detalle (periodicidad, mes, qué ajustar en la plantilla y qué hacer si el cliente pide factura después) está en [Factura global en Shopify](/blog/factura-global-shopify).
+En Plus, Pro y Enterprise también puedes lanzar la [factura global del mes](/blog/factura-global-del-mes-shopify): junta las órdenes pagadas en MXN que no tienen factura, hasta 1,000 por comprobante.
+
+Elige cuándo corre según el plazo que le das al cliente para autofacturarse. El detalle del CFDI por orden (periodicidad, mes, qué ajustar en la plantilla y qué hacer si el cliente pide factura después) está en [Factura global en Shopify](/blog/factura-global-shopify).
 
 ## Errores comunes en caja
 
@@ -132,7 +134,7 @@ En **CFDI / Factura (Órdenes)**, si la orden tiene factura activa, oprime **Can
 
 ### ¿Qué hago con las ventas de POS que nadie facturó?
 
-Factúralas a público en general. Con CFDI Express lo haces desde el admin o con plantillas de Shopify Flow que timbran las órdenes pagadas y no facturadas, incluidas las del POS.
+Factúralas a público en general. Con CFDI Express lo haces desde el admin o con plantillas de Shopify Flow que timbran las órdenes pagadas y no facturadas, incluidas las del POS. En Plus, Pro y Enterprise también puedes juntarlas en la factura global del mes.
 
 ### ¿El cliente recibe la factura por correo?
 
@@ -180,7 +182,7 @@ Sí. CFDI Express manda el PDF y el XML al correo que captura el cajero, salvo q
       "name": "¿Qué hago con las ventas de POS que nadie facturó?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Factúralas a público en general. Con CFDI Express lo haces desde el admin o con plantillas de Shopify Flow que timbran las órdenes pagadas y no facturadas, incluidas las de Shopify POS."
+        "text": "Factúralas a público en general. Con CFDI Express lo haces desde el admin o con plantillas de Shopify Flow que timbran las órdenes pagadas y no facturadas, incluidas las de Shopify POS. En Plus, Pro y Enterprise también puedes juntarlas en la factura global del mes."
       }
     },
     {

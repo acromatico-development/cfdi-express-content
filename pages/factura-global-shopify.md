@@ -14,6 +14,8 @@ Cada venta de tu tienda Shopify lleva CFDI, la pida el cliente o no. Las que nad
 
 Esta guía es para la app de Shopify [CFDI Express](https://apps.shopify.com/cfdi-express). Ves cómo se arma la factura global en la app, cómo hacerla a mano desde el admin, cómo automatizarla con Shopify Flow y qué pasa si el cliente pide su factura después. El paso a paso corto está en [Facturación al público en general](/docs/facturacion-al-publico-en-general-manual-y-automatica).
 
+Si tu plan es Plus, Pro o Enterprise y quieres **una factura global del mes** que junte las órdenes, empieza por [Cómo hacer la factura global del mes en Shopify](/blog/factura-global-del-mes-shopify). Esta guía es la de un CFDI por orden.
+
 ## ¿Qué es la factura global y cuándo la necesitas?
 
 **Respuesta corta:** es el CFDI de las ventas que no se facturaron a nombre de un cliente. Se emite a público en general, con el periodo al que corresponden esas ventas.
@@ -24,7 +26,7 @@ El marco SAT completo (datos del receptor, motivos de cancelación, información
 
 ## Cómo arma CFDI Express la factura global
 
-**Respuesta corta:** la app timbra **un CFDI a público en general por cada orden** de Shopify. La información global va con periodicidad mensual y el mes y año que elijas.
+**Respuesta corta:** desde la orden, la app timbra **un CFDI a público en general por cada orden** de Shopify. La información global va con periodicidad mensual y el mes y año que elijas. En Plus, Pro y Enterprise también puedes juntarlas: [factura global del mes](/blog/factura-global-del-mes-shopify).
 
 Esto es lo que lleva el CFDI cuando facturas una orden a público en general desde la app:
 
@@ -41,10 +43,10 @@ Esto es lo que lleva el CFDI cuando facturas una orden a público en general des
 
 Dos cosas que conviene saber antes de empezar:
 
-- **Una orden, un CFDI.** La app no junta varias órdenes en un solo comprobante. Cada orden queda con su propio UUID, su PDF y su XML, y con el estatus **Facturado** en la lista de órdenes.
+- **Una orden, un CFDI, cuando facturas desde la orden.** Cada orden queda con su propio UUID, su PDF y su XML, y con el estatus **Facturado** en la lista de órdenes.
 - **La periodicidad no se elige en la app.** Siempre va `04` (mensual). Tú eliges el **mes** y el **año**.
 
-Si necesitas un solo CFDI global que agrupe muchas ventas, ese camino es la [API de CFDI Express](https://cfdi.express/api) (más abajo).
+Si quieres un comprobante que junte muchas órdenes, en Plus, Pro y Enterprise está la [facturación global mensual](/docs/facturacion-global-mensual): hasta 1,000 órdenes por factura. La [API de CFDI Express](https://cfdi.express/api) sigue sirviendo si tu equipo arma el comprobante desde otro sistema (más abajo).
 
 ## Paso a paso: factura global manual desde el admin
 
@@ -73,7 +75,7 @@ CFDI Express agrega a [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfd
 - [Después de 10 días](https://assets.acromatico.dev/assets/a4e4ea57-6d0a-42ad-be1e-b4eeec33d7dc.flow)
 - [Al final del mes](https://assets.acromatico.dev/assets/3ef1789f-05c1-489e-9b12-a0acbfe437f6.flow)
 
-La plantilla define **cuándo** se timbra. El CFDI sigue saliendo con periodicidad mensual, una orden a la vez.
+La plantilla define **cuándo** se timbra. El CFDI sigue saliendo con periodicidad mensual, una orden a la vez. Para juntarlas en la factura global del mes, la acción es **Facturación global**, no **Crear CFDI**. Está en [Cómo hacer la factura global del mes](/blog/factura-global-del-mes-shopify).
 
 ### Cómo instalarla
 
@@ -139,7 +141,9 @@ Para ventas a extranjeros la app tiene **Facturar al Publico en General Extranje
 
 ## ¿Necesitas un solo CFDI global con muchas ventas?
 
-**Respuesta corta:** en la app, cada orden va en su propio CFDI. Si quieres un comprobante que agrupe muchas ventas, se arma por API.
+**Respuesta corta:** en Plus, Pro y Enterprise la app agrupa hasta 1,000 órdenes en cada factura global del mes. Desde la orden, cada venta sigue en su propio CFDI. Por API también se arma un global.
+
+La corrida de la app está en [Facturación global mensual](/docs/facturacion-global-mensual). Toma órdenes pagadas, en MXN y sin factura, y no las duplica.
 
 La [API de CFDI Express](https://cfdi.express/api) acepta la información global en `POST /v1/invoices` con periodicidad `01` diaria, `02` semanal, `03` quincenal, `04` mensual o `05` bimestral (meses `13`–`18`). Sirve si tu equipo de desarrollo junta las ventas de un sistema propio. La referencia está en la [documentación de la API](https://api.cfdi.express/docs).
 
@@ -155,7 +159,7 @@ No. Shopify registra la venta, pero no timbra CFDI. Necesitas una app de factura
 
 ### ¿CFDI Express junta todas las ventas en un solo CFDI global?
 
-No. Timbra un CFDI a público en general por orden, con la información global en cada uno. Para un solo CFDI que agrupe ventas existe la API de CFDI Express.
+Desde la orden, no: timbra un CFDI a público en general por orden. En Plus, Pro y Enterprise, la facturación global mensual sí las agrupa, hasta 1,000 órdenes por comprobante. La guía está en [Cómo hacer la factura global del mes](/blog/factura-global-del-mes-shopify). Por API también puedes armar un global desde otro sistema.
 
 ### ¿Puedo dejar fuera una orden de la factura global automática?
 
@@ -195,7 +199,7 @@ En la página de estado de orden verá que el comercio cerró esa orden. Tú pue
       "name": "¿CFDI Express junta todas las ventas en un solo CFDI global?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Timbra un CFDI a público en general por orden, con la información global en cada uno. Para un solo CFDI que agrupe ventas existe la API de CFDI Express."
+        "text": "Desde la orden, no: timbra un CFDI a público en general por orden. En Plus, Pro y Enterprise, la facturación global mensual sí las agrupa, hasta 1,000 órdenes por comprobante. Por API también puedes armar un global desde otro sistema."
       }
     },
     {
