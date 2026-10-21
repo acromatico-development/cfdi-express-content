@@ -31,6 +31,10 @@ Cada fila es un CFDI o complemento de pago. El reporte incluye columnas completa
 - El reporte se construye en un **worker** en segundo plano (BullMQ) que consulta tus registros de CFDIs y complementos en el rango solicitado.
 - Al terminar, el CSV se guarda y se dispara el disparador **`report-generated`** en Shopify Flow (con `startdate`, `enddate`, `reporturl`, `recordcount` y el título), para que puedas encadenar automatizaciones (avisar a contabilidad, subir a un drive, etc.). Revisa [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express) para ver cómo usarlo.
 
+## Reporte de la facturación global mensual
+
+La [facturación global mensual](/docs/facturacion-global-mensual) genera, además, un **CSV** y un **Excel** con **una fila por orden**. Cada fila desglosa el IVA al 0%, al 8% y al 16%, y el IEPS. Ese archivo es el de las órdenes que entraron a la factura global, no el CSV de CFDIs de esta página.
+
 ## Métricas en el dashboard de Reportes
 
 La página de Reportes también muestra un resumen de uso: total de CFDIs generados, total de Constancias de Situación Fiscal (CSF) recibidas, total de reportes creados y un cálculo de "tiempo ahorrado" (basado en ~10 min por CFDI y ~30 min por reporte).

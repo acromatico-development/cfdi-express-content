@@ -17,7 +17,7 @@ Recursos oficiales para enlazar:
 
 1. **Usa el arte publicado.** No lo regeneres. El `image` del frontmatter es el hero 1600×900, sin query (la plantilla también lo usa como `og:image`). En este pack, LinkedIn, X, Facebook e Instagram usan el OG 1200×630, sin query. En el cuerpo del post el hero lleva `?w=1600`.
 2. Publica con el **Texto** sugerido. El CTA es **instalar la app** y la guía de docs.
-3. En la app, la factura a público en general es **un CFDI por orden**, con periodicidad **mensual** y el mes y año que elijas. No prometas "un solo CFDI con todas las ventas" ni periodicidad diaria o semanal.
+3. Este pack es el de **un CFDI por orden**, con periodicidad **mensual** y el mes y año que elijas. No prometas periodicidad diaria o semanal. Desde la app 3.26.0, Plus, Pro y Enterprise también tienen la factura global del mes (hasta 1,000 órdenes por comprobante). Ese anuncio es otro post: `factura-global-del-mes-shopify`. No lo niegues.
 4. Lo automático va con **Shopify Flow** (plantillas de fin de día, 3 días, 10 días y fin de mes). Antes de activarlas se revisan código postal, forma de pago, correo y el mes de la factura global.
 5. Pide **datos fiscales** (RFC, nombre o razón social, régimen y CP). No pidas el PDF de la Constancia de Situación Fiscal.
 6. No publiques el link del blog hasta que el post esté en `https://cfdi.express/blog/factura-global-shopify` (después del merge). **No mergear hasta que Rafael revise.**

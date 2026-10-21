@@ -39,6 +39,7 @@ CFDI Express es una [aplicación de Shopify](https://apps.shopify.com/cfdi-expre
 - [Formulario de Facturación (Theme App Block)](/docs/formulario-de-facturacion-theme-block)
 - [Facturación desde el POS (Punto de Venta) de Shopify](/docs/facturacion-pos-punto-de-venta-shopify)
 - [Facturación al Público en General (Manual y Automática)](/docs/facturacion-al-publico-en-general-manual-y-automatica)
+- [Facturación global mensual](/docs/facturacion-global-mensual)
 - [Facturación al Extranjero (RFC XEXX010101000)](/docs/facturacion-al-extranjero)
 - [Uso de Flow para automatizaciones con CFDI Express](/docs/uso-shopify-flow-automatizaciones-cfdi-express)
 - [Modo Flow en CFDI Express para usar tu propio PAC de Facturación](/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacion)

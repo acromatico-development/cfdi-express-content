@@ -34,6 +34,7 @@ Además del correo transaccional, CFDI Express envía un evento de métrica **"C
 
 ## Correos internos (no al cliente)
 
+- **Facturación global mensual:** si una corrida de [facturación global mensual](/docs/facturacion-global-mensual) falla, CFDI Express envía un correo de aviso. Cuando la corrida termina, la app dispara **Facturación global terminada** en [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express).
 - **Formulario de contacto público** (en cfdi.express): se envía a `hola@cfdi.express` con el tipo de necesidad (conexión a ERP, migración a Shopify, nueva tienda, consultoría, integraciones, otro), verificado por hCaptcha.
 - **Shop redact** (cumplimiento de privacidad de Shopify): se envía a `hola@acromati.co` con el payload cuando se elimina una tienda, como parte de los webhooks obligatorios de Shopify.
 

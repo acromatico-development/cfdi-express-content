@@ -10,6 +10,7 @@ Estos eventos los dispara el app. Los usas como punto de partida de tus automati
 - **`cfdi-deleted`** — se dispara cuando un CFDI es cancelado. Incluye la referencia de la orden.
 - **`cfdi-flow-mode`** — se dispara cuando llega una solicitud de facturación en [Modo Flow](/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacion). Lleva los datos fiscales del cliente para que tu automatización los reenvíe a tu PAC.
 - **`report-generated`** — se dispara cuando un [reporte](/docs/reportes) de CFDIs/complementos termina de generarse. Incluye `startdate`, `enddate`, `reporturl`, `recordcount` y el título del reporte.
+- **Facturación global terminada** — se dispara cuando termina una corrida de [facturación global mensual](/docs/facturacion-global-mensual). Si la corrida falla, la app también manda un correo de aviso.
 
 ## Acciones (actions) que CFDI Express recibe
 
@@ -18,6 +19,7 @@ Estos eventos los dispara el app. Los usas como punto de partida de tus automati
 - **"Crear CFDI"** (`cfdi-create-action`) — timbra un CFDI a partir de una referencia de orden y los datos fiscales que proporciones (RFC, razón social, régimen, código postal, método de pago, uso CFDI, correo y dirección opcional). Devuelve la `download_url` del ZIP. Si el producto o la variante tienen [pedimentos de importación](/docs/pedimentos-de-importacion), esta acción los incluye. No tiene un campo para editarlos.
 - **"Eliminar CFDI"** (`cfdi-delete-action`) — cancela un CFDI dado su `order_reference` y un **motivo** de cancelación del SAT (`01`, `02`, `03` o `04`).
 - **"Crear Nota de Crédito"** — no incluye pedimentos. El detalle está en [Notas de crédito](/docs/notas-de-credito).
+- **"Facturación global"** — agrupa en facturas globales de hasta 1,000 órdenes las ventas pagadas en MXN que no tienen factura. Está en Plus, Pro y Enterprise. No es la acción "Crear CFDI": esa timbra un CFDI por orden. La guía está en [Facturación global mensual](/docs/facturacion-global-mensual).
 
 ## Cómo crear una automatización con Flow
 
@@ -36,6 +38,8 @@ Estos eventos los dispara el app. Los usas como punto de partida de tus automati
 ## Facturación automática al Público en General
 
 La automatización más común combina el **disparador de recurrencia** con la **acción "Crear CFDI"** usando los datos del Público en General (`XAXX010101000`), para timbrar de forma periódica las órdenes que no fueron facturadas. Esto se detalla junto con los campos a usar y las plantillas en [Facturación al Público en General](/docs/facturacion-al-publico-en-general-manual-y-automatica).
+
+Para juntar esas ventas en facturas globales de hasta 1,000 órdenes, en Plus, Pro y Enterprise, usa la acción **Facturación global** con el mismo disparador de horario. Al terminar se dispara **Facturación global terminada**. La guía está en [Facturación global mensual](/docs/facturacion-global-mensual).
 
 ## Plantillas de Shopify Flow
 
