@@ -42,6 +42,71 @@ El formulario del cliente detecta el RFC `XEXX010101000` y despliega automática
 - El campo `ivaZeroItems` viaja desde el formulario (cliente o admin) hasta la previsualización y el timbrado, recalculando los importes de base, IVA traslados y totales en [Modo PAC](/docs/configuraciones).
 - Si un producto ya tiene configurado un IVA especial en [Códigos del SAT por producto](/docs/codigos-sat-producto), la sobreescritura de 0% del extranjero toma precedencia para esa emisión.
 
+<h2 id="receptor-extranjero">Receptor extranjero en la API</h2>
+
+Desde la API **v1.42.0**, el cliente extranjero se manda con `receiver.rfc` = `XEXX010101000` más dos campos del receptor: `residenciaFiscal` y `numRegIdTrib`. El servidor MCP (`https://api.cfdi.express/mcp`) explica ese flujo en sus instrucciones.
+
+El apartado **Cómo facturar al extranjero**, arriba en esta página, describe el flujo de la app de Shopify.
+
+### Qué se captura
+
+| Campo | Qué es |
+| --- | --- |
+| `receiver.rfc` | `XEXX010101000` |
+| `receiver.name` | Nombre o razón social del cliente |
+| `receiver.residenciaFiscal` | Clave de país del catálogo `c_Pais` del SAT. La API la pasa a mayúsculas. Solo valida que sean 3 letras. Nunca `MEX`. La pertenencia a `c_Pais` no se valida aquí. |
+| `receiver.numRegIdTrib` | Tax ID extranjero, de 1 a 40 caracteres. Requiere `residenciaFiscal`. |
+| `receiver.regimenFiscal` | `616` |
+| `receiver.zip` | El código postal del emisor (el mismo en receptor y emisor) |
+| `usoCfdi` | `S01` |
+
+`residenciaFiscal` y `numRegIdTrib` se emiten como `cfdi:Receptor@ResidenciaFiscal` y `cfdi:Receptor@NumRegIdTrib`.
+
+### Ejemplo
+
+`ARG` y `30715436228` son el ejemplo de país y de tax ID. Sustituye `name` por el del cliente y `zip` por el código postal de tu emisor.
+
+```json
+{
+  "usoCfdi": "S01",
+  "receiver": {
+    "rfc": "XEXX010101000",
+    "name": "<nombre o razón social>",
+    "zip": "<código postal del emisor>",
+    "regimenFiscal": "616",
+    "residenciaFiscal": "ARG",
+    "numRegIdTrib": "30715436228"
+  }
+}
+```
+
+### XML y PDF
+
+Esos dos atributos salen en la factura, en la nota de crédito y en el REP.
+
+- En la **nota de crédito** se copian de la factura relacionada. Ver [Notas de crédito](/docs/notas-de-credito).
+- En el **REP** también se emiten. La guía de la app para ese comprobante es [Complementos de pago](/docs/complementos-de-pago).
+- Se **imprimen** en el PDF de la factura y en el PDF del REP.
+
+### Validaciones antes de timbrar
+
+La API las aplica antes de timbrar. Reflejan al SAT.
+
+| Código | Regla |
+| --- | --- |
+| CFDI40151 | `residenciaFiscal` y `numRegIdTrib` solo se permiten con `XEXX010101000` |
+| CFDI40153 | `numRegIdTrib` requiere `residenciaFiscal` |
+| CFDI40152 | `residenciaFiscal` nunca es `MEX` |
+| CFDI40149 | Uso de CFDI `S01`, régimen fiscal `616` y código postal del receptor igual al del emisor. La misma regla que con `XAXX010101000` |
+| CFDI40156 | El formato del tax ID por país lo valida el PAC |
+
+La clave de 3 letras no se contrasta contra `c_Pais` en la API.
+
+Errores **400** de estos campos:
+
+- `residenciaFiscal` o `numRegIdTrib` con cualquier RFC distinto de `XEXX010101000`.
+- Factura o nota de crédito a `XEXX010101000` sin `S01`, sin régimen `616` o sin el código postal del emisor.
+
 ## Notas
 
 - La facturación al extranjero también dispara el disparador `cfdi-created` y envía el correo con el CFDI al cliente (salvo que `skipCfdiEmail` esté activo).
