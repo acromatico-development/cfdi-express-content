@@ -69,7 +69,7 @@ Header `Idempotency-Key` (1 a 255 caracteres), requerido.
 | `periodicidad` | string | no | `c_Periodicidad`. Default `02` mensual. También `01` semanal, `03` diario, `04` quincenal, `05` otro. |
 | `isrTipoPagoRet` | string | no | ISR de personas físicas: `03` pago definitivo (default) o `04` pago provisional. En personas morales siempre es `04`. |
 
-`tipoServicio` nombrado en el contrato, entre otras claves del catálogo: `05` comercio de bienes, `06` otro tipo de servicios, `07` contenido digital, `08` clubes en línea, `09` enseñanza a distancia.
+`tipoServicio` es una sola clave por CFDI. El catálogo completo y las tasas de cada clave están en [Qué calcula la API](#que-calcula-la-api). La clave `11` (apuestas y sorteos, IEPS) responde error: todavía no está soportada.
 
 ### Receptor
 
@@ -93,7 +93,9 @@ Header `Idempotency-Key` (1 a 255 caracteres), requerido.
 | `rfcTerceroAutorizado` | string | no | RFC de 13 posiciones (`^[A-ZÑ&]{4}\d{6}[A-Z0-9]{3}$`). |
 | `contribucionGubernamental` | object | no | `importe` (mayor que 1.00) y `entidad` (`c_EntidadesFederativas` `01`–`32`; `09` es Ciudad de México). |
 
-`formaPago` nombrado en el contrato, entre otras claves del catálogo: `01` efectivo, `02` transferencia, `03` tarjeta de crédito, `06` tarjeta de débito, `08` intermediario de pagos, `09` premios o bonificaciones.
+`formaPago` (`c_FormaPagoServ`): `01` efectivo, `02` transferencia electrónica de fondos, `03` tarjeta de crédito, `04` monedero electrónico, `05` dinero electrónico, `06` tarjeta de débito, `07` tarjeta de servicios, `08` intermediario de pagos, `09` otros ingresos por premios, bonificaciones o análogos.
+
+Al menos un servicio tiene que ser venta o servicio (`formaPago` distinto de `09`): `NumServ` solo cuenta esos. `09` no lleva comisión ni contribución gubernamental.
 
 `comision.importe` es obligatorio dentro de `comision` y es lo que la plataforma cobró al prestador por esa venta. `comision.porcentaje` (de `0.001` a `1`) y `comision.base` son opcionales.
 
@@ -103,29 +105,154 @@ Header `Idempotency-Key` (1 a 255 caracteres), requerido.
 |---|---|
 | `201` | Timbrada. El cuerpo es el recurso `retencion`. |
 | `202` | Sigue en `stamping`. Consulta `GET /v1/retenciones/{id}`. |
-| `400` | Validación: reglas del SAT o claves de catálogo desconocidas. |
+| `400` | Validación: reglas del SAT, claves desconocidas, comercio archivado (`merchant_archived`) o sin CSD (`csd_missing`). |
 | `402` | Sin créditos o tope mensual alcanzado. |
 | `404` | El comercio no existe. |
 | `409` | Esa `Idempotency-Key` ya está en curso. |
 | `422` | El SAT rechazó el comprobante, o la misma llave se reutilizó con otro cuerpo. |
 | `503` | El servicio de timbrado no está disponible. |
 
+La serie del CFDI es `RET`. El folio numérico sale de la secuencia del comercio, la misma de facturas, complementos y nómina.
+
+## Ejemplo de `POST /v1/retenciones`
+
+Este es el cuerpo del e2e del PR. El test arma `ejercicio` y `mes` como el mes anterior en `America/Mexico_City`; con la fecha de la suite (`2026-10-29`) ese periodo es septiembre 2026. `merchantId` lo resuelve el test con el comercio emisor que ya tiene CSD. El header `Idempotency-Key` va aparte.
+
+```json
+{
+  "merchantId": "<id del comercio emisor>",
+  "ejercicio": 2026,
+  "mes": 9,
+  "tipoServicio": "06",
+  "receiver": {
+    "rfc": "XOJI740919U48",
+    "name": "INGRID XODAR JIMENEZ",
+    "zip": "76028"
+  },
+  "servicios": [
+    {
+      "fecha": "2026-09-03",
+      "formaPago": "03",
+      "precioSinIva": 1000,
+      "comision": { "importe": 200, "porcentaje": 0.2 }
+    },
+    {
+      "fecha": "2026-09-12",
+      "formaPago": "01",
+      "precioSinIva": 500,
+      "comision": { "importe": 100 }
+    },
+    {
+      "fecha": "2026-09-20",
+      "formaPago": "06",
+      "precioSinIva": 333.33,
+      "comision": { "importe": 66.67 }
+    }
+  ]
+}
+```
+
+`201`, recurso `retencion` con `status` `stamped` y `serie` `RET`. El e2e fija `montoTotOperacion` `1833.33`, `comisiones` `366.67`, ISR con `baseRet` `1333.33` y `tipoPagoRet` `03`, e IVA con `baseRet` `213.33` y `montoRet` `106.66`. El mismo motor deja el resto de los totales de esa entrada. `id`, `uuid` y `folio` los asigna el timbrado.
+
+```json
+{
+  "object": "retencion",
+  "status": "stamped",
+  "serie": "RET",
+  "ejercicio": 2026,
+  "mes": 9,
+  "tipoServicio": "06",
+  "montoTotOperacion": 1833.33,
+  "montoTotRet": 139.99,
+  "isrRetenido": 33.33,
+  "ivaRetenido": 106.66,
+  "ivaTrasladado": 293.3328,
+  "difIvaEntregadoPrestServ": 106.6728,
+  "comisiones": 366.67,
+  "currency": "MXN",
+  "impRetenidos": [
+    {
+      "impuesto": "001",
+      "baseRet": 1333.33,
+      "montoRet": 33.33,
+      "tipoPagoRet": "03",
+      "tasa": 0.025
+    },
+    {
+      "impuesto": "002",
+      "baseRet": 213.33,
+      "montoRet": 106.66,
+      "tipoPagoRet": "01",
+      "tasa": 0.5
+    }
+  ]
+}
+```
+
+Cómo salen, con `tipoServicio` `06` en 2026 (ISR 2.5%, IVA retenido 50%) y `ivaTasa` default `0.16`:
+
+- IVA trasladado: `1000 × 0.16 = 160`, `500 × 0.16 = 80`, `333.33 × 0.16 = 53.3328`. Total `293.3328`.
+- `MontoTotOperacion`: `1000 + 500 + 333.33 = 1833.33`. El servicio en efectivo entra aquí.
+- Base de ISR: `1833.33 − 500 = 1333.33`. Monto: `1333.33 × 0.025`, truncado a centavos, `33.33`.
+- Base de IVA retenido: IVA que no es efectivo, `160 + 53.3328 = 213.3328`, truncado a `213.33`. Monto: `213.33 × 0.5`, truncado, `106.66`.
+- `DifIVAEntregadoPrestServ`: `293.3328 − 80 − 106.66 = 106.6728`.
+- Comisiones: `200 + 100 + 66.67 = 366.67`.
+
 <h2 id="que-calcula-la-api">Qué calcula la API</h2>
 
-Tú mandas periodo, receptor, servicios y comisión. La API deriva los importes que el SAT valida: `MontoTotOperacion`, el IVA trasladado de cada servicio, el ISR retenido, el IVA retenido, las exclusiones en efectivo y `DifIVAEntregadoPrestServ`.
+El request lleva periodo, receptor, servicios y comisión. La API deriva los importes que el SAT valida. La aritmética va en micro-pesos (`1e-6`) y trunca a centavos: piso a 2 decimales, sin redondear.
 
-Tasas que el contrato publica tal cual. Confírmalas con tu contador; el tipo de servicio y el ejercicio pueden cambiar el caso:
-
-| Caso | Tasa en el contrato |
+| Importe | Cálculo |
 |---|---|
-| Persona moral | ISR retenido del **2.5%**. `isrTipoPagoRet` queda en `04`. |
-| Persona física | La tasa de ISR es la de `c_TipoDeServ` para ese `ejercicio`. El contrato no lista esos porcentajes. |
-| Sin RFC (`XAXX010101000`) | **20%** de ISR y **100%** de IVA. |
-| IVA retenido | **50%** o **100%**. El 100% está explícito para `XAXX010101000`. El contrato no desglosa cuándo aplica el 50%. |
-| IVA trasladado | `ivaTasa`: `0.16`, `0.08` o `0`. |
-| Exclusiones en efectivo | La API las aplica al calcular. El contrato no publica la fórmula ni un monto de corte. |
+| IVA trasladado del servicio | `precioSinIva × ivaTasa`, exacto hasta 6 decimales. Default `0.16`. `formaPago` `09` no lleva nodo de IVA. |
+| `MontoTotOperacion` | Suma de `precioSinIva` de los servicios con nodo de IVA. Igual a `MontoTotGrav`. |
+| Base de ISR | `MontoTotOperacion` menos los precios con `formaPago` `01` (efectivo), truncada a centavos. |
+| ISR retenido | Base × tasa, truncado a centavos. |
+| Base de IVA retenido | IVA trasladado que no es en efectivo, truncado a centavos. |
+| IVA retenido | Esa base × 50% o 100%, truncado a centavos. `tipoPagoRet` `01`. |
+| `DifIVAEntregadoPrestServ` | IVA trasladado total − IVA en efectivo − IVA retenido. |
 
-`tipoServicio` decide las tasas de ISR e IVA. El catálogo está en `GET /v1/catalogs/retenciones/tipo-servicio`.
+### Exclusión en efectivo
+
+`formaPago` `01` es efectivo. Esos servicios sí entran en `MontoTotOperacion` y su IVA sí entra en el IVA trasladado. Salen de las dos bases de retención: el precio se resta de la base de ISR y el IVA se resta de la base de IVA retenido. En `DifIVAEntregadoPrestServ` ese IVA en efectivo también se resta, porque se queda con el prestador.
+
+No hay un monto de corte. La exclusión es por forma de pago `01`, el precio completo del servicio.
+
+### ISR de persona física
+
+Aplica cuando el emisor es persona moral (RFC de 12) y el receptor es persona física (RFC de 13, distinto de `XAXX010101000` y de `XEXX010101000`). La tasa es la de `c_TipoDeServ` para ese `ejercicio`. `isrTipoPagoRet` default `03` (pago definitivo); `04` es pago provisional.
+
+| Clave | Servicio | ISR 2021–2025 | ISR 2026 | IVA retenido |
+|---|---|---|---|---|
+| `01` | Transporte terrestre de pasajeros | 2.1% | 2.1% | 50% |
+| `02` | Entrega de alimentos preparados | 2.1% | 2.1% | 50% |
+| `03` | Entrega de bienes (distintos de alimentos preparados) | 2.1% | 2.1% | 50% |
+| `04` | Hospedaje | 4% | 4% | 50% |
+| `05` | Comercio de bienes | 1% | 2.5% | 50% |
+| `06` | Otro tipo de servicios | 1% | 2.5% | 50% |
+| `07` | Descarga o acceso a contenido digital, así como otros contenidos multimedia | sin ISR | sin ISR | 100% |
+| `08` | Clubes en línea y páginas de citas | sin ISR | sin ISR | 100% |
+| `09` | Enseñanza a distancia o test o ejercicios | sin ISR | sin ISR | 100% |
+
+`ejercicio` va de 2021 al año de la fecha de expedición. 2019 y 2020 usaban rangos de ingreso que este cálculo no modela.
+
+Otros receptores, con el mismo emisor persona moral:
+
+- Persona moral (RFC de 12): ISR del **2.5%** en los tipos `01`–`06`. `tipoPagoRet` siempre `04`. Mandar `isrTipoPagoRet` `03` es error de validación.
+- `XAXX010101000`: ISR del **20%** en los tipos `01`–`06`, e IVA retenido al **100%**.
+- `XEXX010101000`: sin ISR e IVA retenido al **100%**. En el caso de prueba (precio `1000`, tasa `0.16`) `difIvaEntregadoPrestServ` queda en `0`.
+- Tipos `07`, `08` y `09`: sin nodo de ISR para cualquier receptor. IVA retenido al 100%.
+
+Si el emisor es persona física (RFC de 13), no hay retención de ISR. El IVA retenido sigue la columna de la tabla.
+
+### Cuándo el IVA retenido es 50% o 100%
+
+La proporción es sobre el IVA trasladado que no es en efectivo:
+
+- **50%** en tipos `01`–`06`, con receptor nacional distinto de `XAXX010101000`.
+- **100%** en tipos `07`–`09`, con `XAXX010101000` y con `XEXX010101000`.
+
+`tipoServicio` define esas tasas. Las instrucciones del servidor MCP piden no adivinarla.
 
 El recurso ya timbrado trae el resultado:
 
@@ -180,7 +307,11 @@ Header `Idempotency-Key`, requerido. El cuerpo es el mismo de [cancelar una fact
 | `motivo` | string | sí | `01` errores con relación (exige `folioSustitucion`) · `02` errores sin relación · `03` la operación no se llevó a cabo · `04` operación nominativa relacionada a una global. |
 | `folioSustitucion` | string (uuid) | con `01` | UUID del CFDI que sustituye al cancelado. |
 
-`202` cuando la cancelación quedó procesada: el estatus y el acuse vienen en el recurso. Otros status: `400` validación, `402` sin créditos, `404` no existe, `422` el SAT rechazó la cancelación, `503` servicio de timbrado no disponible.
+Cancelar cuesta **1 timbre**. El e2e lo cuenta aparte del timbre del timbrado. `202` cuando quedó aceptada: `status` `cancelled` y `cancellation.status` `accepted`.
+
+Justo después de timbrar, el SAT puede responder `CR1205 - UUID No existe` durante cerca de un minuto. Ese intento se reembolsa y se puede reintentar después.
+
+Otros status: `400` validación, `402` sin créditos, `404` no existe, `422` el SAT rechazó la cancelación, `503` servicio de timbrado no disponible.
 
 Estatus posibles del recurso: `stamping`, `stamped`, `stamp_failed`, `cancel_pending`, `cancelled`.
 
@@ -198,7 +329,16 @@ Los eventos que ya existían (`invoice.*`, `payment.*`, `nomina.*`) siguen en el
 
 ## MCP
 
-La v1.43.0 agrega **4 herramientas** al servidor MCP. El total queda en **22**. Esas cuatro cubren este flujo: crear, listar, consultar y cancelar la constancia.
+La v1.43.0 agrega **4 herramientas**. El total queda en **22**.
+
+| Herramienta | Qué hace |
+|---|---|
+| `create_retencion` | Timbra la constancia. Consume 1 timbre. Manda periodo, `tipoServicio`, `receiver` y `servicios`; ISR, IVA y exclusiones en efectivo se calculan en el servidor. |
+| `get_retencion` | Consulta una constancia: estatus, UUID, receptor, periodo, servicios, retenciones y archivos. |
+| `list_retenciones` | Lista, de la más nueva a la más vieja. Filtra por `receiverRfc`, `ejercicio`, `mes` y `status`. |
+| `cancel_retencion` | Cancela una constancia timbrada. Cuesta 1 timbre. `motivo` `01` exige `folioSustitucion`. |
+
+`get_catalog`, que ya existía, también acepta `retenciones/tipo-servicio`, `retenciones/forma-pago-servicio`, `retenciones/periodicidad`, `retenciones/subtipo-servicio`, `retenciones/tipo-pago-retencion` y `retenciones/entidad-federativa`.
 
 - Producción: https://api.cfdi.express/mcp
 - Pruebas: https://api.cfdi.express/mcp/test
@@ -211,7 +351,7 @@ En el [dashboard](https://dash.cfdi.express), Documentos tiene la pestaña **Ret
 
 ## Costo
 
-Timbrar esta constancia cuesta **1 timbre**. Sin saldo, el `POST` responde `402`. El saldo y los timbres restantes se consultan en [Consultar saldo](/docs/api/saldo).
+Timbrar esta constancia cuesta **1 timbre**. Cancelarla cuesta **otro timbre**. Sin saldo, el `POST` responde `402`. Un rechazo `CR1205` reembolsa el intento de cancelación. El saldo se consulta en [Consultar saldo](/docs/api/saldo).
 
 `sk_test_` opera en el modo de pruebas y `sk_live_` en producción. Cada modo tiene su propio saldo.
 
@@ -242,11 +382,11 @@ Es el CFDI de Retenciones 2.0 con complemento de Servicios de Plataformas Tecnol
 
 ### ¿La API calcula el ISR y el IVA?
 
-Sí. El request lleva precios sin IVA, forma de pago y comisión. La API calcula ISR retenido, IVA retenido, IVA trasladado, exclusiones en efectivo y totales. Las tasas que publica el contrato están en [Qué calcula la API](#que-calcula-la-api). Confírmalas con tu contador. La tasa aplicada en cada CFDI vuelve en `impRetenidos[].tasa`.
+Sí. El request lleva precios sin IVA, forma de pago y comisión. La API calcula ISR retenido, IVA retenido, IVA trasladado, la exclusión de efectivo (`formaPago` `01`) y los totales. Las tasas están en [Qué calcula la API](#que-calcula-la-api). `tipoServicio` lo define el contador de la plataforma. La tasa aplicada vuelve en `impRetenidos[].tasa`.
 
 ### ¿Cuánto cuesta?
 
-1 timbre por constancia timbrada. Ver [Consultar saldo](/docs/api/saldo).
+1 timbre al timbrar y 1 timbre al cancelar. Ver [Consultar saldo](/docs/api/saldo).
 
 ### ¿Dónde la veo en el dashboard?
 
