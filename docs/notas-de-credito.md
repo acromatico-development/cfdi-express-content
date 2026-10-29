@@ -52,7 +52,7 @@ Cuando los requisitos se cumplen, la pantalla de facturación de la orden muestr
 2. Haz clic en **"Cancelar"**.
 3. CFDI Express cancela la Nota de Crédito ante el SAT y la marca con estado **Cancelada**.
 
-> Al cancelar una Nota de Crédito, su monto vuelve a estar **disponible por acreditar**, por lo que puedes generar otra Nota de Crédito por ese monto.
+> Al cancelar una Nota de Crédito, su monto vuelve a estar **disponible por acreditar**, por lo que puedes generar otra Nota de Crédito por ese monto. No aplica si la factura ya se reemplazó: esas notas ya no se pueden cancelar. Ver [Volver a facturar sin cancelar la original](#volver-a-facturar-sin-cancelar-la-original).
 
 ## Cancelación de la factura bloqueada
 
@@ -81,14 +81,32 @@ Los pedimentos de una factura de ingreso se configuran en el producto, la varian
 
 Cada **Nota de Crédito timbrada** registra un cargo de uso igual que cualquier otro CFDI, de acuerdo a tu [plan](/docs/planes-y-precios). La **cancelación** de una Nota de Crédito ajusta el uso (decrementa el cargo, igual que las cancelaciones de CFDI de ingreso).
 
+<h2 id="volver-a-facturar-sin-cancelar-la-original">Volver a facturar sin cancelar la original</h2>
+
+Desde la app **v3.23** puedes generar otra factura de la misma orden sin cancelar la original. El caso típico es una factura al [público en general](/docs/facturacion-al-publico-en-general-manual-y-automatica): días después el cliente pide la factura a nombre de su empresa.
+
+1. Emite **una o varias notas de crédito por el total** de la factura.
+2. En cuanto quedan cubiertas, la página de factura permite capturar los datos fiscales correctos y generar una factura nueva de esa misma orden con el botón **"Volver a facturar"**. En Modo Flow el botón dice **"Volver a facturar (enviar a Flow)"**.
+3. La acción solo la dispara la sesión de admin.
+
+La factura original **sigue vigente ante el SAT**, compensada por sus notas de crédito. No tienes que esperar a que alguien acepte una cancelación. Al generar la nueva, la original pasa de estado `active` a `credited`.
+
+En la misma página aparece la sección **"Facturas Acreditadas"**, donde puedes seguir descargando la factura original y sus notas de crédito.
+
+Las notas de crédito se calculan por factura. La factura nueva empieza con su monto completo disponible para devoluciones.
+
+Para evitar facturar dos veces el mismo ingreso, **ya no se pueden cancelar** las notas de crédito de una factura que ya se reemplazó.
+
+> Este flujo no maneja una factura PPD con [complementos de pago](/docs/complementos-de-pago) activos.
+
 ## Diferencia vs. Cancelación de CFDI
 
 | | Nota de Crédito | Cancelación de CFDI |
 |---|---|---|
-| **Cuándo usar** | Devolución parcial o total, reembolso, descuento | Operación errónea, cliente requiere re-facturar con otros datos |
-| **Efecto** | Genera un CFDI de egreso relacionado; la factura original sigue activa | El CFDI de ingreso queda cancelado ante el SAT y la orden se re-factura |
+| **Cuándo usar** | Devolución parcial o total, reembolso, descuento, o cubrir el total para volver a facturar con otros datos | Operación errónea que debe cancelarse ante el SAT |
+| **Efecto** | Genera un CFDI de egreso relacionado; la factura original sigue vigente ante el SAT. Si vuelves a facturar, pasa de `active` a `credited` | El CFDI de ingreso queda cancelado ante el SAT y la orden se re-factura |
 | **Monto** | Cualquier importe ≤ total de la factura (parciales permitidas) | La factura completa se cancela |
-| **Re-facturación** | No requiere | Sí: la orden queda libre para facturarse de nuevo |
+| **Re-facturación** | Si las notas cubren el total, sí: botón **Volver a facturar**, sin cancelar la original | Sí: la orden queda libre para facturarse de nuevo |
 
 <!-- TODO: grabar tutorial de Notas de Crédito -->
 
