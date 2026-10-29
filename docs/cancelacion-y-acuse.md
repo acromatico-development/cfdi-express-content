@@ -40,6 +40,8 @@ El acuse se puede descargar cuando quieras desde la misma orden, incluso tiempo 
 
 Después de cancelar, la orden queda libre para volver a facturarse (por ejemplo, con datos fiscales distintos). Simplemente ejecuta de nuevo el flujo de facturación (desde el [admin](/docs/facturacion-desde-admin-shopify) o desde los formularios del cliente). El nuevo CFDI tendrá un UUID distinto.
 
+Desde la app v3.23 hay otra salida, sin cancelar la original: [volver a facturar sin cancelar la original](/docs/notas-de-credito#volver-a-facturar-sin-cancelar-la-original).
+
 > Nota: la cancelación **no envía un correo automático** al cliente. Si necesitas avisarle, descarga el acuse y reenvíaselo, o automatiza un correo con el disparador `cfdi-deleted` usando [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express).
 
 <!-- TODO: grabar tutorial de Cancelación y Acuse -->
