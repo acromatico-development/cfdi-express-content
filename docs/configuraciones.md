@@ -30,13 +30,13 @@ En [Modo PAC](/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacio
 - Archivo **`.key`**
 - **Contraseña** del CSD
 
-Estos se registran/cambian ante Facturama al guardar. Si cambias tu CSD, vuelve a cargarlo aquí.
+Estos se registran/cambian ante el PAC al guardar. Si cambias tu CSD, vuelve a cargarlo aquí.
 
 ## Selección de modo: PAC o Flow
 
 El toggle **"¿Ya tienes un PAC de facturación?"** controla el modo:
 
-- **Apagado = Modo PAC:** CFDI Express timbra con tu CSD vía Facturama. Se requiere CSD.
+- **Apagado = Modo PAC:** CFDI Express timbra con tu CSD a través de su PAC. Se requiere CSD.
 - **Encendido = Modo Flow:** No se requiere CSD. Los datos fiscales se envían a tu propio PAC a través de Shopify Flow. Ver [Modo Flow](/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacion).
 
 <!-- TODO: captura — toggle "¿Ya tienes un PAC de facturación?" en Configuraciones -->
@@ -52,7 +52,7 @@ Puedes definir los códigos que se usarán cuando un producto no tenga código a
 - **Código de envío** predeterminado (por defecto `78102200`)
 - **Código de unidad de envío** predeterminado (por defecto `E48`)
 
-Cada uno cuenta con autocompletado desde los catálogos de Facturama. Para sobreescribirlos por producto individual, ver [Códigos del SAT por producto](/docs/codigos-sat-producto).
+Cada uno cuenta con autocompletado desde los catálogos del SAT. Para sobreescribirlos por producto individual, ver [Códigos del SAT por producto](/docs/codigos-sat-producto).
 
 ## Reglas de periodo de facturación
 
