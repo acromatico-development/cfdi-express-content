@@ -2,7 +2,7 @@
 
 Si vendes de primera mano mercancía importada, el número de pedimento va en el concepto de la factura (información aduanera del CFDI). En CFDI Express lo guardas en el producto o en la variante, y la factura lo toma de ahí.
 
-Estos campos solo aparecen si el proveedor de facturación de la tienda es **CFDI Express**. Si la tienda sigue en Facturama, la sección y la columna no se muestran. No dependen de un plan en particular.
+Estos campos solo aparecen si el proveedor de facturación de la tienda es **CFDI Express**. Si la tienda usa otro proveedor de facturación, la sección y la columna no se muestran. No dependen de un plan en particular.
 
 Si no ves **Pedimentos de importación** en el producto, actualiza la app de CFDI Express.
 

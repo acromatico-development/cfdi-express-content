@@ -1,6 +1,6 @@
 # Modo Flow en CFDI Express para usar tu propio PAC de Facturación
 
-CFDI Express normalmente opera en "Modo PAC": nosotros timbramos tus CFDIs usando el Certificado de Sello Digital (CSD) que cargaste y facturamos a través de Facturama (nuestro PAC). El "Modo Flow" es la alternativa para comercios que ya cuentan con su propio PAC o sistema de facturación y quieren mantener el control directo del timbrado.
+CFDI Express normalmente opera en "Modo PAC": nosotros timbramos tus CFDIs usando el Certificado de Sello Digital (CSD) que cargaste y facturamos a través de nuestro PAC. El "Modo Flow" es la alternativa para comercios que ya cuentan con su propio PAC o sistema de facturación y quieren mantener el control directo del timbrado.
 
 ## ¿Qué hace el Modo Flow?
 
@@ -16,10 +16,10 @@ El timbrado real lo ejecuta tu PAC, usando la automatización que tú diseñes e
 
 ## ¿Cuándo usar Modo Flow?
 
-- Ya tienes un PAC con el que quieres seguir timbrando (Facturama, Edicom, SW, Finkok, un ERP propio, etc.).
+- Ya tienes un PAC con el que quieres seguir timbrando (Edicom, SW, Finkok, un ERP propio, etc.).
 - Necesitas que los CFDIs se generen en tu sistema contable/ERP y no en una herramienta externa.
 - Tu negocio maneja reglas de facturación particulares que procesa tu propio sistema antes de timbrar.
-- Quieres evitar el cargo por facturación de CFDI Express (Modo Flow igual consume uso de facturación, pero no usas Facturama de nuestro lado).
+- Quieres evitar el cargo por facturación de CFDI Express (Modo Flow igual consume uso de facturación, pero el timbrado lo hace tu PAC).
 
 ## Configuración del Modo Flow
 
@@ -51,7 +51,7 @@ En tu [lista de órdenes](/docs/ordenes-estatus) y en la pantalla de facturació
 
 | Aspecto | Modo PAC | Modo Flow |
 |---|---|---|
-| ¿Quién timbra? | CFDI Express (Facturama) | Tu propio PAC / ERP |
+| ¿Quién timbra? | CFDI Express | Tu propio PAC / ERP |
 | ¿Se requiere CSD (.cer/.key)? | Sí, cargado en la app | No |
 | Cargo por CFDI timbrado | Sí, conforme al plan | Sí, se registra el uso igualmente |
 | Acción del botón "Generar CFDI" | Timbra inmediatamente | Dispara el disparador `cfdi-flow-mode` |

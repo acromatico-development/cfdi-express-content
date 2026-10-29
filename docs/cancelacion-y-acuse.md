@@ -12,7 +12,7 @@ CFDI Express permite **cancelar** un CFDI ya timbrado ante el SAT, y descargar e
 <!-- ENDTODO -->
 3. Confirma la cancelación. Por ahora CFDI Express cancela con el motivo `02` (comprobante emitido con errores sin relación). Elegir el motivo se está trabajando; hoy no se elige en el admin.
 4. CFDI Express:
-    - Cancela el CFDI en Facturama ante el SAT.
+    - Cancela el CFDI ante el SAT.
     - Marca el CFDI con estatus **Cancelado** y actualiza el metafield `$app.facturado` a falso.
     - Ajusta el uso facturado (decrementa el cargo por uso del CFDI cancelado).
     - Dispara el disparador `cfdi-deleted` en [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express).
@@ -28,7 +28,7 @@ CFDI Express permite **cancelar** un CFDI ya timbrado ante el SAT, y descargar e
 Después de cancelar, CFDI Express te permite descargar el **acuse de cancelación**, que es el documento PDF y XML que el SAT devuelve para confirmar la cancelación.
 
 1. En la pantalla de facturación de la orden, localiza el CFDI cancelado.
-2. Pulsa **Descargar Acuse**. CFDI Express obtiene el acuse desde Facturama y te entrega el PDF (y XML) para tu constancia contable.
+2. Pulsa **Descargar Acuse**. CFDI Express te entrega el PDF (y XML) del acuse para tu constancia contable.
 
 <!-- TODO: captura — botón "Descargar Acuse" sobre un CFDI cancelado -->
 ![TODO: Botón Descargar Acuse](TODO-screenshot)

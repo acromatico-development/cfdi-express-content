@@ -28,7 +28,7 @@ Cuando una orden se factura con método de pago **PPD (Pago en Parcialidades o D
 ![TODO: Formulario de nuevo Complemento de Pago](TODO-screenshot)
 <!-- ENDTODO -->
 5. Haz clic en **Generar Complemento**. El app:
-    - Timbra el complemento en Facturama (PAC) usando tu CSD.
+    - Timbra el complemento ante el SAT usando tu CSD.
     - Empaqueta el PDF + XML en un ZIP y lo almacena.
     - Crea un metaobject `$app:complemento_pago` y actualiza los metafields de la orden.
     - Envía por correo el ZIP del complemento al cliente (a menos que `skipCfdiEmail` esté activo, ver [Configuraciones](/docs/configuraciones)).
@@ -38,7 +38,7 @@ Cuando una orden se factura con método de pago **PPD (Pago en Parcialidades o D
 
 1. Entra a la pantalla de Complementos de la orden.
 2. Localiza el complemento a cancelar y haz clic en **Cancelar**.
-3. CFDI Express cancela el complemento ante el SAT (Facturama) y elimina/descalifica sus metafields.
+3. CFDI Express cancela el complemento ante el SAT y elimina/descalifica sus metafields.
 
 > Importante: **no puedes cancelar un CFDI principal** mientras tenga complementos de pago activos. Primero cancela todos sus complementos asociados y luego cancela el CFDI original.
 
