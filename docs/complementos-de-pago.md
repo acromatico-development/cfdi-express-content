@@ -42,6 +42,14 @@ Cuando una orden se factura con método de pago **PPD (Pago en Parcialidades o D
 
 > Importante: **no puedes cancelar un CFDI principal** mientras tenga complementos de pago activos. Primero cancela todos sus complementos asociados y luego cancela el CFDI original.
 
+## Un REP para varias facturas PPD
+
+Un solo complemento de recepción de pagos (**REP**, Pagos 2.0) puede cubrir varias facturas PPD. En `POST /v1/payments`, el arreglo `documents[]` indica cada factura y el importe de su abono. Todas deben ser del mismo emisor, del mismo RFC receptor y de la misma moneda. El arreglo admite hasta 100 facturas. La parcialidad se numera por factura.
+
+Cada REP consume **1 timbre**. Cancelarlo restaura el saldo de cada factura relacionada. Una factura ligada a un REP vigente no se puede cancelar: primero cancela el complemento.
+
+La referencia del endpoint está en [Timbrar un complemento de pago de varias facturas](https://cfdi.express/docs/api/timbrar-complemento-de-pago-varias-facturas). El paso a paso está en [Cómo emitir un REP para varias facturas PPD](https://cfdi.express/blog/emitir-rep-varias-facturas-ppd).
+
 ## Campos guardados en cada complemento
 
 Cada complemento registra: UUID, folio, fecha de pago, forma de pago, monto, número de parcialidad, saldo anterior, saldo insoluto, correo del receptor y URL de descarga del ZIP. Estos datos también quedan disponibles en el [reporte](/docs/reportes) exportable.
