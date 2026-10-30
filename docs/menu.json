@@ -133,5 +133,10 @@
     "title": "Equipo y workspaces",
     "document": "equipo-y-workspaces.md",
     "completed": true
+  },
+  {
+    "title": "CFDI de Retenciones para plataformas digitales",
+    "document": "retenciones-plataformas-digitales.md",
+    "completed": true
   }
 ]
