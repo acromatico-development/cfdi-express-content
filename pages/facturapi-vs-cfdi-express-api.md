@@ -1,6 +1,6 @@
 ---
-title: "Facturapi vs CFDI Express API: ¿cuál API de CFDI elegir?"
-description: "Compara Facturapi vs CFDI Express API en 2026: precio público (mensualidad + $0.60/timbre vs $1/timbre sin cuota), MCP, skill para agentes, sandbox y multi-RFC."
+title: "Alternativa a Facturapi: API CFDI 4.0 a $1 por timbre"
+description: "¿Buscas una alternativa a Facturapi? Compara precio (mensualidad + $0.60/timbre vs $1 sin cuota), MCP, sandbox y multi-RFC de la API de CFDI Express."
 image: "https://videos.acromatico.dev/api/images/assets/c2fef6a6-b267-4c8b-995d-8dbd14f76b7e.png"
 author: "Rafael González"
 date: "2026-09-15"

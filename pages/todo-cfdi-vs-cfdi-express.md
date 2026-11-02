@@ -1,6 +1,6 @@
 ---
-title: "Todo CFDI 4.0: precios públicos del portal de timbres"
-description: "Todo CFDI es el portal de timbres de Captura Digital (CFDI 4.0). Lista precios públicos por paquete y cuándo una venta en Shopify se timbra con una app."
+title: "Todo CFDI 4.0: precios de timbres y alternativa en Shopify"
+description: "¿Buscas Todo CFDI (todocfdi 4.0)? Precios públicos por paquete de timbres de Captura Digital y cuándo conviene una app de Shopify como alternativa."
 image: "https://videos.acromatico.dev/api/images/assets/50fbed95-9333-4e03-8410-0a395a930d19.png"
 author: "Rafael González"
 date: "2026-09-23"

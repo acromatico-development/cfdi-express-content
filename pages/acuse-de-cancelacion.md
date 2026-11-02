@@ -1,6 +1,6 @@
 ---
-title: "Cómo descargar el acuse de cancelación del SAT (CFDI 4.0)"
-description: "Cómo descargar el acuse de cancelación del SAT de una factura: qué es, los 4 motivos del CFDI 4.0 y cómo obtenerlo en PDF desde Shopify con CFDI Express."
+title: "Acuse de cancelación SAT: cómo descargarlo en PDF (CFDI 4.0)"
+description: "Descarga el acuse de cancelación de tu factura en el SAT: qué es, los 4 motivos de cancelación del CFDI 4.0 y cómo obtenerlo en PDF desde Shopify."
 image: "https://assets.acromatico.dev/marketing/diego/blog/hero-cfdi-facturas-4.0.png"
 author: "Rafael González"
 date: "2026-10-12"
