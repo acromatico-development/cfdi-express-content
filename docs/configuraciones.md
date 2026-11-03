@@ -71,7 +71,7 @@ Estas reglas controlan **cuándo** tus clientes pueden auto-facturarse desde la 
 ## Notificaciones
 
 - **`skipCfdiEmail`** — si lo activas, CFDI Express **no** envía el correo al cliente con el CFDI adjunto. Útil cuando tú reenvías la factura desde tu propio sistema.
-- **`skipCfdiWhatsApp`** — toggle para desactivar notificaciones por WhatsApp (cuando esté disponible).
+- **`skipCfdiWhatsApp`** (**Omitir envío de WhatsApp con CFDI**) — si lo activas, CFDI Express **no** envía el WhatsApp con el CFDI al cliente y oculta el campo de teléfono en los formularios. Ver [Enviar la factura por WhatsApp](/docs/facturacion-desde-admin-shopify#enviar-la-factura-por-whatsapp).
 
 Para el detalle de los correos que se envían, ver [Notificaciones por correo](/docs/notificaciones-por-correo).
 
