@@ -12,6 +12,15 @@ Para poder completar una factura desde el admin de Shopify, sigue los siguientes
 Si el producto o la variante ya tienen pedimentos de importación, la tabla **Productos** muestra la columna **Pedimentos**. Esa columna no aparece si ningún concepto los trae. La guía está en [Pedimentos de importación](/docs/pedimentos-de-importacion).
 ![Datos de Facturación](https://cdn.shopify.com/s/files/1/0804/5540/1763/files/Acr_2025-09-22_at_15.50.44.png?v=1758577857)
 
+### Enviar la factura por WhatsApp
+
+En los datos de facturación aparece el campo **Teléfono (WhatsApp, opcional)**. Si lo llenas, al timbrar el CFDI le enviamos al cliente un mensaje de WhatsApp con el folio, el nombre de tu tienda y la liga para descargar su factura. El envío por correo sigue igual.
+
+- Escribe el número a 10 dígitos (por ejemplo `5512345678`). También se acepta con lada de país (`52` o `521`). Para números de otros países usa el formato internacional con lada.
+- Si el número no es válido, la factura se timbra de todos modos y solo se omite el WhatsApp.
+- El mismo campo aparece en el formulario de autofacturación de la [página de agradecimiento y de estado de orden](/docs/facturacion-checkout-thank-you-page).
+- Si no quieres enviar WhatsApps, activa **Omitir envío de WhatsApp con CFDI** en [Configuraciones](/docs/configuraciones) y el campo deja de mostrarse. Puedes usar [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express) para mandar tus propios mensajes.
+
 4. Para cancelar una factura después de haberla timbrado, puedes dar clic en el botón "Cancelar Factura" que se encuentra arriba a la derecha dentro de la orden ya facturada. Por ahora se cancela con el motivo `02` (comprobante emitido con errores sin relación); elegir el motivo se está trabajando. Esto generará una constancia de cancelación que podrás descargar en todo momento desde la misma orden, y podrás nuevamente facturar la orden con otros datos fiscales.
 ![Descarga de acuses de cancelación](https://cdn.shopify.com/s/files/1/0804/5540/1763/files/Acr_2025-09-22_at_15.51.47.png?v=1758577929)
 
