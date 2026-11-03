@@ -50,6 +50,8 @@ Cada REP consume **1 timbre**. Cancelarlo restaura el saldo de cada factura rela
 
 La referencia del endpoint está en [Timbrar un complemento de pago de varias facturas](https://cfdi.express/docs/api/timbrar-complemento-de-pago-varias-facturas). El paso a paso está en [Cómo emitir un REP para varias facturas PPD](https://cfdi.express/blog/emitir-rep-varias-facturas-ppd).
 
+Si la factura PPD está en dólares u otra moneda distinta de MXN, el REP se timbra en esa misma moneda. En `POST /v1/invoices/{id}/payments` y en `POST /v1/payments`, `exchangeRate` es el TipoCambioP de la fecha de pago: pesos mexicanos por 1 unidad, máximo 6 decimales, y es obligatorio cuando la factura no está en MXN. Para USD se usa el FIX de Banxico publicado en el Diario Oficial de la Federación de la fecha de pago. El pago (`monto` e `importePagado`) va en la moneda de la factura y los Totales se convierten a MXN. Pagar en una moneda distinta a la de la factura sigue sin estar disponible. La respuesta incluye `exchangeRate`. La referencia de un solo documento está en [Timbrar un complemento de pago](https://cfdi.express/docs/api/timbrar-complemento-de-pago).
+
 ## Campos guardados en cada complemento
 
 Cada complemento registra: UUID, folio, fecha de pago, forma de pago, monto, número de parcialidad, saldo anterior, saldo insoluto, correo del receptor y URL de descarga del ZIP. Estos datos también quedan disponibles en el [reporte](/docs/reportes) exportable.
