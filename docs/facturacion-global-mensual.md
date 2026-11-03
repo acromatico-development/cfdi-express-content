@@ -35,6 +35,10 @@ Cada orden que sí entra guarda el **folio** y el **UUID** de la factura global 
 
 Si hay más de 1,000 órdenes que cumplen, salen varias facturas globales. Cada una lleva como máximo 1,000 órdenes.
 
+## Moneda y tipo de cambio por API
+
+La corrida de la app solo junta órdenes en MXN. La factura global que se timbra por API (`POST /v1/invoices` con `informacionGlobal`) acepta `currency` y `exchangeRate` desde la **v1.49.0**, con el mismo contrato que cualquier factura. Los importes van en esa moneda. `exchangeRate` son los pesos mexicanos por 1 unidad, con máximo 6 decimales, de la fecha del comprobante. Si la moneda no es MXN, el campo es obligatorio; con MXN se omite o va en `1`. Para USD se usa el FIX de Banxico publicado en el Diario Oficial de la Federación. La referencia está en [Timbrar una factura](/docs/api/timbrar-factura).
+
 ## Lanzarla a mano
 
 1. En el admin de Shopify abre **Apps → CFDI Express - Facturación**.

@@ -1,6 +1,6 @@
 ---
-title: "RFC genérico extranjero XEXX010101000: cómo facturarlo"
-description: "Factura a clientes del extranjero con el RFC genérico XEXX010101000 e IVA 0%: cuándo usarlo y cómo emitir el CFDI desde Shopify, paso a paso."
+title: "RFC XEXX010101000 y facturas en dólares: cómo facturarlos"
+description: "Factura a clientes del extranjero con el RFC XEXX010101000 e IVA 0% desde Shopify, y emite facturas en dólares u otras monedas con el tipo de cambio del día por la API."
 keywords: "rfc genérico extranjero, XEXX010101000, factura a extranjero, cfdi extranjero shopify, iva 0% extranjero"
 ---
 # Facturación al Extranjero (RFC XEXX010101000)
@@ -106,6 +106,16 @@ Errores **400** de estos campos:
 
 - `residenciaFiscal` o `numRegIdTrib` con cualquier RFC distinto de `XEXX010101000`.
 - Factura o nota de crédito a `XEXX010101000` sin `S01`, sin régimen `616` o sin el código postal del emisor.
+
+<h2 id="moneda-extranjera">Facturas en dólares y otras monedas</h2>
+
+Desde la API **v1.49.0** la factura puede timbrarse en dólares o en otra moneda. En `POST /v1/invoices` se envían `currency` y `exchangeRate`. Cada importe (`unitPrice`, `shipping` y `cartDiscount`) va en esa moneda. Las monedas válidas son MXN, USD, EUR, CAD, GBP, CHF, AUD, NZD, CNY, HKD, SGD, SEK, NOK, DKK, BRL, ARS, COP, PEN y GTQ.
+
+`exchangeRate` son los pesos mexicanos por **1 unidad** de la moneda, con máximo 6 decimales. Es el tipo de cambio de la **fecha de la factura**. Para USD se usa el FIX de Banxico publicado en el Diario Oficial de la Federación. Para el resto de la lista se usa la tabla de equivalencias de Banxico. Con MXN, `exchangeRate` se omite o se envía en `1`. La API timbra el valor tal como llega: el SAT todavía no lo contrasta contra un rango, así que el tipo de cambio correcto queda a cargo de quien emite.
+
+El PDF muestra el equivalente en MXN.
+
+Los campos, el ejemplo en USD y los errores 400 están en [Timbrar una factura](/docs/api/timbrar-factura).
 
 ## Notas
 
