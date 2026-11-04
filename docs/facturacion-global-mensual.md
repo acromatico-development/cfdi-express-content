@@ -74,14 +74,33 @@ Cuando la corrida termina, CFDI Express dispara **Facturación global terminada*
 
 Si algo falla, la app manda un correo de aviso. El listado de correos está en [Notificaciones por correo](/docs/notificaciones-por-correo).
 
-## Órdenes canceladas o reembolsadas
+## Nota de crédito de un pedido de la global
 
-Si una orden que ya entró a la factura global se **cancela** o se **reembolsa**, la app muestra un aviso para que emitas la **nota de crédito**. No la timbra sola.
+Desde la versión **3.27.0**, si un pedido que ya está en la factura global se devuelve o se reembolsa, emites la nota de crédito desde la página de ese pedido. La app no la timbra sola.
 
-La nota se hace desde la orden, como cualquier otra devolución. El paso a paso está en [Notas de crédito](/docs/notas-de-credito).
+Puede ser por el pedido completo o por una parte. Cada impuesto se acredita con su propia tasa: **IVA al 0%**, **IVA al 8%**, **IVA al 16%** e **IEPS**.
 
-<!-- TODO: captura — aviso de orden cancelada o reembolsada dentro de una factura global, con el camino a la nota de crédito -->
-![TODO: Aviso para nota de crédito](TODO-screenshot)
+La nota acredita solo ese pedido. La factura global no se cancela: sigue válida para los demás.
+
+La acción **Crear Nota de Crédito** de Shopify Flow también acepta estos pedidos. El paso a paso está en [Notas de crédito](/docs/notas-de-credito).
+
+<!-- TODO: captura — nota de crédito parcial o total de un pedido que ya está en la factura global, emitida desde la página del pedido -->
+![TODO: Nota de crédito de un pedido de la factura global](TODO-screenshot)
+<!-- ENDTODO -->
+
+## Si el cliente pide su factura después
+
+Ese pedido ya tiene el folio y el UUID de la global. Desde la página del pedido:
+
+1. Emite la nota de crédito por el **pedido completo**.
+2. Genera la factura a nombre del cliente en la misma página.
+
+La factura a su nombre la emites tú desde la app. Si el cliente intenta facturar ese pedido en la página de gracias, en el formulario de la tienda o en el POS, la app le explica que su compra ya está facturada y que tú puedes emitirle la factura a su nombre.
+
+Esto es de Plus, Pro y Enterprise, que son los planes con factura global. En el plan Básico cada venta a público en general sigue siendo un CFDI por pedido.
+
+<!-- TODO: captura — página del pedido en la global: nota de crédito por el pedido completo y factura a nombre del cliente en la misma página -->
+![TODO: Factura a nombre del cliente después de la global](TODO-screenshot)
 <!-- ENDTODO -->
 
 ## Reportes en CSV y Excel
@@ -118,8 +137,8 @@ No. Ese botón sigue timbrando un CFDI por orden. La facturación global mensual
 
 ### ¿Qué hago si el cliente pide su factura después?
 
-Esa orden ya tiene folio y UUID de la global. Revisa con tu contador si corresponde cancelar o compensar con nota de crédito, y luego timbrar la factura con los datos del cliente. La nota de crédito está en [Notas de crédito](/docs/notas-de-credito) y la cancelación en [Cancelación y acuse](/docs/cancelacion-y-acuse).
+Desde la versión **3.27.0**, en la página del pedido emites la nota de crédito por el pedido completo y luego la factura a su nombre. La factura global sigue válida para los demás. Esa factura nominativa la emites tú desde la app. La guía está en [Notas de crédito](/docs/notas-de-credito).
 
 ### ¿Qué pasa si una orden de la global se reembolsa?
 
-La app te avisa para que emitas la nota de crédito. No la genera en automático.
+Emites la nota de crédito desde la página de ese pedido, por el total o por una parte. Cada impuesto (IVA 0%, 8% y 16%, e IEPS) se acredita con su tasa. La nota cubre solo ese pedido; la global sigue válida. La app no la genera sola.

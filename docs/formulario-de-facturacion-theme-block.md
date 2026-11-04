@@ -57,7 +57,8 @@ El bloque no tiene un campo de pedimento. Si el producto o la variante ya los ti
 ## Consideraciones
 
 - El bloque requiere que el cliente conozca el **total exacto** de su orden. Asegúrate de informarles que deben capturarlo con la precisión correcta.
-- Si una orden ya está facturada, el formulario le indicará al cliente y le mostrará su folio anterior con su URL de descarga.
+- Si una orden ya está facturada a nombre del cliente, el formulario le indicará al cliente y le mostrará su folio anterior con su URL de descarga.
+- Si el pedido ya está en una factura global (planes **Plus**, **Pro** y **Enterprise**, desde la app **3.27.0**), el formulario le explica que su compra ya está facturada y que tú puedes emitirle la factura a su nombre desde la app. No timbra otra. En el plan **Básico** no hay factura global. El camino está en [Notas de crédito](/docs/notas-de-credito).
 - El formulario respeta el [Modo Flow](/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacion) si lo tienes activo.
 
 <!-- TODO: grabar tutorial del Formulario de Facturación (Theme App Block) -->

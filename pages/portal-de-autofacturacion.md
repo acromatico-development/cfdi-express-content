@@ -56,7 +56,8 @@ El formulario cambia según el estado de la orden:
 - **Orden sin pagar por completo:** no puede facturar. Ve un aviso de que la orden debe estar totalmente pagada.
 - **Fuera de tu periodo de facturación:** ve **«Período de facturación CFDI expirado»** y que contacte a soporte.
 - **Ya facturada a su nombre:** ve que el CFDI ya se generó y un enlace para descargarlo.
-- **Ya incluida en la factura a público en general:** ve que el comercio cerró esa orden y que contacte a soporte si necesita su CFDI.
+- **Ya facturada a público en general en un CFDI de esa sola orden:** ve que el comercio cerró esa orden y que contacte a soporte si necesita su CFDI.
+- **Ya incluida en la factura global del mes** (Plus, Pro y Enterprise, desde la app **3.27.0**): en la página de gracias, el formulario de la tienda y el POS la app le explica que su compra ya está facturada y que tú puedes emitirle la factura a su nombre. No timbra otra. En el plan Básico no hay factura global.
 - **Orden en moneda distinta a pesos (MXN):** el formulario no se muestra.
 
 ## Lo que configuras tú como comercio
@@ -73,7 +74,7 @@ Para ponerlo en tu tienda, sigue el [tutorial para crear tu portal de autofactur
 
 Esas van a la [factura global](/blog/factura-global-shopify), a público en general (`XAXX010101000`). En CFDI Express la factura global **siempre es mensual (04)**. Con tu periodo de facturación decides hasta cuándo puede el cliente facturar antes de que la orden entre al global.
 
-Si el cliente pide su factura después del global, tendrás que cancelar y volver a facturar. Lo explicamos en [cancelación y acuse](/docs/cancelacion-y-acuse) y en la guía de [acuse de cancelación](/blog/acuse-de-cancelacion).
+Si el cliente pide su factura después de que el pedido entró a la factura global del mes (Plus, Pro y Enterprise), desde la app **3.27.0** emites la nota de crédito por el pedido completo y luego la factura a su nombre, desde la página del pedido. La global sigue válida para los demás. Esa factura la emites tú desde la app. La guía está en [Notas de crédito](/docs/notas-de-credito). En el plan Básico no hay factura global: cada venta a público en general es un CFDI por pedido.
 
 ## Precio
 

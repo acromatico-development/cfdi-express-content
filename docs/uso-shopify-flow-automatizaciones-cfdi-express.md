@@ -18,7 +18,7 @@ Estos eventos los dispara el app. Los usas como punto de partida de tus automati
 
 - **"Crear CFDI"** (`cfdi-create-action`) — timbra un CFDI a partir de una referencia de orden y los datos fiscales que proporciones (RFC, razón social, régimen, código postal, método de pago, uso CFDI, correo y dirección opcional). Devuelve la `download_url` del ZIP. Si el producto o la variante tienen [pedimentos de importación](/docs/pedimentos-de-importacion), esta acción los incluye. No tiene un campo para editarlos.
 - **"Eliminar CFDI"** (`cfdi-delete-action`) — cancela un CFDI dado su `order_reference` y un **motivo** de cancelación del SAT (`01`, `02`, `03` o `04`).
-- **"Crear Nota de Crédito"** — no incluye pedimentos. El detalle está en [Notas de crédito](/docs/notas-de-credito).
+- **"Crear Nota de Crédito"** — emite la nota de un pedido. Desde la versión **3.27.0** también funciona si ese pedido ya está en una [factura global](/docs/facturacion-global-mensual) (Plus, Pro y Enterprise). Puede ser por el pedido completo o por una parte, y acredita IVA al 0%, 8% y 16%, e IEPS, cada uno con su tasa. La global sigue válida para los demás pedidos. No incluye pedimentos. El detalle está en [Notas de crédito](/docs/notas-de-credito).
 - **"Facturación global"** — agrupa en facturas globales de hasta 1,000 órdenes las ventas pagadas en MXN que no tienen factura. Está en Plus, Pro y Enterprise. No es la acción "Crear CFDI": esa timbra un CFDI por orden. La guía está en [Facturación global mensual](/docs/facturacion-global-mensual).
 
 ## Cómo crear una automatización con Flow

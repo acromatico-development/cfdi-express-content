@@ -119,18 +119,32 @@ En [Configuraciones](/docs/configuraciones) eliges la regla de periodo de factur
 
 La [Thank You Page](/docs/facturacion-checkout-thank-you-page) y la [página de estado de orden](/docs/facturacion-pagina-estado-de-orden) respetan esa regla. Pasado el periodo, el cliente ve **Período de facturación CFDI expirado** y un aviso para contactarte.
 
-Si la orden ya se facturó a público en general, el formulario no le deja timbrar otra. Le dice que el comercio cerró esa orden y que te contacte.
+Si la orden ya tiene su propio CFDI, el formulario no le deja timbrar otra. Le dice que el comercio cerró esa orden y que te contacte.
+
+Si el pedido ya está en la factura global del mes (Plus, Pro y Enterprise, desde la app **3.27.0**), la página de gracias, el formulario de la tienda y el POS le explican que su compra ya está facturada y que tú puedes emitirle la factura a su nombre desde la app. No timbra otra. En el plan Básico no hay factura global: cada venta a público en general es un CFDI por pedido.
 
 Por eso conviene alinear las dos piezas. Si tu regla es **Fin del mes de compra**, la plantilla **Al final del mes** respeta ese plazo. Si corres la de **Al final del día**, tu cliente casi no alcanza a autofacturarse.
 
 ## ¿Y si el cliente pide factura después del global?
 
-**Respuesta corta:** la app te deja cancelar el CFDI y volver a facturar, o compensarlo con nota de crédito y timbrar uno nuevo. Cuál usar lo decides con tu contador.
+**Respuesta corta:** si el pedido está en la factura global del mes, desde la **3.27.0** emites la nota de crédito de ese pedido y luego su factura, desde la misma página. La global sigue válida. Si el comprobante era solo de esa orden, puedes cancelarlo o cubrirlo al 100% y volver a facturar.
 
-Estos caminos existen hoy en CFDI Express:
+### Pedido dentro de la factura global del mes
+
+En Plus, Pro y Enterprise:
+
+1. Abre el pedido y emite la nota de crédito. Por el pedido completo, si vas a facturar a nombre del cliente, o por una parte, si solo acreditas una devolución. Cada impuesto (IVA 0%, 8% y 16%, e IEPS) se acredita con su tasa.
+2. La nota acredita solo ese pedido. La factura global no se cancela: sigue válida para los demás.
+3. La factura a nombre del cliente la generas tú desde esa misma página. El cliente no la timbra en la página de gracias, en el formulario ni en el POS.
+
+La acción **Crear Nota de Crédito** de Shopify Flow también funciona con estos pedidos. La guía está en [Notas de crédito](/docs/notas-de-credito) y en [Facturación global mensual](/docs/facturacion-global-mensual). En el plan Básico no hay factura global.
+
+### CFDI a público en general de una sola orden
+
+Si esa orden tiene su propio CFDI (el botón **Facturar al Publico en General** o la plantilla de Flow), estos caminos siguen en la app:
 
 1. **Cancelar y volver a facturar.** En la orden oprime **Cancelar CFDI**. Por ahora la app cancela con el motivo `02` (comprobante emitido con errores sin relación); elegir el motivo se está trabajando. La orden queda libre para timbrar el CFDI con los datos fiscales del cliente. Detalle en [Cancelación y acuse](/docs/cancelacion-y-acuse).
-2. **Nota de crédito y nueva factura.** Si una [nota de crédito](/docs/notas-de-credito) cubre el 100% del CFDI, la app te deja generar una nueva factura de esa orden. El CFDI original sigue vigente ante el SAT, compensado por la nota.
+2. **Nota de crédito y nueva factura.** Si una [nota de crédito](/docs/notas-de-credito) cubre el 100% del CFDI, la app te deja generar una nueva factura de esa orden. El CFDI original sigue vigente ante el SAT, compensado por la nota. Desde la versión **3.27.0**, **Volver a facturar** funciona desde la página del pedido cuando la factura ya quedó acreditada al 100%.
 3. **Cancelar desde Flow.** La acción **Eliminar CFDI** de Flow recibe el motivo de cancelación SAT (`01`, `02`, `03` o `04`). El `04` es el de operación nominativa relacionada en una factura global.
 
 En todos los casos, al cliente pídele **datos fiscales**: RFC, nombre o razón social, régimen, código postal y uso de CFDI. No necesitas el PDF de su Constancia.
@@ -171,7 +185,7 @@ Las plantillas buscan órdenes pagadas y no facturadas sin filtrar canal, así q
 
 ### ¿Qué pasa si el cliente pide su factura después?
 
-En la página de estado de orden verá que el comercio cerró esa orden. Tú puedes cancelar y volver a facturar con sus datos, o compensar con nota de crédito y timbrar una nueva factura. Revisa con tu contador cuál aplica.
+Si el pedido está en la factura global del mes (Plus, Pro y Enterprise), desde la versión **3.27.0** emites la nota de crédito por el pedido completo y luego la factura a su nombre, desde la misma página. La global sigue válida para los demás. Esa factura la emites tú desde la app. Si el comprobante era solo de esa orden, puedes cancelarlo o cubrirlo al 100% y volver a facturar. En el plan Básico cada venta a público en general es un CFDI por pedido.
 
 <script type="application/ld+json">
 {
@@ -223,7 +237,7 @@ En la página de estado de orden verá que el comercio cerró esa orden. Tú pue
       "name": "¿Qué pasa si el cliente pide su factura después del global?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En la página de estado de orden verá que el comercio cerró esa orden. Puedes cancelar y volver a facturar con sus datos, o compensar con nota de crédito y timbrar una nueva factura. Revisa con tu contador cuál aplica."
+        "text": "Si el pedido está en la factura global del mes, desde la versión 3.27.0 emites la nota de crédito por el pedido completo y luego la factura a su nombre, desde la misma página. La global sigue válida para los demás. Esa factura la emites tú desde la app. Si el comprobante era solo de esa orden, puedes cancelarlo o cubrirlo al 100% y volver a facturar. En el plan Básico cada venta a público en general es un CFDI por pedido."
       }
     }
   ]
