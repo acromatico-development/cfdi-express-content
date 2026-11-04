@@ -34,6 +34,8 @@ Para poder configurar CFDI Express, requieres los siguientes datos:
   - Contraseña
 - Logo
 
+Al guardar, el certificado y su contraseña no se envían de vuelta al navegador. Si ya está cargado, en [Configuraciones](/docs/configuraciones) verás **CSD actual cargado** y solo subes archivos cuando lo vas a cambiar.
+
 Si requieres generar tu certificado de sello digital y no sabes cómo puedes ver el siguiente video tutorial:
 
 - Embed:

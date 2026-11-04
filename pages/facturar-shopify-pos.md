@@ -86,7 +86,7 @@ Tienes dos opciones:
 
 El bloque de tema [Formulario de Facturación](/docs/formulario-de-facturacion-theme-block) va en cualquier página de tu tienda en línea, por ejemplo una página «Facturación». El cliente escribe el **número de orden** y el **total**, y si coinciden llena sus datos fiscales. La búsqueda no distingue canal, así que sirve para ventas de POS.
 
-Si la orden ya está facturada, el formulario se lo dice y no timbra otra.
+Si la orden ya está facturada a nombre del cliente, el formulario se lo dice y no timbra otra. Si el pedido ya está en la factura global del mes (Plus, Pro y Enterprise, desde la app **3.27.0**), el formulario, la página de gracias y el POS le explican que su compra ya está facturada y que tú puedes emitirle la factura a su nombre desde la app. En el plan Básico no hay factura global.
 
 Necesitas el canal de tienda en línea con un tema publicado. El total tiene que ser exacto: avísale al cliente que lo copie del ticket.
 
@@ -105,6 +105,8 @@ En el admin abre la orden y oprime **Facturar al Publico en General**. Para no h
 En Plus, Pro y Enterprise también puedes lanzar la [factura global del mes](/blog/factura-global-del-mes-shopify): junta las órdenes pagadas en MXN que no tienen factura, hasta 1,000 por comprobante.
 
 Elige cuándo corre según el plazo que le das al cliente para autofacturarse. El detalle del CFDI por orden (periodicidad, mes, qué ajustar en la plantilla y qué hacer si el cliente pide factura después) está en [Factura global en Shopify](/blog/factura-global-shopify).
+
+Desde la versión **3.27.0**, si un pedido de esa global se devuelve, emites la nota de crédito desde la página del pedido, total o parcial. Cada impuesto (IVA 0%, 8% y 16%, e IEPS) se acredita con su tasa. La nota cubre solo ese pedido; la global sigue válida. Si el cliente pide su factura, cubre el pedido completo y timbra la nominativa desde la misma página. La emites tú desde la app. La acción **Crear Nota de Crédito** de Shopify Flow también funciona con estos pedidos. En el plan Básico no hay factura global. La guía está en [Notas de crédito](/docs/notas-de-credito).
 
 ## Errores comunes en caja
 
@@ -134,7 +136,7 @@ En **CFDI / Factura (Órdenes)**, si la orden tiene factura activa, oprime **Can
 
 ### ¿Qué hago con las ventas de POS que nadie facturó?
 
-Factúralas a público en general. Con CFDI Express lo haces desde el admin o con plantillas de Shopify Flow que timbran las órdenes pagadas y no facturadas, incluidas las del POS. En Plus, Pro y Enterprise también puedes juntarlas en la factura global del mes.
+Factúralas a público en general. Con CFDI Express lo haces desde el admin o con plantillas de Shopify Flow que timbran las órdenes pagadas y no facturadas, incluidas las del POS. En Plus, Pro y Enterprise también puedes juntarlas en la factura global del mes. Desde la versión **3.27.0**, si un pedido de esa global se devuelve o el cliente pide su factura, acreditas solo ese pedido con nota de crédito y la global sigue válida. En el plan Básico cada venta a público en general es un CFDI por pedido.
 
 ### ¿El cliente recibe la factura por correo?
 
@@ -182,7 +184,7 @@ Sí. CFDI Express manda el PDF y el XML al correo que captura el cajero, salvo q
       "name": "¿Qué hago con las ventas de POS que nadie facturó?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Factúralas a público en general. Con CFDI Express lo haces desde el admin o con plantillas de Shopify Flow que timbran las órdenes pagadas y no facturadas, incluidas las de Shopify POS. En Plus, Pro y Enterprise también puedes juntarlas en la factura global del mes."
+        "text": "Factúralas a público en general. Con CFDI Express lo haces desde el admin o con plantillas de Shopify Flow que timbran las órdenes pagadas y no facturadas, incluidas las de Shopify POS. En Plus, Pro y Enterprise también puedes juntarlas en la factura global del mes. Desde la versión 3.27.0, si un pedido de esa global se devuelve o el cliente pide su factura, acreditas solo ese pedido con nota de crédito y la global sigue válida. En el plan Básico cada venta a público en general es un CFDI por pedido."
       }
     },
     {

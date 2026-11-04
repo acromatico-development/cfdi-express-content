@@ -85,11 +85,11 @@ Las ventas de mostrador también son órdenes de Shopify. Si están pagadas, en 
 
 ## Si una orden se cancela o se reembolsa
 
-**Respuesta corta:** la app te avisa para que emitas la nota de crédito. No la timbra sola.
+**Respuesta corta:** desde la versión **3.27.0** emites la nota de crédito en la página de ese pedido. La global sigue válida para los demás.
 
-Cuando una orden que ya está en la factura global se cancela o se reembolsa, ves un aviso en la app. La nota de crédito es un CFDI de egreso ligado a esa factura. La haces desde la orden, con el monto de la devolución. El paso a paso está en [Notas de crédito](/docs/notas-de-credito).
+Puede ser por el pedido completo o por una parte. Cada impuesto se acredita con su propia tasa: IVA al 0%, al 8% y al 16%, e IEPS. La nota cubre solo ese pedido. La factura global no se cancela. La app no la timbra sola. La acción **Crear Nota de Crédito** de Shopify Flow también acepta estos pedidos. El paso a paso está en [Notas de crédito](/docs/notas-de-credito).
 
-Si el cliente pide factura a su nombre después de haber quedado en la global, esa orden ya tiene folio y UUID. Con tu contador defines si cancelas o si compensas con nota de crédito, y después timbras con sus datos fiscales. La cancelación en la app está en [Cancelación y acuse](/docs/cancelacion-y-acuse).
+Si el cliente pide factura a su nombre después de haber quedado en la global, emite primero la nota de crédito por el pedido completo y luego la factura desde la misma página. Esa factura la emites tú desde la app. Si el cliente lo intenta en la página de gracias, en el formulario de la tienda o en el POS, la app le explica que su compra ya está facturada y que tú puedes emitirle la factura a su nombre.
 
 ## El reporte: una fila por orden
 
@@ -121,7 +121,11 @@ No. Solo entran órdenes pagadas, en MXN y sin factura. Cada orden que entra gua
 
 ### ¿Qué hago si reembolsé una orden que ya iba en la global?
 
-La app muestra un aviso para que emitas la nota de crédito. No la genera sola. La guía está en [Notas de crédito](/docs/notas-de-credito).
+Desde la versión **3.27.0** emites la nota de crédito en la página de ese pedido, total o parcial. Cada impuesto (IVA 0%, 8% y 16%, e IEPS) va con su tasa. La nota cubre solo ese pedido; la global sigue válida. La guía está en [Notas de crédito](/docs/notas-de-credito).
+
+### ¿Qué hago si el cliente pide su factura después?
+
+Emite la nota de crédito por el pedido completo y luego la factura a su nombre, desde la misma página. La factura global sigue válida para los demás. Esa factura la emites tú desde la app. En el plan Básico no hay factura global: cada venta a público en general es un CFDI por pedido.
 
 <script type="application/ld+json">
 {
@@ -173,7 +177,15 @@ La app muestra un aviso para que emitas la nota de crédito. No la genera sola. 
       "name": "¿Qué hago si reembolsé una orden que ya iba en la factura global?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La app muestra un aviso para que emitas la nota de crédito. No la genera sola."
+        "text": "Desde la versión 3.27.0 emites la nota de crédito en la página de ese pedido, total o parcial. Cada impuesto (IVA 0%, 8% y 16%, e IEPS) va con su tasa. La nota cubre solo ese pedido y la factura global sigue válida para los demás."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué hago si el cliente pide su factura después de la global?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Emite la nota de crédito por el pedido completo y luego la factura a su nombre, desde la misma página del pedido. La factura global sigue válida para los demás. Esa factura la emites tú desde la app. En el plan Básico no hay factura global: cada venta a público en general es un CFDI por pedido."
       }
     }
   ]
@@ -184,7 +196,7 @@ La app muestra un aviso para que emitas la nota de crédito. No la genera sola. 
 
 1. Confirma que la tienda está en Plus, Pro o Enterprise y que la app está en la 3.26.0 o posterior. La guía corta es [Facturación global mensual](/docs/facturacion-global-mensual).
 2. Lanza una corrida de prueba desde **Facturación global**, o arma el workflow con la acción del mismo nombre.
-3. Baja el CSV o el Excel y revísalo con tu contador. Si una orden se reembolsa después, emite la nota de crédito.
+3. Baja el CSV o el Excel y revísalo con tu contador. Si una orden se reembolsa después, emite la nota de crédito de ese pedido: la global sigue válida para el resto. Si el cliente pide su factura, cubre el pedido completo y timbra la nominativa desde la misma página.
 
 Si facturas un CFDI por orden, con el botón o con la plantilla de Flow, la guía sigue en [Factura global en Shopify](/blog/factura-global-shopify). Si también vendes en tienda física, el cierre de caja está en [Facturar en Shopify POS](/blog/facturar-shopify-pos).
 

@@ -43,7 +43,7 @@ Cancelas el CFDI desde la orden en el admin de Shopify. **Por ahora el admin sol
 
 ### Con Shopify Flow
 
-La acción **«Eliminar CFDI»** de Shopify Flow acepta los **motivos 01 a 04**. Úsala si necesitas cancelar con relación (01), porque la venta no se hizo (03) o para sacar una orden de la factura global (04). Más en [automatizaciones con Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express).
+La acción **«Eliminar CFDI»** de Shopify Flow acepta los **motivos 01 a 04**. Úsala si necesitas cancelar con relación (01) o porque la venta no se hizo (03). El motivo **04** es el de operación nominativa relacionada en una factura global: cancela ese CFDI. Para acreditar un solo pedido de la factura global del mes sin cancelar el comprobante, desde la app **3.27.0** usa la nota de crédito. Más en [automatizaciones con Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express).
 
 ### Descarga del acuse
 
@@ -51,7 +51,7 @@ El acuse se obtiene en PDF, queda guardado y lo descargas desde CFDI Express cua
 
 ## Cancelar y volver a facturar
 
-Un caso común: el cliente pide su factura cuando su orden ya entró a la factura global (que en CFDI Express siempre es mensual, 04). Puedes cancelar y timbrar la factura a su nombre, o compensar con nota de crédito. Revisa con tu contador cuál te conviene. Lo explicamos en la guía de [factura global en Shopify](/blog/factura-global-shopify).
+Si el cliente pide su factura cuando su pedido ya está en la factura global del mes (Plus, Pro y Enterprise), desde la app **3.27.0** no cancelas el comprobante global. Emite la nota de crédito por el pedido completo y luego la factura a su nombre, desde la página del pedido. La global sigue válida para los demás. La guía está en [Notas de crédito](/docs/notas-de-credito). Cancelar un CFDI que es solo de esa orden sigue en [Cancelación y acuse](/docs/cancelacion-y-acuse). En el plan Básico no hay factura global: cada venta a público en general es un CFDI por pedido.
 
 Para que tus clientes facturen solos y no tengas que cancelar tanto, activa el [portal de autofacturación](/blog/portal-de-autofacturacion). Así se configura: [tutorial de autofacturación](/blog/crea-un-portal-de-auto-facturacion-cfdi-en-5-minutos).
 

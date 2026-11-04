@@ -46,6 +46,27 @@ Cuando los requisitos se cumplen, la pantalla de facturación de la orden muestr
 - Si intentas generar una Nota cuyo monto exceda el disponible, CFDI Express muestra un error con el monto disponible por acreditar.
 - Puedes generar **múltiples Notas de Crédito** parciales sobre la misma factura, siempre que el acumulado no supere el total.
 
+## Pedido incluido en una factura global
+
+Desde la versión **3.27.0**, si el pedido ya está en una [factura global](/docs/facturacion-global-mensual), emites la nota de crédito desde la página de ese pedido, en la misma sección **Devoluciones (Notas de Crédito)**.
+
+La factura global es de los planes **Plus**, **Pro** y **Enterprise**. En el plan **Básico** (Standard en [Planes y precios](/docs/planes-y-precios)) no hay factura global: cada venta a público en general es un CFDI por pedido.
+
+- Puedes acreditar el **pedido completo** o **solo una parte**.
+- Cada impuesto se acredita con su propia tasa: **IVA 0%**, **IVA 8%**, **IVA 16%** e **IEPS**.
+- La nota acredita **solo ese pedido**. La factura global no se cancela: sigue válida para los demás.
+
+La acción de Shopify Flow **Crear Nota de Crédito** también funciona con estos pedidos. Está en [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express).
+
+## El cliente pidió su factura después
+
+Si el pedido ya quedó en la global y el cliente quiere la factura a su nombre:
+
+1. Emite la nota de crédito por el **pedido completo** desde la página del pedido.
+2. Desde esa misma página genera la factura con sus datos fiscales.
+
+Esa factura nominativa la emites tú desde la app. El cliente no la timbra en la página de gracias, en el formulario de la tienda ni en el POS. Si lo intenta, la app le explica que su compra ya está facturada y que tú puedes emitirle la factura a su nombre.
+
 ## Cancelar una Nota de Crédito
 
 1. En la sección **"Devoluciones (Notas de Crédito)"**, localiza la Nota a cancelar (estado **Activa**).
@@ -84,6 +105,8 @@ Cada **Nota de Crédito timbrada** registra un cargo de uso igual que cualquier 
 <h2 id="volver-a-facturar-sin-cancelar-la-original">Volver a facturar sin cancelar la original</h2>
 
 Desde la app **v3.23** puedes generar otra factura de la misma orden sin cancelar la original. El caso típico es una factura al [público en general](/docs/facturacion-al-publico-en-general-manual-y-automatica): días después el cliente pide la factura a nombre de su empresa.
+
+Desde la versión **3.27.0**, volver a facturar una factura ya acreditada al **100%** funciona desde la página del pedido. Ese es el paso que sigue cuando cubriste con nota de crédito un pedido que estaba en la factura global.
 
 1. Emite **una o varias notas de crédito por el total** de la factura.
 2. En cuanto quedan cubiertas, la página de factura permite capturar los datos fiscales correctos y generar una factura nueva de esa misma orden con el botón **"Volver a facturar"**. En Modo Flow el botón dice **"Volver a facturar (enviar a Flow)"**.

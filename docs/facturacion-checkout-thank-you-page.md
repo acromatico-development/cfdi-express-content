@@ -23,3 +23,9 @@ El **Formulario de autofacturación** no pide el número de pedimento. Si el pro
   <iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/iKweIA7HyHI?si=SG-PAU9U4-CwvAZM&amp;start=254" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 - Link:
   https://youtu.be/iKweIA7HyHI?si=psdb9qSMODcNfRrs
+
+## Pedido que ya está en la factura global
+
+Desde la versión **3.27.0**, si el cliente intenta facturar un pedido que ya está en la factura global del mes, el formulario le explica que su compra ya está facturada y que tú puedes emitirle la factura a su nombre desde la app. No timbra otra.
+
+La factura global es de los planes **Plus**, **Pro** y **Enterprise**. En el plan **Básico** cada venta a público en general es un CFDI por pedido. Cómo emitir la factura a nombre del cliente está en [Notas de crédito](/docs/notas-de-credito).

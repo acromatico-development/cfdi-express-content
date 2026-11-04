@@ -10,6 +10,10 @@ Para poder completar una factura desde el admin de Shopify, sigue los siguientes
 3. Dentro de la orden a facturar, llena los datos de facturación con los datos fiscales del cliente. Da clic en facturar. Puedes facturar al público en general llenando los datos de facturación de público en general:  RFC genérico XAXX010101000 y el nombre "PÚBLICO EN GENERAL", con régimen fiscal "616 – Sin Obligaciones Fiscales" y el código postal del emisor.
 
 Si el producto o la variante ya tienen pedimentos de importación, la tabla **Productos** muestra la columna **Pedimentos**. Esa columna no aparece si ningún concepto los trae. La guía está en [Pedimentos de importación](/docs/pedimentos-de-importacion).
+
+Desde la versión **3.27.0**, la vista previa de la factura incluye todos los artículos del pedido, hasta **1,000** (el máximo que permite el SAT), con el total correcto. Antes la vista se quedaba en los primeros 50 y, si había descuentos, podía mostrar conceptos en $0 o un total negativo.
+
+Antes de timbrar, la app revisa si el pedido ya tiene una factura vigente. Si ya la tiene, te muestra esa factura en lugar de timbrar otra, aunque el timbrado tarde o alguien vuelva a dar clic.
 ![Datos de Facturación](https://cdn.shopify.com/s/files/1/0804/5540/1763/files/Acr_2025-09-22_at_15.50.44.png?v=1758577857)
 
 ### Enviar la factura por WhatsApp

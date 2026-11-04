@@ -32,6 +32,8 @@ En [Modo PAC](/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacio
 
 Estos se registran/cambian ante el PAC al guardar. Si cambias tu CSD, vuelve a cargarlo aquí.
 
+> Desde la versión **3.27.0**, el certificado y su contraseña no se envían al navegador. Si ya hay un CSD cargado, Configuración muestra **CSD actual cargado**. Solo vuelves a subir los archivos cuando vas a cambiarlo.
+
 ## Selección de modo: PAC o Flow
 
 El toggle **"¿Ya tienes un PAC de facturación?"** controla el modo:
