@@ -27,7 +27,7 @@ Guárdalo. Es lo que te respalda ante tu contador, tu cliente o una revisión de
 | **03** No se llevó a cabo la operación | La venta no sucedió | No |
 | **04** Operación nominativa relacionada en una factura global | La venta estaba en la factura global y ahora se factura a nombre del cliente | No |
 
-El detalle de los datos SAT está en [CFDI facturas 4.0](/blog/cfdi-facturas-4-0).
+El detalle de los datos SAT está en [CFDI facturas 4.0](/blog/cfdi-facturas-4-0). Por la API, el motivo **01** se hace en dos pasos: timbras la sustituta con TipoRelacion `04` y después cancelas la original. La guía está en [Cancelar CFDI con motivo 01](/docs/cancelar-factura-sustitucion).
 
 ## ¿Tu cliente tiene que aceptar la cancelación?
 
@@ -64,7 +64,7 @@ La cancelación la registra el SAT. En CFDI Express el acuse queda guardado en P
 Por ahora el admin solo cancela con motivo 02. Para 01, 03 o 04 usa la acción «Eliminar CFDI» de Shopify Flow.
 
 **¿Puedo cancelar una factura con motivo 01 en CFDI Express?**
-Sí, con la acción «Eliminar CFDI» de Shopify Flow, que acepta los motivos 01 a 04.
+Sí. En la app de Shopify, con la acción «Eliminar CFDI» de Shopify Flow, que acepta los motivos 01 a 04. Por la API, el paso a paso está en [Cancelar CFDI con motivo 01](/docs/cancelar-factura-sustitucion).
 
 **¿Una factura cancelada se puede volver a emitir?**
 Puedes timbrar una factura nueva para la misma venta. Si la relacionas con la cancelada, usa el motivo 01.
