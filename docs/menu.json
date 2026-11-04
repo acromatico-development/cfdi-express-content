@@ -138,5 +138,10 @@
     "title": "CFDI de Retenciones para plataformas digitales",
     "document": "retenciones-plataformas-digitales.md",
     "completed": true
+  },
+  {
+    "title": "Cancelar factura por sustitución (motivo 01)",
+    "document": "cancelar-factura-sustitucion.md",
+    "completed": true
   }
 ]
