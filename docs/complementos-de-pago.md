@@ -42,6 +42,10 @@ Cuando una orden se factura con método de pago **PPD (Pago en Parcialidades o D
 
 > Importante: **no puedes cancelar un CFDI principal** mientras tenga complementos de pago activos. Primero cancela todos sus complementos asociados y luego cancela el CFDI original.
 
+## Complemento de una factura en dólares
+
+Desde la app **3.28.0**, si la factura PPD es en dólares el complemento sale en dólares. El monto del abono se captura en dólares. El tipo de cambio es el de la **fecha del pago** (el FIX de Banxico de ese día). El paso a paso de la factura en USD está en [Cómo facturar en dólares desde Shopify](/blog/facturar-en-dolares-shopify).
+
 ## Un REP para varias facturas PPD
 
 Un solo complemento de recepción de pagos (**REP**, Pagos 2.0) puede cubrir varias facturas PPD. En `POST /v1/payments`, el arreglo `documents[]` indica cada factura y el importe de su abono. Todas deben ser del mismo emisor, del mismo RFC receptor y de la misma moneda. El arreglo admite hasta 100 facturas. La parcialidad se numera por factura.

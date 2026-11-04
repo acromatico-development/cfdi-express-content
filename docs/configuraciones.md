@@ -81,6 +81,18 @@ Para el detalle de los correos que se envían, ver [Notificaciones por correo](/
 
 El toggle **`enableCsfUpload`** agrega un campo de carga de archivo (CSF) a los formularios de facturación públicos (Thank You Page, página de estado de orden, formulario de tema). La CSF subida se guarda y su URL se incluye en el disparador `cfdi-flow-mode` y el evento `cfdi-created`.
 
+## Facturar en dólares (USD)
+
+Desde la versión **3.28.0** puedes facturar en dólares las órdenes que Shopify cobró en dólares. La opción se llama **"Facturar en dólares (USD) las órdenes cobradas en dólares"**.
+
+- Viene **apagada**. Hasta que la actives, esas órdenes se siguen facturando como antes.
+- Si la **moneda de la tienda** ya es el dólar, las facturas salen en dólares sin prender la opción. Antes de la 3.28.0 esas ventas se timbraban como si fueran pesos.
+- El tipo de cambio que propone la app es el **FIX de Banxico del día**. En la página del pedido puedes capturar otro y ver la vista previa con ese valor antes de timbrar.
+- Si la factura es en dólares, su [nota de crédito](/docs/notas-de-credito) y su [complemento de pago](/docs/complementos-de-pago) también salen en dólares, cada uno con el tipo de cambio de su fecha.
+- El total del CFDI es el que cobró Shopify. Un producto de $674.00 se factura en $674.00, no en $673.99, aunque haya descuentos o envío. La nota de crédito cuadra igual.
+
+El paso a paso está en [Cómo facturar en dólares desde Shopify](/blog/facturar-en-dolares-shopify). Lo que pide el SAT está en [Facturación al extranjero: moneda extranjera](/docs/facturacion-al-extranjero#moneda-extranjera).
+
 ## Gestión del plan
 
 Desde Configuraciones también puedes ver tu **plan actual** y, si corresponde, cambiarte de plan (Standard, Plus, Pro, Enterprise). Para tarifas y límites, ver [Planes y Precios](/docs/planes-y-precios).

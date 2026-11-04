@@ -1,6 +1,6 @@
 ---
 title: "Facturación global mensual en Shopify: cómo correrla"
-description: "Agrupa las ventas pagadas en MXN sin factura en comprobantes globales de hasta 1,000 órdenes. Planes Plus, Pro y Enterprise, a mano o con Shopify Flow."
+description: "Agrupa las ventas pagadas sin factura en comprobantes globales de hasta 1,000 órdenes, en MXN o en USD si la tienda factura en dólares. Planes Plus, Pro y Enterprise, a mano o con Shopify Flow."
 keywords: "facturación global mensual, factura global del mes, público en general shopify, XAXX010101000, shopify flow facturación global, CFDI Express"
 ---
 # Facturación global mensual
@@ -10,6 +10,8 @@ URL de esta página: https://cfdi.express/docs/facturacion-global-mensual
 Desde la versión **3.26.0** de la app, CFDI Express puede juntar las ventas a público en general en **facturas globales de hasta 1,000 órdenes** cada una. La corres a mano desde el menú de la app o la programas con la acción **Facturación global** de Shopify Flow.
 
 El camino de un CFDI por orden (el botón **Facturar al Publico en General** y las plantillas que timbran orden por orden) sigue en [Facturación al público en general](/docs/facturacion-al-publico-en-general-manual-y-automatica). Esta guía es la de la factura global del mes. Qué es ese comprobante en CFDI 4.0 está en [Cómo hacer la factura global del mes en Shopify](/blog/factura-global-del-mes-shopify).
+
+Desde la versión **3.28.0** también hay una plantilla de Shopify Flow de factura global diaria. Cada noche agrega a la factura global a público en general las ventas de ayer y las del mes que se pagaron después. El día 1 cierra el mes anterior completo. Está en los mismos planes. El paso a paso de la moneda en el pedido está en [Cómo facturar en dólares desde Shopify](/blog/facturar-en-dolares-shopify).
 
 ## Requisitos y planes
 
@@ -23,11 +25,11 @@ Antes de lanzarla:
 
 ## Qué órdenes entran
 
-La corrida solo toma órdenes que cumplan las tres cosas:
+La corrida solo toma órdenes **pagadas** y **sin factura**, en la moneda que la tienda factura:
 
-- Están **pagadas**.
-- Están en **pesos (MXN)**.
-- **No tienen factura**.
+- En **pesos (MXN)** entran como hasta ahora. Esa factura global sale en MXN.
+- Las órdenes **cobradas en dólares** entran cuando la tienda ya factura en USD: la moneda de la tienda es el dólar, o activaste **Facturar en dólares (USD) las órdenes cobradas en dólares** en [Configuraciones](/docs/configuraciones). Esa factura global sale en USD, con el tipo de cambio FIX de Banxico de la fecha del comprobante.
+- Pesos y dólares van en comprobantes distintos. Cada factura global lleva una sola moneda.
 
 Una orden en otra moneda, una que sigue sin pagar o una que ya tiene CFDI no entra. La corrida **no duplica**: si la lanzas otra vez, las órdenes que ya quedaron facturadas se quedan fuera.
 
@@ -35,9 +37,11 @@ Cada orden que sí entra guarda el **folio** y el **UUID** de la factura global 
 
 Si hay más de 1,000 órdenes que cumplen, salen varias facturas globales. Cada una lleva como máximo 1,000 órdenes.
 
-## Moneda y tipo de cambio por API
+## Moneda en la app y tipo de cambio por API
 
-La corrida de la app solo junta órdenes en MXN. La factura global que se timbra por API (`POST /v1/invoices` con `informacionGlobal`) acepta `currency` y `exchangeRate` desde la **v1.49.0**, con el mismo contrato que cualquier factura. Los importes van en esa moneda. `exchangeRate` son los pesos mexicanos por 1 unidad, con máximo 6 decimales, de la fecha del comprobante. Si la moneda no es MXN, el campo es obligatorio; con MXN se omite o va en `1`. Para USD se usa el FIX de Banxico publicado en el Diario Oficial de la Federación. La referencia está en [Timbrar una factura](/docs/api/timbrar-factura).
+En la app, la corrida junta las órdenes de la sección anterior: pesos, y dólares cuando la tienda factura en USD. En la página del pedido puedes capturar otro tipo de cambio y ver la vista previa antes de timbrar una factura nominativa. Eso está en [Cómo facturar en dólares desde Shopify](/blog/facturar-en-dolares-shopify).
+
+La factura global que se timbra por API (`POST /v1/invoices` con `informacionGlobal`) acepta `currency` y `exchangeRate` desde la **v1.49.0**, con el mismo contrato que cualquier factura. Los importes van en esa moneda. `exchangeRate` son los pesos mexicanos por 1 unidad, con máximo 6 decimales, de la fecha del comprobante. Si la moneda no es MXN, el campo es obligatorio; con MXN se omite o va en `1`. Para USD se usa el FIX de Banxico publicado en el Diario Oficial de la Federación. La referencia está en [Timbrar una factura](/docs/api/timbrar-factura). Otras monedas de esa lista se timbran por API: la corrida de la app no las junta.
 
 ## Lanzarla a mano
 
@@ -66,7 +70,11 @@ La acción se llama **Facturación global**. No le pases una orden: junta las qu
 ![TODO: Acción Facturación global en Shopify Flow](TODO-screenshot)
 <!-- ENDTODO -->
 
-La acción **Crear CFDI** es otra: timbra un CFDI por orden. Las plantillas de fin de día, 3 días, 10 días y fin de mes usan esa acción. El detalle está en [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express) y en [Facturación al público en general](/docs/facturacion-al-publico-en-general-manual-y-automatica).
+La acción **Crear CFDI** es otra: timbra un CFDI por orden. Las plantillas de fin de día, 3 días, 10 días y fin de mes usan esa acción.
+
+Desde la versión **3.28.0** hay una plantilla distinta, de **factura global diaria**. Usa esta acción, **Facturación global**. Cada noche agrega a la factura global a público en general las ventas de ayer y las del mes que se pagaron después. El día 1 cierra el mes anterior completo. Actívala en Shopify Flow. Está en Plus, Pro y Enterprise. En el plan Básico se sigue facturando al público en general un CFDI por orden.
+
+El detalle de las plantillas está en [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express) y en [Facturación al público en general](/docs/facturacion-al-publico-en-general-manual-y-automatica).
 
 ## El disparador Facturación global terminada
 
@@ -80,7 +88,7 @@ Desde la versión **3.27.0**, si un pedido que ya está en la factura global se 
 
 Puede ser por el pedido completo o por una parte. Cada impuesto se acredita con su propia tasa: **IVA al 0%**, **IVA al 8%**, **IVA al 16%** e **IEPS**.
 
-La nota acredita solo ese pedido. La factura global no se cancela: sigue válida para los demás.
+La nota acredita solo ese pedido. La factura global no se cancela: sigue válida para los demás. Si esa factura global es en dólares, la nota sale en dólares, con el tipo de cambio de la fecha de la nota.
 
 La acción **Crear Nota de Crédito** de Shopify Flow también acepta estos pedidos. El paso a paso está en [Notas de crédito](/docs/notas-de-credito).
 
@@ -121,7 +129,7 @@ Agrupar órdenes está en Plus, Pro y Enterprise. En el plan Básico (Standard) 
 
 ### ¿Qué órdenes junta?
 
-Solo órdenes pagadas, en MXN y sin factura. No vuelve a facturar una orden que ya tiene folio y UUID.
+Órdenes pagadas y sin factura. En pesos entran como hasta ahora. Las cobradas en dólares entran cuando la tienda factura en USD, y esa factura global sale en USD. Una orden en otra moneda no entra. No vuelve a facturar una orden que ya tiene folio y UUID.
 
 ### ¿Cuántas órdenes caben en cada factura global?
 

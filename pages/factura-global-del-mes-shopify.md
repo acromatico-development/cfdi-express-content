@@ -70,18 +70,20 @@ Cuando la corrida termina, CFDI Express dispara **Facturación global terminada*
 
 La acción **Crear CFDI** es distinta: timbra **un CFDI por orden**. Las plantillas de fin de día, 3 días, 10 días y fin de mes usan esa acción. Si eso es lo que buscas, la guía es [Factura global en Shopify](/blog/factura-global-shopify).
 
+Desde la versión **3.28.0** hay otra plantilla, de factura global diaria. Usa la acción **Facturación global**. Cada noche agrega las ventas de ayer y las del mes que se pagaron después. El día 1 cierra el mes anterior completo. Está en los mismos planes. Cómo activarla, y cómo entran las órdenes en dólares, está en [Cómo facturar en dólares desde Shopify](/blog/facturar-en-dolares-shopify).
+
 ## Qué órdenes junta, y cuáles no
 
-**Respuesta corta:** solo órdenes **pagadas**, en **MXN** y **sin factura**. No duplica, y cada orden guarda folio y UUID.
+**Respuesta corta:** órdenes **pagadas** y **sin factura**. En pesos entran como hasta ahora. Las cobradas en dólares entran cuando la tienda factura en USD, y esa factura global sale en USD. No duplica, y cada orden guarda folio y UUID.
 
-- Una orden en dólares u otra moneda no entra.
+- Una orden en una moneda distinta de pesos y de dólares no entra. Pesos y dólares van en comprobantes distintos.
 - Una orden que el cliente ya facturó no entra.
 - Una orden que esta misma corrida ya metió en una factura global tampoco vuelve a entrar. Puedes lanzarla de nuevo: lo ya facturado se queda fuera.
 - Si pasan de 1,000, salen varias facturas globales, cada una con hasta 1,000 órdenes.
 
 En el plan Básico (en [Planes y precios](/docs/planes-y-precios) se llama Standard) esta corrida no está. Ahí se sigue facturando al público en general un CFDI por orden, a mano o con la plantilla de Shopify Flow, como hasta ahora. La guía está en [Facturación al público en general](/docs/facturacion-al-publico-en-general-manual-y-automatica).
 
-Las ventas de mostrador también son órdenes de Shopify. Si están pagadas, en MXN y sin factura, entran igual que las de la tienda en línea. Cómo se factura en caja está en [Facturar en Shopify POS](/blog/facturar-shopify-pos).
+Las ventas de mostrador también son órdenes de Shopify. Si están pagadas y sin factura, entran igual que las de la tienda en línea, en la moneda en que la tienda las factura. Cómo se factura en caja está en [Facturar en Shopify POS](/blog/facturar-shopify-pos).
 
 ## Si una orden se cancela o se reembolsa
 
@@ -117,7 +119,7 @@ Agrupar en la factura global del mes está en Plus, Pro y Enterprise, desde la v
 
 ### ¿Se puede facturar dos veces la misma orden?
 
-No. Solo entran órdenes pagadas, en MXN y sin factura. Cada orden que entra guarda el folio y el UUID, y una corrida posterior la deja fuera.
+No. Solo entran órdenes pagadas y sin factura: en pesos, y en dólares cuando la tienda factura en USD. Cada orden que entra guarda el folio y el UUID, y una corrida posterior la deja fuera.
 
 ### ¿Qué hago si reembolsé una orden que ya iba en la global?
 
@@ -169,7 +171,7 @@ Emite la nota de crédito por el pedido completo y luego la factura a su nombre,
       "name": "¿Se puede facturar dos veces la misma orden en la factura global?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Solo entran órdenes pagadas, en MXN y sin factura. Cada orden que entra guarda el folio y el UUID, y una corrida posterior la deja fuera."
+        "text": "No. Solo entran órdenes pagadas y sin factura: en pesos, y en dólares cuando la tienda factura en USD. Cada orden que entra guarda el folio y el UUID, y una corrida posterior la deja fuera."
       }
     },
     {

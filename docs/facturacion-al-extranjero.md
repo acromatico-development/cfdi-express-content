@@ -1,6 +1,6 @@
 ---
 title: "RFC XEXX010101000 y facturas en dólares: cómo facturarlos"
-description: "Factura a clientes del extranjero con el RFC XEXX010101000 e IVA 0% desde Shopify, y emite facturas en dólares u otras monedas con el tipo de cambio del día por la API."
+description: "Factura a clientes del extranjero con el RFC XEXX010101000 e IVA 0% desde Shopify. Desde la app 3.28.0, las órdenes cobradas en USD se facturan en dólares; por la API, el tipo de cambio va en el request."
 keywords: "rfc genérico extranjero, XEXX010101000, factura a extranjero, cfdi extranjero shopify, iva 0% extranjero"
 ---
 # Facturación al Extranjero (RFC XEXX010101000)
@@ -108,6 +108,10 @@ Errores **400** de estos campos:
 - Factura o nota de crédito a `XEXX010101000` sin `S01`, sin régimen `616` o sin el código postal del emisor.
 
 <h2 id="moneda-extranjera">Facturas en dólares y otras monedas</h2>
+
+En la app de Shopify, desde la **3.28.0**, las órdenes cobradas en USD se facturan en dólares si activas **Facturar en dólares (USD) las órdenes cobradas en dólares** en [Configuraciones](/docs/configuraciones). La opción viene apagada. Si la moneda de la tienda ya es el dólar, las facturas salen en dólares: antes de esa versión se timbraban como si fueran pesos. El tipo de cambio que propone la app es el FIX de Banxico del día. En la página del pedido puedes capturar otro y ver la vista previa antes de timbrar. La nota de crédito y el complemento de pago de esa factura salen en dólares, cada uno con el tipo de cambio de su fecha. El paso a paso está en [Cómo facturar en dólares desde Shopify](/blog/facturar-en-dolares-shopify).
+
+Lo de abajo es el contrato de la API.
 
 Desde la API **v1.49.0** la factura puede timbrarse en dólares o en otra moneda. En `POST /v1/invoices` se envían `currency` y `exchangeRate`. Cada importe (`unitPrice`, `shipping` y `cartDiscount`) va en esa moneda. Las monedas válidas son MXN, USD, EUR, CAD, GBP, CHF, AUD, NZD, CNY, HKD, SGD, SEK, NOK, DKK, BRL, ARS, COP, PEN y GTQ.
 

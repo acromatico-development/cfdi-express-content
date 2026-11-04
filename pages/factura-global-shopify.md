@@ -95,7 +95,7 @@ Las plantillas son una base. Antes de activarlas revisa cuatro cosas: el código
 - **Correo de aviso.** El último paso manda un resumen por correo. Pon tu dirección.
 - **Búsqueda de órdenes.** La plantilla busca órdenes **pagadas** que no estén marcadas como **Facturado** ni con **Ignorar auto-facturación**. El query también trae una fecha de inicio. Si quieres otro periodo de espera u órdenes más viejas, edítalo en Flow.
 - **Hasta 100 órdenes por corrida.** Si vendes más que eso por periodo, usa una plantilla que corra más seguido.
-- **Moneda.** Las órdenes que no están en pesos (MXN) se brincan y quedan anotadas en el registro del workflow para que las factures aparte.
+- **Moneda.** Si la tienda factura en dólares, la orden en USD se timbra en USD con el tipo de cambio del día. Una orden en otra moneda se brinca y queda anotada en el registro del workflow para que la factures aparte.
 
 ### Mes y año del periodo
 
@@ -157,7 +157,7 @@ Para ventas a extranjeros la app tiene **Facturar al Publico en General Extranje
 
 **Respuesta corta:** en Plus, Pro y Enterprise la app agrupa hasta 1,000 órdenes en cada factura global del mes. Desde la orden, cada venta sigue en su propio CFDI. Por API también se arma un global.
 
-La corrida de la app está en [Facturación global mensual](/docs/facturacion-global-mensual). Toma órdenes pagadas, en MXN y sin factura, y no las duplica.
+La corrida de la app está en [Facturación global mensual](/docs/facturacion-global-mensual). Toma órdenes pagadas y sin factura, en pesos o en dólares si la tienda factura en USD, y no las duplica. Desde la versión **3.28.0** la plantilla de factura global diaria corre esa acción cada noche; el día 1 cierra el mes anterior. El paso a paso está en [Cómo facturar en dólares desde Shopify](/blog/facturar-en-dolares-shopify).
 
 La [API de CFDI Express](https://cfdi.express/api) acepta la información global en `POST /v1/invoices` con periodicidad `01` diaria, `02` semanal, `03` quincenal, `04` mensual o `05` bimestral (meses `13`–`18`). Sirve si tu equipo de desarrollo junta las ventas de un sistema propio. La referencia está en la [documentación de la API](https://api.cfdi.express/docs).
 
