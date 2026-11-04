@@ -19,7 +19,7 @@ Estos eventos los dispara el app. Los usas como punto de partida de tus automati
 - **"Crear CFDI"** (`cfdi-create-action`) — timbra un CFDI a partir de una referencia de orden y los datos fiscales que proporciones (RFC, razón social, régimen, código postal, método de pago, uso CFDI, correo y dirección opcional). Devuelve la `download_url` del ZIP. Si el producto o la variante tienen [pedimentos de importación](/docs/pedimentos-de-importacion), esta acción los incluye. No tiene un campo para editarlos.
 - **"Eliminar CFDI"** (`cfdi-delete-action`) — cancela un CFDI dado su `order_reference` y un **motivo** de cancelación del SAT (`01`, `02`, `03` o `04`).
 - **"Crear Nota de Crédito"** — emite la nota de un pedido. Desde la versión **3.27.0** también funciona si ese pedido ya está en una [factura global](/docs/facturacion-global-mensual) (Plus, Pro y Enterprise). Puede ser por el pedido completo o por una parte, y acredita IVA al 0%, 8% y 16%, e IEPS, cada uno con su tasa. La global sigue válida para los demás pedidos. No incluye pedimentos. El detalle está en [Notas de crédito](/docs/notas-de-credito).
-- **"Facturación global"** — agrupa en facturas globales de hasta 1,000 órdenes las ventas pagadas en MXN que no tienen factura. Está en Plus, Pro y Enterprise. No es la acción "Crear CFDI": esa timbra un CFDI por orden. La guía está en [Facturación global mensual](/docs/facturacion-global-mensual).
+- **"Facturación global"** — agrupa en facturas globales de hasta 1,000 órdenes las ventas pagadas que no tienen factura. Entran las de pesos. Las cobradas en dólares entran cuando la tienda factura en USD (moneda de la tienda en dólares, o la opción de [Configuraciones](/docs/configuraciones)), y esa factura global sale en USD. Una orden en otra moneda no entra. Está en Plus, Pro y Enterprise. No es la acción "Crear CFDI": esa timbra un CFDI por orden. La guía está en [Facturación global mensual](/docs/facturacion-global-mensual).
 
 ## Cómo crear una automatización con Flow
 
@@ -39,7 +39,7 @@ Estos eventos los dispara el app. Los usas como punto de partida de tus automati
 
 La automatización más común combina el **disparador de recurrencia** con la **acción "Crear CFDI"** usando los datos del Público en General (`XAXX010101000`), para timbrar de forma periódica las órdenes que no fueron facturadas. Esto se detalla junto con los campos a usar y las plantillas en [Facturación al Público en General](/docs/facturacion-al-publico-en-general-manual-y-automatica).
 
-Para juntar esas ventas en facturas globales de hasta 1,000 órdenes, en Plus, Pro y Enterprise, usa la acción **Facturación global** con el mismo disparador de horario. Al terminar se dispara **Facturación global terminada**. La guía está en [Facturación global mensual](/docs/facturacion-global-mensual).
+Para juntar esas ventas en facturas globales de hasta 1,000 órdenes, en Plus, Pro y Enterprise, usa la acción **Facturación global** con el mismo disparador de horario. Al terminar se dispara **Facturación global terminada**. Desde la versión **3.28.0** la plantilla de factura global diaria hace esa corrida cada noche: agrega las ventas de ayer y las del mes que se pagaron después, y el día 1 cierra el mes anterior completo. En el plan Básico esa plantilla no está: ahí se sigue un CFDI por orden. La guía está en [Facturación global mensual](/docs/facturacion-global-mensual).
 
 ## Plantillas de Shopify Flow
 
@@ -49,6 +49,10 @@ Hemos prediseñado plantillas `.flow` que puedes importar y usar como base:
 - [Plantilla de auto facturación despues de 3 días](https://assets.acromatico.dev/assets/4b95bd41-4ba3-451d-babd-40b632821148.flow)
 - [Plantilla de auto facturación despues de 10 días](https://assets.acromatico.dev/assets/a4e4ea57-6d0a-42ad-be1e-b4eeec33d7dc.flow)
 - [Plantilla de auto facturación al final del mes](https://assets.acromatico.dev/assets/3ef1789f-05c1-489e-9b12-a0acbfe437f6.flow)
+
+Esas cuatro plantillas timbran **un CFDI por orden** con la acción **Crear CFDI**.
+
+Desde la versión **3.28.0** hay otra plantilla, de **factura global diaria**. Usa la acción **Facturación global**. Cada noche agrega a la factura global a público en general las ventas de ayer y las del mes que se pagaron después. El día 1 cierra el mes anterior completo. Actívala en Flow. Está en Plus, Pro y Enterprise. En el plan Básico se sigue facturando al público en general un CFDI por orden, con las plantillas de arriba. La guía está en [Facturación global mensual](/docs/facturacion-global-mensual).
 
 ### Cómo importar una plantilla
 
@@ -62,7 +66,7 @@ Hemos prediseñado plantillas `.flow` que puedes importar y usar como base:
 ![TODO: Importar plantilla .flow en Shopify Flow](TODO-screenshot)
 <!-- ENDTODO -->
 
-> Estas plantillas están diseñadas para facturar las órdenes **pagadas y no facturadas** generadas durante el día, hace más de 3 días, hace más de 10 días y al final del mes. Para expandir el tiempo de espera, edita los parámetros del query de búsqueda de órdenes en el editor de Flow. Si requieres una automatización más avanzada o que se integre con otras apps o acciones de Shopify Flow, contáctanos a través de [Acromático Development](https://acromatico.dev).
+> Las cuatro plantillas de **Crear CFDI** están diseñadas para facturar las órdenes **pagadas y no facturadas** generadas durante el día, hace más de 3 días, hace más de 10 días y al final del mes. Para expandir el tiempo de espera, edita los parámetros del query de búsqueda de órdenes en el editor de Flow. Si la tienda factura en dólares, esas órdenes salen en USD con el tipo de cambio del día. La plantilla de factura global diaria es la otra: agrupa, no timbra un CFDI por orden. Si requieres una automatización más avanzada o que se integre con otras apps o acciones de Shopify Flow, contáctanos a través de [Acromático Development](https://acromatico.dev).
 
 ## Modo Flow: pasar los datos a tu propio PAC
 

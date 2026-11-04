@@ -102,7 +102,7 @@ Las ventas de Shopify POS aparecen en el portal de cuentas del cliente: Shopify 
 
 En el admin abre la orden y oprime **Facturar al Publico en General**. Para no hacerlo una por una, importa una plantilla de [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express): busca las órdenes pagadas y no facturadas, sin filtrar canal, así que también toma las del POS.
 
-En Plus, Pro y Enterprise también puedes lanzar la [factura global del mes](/blog/factura-global-del-mes-shopify): junta las órdenes pagadas en MXN que no tienen factura, hasta 1,000 por comprobante.
+En Plus, Pro y Enterprise también puedes lanzar la [factura global del mes](/blog/factura-global-del-mes-shopify): junta las órdenes pagadas que no tienen factura, en pesos o en dólares si la tienda factura en USD, hasta 1,000 por comprobante.
 
 Elige cuándo corre según el plazo que le das al cliente para autofacturarse. El detalle del CFDI por orden (periodicidad, mes, qué ajustar en la plantilla y qué hacer si el cliente pide factura después) está en [Factura global en Shopify](/blog/factura-global-shopify).
 

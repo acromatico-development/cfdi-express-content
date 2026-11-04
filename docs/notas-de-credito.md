@@ -40,6 +40,10 @@ Cuando los requisitos se cumplen, la pantalla de facturación de la orden muestr
 
 ![Modal de nueva Nota de Crédito](https://videos.acromatico.dev/api/images/assets/fdb2de01-fdf9-4c32-9bd0-5a36e65cc246.png)
 
+## Moneda
+
+Si la factura es en dólares, la nota de crédito sale en dólares, con el tipo de cambio de la **fecha de la nota**. El monto que capturas va en esa moneda. Desde la app **3.28.0**. El total de la nota es el monto que acreditas, al centavo. El paso a paso está en [Cómo facturar en dólares desde Shopify](/blog/facturar-en-dolares-shopify).
+
 ## Monto máximo acreditado
 
 - La suma de los montos de todas las Notas de Crédito **activas** no puede exceder el **total de la factura** original.
