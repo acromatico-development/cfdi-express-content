@@ -18,7 +18,7 @@ En la API son dos llamadas, en este orden:
 
 En la sustituta el tipo de relación es `04`. En la cancelación el motivo es `01`.
 
-Timbrar la sustituta cuesta un timbre. Cancelar la original cuesta otro. Si la sustituta no está relacionada con la original, la cancelación responde 400 `substitute_not_related` y no gasta ese timbre. El detalle está más abajo.
+Timbrar la sustituta cuesta un timbre. Cancelar la original cuesta otro. Si la sustituta no está relacionada con la original, la cancelación responde 400 con `code` `validation_error` y `subcode` `substitute_not_related`, y no gasta ese timbre. El detalle está más abajo.
 
 Esta guía es de la API. En la app de Shopify el admin cancela por ahora con motivo 02. Ese flujo está en [Cancelación y acuse](/docs/cancelacion-y-acuse).
 
@@ -113,9 +113,23 @@ Una factura PPD con complementos de pago vigentes se cancela después de cancela
 
 ## Error 400 `substitute_not_related`
 
-Si `folioSustitucion` apunta a un CFDI que no trae a la original en `cfdiRelacionados` con `tipoRelacion` `04`, la API responde **400** `substitute_not_related`.
+`substitute_not_related` es el `subcode`. El `code` sigue siendo `validation_error`.
 
-Esa validación corre antes de enviar la cancelación al SAT y **antes de gastar un timbre**. El intento queda sin cargo. Timbras una sustituta que sí incluya el UUID de la original, o apuntas `folioSustitucion` al UUID de la sustituta que ya lo trae, y vuelves a llamar este endpoint.
+La API busca la sustituta por `folioSustitucion` entre las facturas timbradas en CFDI Express. Responde **400** cuando esa factura no trae `cfdiRelacionados` con `tipoRelacion` `"04"` que incluya el UUID de la original. La validación corre antes de enviar la cancelación al SAT y **antes de gastar un timbre**.
+
+```json
+{
+  "type": "https://api.cfdi.express/docs/errors/validation_error",
+  "title": "Validation error",
+  "status": 400,
+  "code": "validation_error",
+  "subcode": "substitute_not_related"
+}
+```
+
+El `detail` sugiere timbrar la sustituta con `cfdiRelacionados` `{ tipoRelacion: "04", uuids: [UUID de la original] }` o cancelar con motivo `02`.
+
+Si `folioSustitucion` es el UUID de la misma factura que estás cancelando, la respuesta también es 400 `validation_error`.
 
 Si omites `folioSustitucion` con motivo `01`, o el motivo no es `01`–`04`, la respuesta es 400 `validation_error`. Ese caso está en [Cancelar una factura](/docs/api/cancelar-factura).
 
