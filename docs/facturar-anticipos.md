@@ -15,7 +15,7 @@ La API timbra anticipos con el **procedimiento A** del Apéndice 6 de la Guía d
 2. **Factura por el valor total** de la operación: ingreso con los conceptos reales y `cfdiRelacionados` con `tipoRelacion` `"07"` al UUID del anticipo.
 3. **Nota de crédito** (egreso) por el anticipo aplicado: `POST /v1/credit_notes` con `tipoRelacion` `"07"`, `formaPago` `"30"` y `relatedInvoiceId` de la **factura por el total**, no del anticipo.
 
-La API rechaza las combinaciones que no siguen este orden. Cada error dice qué mandar en su lugar; la lista está en la sección «Validaciones y errores comunes».
+La API rechaza las combinaciones que no siguen este orden. Cada error dice qué mandar en su lugar; la lista está en la sección «Errores al facturar anticipos».
 
 Cada paso timbra un CFDI y consume un timbre. Las tres llamadas piden `Authorization: Bearer sk_test_…` o `sk_live_…` y un `Idempotency-Key` (1 a 255 caracteres). En un workspace, el header `x-account-id` indica la cuenta.
 
@@ -182,9 +182,9 @@ El [servidor MCP](/docs/api/mcp) sigue el mismo flujo. Al conectarse, manda a tu
 
 Si no le dices al agente si el remanente se paga en ese momento o después, las instrucciones le piden que te pregunte. Los errores son los mismos que en la API REST, así que el agente corrige y reintenta.
 
-## Validaciones y errores comunes
+## Errores al facturar anticipos
 
-Todas responden **400** con `code` `validation_error` y `subcode` `anticipo_rules`, antes de timbrar. `errors[].path` señala el campo, y `detail` explica qué mandar en su lugar y repite el flujo de tres pasos.
+Las reglas de anticipo responden **400** con `code` `validation_error` y `subcode` `anticipo_rules`, antes de timbrar. Las excepciones se indican en cada tabla. `errors[].path` señala el campo, y `detail` explica qué mandar en su lugar y repite el flujo de tres pasos.
 
 ```json
 {
@@ -218,7 +218,7 @@ Todas responden **400** con `code` `validation_error` y `subcode` `anticipo_rule
 | El anticipo ya se aplicó en otra factura vigente. Un anticipo se aplica una sola vez. | `cfdiRelacionados.uuids` |
 | El anticipo se facturó a otro RFC. | `receiver.rfc` |
 | `formaPago` `"30"` sin que los anticipos cubran el total. | `formaPago` |
-| `metodoPago` `"PPD"` con una forma distinta de `"99"`. | — |
+| `metodoPago` `"PPD"` con una forma distinta de `"99"`. Es un `validation_error` general de cualquier factura, sin `subcode` `anticipo_rules`. | — |
 
 Las reglas de los UUID solo se pueden revisar cuando el anticipo se timbró en CFDI Express. Un UUID timbrado en otro sistema pasa sin esas validaciones.
 
