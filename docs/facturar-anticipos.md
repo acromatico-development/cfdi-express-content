@@ -214,7 +214,8 @@ Las reglas de anticipo responden **400** con `code` `validation_error` y `subcod
 | Un concepto `84111506` / `ACT` junto con la relación `07`. La factura por el total lleva los conceptos reales. | `items` |
 | Relación `07` en una factura global (público en general). Factura al cliente de forma nominativa. | `cfdiRelacionados.tipoRelacion` |
 | El UUID relacionado no es una factura de anticipo (un solo concepto `84111506` / `ACT`). Para sustituir una factura se usa `04`. | `cfdiRelacionados.uuids` |
-| El UUID es de una nota de crédito, de otro emisor, o de un anticipo cancelado o sin timbrar. | `cfdiRelacionados.uuids` |
+| El UUID lo timbró otro emisor: «cfdiRelacionados UUID … was issued by another merchant — a CFDI can only relate the same emisor's CFDIs». Es un `validation_error` general de cualquier relación, sin `subcode` `anticipo_rules`; trae `errors[]` con `message` «different emisor». | `cfdiRelacionados.uuids` |
+| El UUID es de una nota de crédito («UUID … is a credit note — with tipoRelacion 07 relate the anticipo invoice(s).») o de un anticipo cancelado o sin timbrar («Anticipo … (inv…) is cancelled — only a stamped, uncancelled anticipo can be applied.», con el estatus que tenga). | `cfdiRelacionados.uuids` |
 | El anticipo ya se aplicó en otra factura vigente. Un anticipo se aplica una sola vez. | `cfdiRelacionados.uuids` |
 | El anticipo se facturó a otro RFC. | `receiver.rfc` |
 | `formaPago` `"30"` sin que los anticipos cubran el total. | `formaPago` |
