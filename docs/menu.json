@@ -143,5 +143,10 @@
     "title": "Cancelar factura por sustitución (motivo 01)",
     "document": "cancelar-factura-sustitucion.md",
     "completed": true
+  },
+  {
+    "title": "Facturar anticipos (relación 07 y forma de pago 30)",
+    "document": "facturar-anticipos.md",
+    "completed": true
   }
 ]
