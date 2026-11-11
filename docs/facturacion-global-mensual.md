@@ -111,6 +111,38 @@ Esto es de Plus, Pro y Enterprise, que son los planes con factura global. En el 
 ![TODO: Factura a nombre del cliente después de la global](TODO-screenshot)
 <!-- ENDTODO -->
 
+## Cancelar una factura global
+
+Desde la versión **3.29.0** puedes cancelar una factura global, o todas las de una corrida, con un clic desde la app. Igual que la factura global, está en los planes **Plus**, **Pro** y **Enterprise**.
+
+La app cancela siempre con el **motivo 02** del SAT (comprobante emitido con errores sin relación). El motivo no se elige.
+
+1. En el admin de Shopify abre **Apps → CFDI Express - Facturación → Facturación global**.
+2. Para una sola factura, ábrela y da clic en **Cancelar factura global**. Para toda una corrida, da clic en **Cancelar corrida** en la lista de corridas.
+3. Revisa lo que se va a cancelar: el folio, las órdenes y el total de cada factura, y los timbres que se van a usar.
+4. Confirma.
+
+Qué pasa después:
+
+- La cancelación corre en segundo plano. Las órdenes siguen facturadas hasta que el SAT la acepta.
+- Cuando el SAT la acepta, las órdenes quedan otra vez **sin facturar**. Vuelve a correr la factura global del periodo para incluirlas en una nueva.
+- Shopify tarda unos minutos en actualizar su búsqueda. Si una corrida lanzada enseguida no toma todas las órdenes, la siguiente corrida del periodo toma las que falten, sin duplicar.
+- Se usa **1 timbre por factura cancelada**, no por orden.
+- Al terminar te mandamos un correo con el resumen.
+- Si el SAT tarda en responder, la app vuelve a revisar hasta por 72 horas. Si la cancelación no termina, la factura muestra el error y el botón **Reintentar**.
+
+Cuándo no se puede cancelar:
+
+- Si alguna orden de la factura tiene una [nota de crédito](/docs/notas-de-credito) vigente. Cancela primero esa nota. Si la orden ya se volvió a facturar a nombre del cliente, su nota no se puede cancelar y la factura global tampoco: corrígela con notas de crédito por orden.
+- Una corrida se cancela completa o no se cancela. Si una de sus facturas está bloqueada, no se cancela ninguna.
+- Mientras hay una corrida de facturación global en curso. Espera a que termine.
+
+La cancelación de una factura global se hace desde la app.
+
+<!-- TODO: captura — botón Cancelar factura global y ventana de confirmación con folio, órdenes, total y timbres -->
+![TODO: Cancelar una factura global](TODO-screenshot)
+<!-- ENDTODO -->
+
 ## Reportes en CSV y Excel
 
 La facturación global mensual genera un reporte en **CSV** y otro en **Excel**. Cada fila es una orden. El desglose de impuestos de la fila trae **IVA al 0%**, **IVA al 8%**, **IVA al 16%** e **IEPS**.
@@ -146,6 +178,10 @@ No. Ese botón sigue timbrando un CFDI por orden. La facturación global mensual
 ### ¿Qué hago si el cliente pide su factura después?
 
 Desde la versión **3.27.0**, en la página del pedido emites la nota de crédito por el pedido completo y luego la factura a su nombre. La factura global sigue válida para los demás. Esa factura nominativa la emites tú desde la app. La guía está en [Notas de crédito](/docs/notas-de-credito).
+
+### ¿Puedo cancelar una factura global?
+
+Sí, desde la versión **3.29.0**: una factura o una corrida completa, desde la pantalla **Facturación global** de la app. Se cancela ante el SAT con motivo 02 y, cuando el SAT la acepta, las órdenes quedan libres para otra factura global. Usa 1 timbre por factura cancelada. No se puede si alguna orden tiene una nota de crédito vigente.
 
 ### ¿Qué pasa si una orden de la global se reembolsa?
 
