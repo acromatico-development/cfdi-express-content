@@ -10,7 +10,7 @@ Estos eventos los dispara el app. Los usas como punto de partida de tus automati
 - **`cfdi-deleted`** — se dispara cuando un CFDI es cancelado. Incluye la referencia de la orden.
 - **`cfdi-flow-mode`** — se dispara cuando llega una solicitud de facturación en [Modo Flow](/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacion). Lleva los datos fiscales del cliente para que tu automatización los reenvíe a tu PAC.
 - **`report-generated`** — se dispara cuando un [reporte](/docs/reportes) de CFDIs/complementos termina de generarse. Incluye `startdate`, `enddate`, `reporturl`, `recordcount` y el título del reporte.
-- **Facturación global terminada** — se dispara cuando termina una corrida de [facturación global mensual](/docs/facturacion-global-mensual). Si la corrida falla, la app también manda un correo de aviso.
+- **Facturación global terminada** — se dispara cuando termina una corrida de [facturación global mensual](/docs/facturacion-global-mensual), con éxito o con error. Incluye `corridaid`, `estado` (`completada` o `error`), `fechainicio`, `fechafin`, `cfdistimbrados`, `ordenesincluidas`, `ordenessaltadas` y `error`. Desde la versión **3.30.0** también trae `facturas.cfdis` con `uuid`, `folio` (serie y folio juntos), `total`, `ordenes` y `url` (ZIP con el PDF y el XML); `facturas.listaCompleta` indica si la lista trae todas las facturas o se recortó (~45 KB por el límite de Flow). Si la corrida falla, la app también manda un correo de aviso. Cómo mandarle las facturas al contador está en [Cómo mandarle a tu contador las facturas globales con Shopify Flow](/docs/enviar-facturas-globales-al-contador-shopify-flow).
 
 ## Acciones (actions) que CFDI Express recibe
 
@@ -77,9 +77,9 @@ En [Modo Flow](/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturaci
 Usa la acción "Eliminar CFDI" con el motivo del SAT:
 
 - `01` — Comprobante emitido con errores con relación.
-- `02` — Comprobante emitido sin errores con relación.
+- `02` — Comprobante emitido con errores sin relación.
 - `03` — No se llevó a cabo la operación.
-- `04` — Operación nominativa relacionada con la facturación global.
+- `04` — Operación nominativa relacionada en una factura global.
 
 <!-- TODO: grabar tutorial de Shopify Flow con CFDI Express (triggers, acciones, plantillas) -->
 
