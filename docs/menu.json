@@ -100,6 +100,11 @@
     "completed": true
   },
   {
+    "title": "Mandar las facturas globales a tu contador con Shopify Flow",
+    "document": "enviar-facturas-globales-al-contador-shopify-flow.md",
+    "completed": true
+  },
+  {
     "title": "Facturación al Extranjero (RFC XEXX010101000)",
     "document": "facturacion-al-extranjero.md",
     "completed": true

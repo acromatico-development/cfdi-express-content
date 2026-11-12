@@ -80,6 +80,8 @@ El detalle de las plantillas está en [Shopify Flow](/docs/uso-shopify-flow-auto
 
 Cuando la corrida termina, CFDI Express dispara **Facturación global terminada** en Shopify Flow. Úsalo como inicio de otro workflow: avisar a contabilidad, etiquetar el cierre o guardar el reporte.
 
+Desde la versión **3.30.0**, el disparador también trae las facturas que se timbraron: UUID, serie y folio, total, número de órdenes y la liga al ZIP con el PDF y el XML. El paso a paso para mandárselas a tu contador está en [Cómo mandarle a tu contador las facturas globales con Shopify Flow](/docs/enviar-facturas-globales-al-contador-shopify-flow).
+
 Si algo falla, la app manda un correo de aviso. El listado de correos está en [Notificaciones por correo](/docs/notificaciones-por-correo).
 
 ## Nota de crédito de un pedido de la global
