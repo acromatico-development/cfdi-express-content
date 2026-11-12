@@ -20,6 +20,12 @@ El **Formulario de autofacturación** no pide el número de pedimento. Si el pro
 
 > Diferencia con la Thank You Page: la Thank You Page aparece una sola vez, justo tras pagar. La Order Status Page queda disponible cuando el cliente regresa a consultar el estado de su orden, por lo que es ideal para los clientes que no facturaron de inmediato. Ambas respetan las [reglas de periodo de facturación](/docs/configuraciones) que configuraste.
 
+## Órdenes en dólares
+
+Desde la versión **3.29.0**, el formulario también aparece en las órdenes cobradas en **dólares (USD)**, en la página de estado de orden y en la [Thank You Page](/docs/facturacion-checkout-thank-you-page). La factura sale en USD cuando tu tienda factura en dólares: la moneda de la tienda es el dólar, o activaste **Facturar en dólares (USD) las órdenes cobradas en dólares** en [Configuraciones](/docs/configuraciones). Si no, sale en pesos.
+
+Si la moneda de la orden no se puede facturar, el cliente ve un aviso con el motivo y la indicación de contactar a la tienda.
+
 - Embed:
   <iframe width="100%" style="aspect-ratio:16/9;" src="https://www.youtube.com/embed/iKweIA7HyHI?si=SG-PAU9U4-CwvAZM&amp;start=254" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 - Link:

@@ -24,6 +24,12 @@ El **Formulario de autofacturación** no pide el número de pedimento. Si el pro
 - Link:
   https://youtu.be/iKweIA7HyHI?si=psdb9qSMODcNfRrs
 
+## Órdenes en dólares
+
+Desde la versión **3.29.0**, el formulario también aparece en las órdenes cobradas en **dólares (USD)**, en la página de gracias y en la [página de estado de orden](/docs/facturacion-pagina-estado-de-orden). La factura sale en USD cuando tu tienda factura en dólares: la moneda de la tienda es el dólar, o activaste **Facturar en dólares (USD) las órdenes cobradas en dólares** en [Configuraciones](/docs/configuraciones). Si no, sale en pesos.
+
+Si la moneda de la orden no se puede facturar, el cliente ve un aviso con el motivo y la indicación de contactar a la tienda.
+
 ## Pedido que ya está en la factura global
 
 Desde la versión **3.27.0**, si el cliente intenta facturar un pedido que ya está en la factura global del mes, el formulario le explica que su compra ya está facturada y que tú puedes emitirle la factura a su nombre desde la app. No timbra otra.
