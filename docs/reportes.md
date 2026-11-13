@@ -29,7 +29,7 @@ Cada fila es un CFDI o complemento de pago. El reporte incluye columnas completa
 ## Detrás de escena
 
 - El reporte se construye en un **worker** en segundo plano (BullMQ) que consulta tus registros de CFDIs y complementos en el rango solicitado.
-- Al terminar, el CSV se guarda y se dispara el disparador **`report-generated`** en Shopify Flow (con `startdate`, `enddate`, `reporturl`, `recordcount` y el título), para que puedas encadenar automatizaciones (avisar a contabilidad, subir a un drive, etc.). Revisa [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express) para ver cómo usarlo.
+- Al terminar, el CSV se guarda y se dispara el disparador **`report-generated`** en Shopify Flow, con `startdate` y `enddate` (en formato es-MX con hora de México, por ejemplo `1 oct 2026, 00:00:00`, no en ISO), `reporturl` (solo la liga del CSV; el Excel se descarga en CFDI Express › Reportes), `recordcount`, `title`, `reportid` y `origen` (`flow` o `manual`). Si el reporte falla, el disparador no se dispara. Con eso puedes encadenar automatizaciones (avisar a contabilidad, subir a un drive, etc.). Revisa [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express) para ver cómo usarlo.
 
 ## Reporte de la facturación global mensual
 
