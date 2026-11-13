@@ -105,6 +105,11 @@
     "completed": true
   },
   {
+    "title": "Mandar el reporte mensual al contador con Shopify Flow",
+    "document": "reporte-mensual-contador-shopify-flow.md",
+    "completed": true
+  },
+  {
     "title": "Facturación al Extranjero (RFC XEXX010101000)",
     "document": "facturacion-al-extranjero.md",
     "completed": true
