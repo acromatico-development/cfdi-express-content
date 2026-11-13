@@ -43,7 +43,7 @@ Cancelas el CFDI desde la orden en el admin de Shopify. **Por ahora el admin sol
 
 ### Con Shopify Flow
 
-La acción **«Eliminar CFDI»** de Shopify Flow acepta los **motivos 01 a 04**. Úsala si necesitas cancelar con relación (01) o porque la venta no se hizo (03). El motivo **04** es el de operación nominativa relacionada en una factura global: cancela ese CFDI. Para acreditar un solo pedido de la factura global del mes sin cancelar el comprobante, desde la app **3.27.0** usa la nota de crédito. Más en [automatizaciones con Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express).
+La acción **«Eliminar CFDI»** de Shopify Flow se usa con el motivo **02** «Comprobante emitido con errores sin relación». El campo de motivo también deja pasar el **03** «No se llevó a cabo la operación» y el **04** «Operación nominativa relacionada en una factura global». El motivo **01** «Comprobante emitido con errores con relación» no se puede usar en Flow porque pide el folio de sustitución. Ese motivo se hace por API, con `folioSustitucion` (el UUID del CFDI que lo sustituye). El detalle está en [Cancelar una factura](/docs/api/cancelar-factura). Para acreditar un solo pedido de la factura global del mes sin cancelar el comprobante, desde la app **3.27.0** usa la nota de crédito. Más en [automatizaciones con Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express).
 
 ### Descarga del acuse
 
@@ -61,10 +61,10 @@ Para que tus clientes facturen solos y no tengas que cancelar tanto, activa el [
 La cancelación la registra el SAT. En CFDI Express el acuse queda guardado en PDF y lo descargas desde la app.
 
 **¿Qué motivo uso desde el admin de Shopify?**
-Por ahora el admin solo cancela con motivo 02. Para 01, 03 o 04 usa la acción «Eliminar CFDI» de Shopify Flow.
+Por ahora el admin solo cancela con motivo 02 «Comprobante emitido con errores sin relación». En Flow, la acción «Eliminar CFDI» se usa con el motivo 02; el campo también deja pasar el 03 «No se llevó a cabo la operación» y el 04 «Operación nominativa relacionada en una factura global». El motivo 01 «Comprobante emitido con errores con relación» no se puede usar en Flow porque pide el folio de sustitución: se hace por API, con `folioSustitucion` (el UUID del CFDI que lo sustituye). El detalle está en [Cancelar una factura](/docs/api/cancelar-factura).
 
 **¿Puedo cancelar una factura con motivo 01 en CFDI Express?**
-Sí. En la app de Shopify, con la acción «Eliminar CFDI» de Shopify Flow, que acepta los motivos 01 a 04. Por la API, el paso a paso está en [Cancelar CFDI con motivo 01](/docs/cancelar-factura-sustitucion).
+Sí, por API. El motivo 01 «Comprobante emitido con errores con relación» no se puede usar en la acción «Eliminar CFDI» de Shopify Flow porque pide el folio de sustitución. Se cancela con `folioSustitucion` (el UUID del CFDI que lo sustituye). El detalle está en [Cancelar una factura](/docs/api/cancelar-factura).
 
 **¿Una factura cancelada se puede volver a emitir?**
 Puedes timbrar una factura nueva para la misma venta. Si la relacionas con la cancelada, usa el motivo 01.
@@ -75,7 +75,8 @@ Puedes timbrar una factura nueva para la misma venta. Si la relacionas con la ca
   "@type": "FAQPage",
   "mainEntity": [
     {"@type": "Question", "name": "¿Qué es el acuse de cancelación?", "acceptedAnswer": {"@type": "Answer", "text": "Es el comprobante de que el SAT procesó la cancelación de un CFDI. Trae el UUID de la factura, la fecha y el estatus de la cancelación."}},
-    {"@type": "Question", "name": "¿Qué motivo de cancelación uso desde el admin de Shopify?", "acceptedAnswer": {"@type": "Answer", "text": "En CFDI Express el admin cancela por ahora con motivo 02. Para los motivos 01, 03 o 04 usa la acción Eliminar CFDI de Shopify Flow."}},
+    {"@type": "Question", "name": "¿Qué motivo uso desde el admin de Shopify?", "acceptedAnswer": {"@type": "Answer", "text": "Por ahora el admin solo cancela con motivo 02 «Comprobante emitido con errores sin relación». En Flow, la acción «Eliminar CFDI» se usa con el motivo 02; el campo también deja pasar el 03 «No se llevó a cabo la operación» y el 04 «Operación nominativa relacionada en una factura global». El motivo 01 «Comprobante emitido con errores con relación» no se puede usar en Flow porque pide el folio de sustitución: se hace por API, con folioSustitucion (el UUID del CFDI que lo sustituye). El detalle está en https://cfdi.express/docs/api/cancelar-factura."}},
+    {"@type": "Question", "name": "¿Puedo cancelar una factura con motivo 01 en CFDI Express?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, por API. El motivo 01 «Comprobante emitido con errores con relación» no se puede usar en la acción «Eliminar CFDI» de Shopify Flow porque pide el folio de sustitución. Se cancela con folioSustitucion (el UUID del CFDI que lo sustituye). El detalle está en https://cfdi.express/docs/api/cancelar-factura."}},
     {"@type": "Question", "name": "¿Una factura cancelada se puede volver a emitir?", "acceptedAnswer": {"@type": "Answer", "text": "Puedes timbrar una factura nueva para la misma venta. Si la relacionas con la cancelada, usa el motivo 01."}}
   ]
 }

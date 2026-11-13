@@ -17,7 +17,7 @@ Estos eventos los dispara el app. Los usas como punto de partida de tus automati
  Estas acciones aparecen dentro de tus flujos de Flow como pasos que ejecuta CFDI Express:
 
 - **"Crear CFDI"** (`cfdi-create-action`) — timbra un CFDI a partir de una referencia de orden y los datos fiscales que proporciones (RFC, razón social, régimen, código postal, método de pago, uso CFDI, correo y dirección opcional). Devuelve la `download_url` del ZIP. Si el producto o la variante tienen [pedimentos de importación](/docs/pedimentos-de-importacion), esta acción los incluye. No tiene un campo para editarlos.
-- **"Eliminar CFDI"** (`cfdi-delete-action`) — cancela un CFDI dado su `order_reference` y un **motivo** de cancelación del SAT (`01`, `02`, `03` o `04`).
+- **"Eliminar CFDI"** (`cfdi-delete-action`) — cancela un CFDI dado su `order_reference`. Se usa con el motivo **02** «Comprobante emitido con errores sin relación». El campo de motivo también deja pasar el **03** «No se llevó a cabo la operación» y el **04** «Operación nominativa relacionada en una factura global». El motivo **01** «Comprobante emitido con errores con relación» no se puede usar en Flow porque pide el folio de sustitución; se hace por API, con `folioSustitucion` (el UUID del CFDI que lo sustituye). El detalle está en [Cancelar una factura](/docs/api/cancelar-factura).
 - **"Crear Nota de Crédito"** — emite la nota de un pedido. Desde la versión **3.27.0** también funciona si ese pedido ya está en una [factura global](/docs/facturacion-global-mensual) (Plus, Pro y Enterprise). Puede ser por el pedido completo o por una parte, y acredita IVA al 0%, 8% y 16%, e IEPS, cada uno con su tasa. La global sigue válida para los demás pedidos. No incluye pedimentos. El detalle está en [Notas de crédito](/docs/notas-de-credito).
 - **"Facturación global"** — agrupa en facturas globales de hasta 1,000 órdenes las ventas pagadas que no tienen factura. Entran las de pesos. Las cobradas en dólares entran cuando la tienda factura en USD (moneda de la tienda en dólares, o la opción de [Configuraciones](/docs/configuraciones)), y esa factura global sale en USD. Una orden en otra moneda no entra. Está en Plus, Pro y Enterprise. No es la acción "Crear CFDI": esa timbra un CFDI por orden. La guía está en [Facturación global mensual](/docs/facturacion-global-mensual).
 
@@ -74,12 +74,9 @@ En [Modo Flow](/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturaci
 
 ## Cancelación automática
 
-Usa la acción "Eliminar CFDI" con el motivo del SAT:
+Usa la acción "Eliminar CFDI" con el motivo **02** «Comprobante emitido con errores sin relación». El campo de motivo también deja pasar el **03** «No se llevó a cabo la operación» y el **04** «Operación nominativa relacionada en una factura global».
 
-- `01` — Comprobante emitido con errores con relación.
-- `02` — Comprobante emitido con errores sin relación.
-- `03` — No se llevó a cabo la operación.
-- `04` — Operación nominativa relacionada en una factura global.
+El motivo **01** «Comprobante emitido con errores con relación» no se puede usar en Flow porque pide el folio de sustitución. Se hace por API, con `folioSustitucion` (el UUID del CFDI que lo sustituye). El detalle está en [Cancelar una factura](/docs/api/cancelar-factura).
 
 <!-- TODO: grabar tutorial de Shopify Flow con CFDI Express (triggers, acciones, plantillas) -->
 
