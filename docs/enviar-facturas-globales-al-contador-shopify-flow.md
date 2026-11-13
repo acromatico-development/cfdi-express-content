@@ -124,8 +124,11 @@ Sí. Los mismos campos sirven en cualquier acción de Flow que acepte variables.
 
 La factura global está en Plus, Pro y Enterprise. En el plan Básico no hay corridas de factura global, así que este disparador no se usa.
 
+Desde la versión **3.31.0** también puedes, al terminar la corrida, generar el reporte de CFDIs del mismo periodo y mandárselo al contador. El paso a paso está en [Mandar el reporte mensual al contador con Shopify Flow](/docs/reporte-mensual-contador-shopify-flow).
+
 ## Relacionados
 
 - [Facturación global mensual](/docs/facturacion-global-mensual)
+- [Mandar el reporte mensual al contador con Shopify Flow](/docs/reporte-mensual-contador-shopify-flow)
 - [Uso de Flow para automatizaciones con CFDI Express](/docs/uso-shopify-flow-automatizaciones-cfdi-express)
 - [Notificaciones por correo](/docs/notificaciones-por-correo)
