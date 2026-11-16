@@ -11,6 +11,12 @@ Desde la versión **3.30.0** de la app, el disparador **Facturación global term
 
 La factura global está en los planes **Plus**, **Pro** y **Enterprise**. Cómo correrla, a mano o programada, está en [Facturación global mensual](/docs/facturacion-global-mensual).
 
+En este tutorial (2:12) ves cómo facturar el mes desde la app y mandar el folio, el PDF y el XML con Shopify Flow:
+
+<div>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Wm2CBIG4Djc" title="Factura global del mes en Shopify con CFDI Express" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" style="width:100%;height:auto;aspect-ratio:16/9;"></iframe>
+</div>
+
 ## Antes de empezar
 
 1. El plan de la tienda es Plus, Pro o Enterprise.
@@ -132,3 +138,72 @@ Desde la versión **3.31.0** también puedes, al terminar la corrida, generar el
 - [Mandar el reporte mensual al contador con Shopify Flow](/docs/reporte-mensual-contador-shopify-flow)
 - [Uso de Flow para automatizaciones con CFDI Express](/docs/uso-shopify-flow-automatizaciones-cfdi-express)
 - [Notificaciones por correo](/docs/notificaciones-por-correo)
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Factura global del mes en Shopify con CFDI Express (app + Shopify Flow) | Tutorial",
+  "description": "Cómo facturar el mes desde la app de CFDI Express en Shopify y mandar el folio, el PDF y el XML de la factura global con Shopify Flow.",
+  "thumbnailUrl": "https://videos.acromatico.dev/api/images/assets/bc3e437c-d3a3-4c8b-ae24-1ed52a556422.jpg",
+  "uploadDate": "2026-11-16T05:17:42-08:00",
+  "duration": "PT2M12S",
+  "embedUrl": "https://www.youtube.com/embed/Wm2CBIG4Djc",
+  "contentUrl": "https://youtu.be/Wm2CBIG4Djc",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Acromático Development"
+  },
+  "hasPart": [
+    {
+      "@type": "Clip",
+      "name": "Introducción",
+      "startOffset": 0,
+      "endOffset": 9,
+      "url": "https://youtu.be/Wm2CBIG4Djc?t=0"
+    },
+    {
+      "@type": "Clip",
+      "name": "Facturar un mes desde la app",
+      "startOffset": 9,
+      "endOffset": 38,
+      "url": "https://youtu.be/Wm2CBIG4Djc?t=9"
+    },
+    {
+      "@type": "Clip",
+      "name": "Folio, PDF y XML",
+      "startOffset": 38,
+      "endOffset": 59,
+      "url": "https://youtu.be/Wm2CBIG4Djc?t=38"
+    },
+    {
+      "@type": "Clip",
+      "name": "Flow: trigger y correo",
+      "startOffset": 59,
+      "endOffset": 84,
+      "url": "https://youtu.be/Wm2CBIG4Djc?t=59"
+    },
+    {
+      "@type": "Clip",
+      "name": "Variables",
+      "startOffset": 84,
+      "endOffset": 101,
+      "url": "https://youtu.be/Wm2CBIG4Djc?t=84"
+    },
+    {
+      "@type": "Clip",
+      "name": "Activar y nombrar el flujo",
+      "startOffset": 101,
+      "endOffset": 116,
+      "url": "https://youtu.be/Wm2CBIG4Djc?t=101"
+    },
+    {
+      "@type": "Clip",
+      "name": "Ejecución y cierre",
+      "startOffset": 116,
+      "endOffset": 132,
+      "url": "https://youtu.be/Wm2CBIG4Djc?t=116"
+    }
+  ]
+}
+</script>
