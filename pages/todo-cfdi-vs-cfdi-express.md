@@ -16,6 +16,11 @@ Si buscaste **todo cfdi** o **todo cfdi 4.0**, el producto que te sale es el por
 
 Este post es un comparativo **justo y con cifras públicas**. Todo CFDI gana cuando no vendes en Shopify, facturas poco y te sirve un portal con módulos de escuela, taller, hotel o donatarias. CFDI Express gana cuando la venta ya vive en Shopify. Ninguna cubre los dos trabajos.
 
+<div class="ctaBox">
+<p>¿Ya decidiste? Si vendes en Shopify, prueba la app 7 días gratis en el plan Starter. Si timbras desde tu propio sistema, crea tu cuenta API: $1 MXN por timbre, sin mensualidad.</p>
+<p class="ctaActions"><a class="ctaButton" href="https://apps.shopify.com/cfdi-express" data-cta-id="todocfdi_decision_app" data-cta-destination="app">Probar la app 7 días</a> <a class="ctaButton ctaButtonSecondary" href="https://dash.cfdi.express" data-cta-id="todocfdi_decision_api" data-cta-destination="api">Crear cuenta API</a></p>
+</div>
+
 El marco fiscal (datos del receptor, global, cancelación) está en [CFDI facturas 4.0](/blog/cfdi-facturas-4-0). Si tu canal es la tienda, el mapa de apps está en [CFDI 4.0 en Shopify 2026](/blog/cfdi-4-0-shopify-2026) y el duelo de apps en [Facturama vs CFDI Express](/blog/facturama-vs-cfdi-express). Aquí comparamos **portal de timbres vs app (y, al final, la API)**.
 
 Cifras de páginas públicas, **23 de septiembre de 2026**. Si un producto no anuncia una integración, no la damos por hecha.
@@ -37,6 +42,11 @@ Cifras de páginas públicas, **23 de septiembre de 2026**. Si un producto no an
 | **Descarga masiva del SAT** | Producto **aparte**, Windows: [Descarga masiva](https://www.captura-digital.com/descargaMasiva). Licencia 1 RFC **$116 MX** y 25 RFC **$398 MX** en esa página (no es el paquete de timbres). | No es una herramienta de descarga masiva de XML del SAT. En la app descargas el PDF y el XML de lo que timbraste en Shopify. |
 | **Varios RFC** | Su FAQ: el sistema es mono-usuario; **una cuenta por RFC emisor**. | La app va con la tienda. La [API](https://cfdi.express/api) admite varios emisores (merchants) en la misma cuenta. |
 | **Pago del servicio** | Tarjeta, transferencia SPEI u OXXO. La recarga se aplica al RFC, según Precios. | La app se cobra en **Shopify Billing** (USD). La API se recarga con tarjeta (Stripe), en MXN. |
+
+<div class="ctaBox">
+<p>Compara con tu volumen: en la API pagas solo los timbres que usas, con saldo prepagado.</p>
+<p class="ctaActions"><a class="ctaButton" href="https://dash.cfdi.express" data-cta-id="todocfdi_tabla_api" data-cta-destination="api">Crear cuenta y cargar saldo</a></p>
+</div>
 
 Todo CFDI es un portal de timbres. CFDI Express es la app de la tienda. Si mezclas el paquete de $365 MXN con los $15 USD de la app, estás cotizando dos productos distintos.
 
@@ -140,6 +150,11 @@ Este artículo es de **portal vs app**. Lo siguiente es solo para integradores.
 [CFDI Express API](https://cfdi.express/api) no es el login de Todo CFDI ni la app de $15 USD. Es REST, sandbox con `sk_test_`, saldo prepagado, **alrededor de $1 MXN por timbre** y sin mensualidad del producto API. Hay servidor MCP en `https://api.cfdi.express/mcp` y el skill `npx skills add CFDI-Express/skills`. El anuncio está en [Lanzamos CFDI Express API](/blog/lanzamiento-cfdi-express-api).
 
 Captura Digital no publica en estas páginas una API de timbrado para terceros. No afirmamos que no exista un convenio privado: sí afirmamos que **no está en el material público** que usamos para este comparativo (home, Programas, Precios y el login de Todo CFDI, septiembre 2026).
+
+<div class="ctaBox">
+<p>¿Timbras desde tu ERP, CRM o plataforma? Empieza en sandbox con tu llave <code>sk_test_</code> y pasa a producción cuando estés listo.</p>
+<p class="ctaActions"><a class="ctaButton" href="https://dash.cfdi.express" data-cta-id="todocfdi_api_api" data-cta-destination="api">Crear cuenta API</a> <a class="ctaLink" href="/docs" data-cta-id="todocfdi_api_docs" data-cta-destination="docs">Ver la documentación</a></p>
+</div>
 
 ## Preguntas frecuentes
 
