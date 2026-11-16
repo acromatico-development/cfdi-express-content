@@ -12,6 +12,11 @@ keywords: "cfdi facturas 4.0, factura 4.0, cfdi 4.0, facturas 4.0, facturación 
 
 No pidas el PDF de la Constancia: basta con los datos fiscales. Aquí va qué es, qué cambió vs 3.3, qué campos validan y cómo cancelar con los motivos oficiales.
 
+<div class="ctaBox">
+<p>¿Emites facturas desde tu sistema o tu tienda? CFDI Express timbra CFDI 4.0 válidos ante el SAT. Desde tu software, usa la API a $1 MXN por timbre, sin mensualidad. Si vendes en Shopify, la factura sale de la orden.</p>
+<p class="ctaActions"><a class="ctaButton" href="https://dash.cfdi.express" data-cta-id="cfdi40_intro_api" data-cta-destination="api">Crear cuenta API</a> <a class="ctaButton ctaButtonSecondary" href="https://apps.shopify.com/cfdi-express" data-cta-id="cfdi40_intro_app" data-cta-destination="app">Ver app de Shopify</a></p>
+</div>
+
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/M7ImVfrJuH8" title="Qué es CFDI facturas 4.0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## ¿Qué es la factura 4.0 (CFDI 4.0)?
@@ -67,6 +72,11 @@ El SAT exige que estos datos coincidan con su padrón (la lista de RFC inscritos
 - **Uso del CFDI.** Lo elige el receptor (gastos, compras, inversiones, etc.) y debe ser una clave del catálogo `c_UsoCFDI` compatible con su régimen. Si no lo es, el PAC rechaza el timbrado.
 
 Con esos campos debes poder intentar el timbrado. El SAT [aclara que la Constancia no es requisito](https://www.gob.mx/sat/prensa/aclara-sat-que-constancia-de-situacion-fiscal-no-es-requisito-para-emitir-factura-04-2026) para emitir el CFDI: el cliente no está obligado a mandarte el archivo. Si el SAT rechaza, los campos no coinciden con el padrón; confirma RFC, nombre, régimen y CP, no le pidas el PDF.
+
+<div class="ctaBox">
+<p>Evita rechazos por RFC, régimen o CP mal capturado: prueba en sandbox con la API de CFDI Express antes de timbrar en producción.</p>
+<p class="ctaActions"><a class="ctaButton" href="https://dash.cfdi.express" data-cta-id="cfdi40_receptor_api" data-cta-destination="api">Probar la API gratis en sandbox</a></p>
+</div>
 
 ## ¿Qué errores impiden emitir una factura 4.0?
 
@@ -167,6 +177,11 @@ Casi siempre esa búsqueda quiere el panorama completo de la **versión 4.0**: q
 ### ¿Puedo emitir CFDI 4.0 desde Shopify?
 
 Sí. Con CFDI Express lo haces en checkout (Thank You Page), POS, admin, portal de auto-facturación o Flow, con validación de los datos que el SAT exige en 4.0.
+
+<div class="ctaBox">
+<h2 class="ctaTitle">Factura CFDI 4.0 sin pelearte con el SAT</h2>
+<p class="ctaActions"><a class="ctaButton" href="https://dash.cfdi.express" data-cta-id="cfdi40_final_api" data-cta-destination="api">Crear cuenta API</a> <a class="ctaButton ctaButtonSecondary" href="https://apps.shopify.com/cfdi-express" data-cta-id="cfdi40_final_app" data-cta-destination="app">Ver app de Shopify</a></p>
+</div>
 
 <script type="application/ld+json">
 {
