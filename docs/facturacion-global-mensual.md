@@ -13,6 +13,12 @@ El camino de un CFDI por orden (el botón **Facturar al Publico en General** y l
 
 Desde la versión **3.28.0** también hay una plantilla de Shopify Flow de factura global diaria. Cada noche agrega a la factura global a público en general las ventas de ayer y las del mes que se pagaron después. El día 1 cierra el mes anterior completo. Está en los mismos planes. El paso a paso de la moneda en el pedido está en [Cómo facturar en dólares desde Shopify](/blog/facturar-en-dolares-shopify).
 
+En este tutorial (2:12) ves cómo facturar el mes desde la app y mandar el folio, el PDF y el XML con Shopify Flow:
+
+<div>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Wm2CBIG4Djc" title="Factura global del mes en Shopify con CFDI Express" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" style="width:100%;height:auto;aspect-ratio:16/9;"></iframe>
+</div>
+
 ## Requisitos y planes
 
 Agrupar órdenes en la factura global del mes está en los planes **Plus**, **Pro** y **Enterprise**. El plan **Básico** (en [Planes y precios](/docs/planes-y-precios) se llama **Standard**) sigue facturando al público en general **un CFDI por orden**, a mano o con la plantilla de Shopify Flow, como hasta ahora.
@@ -188,3 +194,72 @@ Sí, desde la versión **3.29.0**: una factura o una corrida completa, desde la 
 ### ¿Qué pasa si una orden de la global se reembolsa?
 
 Emites la nota de crédito desde la página de ese pedido, por el total o por una parte. Cada impuesto (IVA 0%, 8% y 16%, e IEPS) se acredita con su tasa. La nota cubre solo ese pedido; la global sigue válida. La app no la genera sola.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Factura global del mes en Shopify con CFDI Express (app + Shopify Flow) | Tutorial",
+  "description": "Cómo facturar el mes desde la app de CFDI Express en Shopify y mandar el folio, el PDF y el XML de la factura global con Shopify Flow.",
+  "thumbnailUrl": "https://videos.acromatico.dev/api/images/assets/bc3e437c-d3a3-4c8b-ae24-1ed52a556422.jpg",
+  "uploadDate": "2026-11-16T05:17:42-08:00",
+  "duration": "PT2M12S",
+  "embedUrl": "https://www.youtube.com/embed/Wm2CBIG4Djc",
+  "contentUrl": "https://youtu.be/Wm2CBIG4Djc",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Acromático Development"
+  },
+  "hasPart": [
+    {
+      "@type": "Clip",
+      "name": "Introducción",
+      "startOffset": 0,
+      "endOffset": 9,
+      "url": "https://youtu.be/Wm2CBIG4Djc?t=0"
+    },
+    {
+      "@type": "Clip",
+      "name": "Facturar un mes desde la app",
+      "startOffset": 9,
+      "endOffset": 38,
+      "url": "https://youtu.be/Wm2CBIG4Djc?t=9"
+    },
+    {
+      "@type": "Clip",
+      "name": "Folio, PDF y XML",
+      "startOffset": 38,
+      "endOffset": 59,
+      "url": "https://youtu.be/Wm2CBIG4Djc?t=38"
+    },
+    {
+      "@type": "Clip",
+      "name": "Flow: trigger y correo",
+      "startOffset": 59,
+      "endOffset": 84,
+      "url": "https://youtu.be/Wm2CBIG4Djc?t=59"
+    },
+    {
+      "@type": "Clip",
+      "name": "Variables",
+      "startOffset": 84,
+      "endOffset": 101,
+      "url": "https://youtu.be/Wm2CBIG4Djc?t=84"
+    },
+    {
+      "@type": "Clip",
+      "name": "Activar y nombrar el flujo",
+      "startOffset": 101,
+      "endOffset": 116,
+      "url": "https://youtu.be/Wm2CBIG4Djc?t=101"
+    },
+    {
+      "@type": "Clip",
+      "name": "Ejecución y cierre",
+      "startOffset": 116,
+      "endOffset": 132,
+      "url": "https://youtu.be/Wm2CBIG4Djc?t=116"
+    }
+  ]
+}
+</script>
