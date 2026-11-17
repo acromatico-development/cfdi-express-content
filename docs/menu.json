@@ -158,5 +158,10 @@
     "title": "Facturar anticipos (relación 07 y forma de pago 30)",
     "document": "facturar-anticipos.md",
     "completed": true
+  },
+  {
+    "title": "Vista previa de la factura antes de timbrar (MCP y API)",
+    "document": "vista-previa-factura-antes-de-timbrar.md",
+    "completed": true
   }
 ]
