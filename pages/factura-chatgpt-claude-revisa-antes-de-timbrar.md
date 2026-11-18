@@ -26,6 +26,31 @@ Pedirle una factura a tu agente de IA es rápido. Lo que da nervios es el moment
   <figcaption style="font-size:0.85rem;opacity:0.8;margin-top:0.5rem">La vista previa en el chat: la factura como se va a imprimir, con marca de agua PREVIEW, antes de timbrar. Captura del demo en modo prueba.</figcaption>
 </figure>
 
+En este video de 3:49 lo ves completo en Claude: una factura y un complemento de pago, con una corrección antes de timbrar.
+
+<figure style="margin:1.5rem auto;max-width:720px">
+  <div style="position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#0b0b0f"><iframe src="https://www.youtube-nocookie.com/embed/Lcy8LP6Euw8?autoplay=1&amp;rel=0&amp;playsinline=1" srcdoc="<style>*{margin:0;padding:0}html,body{height:100%;background:#0b0b0f;overflow:hidden}a{position:absolute;inset:0;display:block}img{width:100%;height:100%;object-fit:cover}b{position:absolute;top:50%;left:50%;width:68px;height:48px;transform:translate(-50%,-50%);border-radius:14px;background:rgba(0,0,0,.72)}b:after{content:'';position:absolute;top:50%;left:54%;transform:translate(-50%,-50%);border-style:solid;border-width:11px 0 11px 19px;border-color:transparent transparent transparent #fff}a:hover b{background:#e62117}i{position:absolute;right:8px;bottom:8px;padding:2px 6px;border-radius:4px;background:rgba(0,0,0,.78);color:#fff;font:600 12px sans-serif;font-style:normal}</style><a href='https://www.youtube-nocookie.com/embed/Lcy8LP6Euw8?autoplay=1&amp;rel=0&amp;playsinline=1' aria-label='Reproducir el video'><img src='https://i.ytimg.com/vi/Lcy8LP6Euw8/maxresdefault.jpg' alt='' width='1280' height='720'><b></b><i>3:49</i></a>" title="Factura y complemento de pago con vista previa en Claude | CFDI Express API" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div>
+  <figcaption style="font-size:0.85rem;opacity:0.8;margin-top:0.5rem;text-align:center"><a href="https://www.youtube.com/watch?v=Lcy8LP6Euw8">Factura y complemento de pago con vista previa en Claude | CFDI Express API</a> · 3:49 · YouTube</figcaption>
+</figure>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Factura y complemento de pago con vista previa en Claude | CFDI Express API",
+  "description": "Cómo revisar una factura y un complemento de pago (REP) antes de timbrarlos, desde Claude, con la vista previa de CFDI Express API.",
+  "inLanguage": "es-MX",
+  "uploadDate": "2026-11-18",
+  "duration": "PT3M49S",
+  "thumbnailUrl": [
+    "https://i.ytimg.com/vi/Lcy8LP6Euw8/maxresdefault.jpg",
+    "https://i.ytimg.com/vi/Lcy8LP6Euw8/hqdefault.jpg"
+  ],
+  "contentUrl": "https://www.youtube.com/watch?v=Lcy8LP6Euw8",
+  "embedUrl": "https://www.youtube.com/embed/Lcy8LP6Euw8"
+}
+</script>
+
 ## Los tres botones de la tarjeta
 
 **Autorizar y timbrar.** Si todo está bien, la autorizas y la factura se timbra ante el SAT con tu certificado. Es el único momento en que se consume un timbre. La tarjeta te muestra el folio fiscal (UUID) y un botón para abrir el PDF timbrado.
