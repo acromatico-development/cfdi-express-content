@@ -15,7 +15,7 @@ La vista previa arma la factura exactamente como se va a timbrar y la muestra co
 - **Valida lo mismo que el timbrado.** Corre todas las validaciones de [Timbrar una factura](/docs/api/timbrar-factura). Una vista previa que pasa no falla después por una validación de datos de la API. El SAT valida al timbrar, así que puede haber un rechazo del SAT (`sat_rejected`) que la vista previa no detecta.
 - **Es opcional.** Puedes timbrar directo, como antes.
 
-Solo aplica a facturas de ingreso (`POST /v1/invoices` y `create_invoice`). No hay vista previa de notas de crédito, complementos de pago, nómina ni retenciones.
+Desde la v1.54.0 también hay vista previa de notas de crédito, complementos de pago (REP) y recibos de nómina, con el mismo flujo y la misma tarjeta: [`POST /v1/credit_notes/preview`](/docs/api/vista-previa-nota-de-credito) y `preview_credit_note`, [`POST /v1/payments/preview`](/docs/api/vista-previa-complemento-de-pago) y `preview_payment`, y [`POST /v1/nominas/preview`](/docs/api/vista-previa-nomina) y `preview_nomina`, cada una con su `/pdf`. Esta guía usa la factura de ingreso como ejemplo. Las retenciones no tienen vista previa.
 
 ## La vista previa en el chat (servidor MCP)
 
