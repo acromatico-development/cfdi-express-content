@@ -7,7 +7,7 @@ keywords: "factura desde ChatGPT, factura con Claude, vista previa factura, revi
 ---
 # Factura desde ChatGPT o Claude sin sorpresas: revisa antes de timbrar
 
-<!-- TODO: imagen de portada (frontmatter image) -->
+<!-- TODO: portada / og:image 1200×630 (frontmatter image). Los stills del demo son verticales y no sirven recortados a 1200×630; mientras tanto el sitio usa la imagen por defecto del blog. Pedirle a Mark una composición horizontal. -->
 
 Pedirle una factura a tu agente de IA es rápido. Lo que da nervios es el momento de timbrar: una vez que el CFDI llega al SAT, corregirlo significa cancelar y volver a emitir. Por eso, desde la versión **v1.53.0** de CFDI Express, tu agente te muestra la factura **tal como se va a imprimir antes de timbrarla**, y tú decides qué sigue.
 
@@ -20,9 +20,10 @@ Pedirle una factura a tu agente de IA es rápido. Lo que da nervios es el moment
 3. El agente valida los datos y te muestra una tarjeta con la factura como se va a imprimir: receptor, conceptos, impuestos y total.
 4. Elige qué hacer con los botones de la tarjeta.
 
-<!-- TODO: still del demo — tarjeta de vista previa en el chat con los tres botones -->
-![TODO: Vista previa de una factura CFDI 4.0 dentro del chat, con los botones Pedir cambios, Descargar PDF y Autorizar y timbrar](TODO-screenshot)
-<!-- ENDTODO -->
+<figure style="margin:1.5rem auto;max-width:420px;text-align:center">
+  <img src="https://videos.acromatico.dev/api/images/assets/6ab0fcb0-546e-4b07-92a3-6a41229353e7.png?w=840&format=webp" alt="Tarjeta de vista previa de una factura CFDI 4.0 en el chat con marca de agua PREVIEW, total de $50,000.00 MXN y los botones Pedir cambios, Descargar PDF y Autorizar y timbrar" width="420" height="399" loading="lazy" style="width:100%;height:auto;border-radius:12px" />
+  <figcaption style="font-size:0.85rem;opacity:0.8;margin-top:0.5rem">La vista previa en el chat: la factura como se va a imprimir, con marca de agua PREVIEW, antes de timbrar. Captura del demo en modo prueba.</figcaption>
+</figure>
 
 ## Los tres botones de la tarjeta
 
@@ -32,9 +33,10 @@ Pedirle una factura a tu agente de IA es rápido. Lo que da nervios es el moment
 
 **Descargar PDF.** Te bajas la vista previa en PDF para revisarla con calma o mandársela a tu cliente antes de timbrar.
 
-<!-- TODO: still del demo — la vista previa actualizada después de pedir cambios -->
-![TODO: Vista previa actualizada después de pedir un cambio en el chat](TODO-screenshot)
-<!-- ENDTODO -->
+<figure style="margin:1.5rem auto;max-width:420px;text-align:center">
+  <img src="https://videos.acromatico.dev/api/images/assets/dd65c6ac-265c-4b0c-98d6-948b03544cd8.png?w=840&format=webp" alt="Vista previa nueva de la factura con método de pago PPD, forma de pago 99 y total de $58,000.00 MXN, generada después de pedir cambios en el chat" width="420" height="590" loading="lazy" style="width:100%;height:auto;border-radius:12px" />
+  <figcaption style="font-size:0.85rem;opacity:0.8;margin-top:0.5rem">Después de pedir «ponle 50000 más IVA y que sea PPD», el agente generó una vista previa nueva con el total de $58,000.00; no es la misma tarjeta actualizada. Los datos del receptor están tapados.</figcaption>
+</figure>
 
 ## Lo que la vista previa no hace
 
@@ -49,6 +51,11 @@ El PDF de la vista previa lleva la marca de agua **PREVIEW** en cada página y l
 ## Un solo timbre, aunque confirmes dos veces
 
 ¿Le diste doble clic a **Autorizar y timbrar**? ¿Contestaste «sí» dos veces en el chat? Se timbra **una sola factura**. La vista previa y el timbrado comparten la misma referencia, así que la segunda confirmación regresa la factura que ya se timbró, en vez de emitir otra.
+
+<figure style="margin:1.5rem auto;max-width:420px;text-align:center">
+  <img src="https://videos.acromatico.dev/api/images/assets/48ed4684-a11f-46f0-888f-d209994ff388.png?w=840&format=webp" alt="Mensaje Factura timbrada con el folio fiscal UUID y el botón Abrir PDF después de autorizar la vista previa" width="420" height="327" loading="lazy" style="width:100%;height:auto;border-radius:12px" />
+  <figcaption style="font-size:0.85rem;opacity:0.8;margin-top:0.5rem">Al tocar «Autorizar y timbrar», la tarjeta confirma la factura timbrada con su folio fiscal (UUID) y el botón «Abrir PDF». Captura en modo prueba.</figcaption>
+</figure>
 
 Si pides cambios, el agente arma una vista previa nueva. Autoriza esa, la más reciente.
 
