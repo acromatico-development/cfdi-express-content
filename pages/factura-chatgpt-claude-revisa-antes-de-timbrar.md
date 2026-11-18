@@ -1,13 +1,14 @@
 ---
 title: "Factura desde ChatGPT o Claude: revisa antes de timbrar"
 description: "Tu agente de IA te muestra la factura como se va a imprimir antes de timbrarla. La autorizas, pides cambios o la descargas. Sin timbre ni folio."
+image: "https://videos.acromatico.dev/api/images/assets/89d432e2-e530-46da-bc66-804a45abffef.png"
 author: "Rafael González"
 date: "2026-11-18"
 keywords: "factura desde ChatGPT, factura con Claude, vista previa factura, revisar factura antes de timbrar, CFDI 4.0, agente de IA, MCP, CFDI Express"
 ---
 # Factura desde ChatGPT o Claude sin sorpresas: revisa antes de timbrar
 
-<!-- TODO: portada / og:image 1200×630 (frontmatter image). Los stills del demo son verticales y no sirven recortados a 1200×630; mientras tanto el sitio usa la imagen por defecto del blog. Pedirle a Mark una composición horizontal. -->
+![Portada de CFDI Express: «Revisa tu factura antes de timbrar» (API v1.53.0), con la tarjeta real de vista previa de la factura y el botón «Autorizar y timbrar» resaltado.](https://videos.acromatico.dev/api/images/assets/89d432e2-e530-46da-bc66-804a45abffef.png?w=1200&format=webp)
 
 Pedirle una factura a tu agente de IA es rápido. Lo que da nervios es el momento de timbrar: una vez que el CFDI llega al SAT, corregirlo significa cancelar y volver a emitir. Por eso, desde la versión **v1.53.0** de CFDI Express, tu agente te muestra la factura **tal como se va a imprimir antes de timbrarla**, y tú decides qué sigue.
 
