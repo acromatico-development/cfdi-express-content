@@ -68,7 +68,7 @@ En agentes que no muestran la tarjeta, la vista previa llega como resumen en el 
 
 ## Para developers
 
-Lo mismo está en la API: `POST /v1/invoices/preview` regresa los totales, los datos del CFDI y la representación impresa sin timbrar, y `POST /v1/invoices/preview/pdf` regresa el PDF. Los detalles están en la guía de [vista previa de la factura](/docs/vista-previa-factura-antes-de-timbrar) y en la documentación del [servidor MCP](/docs/api/mcp).
+Lo mismo está en la API: `POST /v1/invoices/preview` regresa los totales, los datos del CFDI y la representación impresa sin timbrar, y `POST /v1/invoices/preview/pdf` regresa el PDF. Desde la v1.54.0 también existen `POST /v1/credit_notes/preview`, `POST /v1/payments/preview` y `POST /v1/nominas/preview`, cada una con su `/pdf`. Los detalles están en la guía de [vista previa de la factura](/docs/vista-previa-factura-antes-de-timbrar) y en la documentación del [servidor MCP](/docs/api/mcp).
 
 ## Preguntas frecuentes
 
@@ -84,6 +84,9 @@ Se timbra una sola factura. La vista previa y el timbrado comparten la misma ref
 **¿Tengo que ver la vista previa siempre?**
 No. Puedes pedirle a tu agente que se la salte y timbre directo.
 
+**¿Solo funciona con facturas?**
+No. Desde la v1.54.0 tu agente también te muestra la vista previa de notas de crédito, complementos de pago y recibos de nómina, con la misma tarjeta y los mismos botones. Las retenciones todavía no tienen vista previa.
+
 **¿Funciona con ChatGPT y con Claude?**
 Sí. En los dos ves la tarjeta con los botones. En agentes que no la muestran, el agente te resume la factura en el chat y espera tu confirmación.
 
@@ -96,6 +99,7 @@ Sí. En los dos ves la tarjeta con los botones. En agentes que no la muestran, e
     {"@type": "Question", "name": "¿El PDF de la vista previa sirve como factura?", "acceptedAnswer": {"@type": "Answer", "text": "No. Lleva la marca de agua PREVIEW y la leyenda «VISTA PREVIA — SIN VALIDEZ FISCAL». No tiene UUID, sellos ni código QR, porque esos datos se generan al timbrar."}},
     {"@type": "Question", "name": "¿Qué pasa si confirmo dos veces?", "acceptedAnswer": {"@type": "Answer", "text": "Se timbra una sola factura. La vista previa y el timbrado comparten la misma referencia, así que un doble clic o un «sí» repetido regresan la factura que ya se timbró."}},
     {"@type": "Question", "name": "¿Tengo que ver la vista previa siempre?", "acceptedAnswer": {"@type": "Answer", "text": "No. Puedes pedirle a tu agente que se la salte y timbre directo."}},
+    {"@type": "Question", "name": "¿Solo funciona con facturas?", "acceptedAnswer": {"@type": "Answer", "text": "No. Desde la v1.54.0 tu agente también te muestra la vista previa de notas de crédito, complementos de pago y recibos de nómina, con la misma tarjeta y los mismos botones. Las retenciones todavía no tienen vista previa."}},
     {"@type": "Question", "name": "¿Funciona con ChatGPT y con Claude?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. En los dos ves la tarjeta con los botones. En agentes que no la muestran, el agente te resume la factura en el chat y espera tu confirmación."}}
   ]
 }
