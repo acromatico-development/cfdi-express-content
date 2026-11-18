@@ -17,6 +17,33 @@ La vista previa arma la factura exactamente como se va a timbrar y la muestra co
 
 Desde la v1.54.0 también hay vista previa de notas de crédito, complementos de pago (REP) y recibos de nómina, con el mismo flujo y la misma tarjeta: [`POST /v1/credit_notes/preview`](/docs/api/vista-previa-nota-de-credito) y `preview_credit_note`, [`POST /v1/payments/preview`](/docs/api/vista-previa-complemento-de-pago) y `preview_payment`, y [`POST /v1/nominas/preview`](/docs/api/vista-previa-nomina) y `preview_nomina`, cada una con su `/pdf`. Esta guía usa la factura de ingreso como ejemplo. Las retenciones no tienen vista previa.
 
+## En video
+
+Una factura y un complemento de pago pasan por la vista previa en Claude, con una corrección antes de timbrar. Haz clic en la imagen para reproducirlo.
+
+<figure style="margin:1.5rem auto;max-width:720px">
+  <div style="position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#0b0b0f"><iframe src="https://www.youtube-nocookie.com/embed/Lcy8LP6Euw8?autoplay=1&amp;rel=0&amp;playsinline=1" srcdoc="<style>*{margin:0;padding:0}html,body{height:100%;background:#0b0b0f;overflow:hidden}a{position:absolute;inset:0;display:block}img{width:100%;height:100%;object-fit:cover}b{position:absolute;top:50%;left:50%;width:68px;height:48px;transform:translate(-50%,-50%);border-radius:14px;background:rgba(0,0,0,.72)}b:after{content:'';position:absolute;top:50%;left:54%;transform:translate(-50%,-50%);border-style:solid;border-width:11px 0 11px 19px;border-color:transparent transparent transparent #fff}a:hover b{background:#e62117}i{position:absolute;right:8px;bottom:8px;padding:2px 6px;border-radius:4px;background:rgba(0,0,0,.78);color:#fff;font:600 12px sans-serif;font-style:normal}</style><a href='https://www.youtube-nocookie.com/embed/Lcy8LP6Euw8?autoplay=1&amp;rel=0&amp;playsinline=1' aria-label='Reproducir el video'><img src='https://i.ytimg.com/vi/Lcy8LP6Euw8/maxresdefault.jpg' alt='' width='1280' height='720'><b></b><i>3:49</i></a>" title="Factura y complemento de pago con vista previa en Claude | CFDI Express API" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div>
+  <figcaption style="font-size:0.85rem;opacity:0.8;margin-top:0.5rem;text-align:center"><a href="https://www.youtube.com/watch?v=Lcy8LP6Euw8">Factura y complemento de pago con vista previa en Claude | CFDI Express API</a> · 3:49 · YouTube</figcaption>
+</figure>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Factura y complemento de pago con vista previa en Claude | CFDI Express API",
+  "description": "Cómo revisar una factura y un complemento de pago (REP) antes de timbrarlos, desde Claude, con la vista previa de CFDI Express API.",
+  "inLanguage": "es-MX",
+  "uploadDate": "2026-11-18",
+  "duration": "PT3M49S",
+  "thumbnailUrl": [
+    "https://i.ytimg.com/vi/Lcy8LP6Euw8/maxresdefault.jpg",
+    "https://i.ytimg.com/vi/Lcy8LP6Euw8/hqdefault.jpg"
+  ],
+  "contentUrl": "https://www.youtube.com/watch?v=Lcy8LP6Euw8",
+  "embedUrl": "https://www.youtube.com/embed/Lcy8LP6Euw8"
+}
+</script>
+
 ## La vista previa en el chat (servidor MCP)
 
 En el [servidor MCP](/docs/api/mcp), la herramienta es `preview_invoice`. Recibe exactamente los mismos argumentos que `create_invoice`, sin `idempotency_key`.
