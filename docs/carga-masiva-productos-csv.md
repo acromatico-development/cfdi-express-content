@@ -23,6 +23,21 @@ El archivo debe tener encabezados y una fila por producto, identificado por su *
 
 > Si dejas vacías las columnas de códigos por producto, conservará el valor que ya tenga configurado. La columna `pedimentos` es distinta: una celda vacía borra los pedimentos del producto; si el archivo no trae esa columna, no se modifican. El detalle está en [Pedimentos de importación](/docs/pedimentos-de-importacion). Si quieres **limpiar** todos los metafields de un producto, usa la acción `clear` en la página individual del producto ([Códigos del SAT por producto](/docs/codigos-sat-producto)). **Limpiar códigos** también borra los pedimentos.
 
+## Metacampos de producto
+
+El código, la unidad, el IEPS y el IVA del producto están en metacampos del namespace `$app`. En tu tienda puedes leerlos y editarlos. Las columnas del CSV siguen el formato de la tabla de arriba. Estas son las validaciones de esos metacampos. La de 8 dígitos aplica solo al **Código SAT** del producto.
+
+| Clave | Nombre | Validación |
+|---|---|---|
+| `codigo_sat` | Código SAT | 8 dígitos (`^[0-9]{8}$`). Vacío = predeterminada de la tienda |
+| `unidad_sat` | Unidad SAT | 1 a 3 caracteres A-Z o 0-9 (por ejemplo `H87`, `E48`). Vacío = predeterminada de la tienda |
+| `ieps_aplica` | Aplica IEPS | Booleano |
+| `tasa_ieps` | Tasa de IEPS | Porcentaje, mínimo 0. Solo si Aplica IEPS |
+| `iva_personalizado` | IVA personalizado | Booleano |
+| `tasa_iva` | Tasa de IVA | Porcentaje de 0 a 100 (0, 8 o 16). Solo si IVA personalizado |
+
+Pedido, cliente, migración y Shopify Flow están en [Códigos del SAT por producto](/docs/codigos-sat-producto).
+
 ## Cómo subir el CSV
 
 1. Entra a CFDI Express → **Productos**.
