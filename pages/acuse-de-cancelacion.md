@@ -1,6 +1,6 @@
 ---
-title: "Acuse de cancelación SAT: cómo descargarlo en PDF (CFDI 4.0)"
-description: "Descarga el acuse de cancelación de tu factura en el SAT: qué es, los 4 motivos de cancelación del CFDI 4.0 y cómo obtenerlo en PDF desde Shopify."
+title: "Acuse de cancelación SAT: qué es y cómo descargarlo"
+description: "Acuse de cancelación SAT: qué es, los motivos 01 a 04 del CFDI 4.0 y cómo descargar el PDF de la factura."
 image: "https://assets.acromatico.dev/marketing/diego/blog/hero-cfdi-facturas-4.0.png"
 author: "Rafael González"
 date: "2026-10-12"
@@ -58,7 +58,7 @@ Para que tus clientes facturen solos y no tengas que cancelar tanto, activa el [
 ## Preguntas frecuentes
 
 **¿Dónde descargo el acuse de cancelación?**
-La cancelación la registra el SAT. En CFDI Express el acuse queda guardado en PDF y lo descargas desde la app.
+La cancelación la registra el SAT. En CFDI Express el acuse queda guardado en PDF y lo descargas desde la app. El paso a paso está en [Cancelación y acuse](/docs/cancelacion-y-acuse).
 
 **¿Qué motivo uso desde el admin de Shopify?**
 Por ahora el admin solo cancela con motivo 02 «Comprobante emitido con errores sin relación». En Flow, la acción «Eliminar CFDI» se usa con el motivo 02; el campo también deja pasar el 03 «No se llevó a cabo la operación» y el 04 «Operación nominativa relacionada en una factura global». El motivo 01 «Comprobante emitido con errores con relación» no se puede usar en Flow porque pide el folio de sustitución: se hace por API, con `folioSustitucion` (el UUID del CFDI que lo sustituye). El detalle está en [Cancelar una factura](/docs/api/cancelar-factura).

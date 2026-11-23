@@ -15,6 +15,8 @@ La API timbra anticipos con el **procedimiento A** del Apéndice 6 de la Guía d
 2. **Factura por el valor total** de la operación: ingreso con los conceptos reales y `cfdiRelacionados` con `tipoRelacion` `"07"` al UUID del anticipo.
 3. **Nota de crédito** (egreso) por el anticipo aplicado: `POST /v1/credit_notes` con `tipoRelacion` `"07"`, `formaPago` `"30"` y `relatedInvoiceId` de la **factura por el total**, no del anticipo.
 
+Cuándo un pago es anticipo, y el detalle de cada comprobante, está en [Facturar anticipos en CFDI 4.0](/blog/facturar-anticipos-cfdi-4-0).
+
 La API rechaza las combinaciones que no siguen este orden. Cada error dice qué mandar en su lugar; la lista está en la sección «Errores al facturar anticipos».
 
 Cada paso timbra un CFDI y consume un timbre. Las tres llamadas piden `Authorization: Bearer sk_test_…` o `sk_live_…` y un `Idempotency-Key` (1 a 255 caracteres). En un workspace, el header `x-account-id` indica la cuenta.
