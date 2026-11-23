@@ -1,6 +1,6 @@
 ---
-title: "Cómo facturar a un cliente extranjero en CFDI 4.0 (XEXX010101000)"
-description: "RFC genérico XEXX010101000 en CFDI 4.0: residencia fiscal, tax ID extranjero, uso S01, régimen 616 y el código postal del emisor, con el JSON de la API."
+title: "XEXX010101000: facturar a un extranjero en CFDI 4.0"
+description: "RFC genérico XEXX010101000 para un cliente extranjero en CFDI 4.0: régimen 616, uso S01 y el código postal del emisor."
 image: "https://assets.acromatico.dev/marketing/diego/blog/hero-cfdi-facturas-4.0.png"
 author: "Rafael González"
 date: "2026-10-28"

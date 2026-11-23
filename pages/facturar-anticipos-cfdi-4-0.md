@@ -10,7 +10,7 @@ keywords: "facturar anticipos, anticipo cfdi 4.0, cómo facturar un anticipo, ti
 
 Un cliente te paga antes de saber exactamente qué va a comprar o cuánto va a costar. Ese dinero es un **anticipo**, y el SAT no lo factura como una venta normal: pide **tres comprobantes** que se relacionan entre sí.
 
-Este post es para contadores y dueños de negocio. Explica cuándo un pago es anticipo, qué lleva cada CFDI y los errores que más se repiten. Las reglas salen del **Apéndice 6** de la Guía de llenado del Anexo 20 («Procedimiento para la emisión de los CFDI en el caso de anticipos recibidos»), en su procedimiento **A**: facturación aplicando anticipo con CFDI de egreso.
+Este post es para contadores y dueños de negocio. Explica cuándo un pago es anticipo, qué lleva cada CFDI y los errores que más se repiten. Las reglas salen del **Apéndice 6** de la Guía de llenado del Anexo 20 («Procedimiento para la emisión de los CFDI en el caso de anticipos recibidos»), en su procedimiento **A**: facturación aplicando anticipo con CFDI de egreso. El paso a paso para timbrarlos está en [Facturar anticipos](/docs/facturar-anticipos).
 
 ## ¿Qué es un anticipo para el SAT?
 
@@ -104,6 +104,15 @@ Con la factura por el valor total de la operación, usando el tipo de relación 
 **¿La factura por el total puede quedar pendiente de pago?**
 Sí. Si el remanente se paga después, la factura por el total va con el método PPD y se emite un CFDI con complemento de pago por cada pago que recibas.
 
+**¿Cómo se facturan los anticipos ante el SAT?**
+El procedimiento A del Apéndice 6 de la Guía de llenado pide tres comprobantes: la factura del anticipo, la factura por el valor total con tipo de relación 07 y un CFDI de egreso que aplica el anticipo.
+
+**¿Qué lleva una factura por anticipo?**
+Un comprobante de ingreso con un solo concepto, clave 84111506, cantidad 1, unidad ACT, descripción «Anticipo del bien o servicio», método de pago PUE y la forma de pago real. No lleva CFDI relacionados.
+
+**¿Cómo es la facturación de anticipos 4.0 del SAT?**
+La factura del anticipo va en PUE con la clave 84111506. La factura por el total relaciona ese UUID con tipo de relación 07. El egreso aplica el anticipo con forma de pago 30 y tipo de relación 07 hacia la factura por el total.
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -112,7 +121,10 @@ Sí. Si el remanente se paga después, la factura por el total va con el método
     {"@type": "Question", "name": "¿Cuándo un pago es anticipo y cuándo es una venta en parcialidades?", "acceptedAnswer": {"@type": "Answer", "text": "Es anticipo cuando todavía no se conoce o no se ha determinado el bien o servicio, su precio, o ninguno de los dos. Si ya hay acuerdo sobre el bien o servicio y su precio, aunque no sea por escrito, y el cliente paga una parte, es una venta en parcialidades."}},
     {"@type": "Question", "name": "¿Qué clave de producto lleva la factura de un anticipo?", "acceptedAnswer": {"@type": "Answer", "text": "Un solo concepto con clave 84111506, cantidad 1, unidad ACT y descripción «Anticipo del bien o servicio». El valor unitario es el anticipo antes de impuestos."}},
     {"@type": "Question", "name": "¿Con qué factura se relaciona la nota de crédito con forma de pago 30?", "acceptedAnswer": {"@type": "Answer", "text": "Con la factura por el valor total de la operación, usando el tipo de relación 07. No se relaciona con la factura del anticipo."}},
-    {"@type": "Question", "name": "¿La factura por el total puede quedar pendiente de pago?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Si el remanente se paga después, la factura por el total va con el método PPD y se emite un CFDI con complemento de pago por cada pago que recibas."}}
+    {"@type": "Question", "name": "¿La factura por el total puede quedar pendiente de pago?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Si el remanente se paga después, la factura por el total va con el método PPD y se emite un CFDI con complemento de pago por cada pago que recibas."}},
+    {"@type": "Question", "name": "¿Cómo se facturan los anticipos ante el SAT?", "acceptedAnswer": {"@type": "Answer", "text": "El procedimiento A del Apéndice 6 de la Guía de llenado pide tres comprobantes: la factura del anticipo, la factura por el valor total con tipo de relación 07 y un CFDI de egreso que aplica el anticipo."}},
+    {"@type": "Question", "name": "¿Qué lleva una factura por anticipo?", "acceptedAnswer": {"@type": "Answer", "text": "Un comprobante de ingreso con un solo concepto, clave 84111506, cantidad 1, unidad ACT, descripción «Anticipo del bien o servicio», método de pago PUE y la forma de pago real. No lleva CFDI relacionados."}},
+    {"@type": "Question", "name": "¿Cómo es la facturación de anticipos 4.0 del SAT?", "acceptedAnswer": {"@type": "Answer", "text": "La factura del anticipo va en PUE con la clave 84111506. La factura por el total relaciona ese UUID con tipo de relación 07. El egreso aplica el anticipo con forma de pago 30 y tipo de relación 07 hacia la factura por el total."}}
   ]
 }
 </script>
