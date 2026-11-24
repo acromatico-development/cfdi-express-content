@@ -4,7 +4,7 @@ description: "Un pago que cubre varias facturas PPD se timbra como un solo REP (
 image: "https://assets.acromatico.dev/marketing/diego/blog/hero-cfdi-facturas-4.0.png"
 author: "Rafael González"
 date: "2026-10-30"
-keywords: "complemento de pago, REP varias facturas, PPD, Pagos 2.0, CFDI 4.0, POST /v1/payments, DoctoRelacionado, timbrar complemento de pago, saldo insoluto, numParcialidad, CFDI Express API"
+keywords: "complemento de pago, REP varias facturas, PPD, Pagos 2.0, CFDI 4.0, POST /v1/payments, DoctoRelacionado, timbrar complemento de pago, saldo insoluto, numParcialidad, monto mayor, unappliedAmount, remanente, referencia del pago, CFDI Express API"
 ---
 # Cómo emitir un REP para varias facturas PPD con un solo pago (CFDI 4.0, Pagos 2.0)
 
@@ -38,11 +38,15 @@ Todas se revisan antes de gastar el timbre.
 
 `fechaPago` es opcional, en hora de Ciudad de México: `AAAA-MM-DDTHH:mm:ss`. Si lo omites, es el momento del request.
 
-`monto` es opcional y positivo. Si lo mandas, tiene que ser igual a la suma de `documents[].importePagado`, con tolerancia de ±0.005. Si lo omites, el total es esa suma.
+`monto` es opcional y positivo. Si lo omites, el total es la suma de `documents[].importePagado`. Desde la **v1.58.0**, si lo mandas puede ser **mayor o igual** que esa suma, como permite el SAT (regla CRP20217), con tolerancia de 0.005. Solo si es menor responde 400 `validation_error`.
+
+`Monto` y `MontoTotalPagos` del XML llevan el `monto` que mandas. El saldo de cada factura baja solo por su `importePagado`. Lo que sobra sale en `unappliedAmount`; qué hacer con ello está más abajo, en «El remanente».
+
+`reference` es opcional, desde la v1.58.0: una referencia tuya del pago, de 1 a 100 caracteres y sin `|`, como el id del depósito o de la transacción. Se guarda, el recurso la devuelve y sirve para buscar el REP. No se imprime en el XML.
 
 ## Ejemplo: $5.80 = 2.32 + 2.32 + 1.16
 
-El header `Idempotency-Key` es obligatorio (de 1 a 255 caracteres). Los `invoiceId` de abajo son el ejemplo publicado en la referencia; los importes son los del pago de $5.80.
+Este es el caso sin remanente: `monto` es exactamente la suma de los tres importes. El header `Idempotency-Key` es obligatorio (de 1 a 255 caracteres). Los `invoiceId` de abajo son el ejemplo publicado en la referencia; los importes son los del pago de $5.80.
 
 ```bash
 curl https://api.cfdi.express/v1/payments \
@@ -53,6 +57,7 @@ curl https://api.cfdi.express/v1/payments \
     "formaPago": "03",
     "fechaPago": "2026-10-30T12:00:00",
     "monto": 5.80,
+    "reference": "DEP-20261030-01",
     "documents": [
       { "invoiceId": "inv7k3q9x2m4v1t8p6d0n5cb", "importePagado": 2.32 },
       { "invoiceId": "inv2p8d4n6c0b5rzmkq2f8v3", "importePagado": 2.32 },
@@ -78,6 +83,8 @@ En el ejemplo, `monto` queda en 5.80 y `documents` trae tres entradas. Cada una 
   "uuid": "33d7d158-5f9c-49ef-b1a1-b9c5557efea0",
   "numParcialidad": 1,
   "monto": 5.80,
+  "unappliedAmount": 0,
+  "reference": "DEP-20261030-01",
   "formaPago": "03",
   "fechaPago": "2026-10-30T18:00:00.000Z",
   "saldoAnterior": 2.32,
@@ -113,19 +120,74 @@ En el ejemplo, `monto` queda en 5.80 y `documents` trae tres entradas. Cada una 
 }
 ```
 
-`invoiceId`, `numParcialidad`, `saldoAnterior` y `saldoInsoluto` en la raíz son los de la **primera** factura. `monto` es el total del pago. El detalle de cada una está en `documents[]`: `invoiceId`, `numParcialidad`, `importePagado`, `saldoAnterior` y `saldoInsoluto`.
+`invoiceId`, `numParcialidad`, `saldoAnterior` y `saldoInsoluto` en la raíz son los de la **primera** factura. `monto` es el total del pago. `unappliedAmount` es `monto` menos la suma de `importePagado`, con 2 decimales: aquí 0, porque no sobra nada. `reference` es la que mandaste, o `null` si no mandaste ninguna. El detalle de cada una está en `documents[]`: `invoiceId`, `numParcialidad`, `importePagado`, `saldoAnterior` y `saldoInsoluto`.
 
 `fechaPago` del request es hora local de Ciudad de México (`2026-10-30T12:00:00`). En el recurso de este ejemplo queda el instante en UTC (`2026-10-30T18:00:00.000Z`).
 
 El mismo `documents[]` viene en el GET, en el [listado](https://cfdi.express/docs/api/listar-complementos-de-pago) y en los webhooks `payment.*`. `GET /v1/payments?invoiceId=` encuentra el REP con cualquiera de sus facturas, no solo con la primera.
 
+Con `reference` lo encuentras por tu propia referencia: `GET /v1/payments?reference=DEP-20261030-01` filtra por coincidencia exacta, sin distinguir mayúsculas. La búsqueda libre `?q=` también la encuentra, siempre que escribas la referencia completa (`?q=dep-20261030-01` sirve; un fragmento no).
+
 En el XML de este ejemplo hay un `Pago` y tres `DoctoRelacionado`. Cada documento usa el UUID de su factura en `IdDocumento`, `ImpPagado` con el `importePagado`, y sus saldos. `EquivalenciaDR` es `"1"`. Los impuestos de cada documento se prorratean desde los de su factura. `ImpuestosP` y `Totales` son la suma, en centavos. Con estas tres facturas de IVA 16% (bases 2.00, 2.00 y 1.00), el `TrasladoP` queda con base **5.00** e IVA **0.80**, y los totales traen `MontoTotalPagos` 5.80, `TotalTrasladosBaseIVA16` 5.00 y `TotalTrasladosImpuestoIVA16` 0.80.
 
 En el CFDI, el primer documento es la primera factura de `documents` y el resto va ordenado por id.
 
-Mandar `monto` 6 contra estos importes responde **400**: `monto 6.00 must equal the sum of documents[].importePagado (5.80)`.
-
 Para probar, una llave `sk_test_` en [dash.cfdi.express](https://dash.cfdi.express). La referencia interactiva está en [api.cfdi.express/docs](https://api.cfdi.express/docs).
+
+## Ejemplo: depósito de $6.00 sobre facturas de $5.80
+
+**Respuesta corta:** desde la v1.58.0 se timbra. Las facturas se liquidan igual y los 0.20 que sobran salen en `unappliedAmount`.
+
+El cliente deposita 6.00 y tú le aplicas 5.80 a las mismas tres facturas:
+
+```bash
+curl https://api.cfdi.express/v1/payments \
+  -H "Authorization: Bearer sk_test_..." \
+  -H "Idempotency-Key: payment_88241" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "formaPago": "03",
+    "fechaPago": "2026-10-30T12:00:00",
+    "monto": 6.00,
+    "reference": "DEP-20261030-02",
+    "documents": [
+      { "invoiceId": "inv7k3q9x2m4v1t8p6d0n5cb", "importePagado": 2.32 },
+      { "invoiceId": "inv2p8d4n6c0b5rzmkq2f8v3", "importePagado": 2.32 },
+      { "invoiceId": "inv5c0btpay9x2m6q4k1v3p8", "importePagado": 1.16 }
+    ]
+  }'
+```
+
+Responde **201** si el SAT timbra en la misma petición, o **202** si queda en cola, igual que el ejemplo anterior. Fragmento del recurso:
+
+```json
+{
+  "id": "pay8d4n6c0b5rzmkq2f8v3inv",
+  "object": "payment",
+  "status": "stamped",
+  "monto": 6.00,
+  "unappliedAmount": 0.20,
+  "reference": "DEP-20261030-02",
+  "documents": [
+    { "invoiceId": "inv7k3q9x2m4v1t8p6d0n5cb", "importePagado": 2.32, "saldoAnterior": 2.32, "saldoInsoluto": 0 },
+    { "invoiceId": "inv2p8d4n6c0b5rzmkq2f8v3", "importePagado": 2.32, "saldoAnterior": 2.32, "saldoInsoluto": 0 },
+    { "invoiceId": "inv5c0btpay9x2m6q4k1v3p8", "importePagado": 1.16, "saldoAnterior": 1.16, "saldoInsoluto": 0 }
+  ]
+}
+```
+
+En el XML, `Monto` y `MontoTotalPagos` son 6.00. Los tres `DoctoRelacionado` llevan los mismos `ImpPagado` (2.32, 2.32 y 1.16) y cada factura queda con saldo 0, como en el caso sin remanente. Los impuestos se prorratean por `ImpPagado`, no por `Monto`: `TotalTrasladosBaseIVA16` sigue en 5.00 y `TotalTrasladosImpuestoIVA16` en 0.80.
+
+Lo que no se acepta es lo contrario: `monto` 5.00 contra estos importes responde **400** `validation_error`: `monto 5.00 can't be less than the sum of documents[].importePagado (5.80)`.
+
+## El remanente: `unappliedAmount`
+
+**Respuesta corta:** `unappliedAmount` es solo informativo. No es un saldo a favor del cliente y no se aplica con otro REP del mismo pago.
+
+- **Si el remanente cubre otra factura PPD que ya existe**, inclúyela en `documents` de este mismo REP, con su `importePagado`. No se timbra un segundo REP por la diferencia.
+- **Si no**, el remanente se documenta fuera del REP como **anticipo** (Apéndice 6 de la Guía de llenado del Anexo 20, con `TipoRelacion` `07`), y las ventas que se hagan después se facturan como **PUE** si ya están pagadas. La otra salida es devolverle el dinero al cliente.
+
+Cuál aplica lo decide el contador del emisor. El procedimiento del anticipo está en [Facturar anticipos](https://cfdi.express/docs/facturar-anticipos) y, con más detalle, en [Cómo facturar anticipos en CFDI 4.0](/blog/facturar-anticipos-cfdi-4-0).
 
 ## Cómo se cuentan las parcialidades
 
@@ -151,7 +213,8 @@ Estas respuestas llegan **antes** de gastar un timbre. Las de 400 usan el códig
 | Otro emisor | 400 | `Invoice X was issued by a different merchant than Y` |
 | Otro RFC receptor | 400 | `Invoice X has a different receiver RFC than Y` |
 | Otra moneda | 400 | `Invoice X is in USD; Y is in MXN` |
-| `monto` distinto de la suma | 400 | `monto A must equal the sum of documents[].importePagado (B)` |
+| `monto` menor que la suma | 400 | `monto A can't be less than the sum of documents[].importePagado (B)`. Mayor o igual se acepta |
+| `reference` vacía, de más de 100 caracteres o con barra vertical | 400 | Error en el campo `reference`: de 1 a 100 caracteres, sin barra vertical |
 | `formaPago` que no existe | 400 | `Unknown forma de pago "{clave}"` |
 | `formaPago` `99` | 400 | `A REP requires the real forma de pago (not 99 'Por definir')` |
 
@@ -171,7 +234,7 @@ Cancelar una factura PPD que tenga un REP vigente —`stamping`, `stamped` o `ca
 
 ## Desde el servidor MCP
 
-`create_payment` en [el servidor MCP](https://api.cfdi.express/mcp) timbra el mismo REP. Para varias facturas el argumento es `documents` (cada entrada con `invoiceId`, `importePagado` y, si la conoces, `numParcialidad`). `monto` y `fechaPago` siguen siendo opcionales; `formaPago` es el real, no `99`.
+`create_payment` en [el servidor MCP](https://api.cfdi.express/mcp) timbra el mismo REP. Para varias facturas el argumento es `documents` (cada entrada con `invoiceId`, `importePagado` y, si la conoces, `numParcialidad`). `monto` y `fechaPago` siguen siendo opcionales; `formaPago` es el real, no `99`. Como en la API, `monto` puede ser mayor que la suma de los `importePagado`, nunca menor, y el resultado dice cuánto no se aplicó a ninguna factura. `create_payment` también acepta `reference` (1 a 100 caracteres, sin `|`), y `list_payments` busca por ella.
 
 Para una sola factura el argumento es `invoiceId` más `monto`. Las dos formas no se combinan. Si mandas `invoiceId` junto con `documents`, la herramienta responde: `Pass either invoiceId (one invoice) or documents (several invoices), not both.` Si con `documents` pones `numParcialidad` en la raíz, responde: `With documents, set numParcialidad on each document entry instead.`
 
@@ -181,6 +244,12 @@ Una instrucción que corresponde a este pago:
 
 ```text
 Registra un pago con forma de pago 03 del 2026-10-30T12:00:00 que liquida tres facturas PPD: 2.32, 2.32 y 1.16, en un solo REP
+```
+
+Y una para el depósito de 6.00 con referencia:
+
+```text
+Registra un depósito de 6.00 con referencia DEP-20261030-02, forma de pago 03 del 2026-10-30T12:00:00, que liquida tres facturas PPD por 2.32, 2.32 y 1.16 en un solo REP
 ```
 
 ## Preguntas frecuentes
@@ -200,6 +269,15 @@ Por factura. La siguiente es uno más que los REP de esa factura en `stamping` o
 **¿Qué saldos trae la respuesta?**
 `documents[]` trae, por factura, `numParcialidad`, `importePagado`, `saldoAnterior` y `saldoInsoluto`. En la raíz, `invoiceId`, `numParcialidad`, `saldoAnterior` y `saldoInsoluto` son los de la primera factura, y `monto` es el total.
 
+**¿El monto puede ser mayor que la suma de los importes?**
+Sí, desde la v1.58.0. `monto` puede ser mayor o igual que la suma de `documents[].importePagado`; solo si es menor responde 400. `Monto` y `MontoTotalPagos` del XML llevan el `monto` pedido, cada factura baja solo por su `importePagado` y lo que sobra sale en `unappliedAmount`.
+
+**¿Qué hago con el remanente de `unappliedAmount`?**
+Es solo informativo: no es un saldo a favor ni se aplica con otro REP del mismo pago. Si cubre otra factura PPD existente, va en el mismo REP. Si no, se documenta fuera del REP como anticipo (Apéndice 6 del Anexo 20, TipoRelacion 07), facturando después las ventas como PUE si ya están pagadas, o se devuelve. El criterio es del contador del emisor.
+
+**¿Puedo guardar mi propia referencia del pago?**
+Sí, con `reference` (1 a 100 caracteres, sin `|`). El recurso la devuelve, no se imprime en el XML y se busca con `GET /v1/payments?reference=` (coincidencia exacta) o con `?q=` (la referencia completa, sin distinguir mayúsculas).
+
 **¿Qué pasa si cancelo el REP?**
 Cada factura recupera el `importePagado` que ese REP le aplicó. En el ejemplo de $5.80 los saldos vuelven a 2.32, 2.32 y 1.16.
 
@@ -207,7 +285,7 @@ Cada factura recupera el `importePagado` que ese REP le aplicó. En el ejemplo d
 Si el REP está vigente (`stamping`, `stamped` o `cancel_pending`), la cancelación de la factura responde 400 con `subcode` `cancel_reps_first`, aunque esa factura no sea la primera del REP.
 
 **¿Puedo pedirlo desde un agente?**
-Sí. `create_payment` acepta `documents`. No se combina con `invoiceId` y `monto`. Con `documents`, `numParcialidad` va en cada entrada.
+Sí. `create_payment` acepta `documents`. No se combina con `invoiceId`. Con `documents`, `numParcialidad` va en cada entrada. También acepta `reference`.
 
 <script type="application/ld+json">
 {
@@ -219,9 +297,12 @@ Sí. `create_payment` acepta `documents`. No se combina con `invoiceId` y `monto
     {"@type": "Question", "name": "¿Cuántos timbres cuesta?", "acceptedAnswer": {"@type": "Answer", "text": "Uno por REP, no uno por factura. Cancelar el REP cuesta otro timbre."}},
     {"@type": "Question", "name": "¿Las parcialidades se numeran por el pago o por la factura?", "acceptedAnswer": {"@type": "Answer", "text": "Por factura. La siguiente es uno más que los REP de esa factura en stamping o stamped. Un REP de varias facturas cuenta en cada una. Si omites numParcialidad, se asigna; si la mandas y no sigue la secuencia, responde 400 con expected N."}},
     {"@type": "Question", "name": "¿Qué saldos trae la respuesta?", "acceptedAnswer": {"@type": "Answer", "text": "documents trae, por factura, numParcialidad, importePagado, saldoAnterior y saldoInsoluto. En la raíz, invoiceId, numParcialidad, saldoAnterior y saldoInsoluto son los de la primera factura, y monto es el total."}},
+    {"@type": "Question", "name": "¿El monto puede ser mayor que la suma de los importes?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, desde la v1.58.0. monto puede ser mayor o igual que la suma de documents[].importePagado; solo si es menor responde 400. Monto y MontoTotalPagos del XML llevan el monto pedido, cada factura baja solo por su importePagado y lo que sobra sale en unappliedAmount."}},
+    {"@type": "Question", "name": "¿Qué hago con el remanente de unappliedAmount?", "acceptedAnswer": {"@type": "Answer", "text": "Es solo informativo: no es un saldo a favor ni se aplica con otro REP del mismo pago. Si cubre otra factura PPD existente, va en el mismo REP. Si no, se documenta fuera del REP como anticipo (Apéndice 6 del Anexo 20, TipoRelacion 07), facturando después las ventas como PUE si ya están pagadas, o se devuelve. El criterio es del contador del emisor."}},
+    {"@type": "Question", "name": "¿Puedo guardar mi propia referencia del pago?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, con reference (1 a 100 caracteres, sin barra vertical). El recurso la devuelve, no se imprime en el XML y se busca con GET /v1/payments?reference= (coincidencia exacta) o con ?q= (la referencia completa, sin distinguir mayúsculas)."}},
     {"@type": "Question", "name": "¿Qué pasa si cancelo el REP?", "acceptedAnswer": {"@type": "Answer", "text": "Cada factura recupera el importePagado que ese REP le aplicó. En el ejemplo de $5.80 los saldos vuelven a 2.32, 2.32 y 1.16."}},
     {"@type": "Question", "name": "¿Puedo cancelar una factura que ya está en un REP?", "acceptedAnswer": {"@type": "Answer", "text": "Si el REP está vigente (stamping, stamped o cancel_pending), la cancelación de la factura responde 400 con subcode cancel_reps_first, aunque esa factura no sea la primera del REP."}},
-    {"@type": "Question", "name": "¿Puedo pedirlo desde un agente?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. create_payment acepta documents. No se combina con invoiceId y monto. Con documents, numParcialidad va en cada entrada."}}
+    {"@type": "Question", "name": "¿Puedo pedirlo desde un agente?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. create_payment acepta documents. No se combina con invoiceId. Con documents, numParcialidad va en cada entrada. También acepta reference."}}
   ]
 }
 </script>
@@ -229,8 +310,8 @@ Sí. `create_payment` acepta `documents`. No se combina con `invoiceId` y `monto
 ## Timbrar el REP de varias facturas
 
 1. Junta las facturas PPD timbradas del mismo emisor, el mismo RFC y la misma moneda.
-2. Manda `POST /v1/payments` con `Idempotency-Key`, `formaPago` y `documents` (`invoiceId` e `importePagado` por factura). El ejemplo de $5.80 usa `formaPago` `"03"`.
-3. Lee `documents[]`: `saldoAnterior`, `saldoInsoluto` y `numParcialidad` de cada factura.
+2. Manda `POST /v1/payments` con `Idempotency-Key`, `formaPago` y `documents` (`invoiceId` e `importePagado` por factura). Si el depósito fue mayor, manda `monto` con el total recibido; si quieres conciliarlo, agrega `reference`. El ejemplo de $5.80 usa `formaPago` `"03"`.
+3. Lee `documents[]`: `saldoAnterior`, `saldoInsoluto` y `numParcialidad` de cada factura. Si `unappliedAmount` es mayor que 0, revisa con tu contador cómo documentar el remanente.
 4. Contrasta el cuerpo con [Timbrar un complemento de pago de varias facturas](https://cfdi.express/docs/api/timbrar-complemento-de-pago-varias-facturas).
 
 El contexto de la API está en [el anuncio de lanzamiento](/blog/lanzamiento-cfdi-express-api) y en la [landing](https://cfdi.express/api).
