@@ -38,7 +38,7 @@ El cuerpo es el de [Timbrar una factura](/docs/api/timbrar-factura), más `cfdiR
 
 `uuids` lleva el UUID (folio fiscal) de la factura original. El `id` (`inv…`) de esa misma factura es el que va en la ruta del paso 2.
 
-La petición espera hasta 20 segundos. **201** trae la factura timbrada: copia `uuid`, que es el folio fiscal de la sustituta. Bajo carga extrema responde **202** con `status` `stamping`. En ese caso consultas [`GET /v1/invoices/{id}`](/docs/api/obtener-factura) hasta que pase a `stamped` y tomas el `uuid`. Cancela la original cuando ya tengas ese UUID.
+La petición espera hasta 20 segundos. HTTP **201** trae la factura timbrada: copia `uuid`, que es el folio fiscal de la sustituta. Bajo carga extrema responde **202** con `status` `stamping`. En ese caso consultas [`GET /v1/invoices/{id}`](/docs/api/obtener-factura) hasta que pase a `stamped` y tomas el `uuid`. Cancela la original cuando ya tengas ese UUID.
 
 ### cURL
 
@@ -107,7 +107,7 @@ curl -X POST https://api.cfdi.express/v1/invoices/inv7k3q9x2m4v1t8p6d0n5cb/cance
   }'
 ```
 
-La cancelación aceptada responde **202**. El recurso queda con `status` `cancelled` y `cancellation.motivo` `01`. `cancellation.folioSustitucion` es el UUID que enviaste. El acuse XML del SAT queda en `cancellation.acuseUrl`, URL firmada de 15 minutos. La forma completa de la respuesta está en [Cancelar una factura](/docs/api/cancelar-factura).
+La cancelación aceptada responde HTTP **202**. El recurso queda con `status` `cancelled` y `cancellation.motivo` `01`. `cancellation.folioSustitucion` es el UUID que enviaste. El acuse XML del SAT queda en `cancellation.acuseUrl`, URL firmada de 15 minutos. La forma completa de la respuesta está en [Cancelar una factura](/docs/api/cancelar-factura).
 
 Una factura PPD con complementos de pago vigentes se cancela después de cancelar esos REP con `POST /v1/payments/{id}/cancel`.
 
@@ -133,6 +133,47 @@ Si `folioSustitucion` es el UUID de la misma factura que estás cancelando, la r
 
 Si omites `folioSustitucion` con motivo `01`, o el motivo no es `01`–`04`, la respuesta es 400 `validation_error`. Ese caso está en [Cancelar una factura](/docs/api/cancelar-factura).
 
+## Error 422 `sat_rejected`
+
+Si la validación pasa, la API envía la cancelación al SAT. Cuando el SAT la rechaza, la respuesta es HTTP **422** con `code` `sat_rejected` y el timbre de la cancelación se reembolsa.
+
+```json
+{
+  "type": "https://api.cfdi.express/docs/errors/sat_rejected",
+  "title": "Rejected by SAT",
+  "status": 422,
+  "code": "sat_rejected",
+  "detail": "SAT rejected the cancellation (EstatusUUID 207)",
+  "satStatus": "207",
+  "satDescription": "Folio Sustitución inválido",
+  "satMessage": "El folio de sustitución no es válido: verifica que la factura que sustituye exista, esté vigente y se haya emitido después de la original."
+}
+```
+
+| Campo | Qué trae |
+|---|---|
+| `satStatus` | Código del SAT (EstatusUUID). |
+| `satDescription` | Texto oficial del Anexo 29 (DOF 6 nov 2026). Opcional. |
+| `satMessage` | Qué significa, en español, para ti o para el comercio. Opcional. |
+
+`code`, `status`, `detail` y `satStatus` vienen igual que antes. `detail` puede seguir en inglés: para saber qué pasó y qué mostrar, lee `satMessage` y, si no viene, `satDescription`.
+
+### Códigos del SAT que verás con motivo 01
+
+| `satStatus` | `satDescription` | `satMessage` |
+|---|---|---|
+| `207` | Folio Sustitución inválido | El folio de sustitución no es válido: verifica que la factura que sustituye exista, esté vigente y se haya emitido después de la original. |
+| `210` | Relación no válida o inexistente | La relación con otros CFDI no es válida o no existe. |
+| `312` | Folio Fiscal no relacionado de acuerdo a la clave de motivo de cancelación | El CFDI no tiene la relación que exige el motivo elegido. |
+
+Un 207 o 210 del SAT no es lo mismo que el 400 `substitute_not_related`. El 400 lo responde la API antes de enviar nada al SAT y no gasta el timbre. El 422 ya pasó por el SAT: el SAT revisó la sustituta y la relación por su cuenta, y el timbre se reembolsa. Revisa la sustituta; si hace falta, emite una nueva con `cfdiRelacionados` correcto y vuelve a cancelar con su UUID.
+
+El 6 nov 2026 el SAT reasignó los códigos de cancelación ([Anexo 29, DOF](https://dof.gob.mx/nota_detalle.php?codigo=5803159&fecha=06/11/2026)). El 207 ya no significa «motivo no válido»: ese caso sigue siendo un 400 de validación en la API, o `311` si llega del SAT. Los códigos 211, 212 y 303 ya no existen.
+
+**HTTP o SAT.** Los **201** y **202** de los pasos 1 y 2 son códigos HTTP: sustituta timbrada y cancelación aceptada. El SAT también usa 201 (solicitud de cancelación recibida) y 202 (folio fiscal previamente cancelado) como EstatusUUID; son los únicos que cuentan como cancelación aceptada. Cualquier otro EstatusUUID es rechazo y llega en `satStatus` dentro de un HTTP 422.
+
+La tabla completa de códigos del SAT está en [Cancelar una factura](/docs/api/cancelar-factura).
+
 ## UUID en minúsculas (v1.50.1)
 
 Desde la **v1.50.1** un UUID se acepta en minúsculas, en mayúsculas o mezclado, en `cfdiRelacionados.uuids` y en `folioSustitucion`. El formato es 8-4-4-4-12 en hexadecimal.
@@ -149,7 +190,7 @@ Los motivos `02`, `03` y `04` cubren los casos sin factura sustituta. El cuerpo 
 | `03` | La operación no se llevó a cabo. |
 | `04` | Operación nominativa relacionada en una factura global. |
 
-El cuerpo, los ejemplos y el resto de errores (402 sin saldo, 422 rechazo del SAT, 503 PAC no disponible) están en [Cancelar una factura](/docs/api/cancelar-factura).
+El cuerpo, los ejemplos, el resto de errores (402 sin saldo, 503 PAC no disponible) y la tabla de códigos del 422 están en [Cancelar una factura](/docs/api/cancelar-factura).
 
 ## Relacionados
 

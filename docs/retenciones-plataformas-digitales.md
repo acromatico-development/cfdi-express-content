@@ -309,7 +309,9 @@ Header `Idempotency-Key`, requerido. El cuerpo es el mismo de [cancelar una fact
 
 Cancelar cuesta **1 timbre**. El e2e lo cuenta aparte del timbre del timbrado. `202` cuando quedó aceptada: `status` `cancelled` y `cancellation.status` `accepted`.
 
-Justo después de timbrar, el SAT puede responder `CR1205 - UUID No existe` durante cerca de un minuto. Ese intento se reembolsa y se puede reintentar después.
+Justo después de timbrar, el SAT puede responder `CR1205 - Folio Fiscal No existe` durante cerca de un minuto. Ese intento se reembolsa y se puede reintentar después.
+
+El `422` trae `satStatus`, `satDescription` (texto oficial del Anexo 29) y `satMessage` (qué significa, en español). La tabla de códigos está en [Cancelar una retención](/docs/api/cancelar-retencion).
 
 Otros status: `400` validación, `402` sin créditos, `404` no existe, `422` el SAT rechazó la cancelación, `503` servicio de timbrado no disponible.
 
