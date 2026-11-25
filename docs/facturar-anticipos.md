@@ -149,6 +149,8 @@ Se emite después de la factura por el total. La Guía de llenado indica que amb
 
 El receptor se copia de la factura relacionada. La referencia completa está en [Crear una nota de crédito](/docs/api/crear-nota-de-credito).
 
+Desde la v1.59.0 también puedes mandar `relatedUuid` con el UUID de la factura por el total en lugar de `relatedInvoiceId`. Si ese UUID está en tu cuenta, sin importar mayúsculas y minúsculas, la nota se liga a esa factura y pasa por las mismas reglas de anticipo, moneda, emisor y tope. Está en [Notas de crédito por UUID](/docs/importar-cfdis-de-otros-sistemas#notas-de-credito-por-uuid).
+
 ```bash
 curl -X POST https://api.cfdi.express/v1/credit_notes \
   -H "Authorization: Bearer sk_test_..." \

@@ -163,5 +163,10 @@
     "title": "Vista previa de la factura antes de timbrar (MCP y API)",
     "document": "vista-previa-factura-antes-de-timbrar.md",
     "completed": true
+  },
+  {
+    "title": "Importar CFDIs de otros sistemas (REP y notas de crédito por UUID)",
+    "document": "importar-cfdis-de-otros-sistemas.md",
+    "completed": true
   }
 ]
