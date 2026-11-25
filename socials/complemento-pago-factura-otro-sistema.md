@@ -6,7 +6,7 @@ Recursos oficiales para enlazar:
 
 - Post (tras el merge; **no publicar todavía**): https://cfdi.express/blog/complemento-pago-factura-otro-sistema
 - Dashboard (llaves `sk_test_` / `sk_live_`): https://dash.cfdi.express
-- Docs interactivas: https://api.cfdi.express/docs
+- Guía de importación: https://cfdi.express/docs/importar-cfdis-de-otros-sistemas
 - Demo: https://cal.com/team/acromatico-development/cfdi-express
 - Contacto: hola@cfdi.express
 
@@ -17,7 +17,7 @@ Recursos oficiales para enlazar:
 1. **No regeneres las imágenes.** Diego ya las entregó. Usa solo las dos URLs de abajo, sin query y sin inventar otras.
 2. Publica con el **Texto** sugerido. El anuncio es de la **API pública** (`https://api.cfdi.express`), versión 1.59.0. No es la app de Shopify ni el dashboard: por ahora no hay carga de XML ahí.
 3. El `image` del frontmatter es el **OG 1200×630**. El hero 1600×900 va en el cuerpo del post, debajo del H1. El template no pinta el `image` del frontmatter dentro del artículo.
-4. El CTA principal es **docs + dashboard**. La guía de importación de Pablo aún no está en cfdi.express; no escribas una página de docs. Enlaza https://api.cfdi.express/docs.
+4. El CTA principal es la guía [Importar CFDIs de otros sistemas](https://cfdi.express/docs/importar-cfdis-de-otros-sistemas) y el dashboard. No enlaces https://cfdi.express/docs/api/importar-facturas: todavía responde 404.
 5. **No mergear ni publicar** hasta que Rafael lo revise. En este repo el merge publica en vivo.
 
 ---
@@ -55,11 +55,11 @@ Alt del hero: «Personaje 3D con hoodie teal entre facturas genéricas que entra
 >
 > El REP sale por `POST /v1/payments` (o `preview` antes, sin timbrar ni cobrar). Puedes adjuntar el XML o usar el `invoiceId` ya importado (`inv_…`).
 >
-> Precio de la API: $1 MXN por timbre, sin suscripción. Cada XML importado cuesta el 20 % del precio por timbre de tu cuenta. No cuenta como timbre. Si el XML va adjunto al REP, la importación no se cobra: solo el timbre del complemento.
+> Precio de la API: $1 MXN por timbre, sin suscripción. Cada XML importado cuesta el 20 % del precio por timbre de tu cuenta: $0.20 con el precio de lista. Si el XML va adjunto al REP, la importación no se cobra: solo el timbre del complemento.
 >
 > Por MCP: `import_invoices` (XML en texto, hasta 5) y `create_payment` / `preview_payment`.
 >
-> 📘 Referencia: https://api.cfdi.express/docs
+> 📘 Guía: https://cfdi.express/docs/importar-cfdis-de-otros-sistemas
 > 🔑 Prueba con `sk_test_`: https://dash.cfdi.express
 >
 > #CFDI #FacturacionElectronica #SAT #CFDIExpress #API #ComplementoDePago #REP #PPD #DesarrolloDeSoftware
@@ -87,7 +87,7 @@ https://videos.acromatico.dev/api/images/assets/d9faa378-3e95-4068-80ab-4609bfb1
 >
 > POST /v1/invoices/import · POST /v1/payments
 >
-> → https://api.cfdi.express/docs
+> → https://cfdi.express/docs/importar-cfdis-de-otros-sistemas
 
 ### Hilo opcional
 
@@ -96,7 +96,7 @@ https://videos.acromatico.dev/api/images/assets/d9faa378-3e95-4068-80ab-4609bfb1
 3. `POST /v1/invoices/import`: 1 a 20 XML en base64. `Idempotency-Key` opcional. En PPD, `previousPayments` es obligatorio (`false`, o saldo + última parcialidad). En PUE no se permite.
 4. Cada XML vuelve `imported`, `already_imported` o `rejected`. Rechazados y duplicados no se cobran. Si no hay saldo o llegaste al tope mensual: 402 y no se importa nada.
 5. El REP va en `POST /v1/payments`. En `documents[]`, exactamente uno: `xml` o `invoiceId`. Con el XML adjunto, la importación no se cobra. Con `inv_…`, el saldo y la parcialidad siguen lo guardado.
-6. Precio: $1 MXN por timbre, sin suscripción. Importar cuesta el 20 % del precio por timbre de tu cuenta. MCP: `import_invoices`, `create_payment`, `preview_payment`. Docs: https://api.cfdi.express/docs · llaves: https://dash.cfdi.express
+6. Precio: $1 MXN por timbre, sin suscripción. Importar cuesta el 20 % del precio por timbre de tu cuenta ($0.20 con el precio de lista). Si el XML va en el REP, esa importación no se cobra. MCP: `import_invoices`, `create_payment`, `preview_payment`. Guía: https://cfdi.express/docs/importar-cfdis-de-otros-sistemas · llaves: https://dash.cfdi.express
 
 ### Media
 
@@ -119,10 +119,10 @@ https://videos.acromatico.dev/api/images/assets/5a28303c-24bf-4f7e-b34c-9a57a3d2
 >
 > Es la API (versión 1.59.0), no una carga de XML en el dashboard. Importas el CFDI 4.0 de ingreso y timbras el complemento con `POST /v1/payments`, o se lo pides a tu agente.
 >
-> $1 MXN por timbre, sin suscripción. Importar un XML cuesta el 20 % del precio por timbre de tu cuenta.
+> $1 MXN por timbre, sin suscripción. Importar un XML cuesta el 20 % del precio por timbre de tu cuenta: $0.20 con el precio de lista. Si va adjunto al REP, la importación no se cobra.
 >
 > Prueba con una llave `sk_test_` en https://dash.cfdi.express
-> Referencia: https://api.cfdi.express/docs
+> Guía: https://cfdi.express/docs/importar-cfdis-de-otros-sistemas
 >
 > #CFDI #FacturacionElectronica #SAT #CFDIExpress #ComplementoDePago #REP
 
@@ -152,10 +152,10 @@ https://videos.acromatico.dev/api/images/assets/d9faa378-3e95-4068-80ab-4609bfb1
 > Por API o con tu agente (MCP).
 >
 > $1 MXN por timbre, sin suscripción.
-> Importar: 20 % del precio por timbre de tu cuenta.
+> Importar: 20 % del precio por timbre de tu cuenta ($0.20 con el precio de lista). Adjuntarlo al REP no se cobra.
 >
 > Prueba en sandbox → dash.cfdi.express
-> Docs → api.cfdi.express/docs
+> Guía → cfdi.express/docs/importar-cfdis-de-otros-sistemas
 >
 > #CFDI #CFDI40 #FacturacionElectronica #SAT #CFDIExpress #ComplementoDePago #REP #PPD #FacturaElectronica #API #MCP #Mexico #PyME #DesarrolloDeSoftware #ERP #Integraciones #SATMexico #Timbrado #FacturaPPD #AgenteIA #ImportarXML #SaldoInsoluto #Parcialidad #CFDIExpressAPI
 
@@ -184,10 +184,10 @@ https://videos.acromatico.dev/api/images/assets/d9faa378-3e95-4068-80ab-4609bfb1
 
 - [x] Diego entregó el OG 1200×630 y el hero 1600×900. Frontmatter `image` = OG, sin query. El hero va en el cuerpo, debajo del H1, sin query. No inventar otras URLs.
 - [ ] Rafael revisa el post antes del merge. **No mergear y no publicar:** en este repo el merge publica en vivo.
-- [ ] No pegar https://cfdi.express/blog/complemento-pago-factura-otro-sistema hasta que el post esté en vivo. Mientras tanto, CTA a https://api.cfdi.express/docs y https://dash.cfdi.express.
+- [ ] No pegar https://cfdi.express/blog/complemento-pago-factura-otro-sistema hasta que el post esté en vivo. Mientras tanto, CTA a https://cfdi.express/docs/importar-cfdis-de-otros-sistemas y https://dash.cfdi.express. No enlazar /docs/api/importar-facturas.
 - [ ] No escribir una página de docs. Pablo es dueño de la guía oficial; su doc de importación aún no está en cfdi.express.
 - [ ] CTA principal = docs + dashboard. La app de Shopify y el dashboard no cargan XML en esta versión.
-- [ ] Cifras alineadas al post: API v1.59.0; $1 MXN por timbre, sin suscripción; importación = 20 % del precio por timbre de la cuenta; 1–20 XML en `POST /v1/invoices/import`; MCP máximo 5; 402 si no hay saldo o se llegó al tope mensual.
+- [ ] Cifras alineadas al post: API v1.59.0; $1 MXN por timbre, sin suscripción; importación = 20 % del precio por timbre de la cuenta ($0.20 con el precio de lista); adjuntar el XML al REP no cobra la importación.
 - [ ] Sin nombres de otros sistemas de facturación ni de clientes.
 - [ ] Sin endpoints, campos ni precios que no estén en el post.
 - [ ] Ortografía del arte: el alt del hero describe al personaje, las facturas, los REP y el logo. No agregar texto distinto en un asset nuevo salvo que se regenere a propósito.
