@@ -1,4 +1,4 @@
-# Social Pack | Cómo emitir el complemento de pago de una factura timbrada en otro sistema
+# Social Pack | Complemento de pago de una factura de otro sistema
 
 Corresponde al blog post: [`pages/complemento-pago-factura-otro-sistema.md`](../pages/complemento-pago-factura-otro-sistema.md)
 
@@ -7,7 +7,7 @@ Recursos oficiales para enlazar:
 - Post (tras el merge; **no publicar todavía**): https://cfdi.express/blog/complemento-pago-factura-otro-sistema
 - Dashboard (llaves `sk_test_` / `sk_live_`): https://dash.cfdi.express
 - Docs interactivas: https://api.cfdi.express/docs
-- Demo: https://cfdi.express
+- Demo: https://cal.com/team/acromatico-development/cfdi-express
 - Contacto: hola@cfdi.express
 
 ---
@@ -47,7 +47,7 @@ Alt del hero: «Personaje 3D con hoodie teal entre facturas genéricas que entra
 
 > Cambiaste de sistema de facturación y te quedaron facturas PPD con complementos de pago pendientes.
 >
-> Desde la versión 1.59.0 de CFDI Express API puedes traer esos CFDI 4.0 de ingreso e emitir el REP desde tu backend, o pedírselo a tu agente.
+> Desde la versión 1.59.0 de CFDI Express API puedes traer esos CFDI 4.0 de ingreso y emitir el REP desde tu backend, o pedírselo a tu agente.
 >
 > Qué entra: facturas de ingreso CFDI 4.0, PUE o PPD, timbradas en otro sistema, con el RFC emisor de uno de tus merchants. La API revisa el XML, los sellos y que el SAT las reporte como Vigentes.
 >
