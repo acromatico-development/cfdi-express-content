@@ -85,7 +85,7 @@ La respuesta es **200** con un resultado por XML:
 
 - **`imported`**: la factura quedó en tu cuenta y se cobró. Guarda `invoiceId`.
 - **`already_imported`**: el UUID ya estaba en tu cuenta (importado antes o timbrado aquí). No se cobra.
-- **`rejected`**: no se importó ni se cobró. `reason.code` explica por qué: `invalid_seal`, `unsupported_version`, `merchant_not_found`, `previous_payments_required`, `sat_cancelled` y los demás de la [tabla de motivos](https://cfdi.express/docs/api/importar-facturas#rejected).
+- **`rejected`**: no se importó ni se cobró. `reason.code` explica por qué: `invalid_seal`, `unsupported_version`, `merchant_not_found`, `previous_payments_required`, `sat_cancelled` y los demás de la [tabla de motivos](https://cfdi.express/docs/api/importar-facturas).
 
 **Costo:** 20% del precio de timbre de tu cuenta por cada XML importado: **20 centavos** con el precio de lista de $1 MXN. `already_imported` y `rejected` no cuestan. `unitPriceCentavos` trae el precio aplicado.
 
