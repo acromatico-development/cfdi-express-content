@@ -7,6 +7,7 @@ Sidekick es el asistente de inteligencia artificial integrado en Shopify. Con la
 - **Generar facturas CFDI** de órdenes específicas usando lenguaje natural
 - **Consultar el estado de facturación** de tus órdenes
 - **Acceder rápidamente** a los datos de tus facturas ya timbradas
+- **Precargar los datos fiscales** subiéndole a Sidekick la Constancia de Situación Fiscal del cliente
 
 ## ¿Cómo usar la facturación con Sidekick?
 
@@ -17,9 +18,9 @@ Sidekick es el asistente de inteligencia artificial integrado en Shopify. Con la
    - "Genera el CFDI de la orden más reciente"
    - "¿Cuál es el estatus de facturación de la orden #5678?"
 
-3. Sidekick utilizará la extensión de CFDI Express para procesar tu solicitud y generar la factura o consultar la información que necesitas.
+3. Para no capturar los datos fiscales a mano, súbele a Sidekick la Constancia de Situación Fiscal (CSF) del cliente, en PDF, junto con la orden que quieres facturar. Sidekick lee la constancia y, con la extensión de CFDI Express, abre el formulario de facturación del admin con estos campos precargados: RFC, razón social, código postal y régimen fiscal. Revisa que coincidan con la constancia. La razón social se precarga sin el sufijo societario (por ejemplo, sin «S.A. DE C.V.»).
 
-4. Confirma los datos de facturación si Sidekick te los solicita y la factura se generará automáticamente.
+4. Nada se timbra todavía. Cuando los datos estén bien, da clic en «Facturar» para generar la factura. Si Sidekick abrió el formulario antes de que adjuntaras la constancia, súbela en el mismo chat y pedirá que actualice los campos; tú sigues confirmando con «Facturar».
 
 **Generar factura CFDI** abre el formulario del admin y rellena datos fiscales. No escribe pedimentos. Si el producto o la variante ya los tienen, salen al oprimir **Facturar**. Guía: [Pedimentos de importación](/docs/pedimentos-de-importacion).
 
