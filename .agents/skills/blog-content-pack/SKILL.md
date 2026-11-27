@@ -54,7 +54,7 @@ keywords: "palabra clave, otra"
 ### Datos clave del API (últimos verificados, agosto 2026)
 
 - Endpoints: facturas `POST /v1/invoices` (PUE/PPD/globales), complementos `POST /v1/invoices/{id}/payments`, cancelaciones `POST /v1/invoices/{id}/cancel`, notas de crédito `POST /v1/credit_notes`, emisores/CSDs `/v1/merchants`, catálogos `/v1/catalogs/*` (52,513 claves de producto, 2,418 unidades), saldo `/v1/balance`, billing `/v1/billing/*`.
-- Precio: **$1 MXN por timbre**, saldo prepagado, recargas $100–$50,000 MXN vía Stripe, descuentos por volumen. Sandbox (`sk_test_`) gratis.
+- Precio: **$1 MXN por timbre**, saldo prepagado, recargas $100–$50,000 MXN vía Stripe. Sandbox (`sk_test_`) gratis. Si timbras mucho volumen, escríbenos a [hola@cfdi.express](mailto:hola@cfdi.express). Cada CFDI que se timbra consume un timbre, incluidas cancelaciones y complementos de pago.
 - Convenciones estilo Stripe: `sk_test_`/`sk_live_`, `livemode`, idempotencia (`Idempotency-Key`), errores `problem+json`, docs interactivas Scalar.
 - MCP server en `https://api.cfdi.express/mcp` (OAuth con claude.ai/ChatGPT; API key con Claude Code/Cursor/Windsurf; test en `/mcp/test`). 13 herramientas. Video tutorial: `https://youtu.be/urs7klK6p1U`.
 - Confiabilidad verificada: 35 timbres concurrentes sin dobles timbres, p95 1.57 s, reembolso automático si el SAT rechaza, multi-CSD/multi-RFC con AES-256-GCM.

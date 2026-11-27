@@ -25,7 +25,7 @@ Cifras de sitios públicos, **septiembre 2026**. Donde hay precio, lo marcamos c
 |  | [Facturapi](https://www.facturapi.io/) | [CFDI Express API](https://cfdi.express/api) |
 | --- | --- | --- |
 | **Mensualidad (API)** | **~$299 MXN/mes** según [pricing público](https://www.facturapi.io/pricing) (IVA incluido en esa página). | **$0** de cuota del producto API. |
-| **Costo por timbre** | **~$0.60 MXN** según pricing público. Consumibles al mes siguiente (FAQ de su sitio). | **~$1 MXN** en producción, saldo prepagado. Descuentos por volumen automáticos (la landing no publica la tabla de tramos). |
+| **Costo por timbre** | **~$0.60 MXN** según pricing público. Consumibles al mes siguiente (FAQ de su sitio). | **~$1 MXN** en producción, saldo prepagado. |
 | **Multi-RFC** | API multi-RFC **sin cargo extra por RFC**. Facturación Web / E-Receipts / Descarga masiva sí van **por organización**. | Varios **emisores (merchants)** por cuenta, cada uno con su CSD y RFC, todos activos. CSD encriptado AES-256-GCM. No publicamos un tope de RFC. |
 | **Sandbox / prueba** | Modo test + **prueba de 14 días sin tarjeta** para explorar la API (según su sitio). | Sandbox **gratis** con `sk_test_`. Sin tarjeta para el primer timbre de prueba. |
 | **Webhooks** | Sí: su pricing menciona webhooks para eventos asíncronos (ej. respuesta de cancelación del receptor). | Sí: webhooks de salida firmados (`invoice.*`, `payment.*`, `nomina.*`). Guía: [Webhooks CFDI](/blog/webhooks-cfdi-express-api). |
@@ -91,7 +91,7 @@ Si tu volumen es bajo o irregular, **no quieres $299 fijos** aunque un mes no ti
 
 **Respuesta corta:** con el **pricing público** de septiembre 2026, CFDI Express API sale más barata en volumen bajo o esporádico. Facturapi gana cuando el **$0.60** ya absorbió los **~$299** de mensualidad. **CFDI Express no es siempre más barata.**
 
-Fórmulas usadas (lista, sin descuentos a la medida ni tramos de volumen de CFDI Express):
+Fórmulas usadas (precios de lista, sin descuentos a la medida):
 
 - Facturapi ≈ **299 + 0.60 × n**
 - CFDI Express API ≈ **1.00 × n** (sin mensualidad)
@@ -111,7 +111,6 @@ Lectura honesta:
 - A **500** todavía gana CFDI Express API en esta tabla (~$99 de diferencia), pero el gap ya se cierra.
 - A **2,000**, el **$0.60** de Facturapi gana **si** pagas la mensualidad (~$501 a favor de Facturapi en el ejemplo).
 - Facturapi cobra consumibles **al mes siguiente**; CFDI Express API descuenta saldo **al timbrar**. No es el mismo cash flow.
-- CFDI Express API anuncia **descuentos por volumen** automáticos: si tu `pricePerTimbre` baja de $1, el cruce se recorre (Facturapi necesitaría aún más n para ganar). No inventamos el tramo: mira `GET /v1/balance` o la [landing](https://cfdi.express/api).
 - Facturapi invita a **precio custom** a alto volumen. Tampoco lo inventamos: pídeles cotización.
 - IVA: Facturapi etiqueta su pricing como **IVA incluido**. El **$1 MXN** de CFDI Express API es el precio publicado en la landing; no añadimos impuestos que no estén en esa página.
 
@@ -146,7 +145,7 @@ Las dos son APIs REST de CFDI 4.0 para sistemas propios. **Facturapi** destaca p
 
 ### ¿Cuál API es más barata?
 
-Depende del **n**. En la tabla ilustrativa, CFDI Express API gana a 100 y 500 timbres/mes; Facturapi gana a 2,000 **si** pagas la mensualidad. El cruce de lista está **cerca de 750 timbres/mes**. Nadie aquí es “siempre más barato”. Descuentos de volumen (ambos lados, los de Facturapi vía ventas) mueven el número.
+Depende del **n**. En la tabla ilustrativa, CFDI Express API gana a 100 y 500 timbres/mes; Facturapi gana a 2,000 **si** pagas la mensualidad. El cruce de lista está **cerca de 750 timbres/mes**. Nadie aquí es “siempre más barato”. Un precio a la medida por volumen (Facturapi lo cotiza vía ventas) mueve el número.
 
 ### ¿Esto es lo mismo que Facturama vs CFDI Express?
 
