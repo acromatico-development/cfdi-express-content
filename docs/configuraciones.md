@@ -6,12 +6,13 @@ La página de **Configuraciones** del app de CFDI Express concentra todos los da
 
 - **Razón Social**
 - **RFC** (validado con el patrón del SAT)
-- **Régimen Fiscal** (catálogo del SAT; debe coincidir con tu Constancia de Situación Fiscal)
+- **Régimen Fiscal** (catálogo del SAT; debe coincidir con tu Constancia de Situación Fiscal). Está en su propia fila, no junto a la contraseña del CSD.
 - **Código Postal** (el de tu CSF)
-- **Logo** (se muestra en el CFDI y en los correos al cliente)
 - **Correo del contador o equipo responsable de CFDI Express (opcional)**: un correo que recibe copia de los avisos de la tienda (vencimiento del CSD, errores y cancelaciones de la factura global, actualización masiva de productos y cambios en tu facturación). Puedes dejarlo vacío, agregarlo después o borrarlo. Ver [Correo del responsable fiscal](/docs/correo-del-responsable-fiscal).
 
-<!-- TODO: captura — sección "Datos fiscales del emisor" con logo cargado -->
+El logo no está en este bloque: va en su propia sección, debajo del CSD.
+
+<!-- TODO: captura — datos fiscales (razón social, RFC, código postal, régimen y correo del responsable), sin el logo ni la contraseña del CSD -->
 ![TODO: Datos fiscales del emisor](TODO-screenshot)
 <!-- ENDTODO -->
 
@@ -25,21 +26,43 @@ Si está apagado, el CFDI se emite sólo con el código postal del emisor.
 
 ## Certificado de Sello Digital (CSD) — solo Modo PAC
 
-En [Modo PAC](/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacion) debes cargar:
+En [Modo PAC](/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacion) el CSD se captura en un solo bloque, **Certificado de Sello Digital**, con estas tres cosas juntas:
 
-- Archivo **`.cer`**
-- Archivo **`.key`**
-- **Contraseña** del CSD
+- **Contraseña del Certificado**
+- Archivo **`.key`** (Llave)
+- Archivo **`.cer`** (Certificado)
 
-Estos se registran/cambian ante el PAC al guardar. Si cambias tu CSD, vuelve a cargarlo aquí.
+Ahí verás esta nota: «Asegúrate de subir la llave y certificado del CSD y no de la FIEL». El certificado y su contraseña no se envían al navegador. Si ya hay un CSD cargado, las cajas muestran **Llave del CSD actual cargada** y **Certificado del CSD actual cargado**. Solo vuelve a subir los archivos cuando lo vayas a cambiar. Si no vas a cambiar la llave, puedes dejar la contraseña vacía: la app conserva la del CSD actual (la ayuda del campo dice «Déjala vacía para conservar la del CSD actual»).
 
-> Desde la versión **3.27.0**, el certificado y su contraseña no se envían al navegador. Si ya hay un CSD cargado, Configuración muestra **CSD actual cargado**. Solo vuelves a subir los archivos cuando vas a cambiarlo.
+Estos se registran o se cambian ante el PAC al guardar.
 
-### Vencimiento del CSD
+En [Modo Flow](/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacion) no se muestran la contraseña, las cajas del CSD ni la fecha de vencimiento.
 
-Cuando a tu CSD le quedan 30 días o menos, o ya venció, la app muestra un banner en todas las pantallas con el botón **Actualizar CSD**, que te trae a esta sección. Además, te mandamos recordatorios por correo antes y después del vencimiento: al [correo del responsable fiscal](/docs/correo-del-responsable-fiscal), si lo guardaste, y al correo de tu tienda en Shopify; sin responsable, solo al de la tienda. Con el CSD vencido no se puede timbrar.
+### Fecha de vencimiento
 
-El banner se quita cuando subes aquí un CSD vigente al que le quedan más de 30 días. El calendario de los correos y qué dicen está en [Avisos de CSD por caducar](/docs/avisos-de-csd-por-caducar).
+Si ya tienes un CSD cargado, en ese mismo bloque aparece la vigencia, leída del certificado, en calendario de la Ciudad de México:
+
+- Si aún no vence: **Vence el DD/MM/AAAA (en N días)**. Si falta un día: **(en 1 día)**. Si vence hoy y todavía no llega la hora exacta: **(hoy)**.
+- Si ya venció: **Venció el DD/MM/AAAA**.
+- El color es el mismo del banner de la app: texto normal si le quedan más de 30 días; **ámbar** si faltan 30 días o menos y todavía está vigente; **rojo** si ya venció.
+- Si no hay CSD cargado, no se muestra fecha.
+- Si hay un CSD pero no se puede leer el `.cer`: «No se pudo leer la vigencia del certificado.»
+
+Cuando a tu CSD le quedan 30 días o menos, o ya venció, la app además muestra un banner en todas las pantallas con el botón **Actualizar CSD**, que te trae a esta sección. También te mandamos recordatorios por correo antes y después del vencimiento: al [correo del responsable fiscal](/docs/correo-del-responsable-fiscal), si lo guardaste, y al correo de tu tienda en Shopify; sin responsable, solo al de la tienda. Con el CSD vencido no se puede timbrar.
+
+El banner se quita cuando subes aquí un CSD vigente al que le quedan más de 30 días. Al guardar un CSD nuevo, la fecha de este bloque se actualiza enseguida. El calendario de los correos y qué dicen está en [Avisos de CSD por caducar](/docs/avisos-de-csd-por-caducar).
+
+<!-- TODO: captura — bloque "Certificado de Sello Digital" (contraseña, llave, certificado y fecha de vencimiento) -->
+![TODO: Bloque Certificado de Sello Digital con fecha de vencimiento](TODO-screenshot)
+<!-- ENDTODO -->
+
+## Logo
+
+El **logo** (archivo `.png`) se muestra en el CFDI y en los correos al cliente. Está en su propia sección, **Logo**, justo debajo del bloque del CSD. No forma parte del certificado.
+
+<!-- TODO: captura — sección Logo, aparte del bloque del CSD -->
+![TODO: Sección Logo en Configuraciones](TODO-screenshot)
+<!-- ENDTODO -->
 
 ## Selección de modo: PAC o Flow
 
