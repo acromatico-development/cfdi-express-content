@@ -168,5 +168,10 @@
     "title": "Importar CFDIs de otros sistemas (REP y notas de crédito por UUID)",
     "document": "importar-cfdis-de-otros-sistemas.md",
     "completed": true
+  },
+  {
+    "title": "Validar los datos fiscales del receptor antes de timbrar (API y MCP)",
+    "document": "validar-datos-del-receptor.md",
+    "completed": true
   }
 ]
