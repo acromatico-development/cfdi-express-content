@@ -12,9 +12,7 @@ La página de **Configuraciones** del app de CFDI Express concentra todos los da
 
 El logo no está en este bloque: va en su propia sección, debajo del CSD.
 
-<!-- TODO: captura — datos fiscales (razón social, RFC, código postal, régimen y correo del responsable), sin el logo ni la contraseña del CSD -->
-![TODO: Datos fiscales del emisor](TODO-screenshot)
-<!-- ENDTODO -->
+![Configuraciones de CFDI Express en Modo PAC, con los datos fiscales del emisor: razón social, RFC, código postal, régimen fiscal y el correo del responsable](https://videos.acromatico.dev/api/images/assets/f35150cc-a226-4aea-be53-29c8156c6f17.png?w=1600&format=webp)
 
 ## Dirección fiscal completa (opcional)
 
@@ -52,17 +50,13 @@ Cuando a tu CSD le quedan 30 días o menos, o ya venció, la app además muestra
 
 El banner se quita cuando subes aquí un CSD vigente al que le quedan más de 30 días. Al guardar un CSD nuevo, la fecha de este bloque se actualiza enseguida. El calendario de los correos y qué dicen está en [Avisos de CSD por caducar](/docs/avisos-de-csd-por-caducar).
 
-<!-- TODO: captura — bloque "Certificado de Sello Digital" (contraseña, llave, certificado y fecha de vencimiento) -->
-![TODO: Bloque Certificado de Sello Digital con fecha de vencimiento](TODO-screenshot)
-<!-- ENDTODO -->
+![Bloque Certificado de Sello Digital en Configuraciones, con la contraseña, la llave y el certificado juntos, la fecha «Vence el 18/05/2027 (en 172 días)» y la sección Logo debajo](https://videos.acromatico.dev/api/images/assets/d22b24cb-7068-4cdf-8597-10396b946c06.png?w=1600&format=webp)
 
 ## Logo
 
 El **logo** (archivo `.png`) se muestra en el CFDI y en los correos al cliente. Está en su propia sección, **Logo**, justo debajo del bloque del CSD. No forma parte del certificado.
 
-<!-- TODO: captura — sección Logo, aparte del bloque del CSD -->
-![TODO: Sección Logo en Configuraciones](TODO-screenshot)
-<!-- ENDTODO -->
+![Sección Logo en Configuraciones, debajo de la llave, el certificado y la fecha de vencimiento del CSD, seguida de los códigos del SAT predeterminados](https://videos.acromatico.dev/api/images/assets/6dd77e0e-3387-4bdb-b3e0-911ee8919c5e.png?w=1600&format=webp)
 
 ## Selección de modo: PAC o Flow
 
@@ -71,9 +65,7 @@ El toggle **"¿Ya tienes un PAC de facturación?"** controla el modo:
 - **Apagado = Modo PAC:** CFDI Express timbra con tu CSD a través de su PAC. Se requiere CSD.
 - **Encendido = Modo Flow:** No se requiere CSD. Los datos fiscales se envían a tu propio PAC a través de Shopify Flow. Ver [Modo Flow](/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacion).
 
-<!-- TODO: captura — toggle "¿Ya tienes un PAC de facturación?" en Configuraciones -->
-![TODO: Toggle Modo PAC / Modo Flow](TODO-screenshot)
-<!-- ENDTODO -->
+El selector aparece al inicio de Configuraciones; se ve en la captura de [datos fiscales del emisor](#datos-fiscales-del-emisor).
 
 ## Códigos del SAT predeterminados
 
