@@ -3,7 +3,12 @@
 Para poder completar la configuración inicial de CFDI Express debes:
 
 1. Seleccionar si quieres modo PAC o modo Flow.
-![Selección PAC - Flow](https://cdn.shopify.com/s/files/1/0804/5540/1763/files/Acr_2025-07-17_at_16.46.41_2x_3663a166-5e89-4f17-b897-e0070bf0944d.png?v=1752792420)
+
+![Inicio del onboarding de CFDI Express, con el selector de Modo PAC o Modo Flow (PAC seleccionado), los planes de suscripción y el inicio de «Registra tu cuenta»](https://videos.acromatico.dev/api/images/assets/9e2fb0fc-8df5-4173-b4f1-52e80eac81d8.png?w=1600&format=webp)
+
+Si eliges **Modo Flow**, los planes distintos al de $15 USD/mes quedan en gris:
+
+![Inicio del onboarding de CFDI Express con Modo Flow seleccionado y los demás planes de suscripción en gris](https://videos.acromatico.dev/api/images/assets/7d1cc399-c4e8-48e3-b779-f65bb64214b0.png?w=1600&format=webp)
 
 2. Llenar el formulario correspondiente al modo del app que seleccionaste.
 
@@ -12,11 +17,12 @@ Para poder completar la configuración inicial de CFDI Express debes:
     En **Modo Flow** no se piden contraseña ni archivos del CSD. Sí se piden los datos fiscales, el correo del responsable (opcional) y el logo.
 
     - Formulario Modo PAC
-      <!-- TODO: captura desactualizada (17 jul 2025) — muestra la contraseña junto al régimen y el logo en la misma fila que la llave y el certificado, con el encabezado «Archivos». Hay que rehacerla con el bloque «Certificado de Sello Digital» (contraseña + llave + certificado) y el logo aparte. También falta el campo del correo del responsable. Se deja la imagen actual hasta tener la nueva. -->
-      ![Formulario PAC](https://cdn.shopify.com/s/files/1/0804/5540/1763/files/Acr_2025-07-17_at_16.49.14_2x_ef94ccd8-a733-4925-a040-dcc9e5abf9a8.png?v=1752792575)
+
+      ![Formulario de onboarding en Modo PAC: razón social, RFC, código postal, régimen fiscal, correo del responsable, bloque Certificado de Sello Digital con contraseña, llave y certificado, y el Logo en su propia sección](https://videos.acromatico.dev/api/images/assets/17d731c9-3141-4b4a-811a-18edb5572f00.png?w=1600&format=webp)
+
     - Formulario Modo Flow
-      <!-- TODO: captura desactualizada (17 jul 2025) — no muestra el encabezado «Logo» ni el campo del correo del responsable. Se deja la imagen actual hasta tener la nueva. -->
-      ![Formulario Flow](https://cdn.shopify.com/s/files/1/0804/5540/1763/files/Acr_2025-07-17_at_16.49.37_2x_4c1591ac-7bde-4864-9203-9259758c8113.png?v=1752792590)
+
+      ![Formulario de onboarding en Modo Flow, sin el bloque del CSD, con el logo en su propia sección, los códigos del SAT y el botón Registrarse desactivado](https://videos.acromatico.dev/api/images/assets/c9633f52-b47f-41da-9a51-ef162a35effd.png?w=1600&format=webp)
 
 3. Después de haber hecho el onboarding, puedes modificar cualquiera de los datos configurados y definir el código de producto y código de servicio del SAT predeterminados en la sección de configuraciones de la aplicación. Ahí también podrás definir si quieres solicitar la Constancia de Situación Fiscal (CSF) de los clientes cuando generan una factura.
 
