@@ -8,7 +8,7 @@ keywords: "CFDI40143, CFDI40144, CFDI40145, CFDI40146, CFDI40147, CFDI40148, nom
 ---
 # Errores CFDI40143 a CFDI40148: qué significan y cómo evitarlos validando al receptor
 
-![Hero del blog de CFDI Express Errores CFDI40143 a CFDI40148: qué significan. A un lado, el error del SAT CFDI40145 sobre el nombre del receptor; al otro, el mensaje claro de CFDI Express que pide copiar el nombre de la constancia, sin el régimen de capital. Personaje 3D con hoodie teal. Pie: cfdi.express.](https://videos.acromatico.dev/api/images/assets/b40bcd98-8e31-4ff5-9472-2363f5bf628b.png?format=webp)
+![A un lado, el error del SAT CFDI40145 sobre el nombre del receptor; al otro, el mensaje claro de CFDI Express que pide copiar el nombre de la constancia.](https://videos.acromatico.dev/api/images/assets/b40bcd98-8e31-4ff5-9472-2363f5bf628b.png?format=webp)
 
 **Respuesta corta:** CFDI40143 a CFDI40148 son rechazos del SAT al RFC, el nombre o el código postal del receptor, o al usar «PUBLICO EN GENERAL» con un RFC distinto de XAXX010101000. Se corrigen con los datos de la Constancia de Situación Fiscal. `POST /v1/receivers/validate` y la herramienta MCP `validate_receiver` revisan formato, catálogos, régimen, uso de CFDI y las reglas del RFC genérico antes de timbrar: no timbran, no cobran y no guardan nada. No consultan el padrón del SAT, así que CFDI40143, CFDI40144, CFDI40145, CFDI40147 y CFDI40148 solo se confirman al timbrar; si el PAC los rechaza, la API devuelve el código y qué corregir, en español.
 
