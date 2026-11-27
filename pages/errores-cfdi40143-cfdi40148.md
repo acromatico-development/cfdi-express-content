@@ -1,14 +1,14 @@
 ---
 title: "Errores CFDI40143 a CFDI40148: qué significan"
 description: "Qué significan CFDI40143 a CFDI40148, cómo corregir RFC, nombre y CP del receptor con la constancia, y cómo validarlos antes de timbrar, sin costo."
-image: "TODO_DIEGO_OG_1200x630"
+image: "https://videos.acromatico.dev/api/images/assets/07b58356-303a-4107-9a46-b6c67e0b4afb.png"
 author: "Rafael González"
 date: "2026-11-26"
 keywords: "CFDI40143, CFDI40144, CFDI40145, CFDI40146, CFDI40147, CFDI40148, nombre del receptor, régimen fiscal receptor, código postal receptor, DomicilioFiscalReceptor, validar receptor, Constancia de Situación Fiscal, RFC inscritos no cancelados, PUBLICO EN GENERAL, validate_receiver, POST /v1/receivers/validate, CFDI Express API"
 ---
 # Errores CFDI40143 a CFDI40148: qué significan y cómo evitarlos validando al receptor
 
-![TODO Diego: hero 1600×900. Sustituir esta imagen y el `image` del frontmatter (OG 1200×630) por los assets finales, sin query en la URL.](TODO_DIEGO_HERO_1600x900)
+![Hero del blog de CFDI Express Errores CFDI40143 a CFDI40148: qué significan. A un lado, el error del SAT CFDI40145 sobre el nombre del receptor; al otro, el mensaje claro de CFDI Express que pide copiar el nombre de la constancia, sin el régimen de capital. Personaje 3D con hoodie teal. Pie: cfdi.express.](https://videos.acromatico.dev/api/images/assets/b40bcd98-8e31-4ff5-9472-2363f5bf628b.png?format=webp)
 
 **Respuesta corta:** CFDI40143 a CFDI40148 son rechazos del SAT al RFC, el nombre o el código postal del receptor, o al usar «PUBLICO EN GENERAL» con un RFC distinto de XAXX010101000. Se corrigen con los datos de la Constancia de Situación Fiscal. `POST /v1/receivers/validate` y la herramienta MCP `validate_receiver` revisan formato, catálogos, régimen, uso de CFDI y las reglas del RFC genérico antes de timbrar: no timbran, no cobran y no guardan nada. No consultan el padrón del SAT, así que CFDI40143, CFDI40144, CFDI40145, CFDI40147 y CFDI40148 solo se confirman al timbrar; si el PAC los rechaza, la API devuelve el código y qué corregir, en español.
 
