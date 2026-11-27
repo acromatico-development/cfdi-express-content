@@ -13,7 +13,7 @@ Disponible a partir de la versión **v1.60.0** de la API.
 
 - **No timbra, no cobra y no guarda nada.**
 - **Usa el mismo validador que el timbrado.** `POST /v1/invoices` aplica exactamente estas reglas antes de timbrar y responde el mismo error. Si la prevalidación pasa, la factura no falla después por una de estas reglas.
-- **No compara contra el padrón del SAT.** Revisa formatos y catálogos del SAT, no que los datos coincidan con lo que el SAT tiene registrado. El porqué está más abajo, en «Lo que no se revisa».
+- **No compara contra el padrón del SAT.** Revisa formatos y catálogos del SAT, no que los datos coincidan con lo que el SAT tiene registrado. Más abajo está [por qué](#lo-que-no-se-revisa).
 
 > `POST https://api.cfdi.express/v1/receivers/validate`
 > Autenticación: `Authorization: Bearer sk_test_…` o `sk_live_…`. En un workspace, el header `x-account-id` indica la cuenta.
@@ -142,10 +142,10 @@ Todo se revisa localmente, contra los catálogos del SAT para CFDI 4.0. Son los 
 | `regimen_persona` | El régimen aplica al tipo de persona del RFC. | CFDI40158 |
 | `regimen_uso_cfdi` | El uso existe en `c_UsoCFDI` y aplica al tipo de persona y al régimen. `S01` se acepta para personas físicas y morales. `CP01` y `CN01` no se aceptan en facturas ni notas de crédito. | CFDI40160, CFDI40161 |
 | `name_uppercase` | El nombre se pasa a mayúsculas y se quitan los espacios sobrantes. Hasta 300 caracteres y sin `\|`. | — |
-| `name_societary_suffix` | En personas morales, el nombre no puede terminar en un régimen de capital como «SA DE CV». Ver «`name_societary_suffix`: sufijo societario», más abajo. | — |
+| `name_societary_suffix` | En personas morales, el nombre no puede terminar en un régimen de capital como «SA DE CV». Ver [`name_societary_suffix`](#name-societary-suffix). | — |
 | `generic_rfc` | Con `XAXX010101000` o `XEXX010101000`: régimen `616`, uso `S01` y código postal igual al del emisor. «PUBLICO EN GENERAL» solo con `XAXX010101000`. | CFDI40146, CFDI40149, CFDI40159 |
 
-## Lo que no se revisa (y por qué)
+<h2 id="lo-que-no-se-revisa">Lo que no se revisa (y por qué)</h2>
 
 Son los `check` de `notChecked`:
 
@@ -159,7 +159,7 @@ Son los `check` de `notChecked`:
 **No hay una API pública del SAT para comparar estos datos contra el padrón.** Ni CFDI Express ni ningún PAC puede confirmarlos antes de timbrar. Solo hay dos formas:
 
 1. **El validador oficial del SAT.** [Valida en línea RFC's uno a uno o de manera masiva hasta 5 mil registros](https://www.sat.gob.mx/aplicacion/79615/valida-en-linea-rfc%C2%B4s-uno-a-uno-o-de-manera-masiva-hasta-5-mil-registros), en el portal del SAT. Pide un captcha, así que no se puede automatizar. Revisa el RFC, el nombre y el código postal. En personas morales, el nombre se escribe sin el régimen societario.
-2. **El timbrado.** Si algún dato no coincide, el SAT rechaza la factura (ver «Rechazos del SAT al timbrar», más abajo).
+2. **El timbrado.** Si algún dato no coincide, el SAT rechaza la factura (ver [Rechazos del SAT al timbrar](#rechazos-del-sat)).
 
 Por eso, la referencia para capturar los datos es la **constancia de situación fiscal** (CSF) del cliente, con fecha reciente. Copia de ahí el RFC, el nombre o razón social, el código postal y el régimen.
 
@@ -181,7 +181,7 @@ Cuando los datos no pasan alguna revisión, la respuesta es `problem+json` con `
 
 Valores de `errors[].code`: `rfc_invalid`, `zip_invalid`, `name_invalid`, `name_societary_suffix`, `name_publico_en_general`, `regimen_unknown`, `regimen_persona_mismatch`, `regimen_generic_rfc`, `uso_cfdi_unknown`, `uso_cfdi_not_allowed`, `uso_cfdi_persona_mismatch`, `uso_cfdi_regimen_mismatch`, `uso_cfdi_generic_rfc` y `zip_generic_rfc`. En facturas y notas de crédito también pueden aparecer `residencia_fiscal_invalid`, `foreign_fields_not_allowed` y `num_reg_id_trib_invalid`, de los campos de extranjero (CFDI40150 a CFDI40154), que este endpoint no recibe.
 
-### `name_societary_suffix`: sufijo societario
+<h3 id="name-societary-suffix"><code>name_societary_suffix</code>: sufijo societario</h3>
 
 Aplica a personas morales (RFC de 12 caracteres). Si la razón social termina en un régimen de capital, se **bloquea**. El SAT registra la razón social sin él (la constancia lo muestra aparte) y la factura se rechazaría con CFDI40144 o CFDI40145.
 
@@ -305,7 +305,7 @@ El `merchantId` no existe en tu cuenta (en el modo de la llave) o está eliminad
 
 Los errores de RFC genérico (`XAXX010101000`) y de receptor extranjero (`XEXX010101000`) también responden con este contrato, con mensajes en español.
 
-### Rechazos del SAT al timbrar (CFDI40143 a CFDI40148)
+<h3 id="rechazos-del-sat">Rechazos del SAT al timbrar (CFDI40143 a CFDI40148)</h3>
 
 Lo que la validación local no puede revisar lo revisa el SAT al timbrar. Si el RFC, el nombre o el código postal no coinciden con el padrón, la factura se rechaza con **422** `sat_rejected`. La respuesta trae un mensaje que explica qué corregir:
 
@@ -339,7 +339,7 @@ Lo que la validación local no puede revisar lo revisa el SAT al timbrar. Si el 
 - Si el SAT rechaza la factura, el timbre se reembolsa.
 - En `GET /v1/invoices/{id}` de esa factura (`stamp_failed`), `failure` trae `satRule`, `attribute` y `message`.
 
-## Por MCP: `validate_receiver`
+<h2 id="validate-receiver">Por MCP: <code>validate_receiver</code></h2>
 
 En el [servidor MCP](/docs/api/mcp), la herramienta `validate_receiver` recibe los mismos argumentos que el endpoint: `merchantId`, `customer` (`taxId`, `legalName`, `taxRegime`, `zip`) y `usage`. Es de solo lectura: no timbra, no cobra y no guarda nada.
 
