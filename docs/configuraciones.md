@@ -9,7 +9,7 @@ La página de **Configuraciones** del app de CFDI Express concentra todos los da
 - **Régimen Fiscal** (catálogo del SAT; debe coincidir con tu Constancia de Situación Fiscal)
 - **Código Postal** (el de tu CSF)
 - **Logo** (se muestra en el CFDI y en los correos al cliente)
-- **Correo del contador o equipo responsable de CFDI Express (opcional)**: un correo que recibe copia de los avisos de la tienda (errores y cancelaciones de la factura global, actualización masiva de productos y cambios en tu facturación). Puedes dejarlo vacío, agregarlo después o borrarlo. Ver [Correo del responsable fiscal](/docs/correo-del-responsable-fiscal).
+- **Correo del contador o equipo responsable de CFDI Express (opcional)**: un correo que recibe copia de los avisos de la tienda (vencimiento del CSD, errores y cancelaciones de la factura global, actualización masiva de productos y cambios en tu facturación). Puedes dejarlo vacío, agregarlo después o borrarlo. Ver [Correo del responsable fiscal](/docs/correo-del-responsable-fiscal).
 
 <!-- TODO: captura — sección "Datos fiscales del emisor" con logo cargado -->
 ![TODO: Datos fiscales del emisor](TODO-screenshot)
@@ -37,7 +37,7 @@ Estos se registran/cambian ante el PAC al guardar. Si cambias tu CSD, vuelve a c
 
 ### Vencimiento del CSD
 
-Cuando a tu CSD le quedan 30 días o menos, o ya venció, la app muestra un banner en todas las pantallas con el botón **Actualizar CSD**, que te trae a esta sección. Además, te mandamos recordatorios por correo al correo de tu tienda en Shopify, antes y después del vencimiento. Con el CSD vencido no se puede timbrar.
+Cuando a tu CSD le quedan 30 días o menos, o ya venció, la app muestra un banner en todas las pantallas con el botón **Actualizar CSD**, que te trae a esta sección. Además, te mandamos recordatorios por correo antes y después del vencimiento: al [correo del responsable fiscal](/docs/correo-del-responsable-fiscal), si lo guardaste, y al correo de tu tienda en Shopify; sin responsable, solo al de la tienda. Con el CSD vencido no se puede timbrar.
 
 El banner se quita cuando subes aquí un CSD vigente al que le quedan más de 30 días. El calendario de los correos y qué dicen está en [Avisos de CSD por caducar](/docs/avisos-de-csd-por-caducar).
 

@@ -1,7 +1,7 @@
 ---
 title: "Correo del responsable fiscal: copia de los avisos de tu tienda para tu contador"
-description: "Agrega en CFDI Express el correo de tu contador o de tu equipo de facturación para que reciba copia de los avisos de la tienda: errores y cancelaciones de la factura global, actualización masiva de productos y cambios en tu facturación."
-keywords: "correo del contador, responsable fiscal, avisos de la tienda, copia de correos, factura global errores, actualización masiva de productos, CFDI Express, Shopify"
+description: "Agrega en CFDI Express el correo de tu contador o de tu equipo de facturación para que reciba los avisos de la tienda: vencimiento de tu CSD, errores y cancelaciones de la factura global, actualización masiva de productos y cambios en tu facturación."
+keywords: "correo del contador, responsable fiscal, avisos de la tienda, copia de correos, CSD por vencer, aviso vencimiento CSD, factura global errores, actualización masiva de productos, CFDI Express, Shopify"
 ---
 # Correo del responsable fiscal
 
@@ -20,7 +20,7 @@ El campo está junto a los datos fiscales:
 
 La etiqueta del campo es **Correo del contador o equipo responsable de CFDI Express (opcional)**, con este texto de ayuda:
 
-> Le enviaremos una copia de los avisos de la tienda (errores de la factura global, actualización masiva de productos y cambios en tu facturación). Puede ser un alias, por ejemplo facturacion@tuempresa.com. Déjalo vacío si no lo necesitas.
+> Le enviaremos los avisos de la tienda (vencimiento de tu CSD, errores de la factura global, actualización masiva de productos y cambios en tu facturación), además de al correo de la tienda. Puede ser un alias, por ejemplo facturacion@tuempresa.com. Déjalo vacío si no lo necesitas.
 
 Para guardarlo:
 
@@ -37,6 +37,7 @@ Cuando el campo tiene un correo, ese correo recibe copia de estos avisos de la t
 
 | Aviso | Cuándo llega | A quién le llegaba ya |
 |---|---|---|
+| [CSD por caducar o vencido](/docs/avisos-de-csd-por-caducar) (solo Modo PAC) | Antes y después de que venza tu Certificado de Sello Digital. La cadencia y el contenido están en la guía de CSD. Este aviso es, sobre todo, para tu contador. | Al correo de la tienda en Shopify. |
 | Error de la [factura global](/docs/facturacion-global-mensual) | Cuando una corrida de facturación global termina con error. | Al correo de contacto de la tienda en Shopify o, si no hay, al correo de la tienda. |
 | Cancelación de [factura global](/docs/facturacion-global-mensual#cancelar-una-factura-global) | Cuando termina la cancelación de una factura global o de una corrida, con el resumen. | Igual que el anterior. |
 | [Actualización masiva de productos](/docs/carga-masiva-productos-csv) | Cuando termina la carga masiva por CSV. Asunto: «CFDI Express - Actualización masiva de productos completada». | Al correo de contacto de la tienda en Shopify. |
@@ -48,7 +49,6 @@ Si dejas el campo vacío, todo sigue igual: cada aviso llega solo a quien le lle
 
 ## Qué no recibe
 
-- **Los [avisos de CSD por caducar](/docs/avisos-de-csd-por-caducar).** Los recordatorios de vencimiento del certificado llegan solo al correo de tu tienda en Shopify, no al del responsable.
 - **Los correos a tus clientes.** El CFDI, el complemento de pago, la nota de crédito y la confirmación de datos fiscales en Modo Flow siguen llegando solo al cliente, y si el cliente responde, la respuesta va al contacto de tu tienda en Shopify, como siempre. El detalle está en [Notificaciones por correo](/docs/notificaciones-por-correo).
 
 ## Preguntas frecuentes
@@ -63,7 +63,7 @@ No, es un solo correo. Si varias personas necesitan los avisos, usa un alias o u
 
 ### ¿Mi contador recibe las facturas de mis clientes?
 
-No. Solo recibe copia de los avisos de la tienda de la tabla de arriba. Para mandarle las facturas globales, usa [Shopify Flow](/docs/enviar-facturas-globales-al-contador-shopify-flow).
+No. Solo recibe los avisos de la tienda de la tabla de arriba, incluidos los del vencimiento de tu CSD. Para mandarle las facturas globales, usa [Shopify Flow](/docs/enviar-facturas-globales-al-contador-shopify-flow).
 
 ### ¿Cómo dejo de enviarle avisos?
 
