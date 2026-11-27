@@ -38,6 +38,8 @@ Los dos banners tienen el botón **Actualizar CSD**, que te lleva a [Configuraci
 
 El banner no sigue el calendario de los correos: está visible todos los días mientras falten 30 días o menos, o mientras el CSD esté vencido.
 
+En Configuraciones, en el bloque **Certificado de Sello Digital**, también puedes ver la fecha de vencimiento del CSD que tienes cargado, aunque le queden más de 30 días. Ahí aparece **Vence el DD/MM/AAAA (en N días)** (o **en 1 día**, o **hoy**). Si faltan 30 días o menos y todavía está vigente, el texto se pone en ámbar; si ya venció, dice **Venció el DD/MM/AAAA** en rojo. Es el mismo criterio de color que el banner. El onboarding no muestra esta fecha.
+
 ## Los correos
 
 ### Quién los recibe
@@ -92,8 +94,8 @@ Desde el día del vencimiento, el correo también te dice cada cuándo te seguir
 ## Cómo actualizar tu CSD
 
 1. Tramita un CSD nuevo en el portal del SAT, en **CertiSAT Web**, con tu e.firma. El SAT te entrega el certificado (**.cer**) y la llave (**.key**) con la contraseña que elijas.
-2. En tu admin de Shopify abre **CFDI Express → Configuraciones → Datos fiscales**.
-3. Sube el **.cer**, el **.key** y la contraseña, y guarda.
+2. En tu admin de Shopify abre **CFDI Express → Configuraciones** y ve al bloque **Certificado de Sello Digital**.
+3. Sube el **.cer**, el **.key** y la contraseña, y guarda. Si no vas a cambiar la llave, puedes dejar la contraseña vacía para conservar la actual. Al guardar, la fecha de vencimiento de ese bloque se actualiza.
 
 El detalle de esa sección está en [Configuraciones](/docs/configuraciones). Si nunca has tramitado un CSD, en [Onboarding](/docs/onboarding) hay un video con el paso a paso.
 
@@ -125,7 +127,7 @@ Sí, si guardaste su correo como [correo del responsable fiscal](/docs/correo-de
 
 ### Ya subí mi CSD nuevo y sigo viendo el banner
 
-El banner se quita cuando el CSD cargado está vigente y le quedan más de 30 días. Revisa en [Configuraciones](/docs/configuraciones) que guardaste el certificado nuevo y no el anterior.
+El banner se quita cuando el CSD cargado está vigente y le quedan más de 30 días. Revisa en [Configuraciones](/docs/configuraciones), en el bloque **Certificado de Sello Digital**, que la fecha corresponda al certificado nuevo (debe decir **Vence el…** con más de 30 días, en color normal) y no al anterior.
 
 ### Uso Modo Flow, ¿me llegan estos avisos?
 
