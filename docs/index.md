@@ -24,6 +24,8 @@ CFDI Express es una [aplicación de Shopify](https://apps.shopify.com/cfdi-expre
 
 - [Onboarding y configuración](/docs/onboarding)
 - [Configuraciones](/docs/configuraciones)
+- [Avisos de CSD por caducar](/docs/avisos-de-csd-por-caducar)
+- [Correo del responsable fiscal](/docs/correo-del-responsable-fiscal)
 - [Planes y Precios](/docs/planes-y-precios)
 - [Lista de Órdenes y Estatus](/docs/ordenes-estatus)
 - [Facturación desde el administrador de Shopify](/docs/facturacion-desde-admin-shopify)

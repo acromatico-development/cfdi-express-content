@@ -52,6 +52,8 @@ Pedido, cliente, migración y Shopify Flow están en [Códigos del SAT por produ
 
 > Por el volumen, la actualización **no es instantánea**; puedes cerrar la app y regresar más tarde. Cada producto actualizado pasa a tener sus códigos disponibles para el timbrado.
 
+Cuando termina, te llega el correo «CFDI Express - Actualización masiva de productos completada» al correo de contacto de tu tienda en Shopify. Si llenaste el [correo del responsable fiscal](/docs/correo-del-responsable-fiscal), también le llega copia.
+
 ## Recomendaciones
 
 - Usa los **códigos predeterminados** de [Configuraciones](/docs/configuraciones) para los productos genéricos y sólo sobreescribe los específicos en el CSV (menos trabajo).

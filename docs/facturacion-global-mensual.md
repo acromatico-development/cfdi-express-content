@@ -88,7 +88,7 @@ Cuando la corrida termina, CFDI Express dispara **Facturación global terminada*
 
 Desde la versión **3.30.0**, el disparador también trae las facturas que se timbraron: UUID, serie y folio, total, número de órdenes y la liga al ZIP con el PDF y el XML. El paso a paso para mandárselas a tu contador está en [Cómo mandarle a tu contador las facturas globales con Shopify Flow](/docs/enviar-facturas-globales-al-contador-shopify-flow).
 
-Si algo falla, la app manda un correo de aviso. El listado de correos está en [Notificaciones por correo](/docs/notificaciones-por-correo).
+Si algo falla, la app manda un correo de aviso. El listado de correos está en [Notificaciones por correo](/docs/notificaciones-por-correo). Si llenaste el [correo del responsable fiscal](/docs/correo-del-responsable-fiscal), tu contador recibe copia.
 
 ## Nota de crédito de un pedido de la global
 
@@ -136,7 +136,7 @@ Qué pasa después:
 - Cuando el SAT la acepta, las órdenes quedan otra vez **sin facturar**. Vuelve a correr la factura global del periodo para incluirlas en una nueva.
 - Shopify tarda unos minutos en actualizar su búsqueda. Si una corrida lanzada enseguida no toma todas las órdenes, la siguiente corrida del periodo toma las que falten, sin duplicar.
 - Se usa **1 timbre por factura cancelada**, no por orden.
-- Al terminar te mandamos un correo con el resumen.
+- Al terminar te mandamos un correo con el resumen. Si llenaste el [correo del responsable fiscal](/docs/correo-del-responsable-fiscal), también le llega copia.
 - Si el SAT tarda en responder, la app vuelve a revisar hasta por 72 horas. Si la cancelación no termina, la factura muestra el error y el botón **Reintentar**.
 
 Cuándo no se puede cancelar:

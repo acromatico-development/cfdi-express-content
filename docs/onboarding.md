@@ -34,6 +34,10 @@ Para poder configurar CFDI Express, requieres los siguientes datos:
   - Contraseña
 - Logo
 
+Junto a los datos fiscales también verás el campo **Correo del contador o equipo responsable de CFDI Express (opcional)**, en Modo PAC y en Modo Flow. No es obligatorio para terminar el alta: puedes dejarlo vacío y agregarlo después en [Configuraciones](/docs/configuraciones). Ese correo recibe copia de los avisos de la tienda. Ver [Correo del responsable fiscal](/docs/correo-del-responsable-fiscal).
+
+Tu CSD tiene fecha de vencimiento. Cuando se acerque, la app te avisa con un banner y por correo. Ver [Avisos de CSD por caducar](/docs/avisos-de-csd-por-caducar).
+
 Al guardar, el certificado y su contraseña no se envían de vuelta al navegador. Si ya está cargado, en [Configuraciones](/docs/configuraciones) verás **CSD actual cargado** y solo subes archivos cuando lo vas a cambiar.
 
 Si requieres generar tu certificado de sello digital y no sabes cómo puedes ver el siguiente video tutorial:
