@@ -1,6 +1,6 @@
 ---
 title: "Avisos de CSD por caducar: banner y correos de la app de Shopify"
-description: "CFDI Express te avisa antes de que venza tu Certificado de Sello Digital (CSD): un banner en la app y correos 30, 15, 7, 3 y 1 días antes, y un recordatorio diario durante dos semanas si ya venció."
+description: "CFDI Express te avisa antes de que venza tu Certificado de Sello Digital (CSD): un banner en la app y correos 30, 15, 7, 3 y 1 días antes, y, si ya venció, un recordatorio diario durante 15 días y después uno semanal hasta que subas un CSD vigente."
 keywords: "CSD por vencer, CSD vencido, certificado de sello digital vencido, renovar CSD, CertiSAT Web, aviso vencimiento CSD, no puedo timbrar facturas, CFDI Express, Shopify"
 ---
 # Avisos de CSD por caducar
@@ -58,7 +58,9 @@ La app revisa la vigencia de tu CSD todos los días a las **9:00 de la mañana, 
 
 Si tu tienda entra a esa ventana con menos de 30 días (por ejemplo, a 12 días del vencimiento), te llega en ese momento el siguiente aviso que toca (en el ejemplo, el de 7 días) y de ahí sigue el calendario normal. No se reenvían los avisos que ya pasaron.
 
-**Desde el día en que vence:** un correo **al día durante 15 días**, del día del vencimiento al día 14. Después ya no se mandan más.
+**Desde el día en que vence:** un correo **al día durante 15 días**, del día del vencimiento al día 14.
+
+**Después, uno por semana:** del día 15 al 20 no se manda nada. Desde el día 21 llega un correo **cada semana** (días 21, 28, 35, 42…) y no se detienen solos: siguen hasta que subas un CSD vigente.
 
 Nunca recibes más de un correo al día por el mismo CSD.
 
@@ -82,7 +84,10 @@ Dentro del correo viene:
 - La fecha y hora de vencimiento, en hora de la Ciudad de México.
 - Los pasos para actualizarlo (los mismos de la sección siguiente) y el botón **Actualizar mi CSD**, que abre Configuraciones de la app.
 
-Los correos después del vencimiento te recuerdan que te avisaremos cada día durante dos semanas o hasta que subas un CSD vigente. El del día 14 te dice que es el último recordatorio.
+Desde el día del vencimiento, el correo también te dice cada cuándo te seguiremos avisando:
+
+- **Del día del vencimiento al día 13:** «Te lo recordaremos cada día durante 15 días y después una vez por semana, hasta que subas un CSD vigente.»
+- **Desde el día 14:** «A partir de ahora te lo recordaremos una vez por semana hasta que subas un CSD vigente.»
 
 ## Cómo actualizar tu CSD
 
@@ -105,6 +110,10 @@ Te recomendamos hacerlo con el primer aviso. El trámite en el SAT puede tardar,
 ### ¿Puedo seguir facturando con el CSD vencido?
 
 No. Mientras no subas uno vigente, CFDI Express no timbra facturas, notas de crédito ni complementos de pago, tampoco desde Shopify Flow.
+
+### ¿Hasta cuándo me llegan los correos si no actualizo mi CSD?
+
+Hasta que subas un CSD vigente. Después de los 15 días de avisos diarios, te sigue llegando uno por semana, sin fecha de fin.
 
 ### ¿Puedo cambiar a quién le llegan los avisos?
 
