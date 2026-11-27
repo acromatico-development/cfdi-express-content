@@ -9,6 +9,7 @@ La página de **Configuraciones** del app de CFDI Express concentra todos los da
 - **Régimen Fiscal** (catálogo del SAT; debe coincidir con tu Constancia de Situación Fiscal)
 - **Código Postal** (el de tu CSF)
 - **Logo** (se muestra en el CFDI y en los correos al cliente)
+- **Correo del contador o equipo responsable de CFDI Express (opcional)**: un correo que recibe copia de los avisos de la tienda (errores y cancelaciones de la factura global, actualización masiva de productos y cambios en tu facturación). Puedes dejarlo vacío, agregarlo después o borrarlo. Ver [Correo del responsable fiscal](/docs/correo-del-responsable-fiscal).
 
 <!-- TODO: captura — sección "Datos fiscales del emisor" con logo cargado -->
 ![TODO: Datos fiscales del emisor](TODO-screenshot)
@@ -33,6 +34,12 @@ En [Modo PAC](/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacio
 Estos se registran/cambian ante el PAC al guardar. Si cambias tu CSD, vuelve a cargarlo aquí.
 
 > Desde la versión **3.27.0**, el certificado y su contraseña no se envían al navegador. Si ya hay un CSD cargado, Configuración muestra **CSD actual cargado**. Solo vuelves a subir los archivos cuando vas a cambiarlo.
+
+### Vencimiento del CSD
+
+Cuando a tu CSD le quedan 30 días o menos, o ya venció, la app muestra un banner en todas las pantallas con el botón **Actualizar CSD**, que te trae a esta sección. Además, te mandamos recordatorios por correo al correo de tu tienda en Shopify, antes y después del vencimiento. Con el CSD vencido no se puede timbrar.
+
+El banner se quita cuando subes aquí un CSD vigente al que le quedan más de 30 días. El calendario de los correos y qué dicen está en [Avisos de CSD por caducar](/docs/avisos-de-csd-por-caducar).
 
 ## Selección de modo: PAC o Flow
 
@@ -75,7 +82,7 @@ Estas reglas controlan **cuándo** tus clientes pueden auto-facturarse desde la 
 - **`skipCfdiEmail`** — si lo activas, CFDI Express **no** envía el correo al cliente con el CFDI adjunto. Útil cuando tú reenvías la factura desde tu propio sistema.
 - **`skipCfdiWhatsApp`** (**Omitir envío de WhatsApp con CFDI**) — si lo activas, CFDI Express **no** envía el WhatsApp con el CFDI al cliente y oculta el campo de teléfono en los formularios. Ver [Enviar la factura por WhatsApp](/docs/facturacion-desde-admin-shopify#enviar-la-factura-por-whatsapp).
 
-Para el detalle de los correos que se envían, ver [Notificaciones por correo](/docs/notificaciones-por-correo).
+Para el detalle de los correos que se envían, ver [Notificaciones por correo](/docs/notificaciones-por-correo). Para que tu contador reciba copia de los avisos de la tienda, llena el [correo del responsable fiscal](/docs/correo-del-responsable-fiscal) en los datos fiscales.
 
 ## Solicitud de Constancia de Situación Fiscal (CSF)
 

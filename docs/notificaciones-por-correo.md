@@ -32,6 +32,20 @@ En [Modo Flow](/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturaci
 
 Además del correo transaccional, CFDI Express envía un evento de métrica **"CFDI Generated"** a Klaviyo (no bloqueante), distinguiendo entre cliente "public_client" (público en general) y "fiscal_client" (con RFC real). Esto te permite segmentar y automatizar marketing en Klaviyo sin que CFDI Express envíe correos de marketing: esa parte la controlas tú desde Klaviyo.
 
+## Avisos a la tienda
+
+Además de los correos al cliente, CFDI Express te manda a ti, como tienda, avisos sobre tu facturación:
+
+| Aviso | A quién llega | Copia al responsable fiscal |
+|---|---|---|
+| [CSD por caducar o vencido](/docs/avisos-de-csd-por-caducar) (solo Modo PAC) | Correo de la tienda en Shopify | No |
+| Error de una corrida de [factura global](/docs/facturacion-global-mensual) | Correo de contacto de la tienda en Shopify o, si no hay, correo de la tienda | Sí |
+| [Cancelación de factura global](/docs/facturacion-global-mensual#cancelar-una-factura-global) terminada | Correo de contacto de la tienda en Shopify o, si no hay, correo de la tienda | Sí |
+| [Actualización masiva de productos](/docs/carga-masiva-productos-csv) completada | Correo de contacto de la tienda en Shopify | Sí |
+| Cambio de proveedor de timbrado de tu tienda | Correo de la tienda en Shopify | Sí |
+
+Si llenas el [correo del responsable fiscal](/docs/correo-del-responsable-fiscal) en [Configuraciones](/docs/configuraciones), ese correo recibe copia de los avisos marcados con «Sí». Los avisos de CSD llegan solo al correo de la tienda. El responsable no recibe los correos que van a tus clientes.
+
 ## Correos internos (no al cliente)
 
 - **Facturación global mensual:** si una corrida de [facturación global mensual](/docs/facturacion-global-mensual) falla, CFDI Express envía un correo de aviso. Cuando la corrida termina, la app dispara **Facturación global terminada** en [Shopify Flow](/docs/uso-shopify-flow-automatizaciones-cfdi-express).
