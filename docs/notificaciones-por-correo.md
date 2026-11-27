@@ -38,13 +38,13 @@ Además de los correos al cliente, CFDI Express te manda a ti, como tienda, avis
 
 | Aviso | A quién llega | Copia al responsable fiscal |
 |---|---|---|
-| [CSD por caducar o vencido](/docs/avisos-de-csd-por-caducar) (solo Modo PAC) | Correo de la tienda en Shopify | No |
+| [CSD por caducar o vencido](/docs/avisos-de-csd-por-caducar) (solo Modo PAC) | Correo de la tienda en Shopify | Sí |
 | Error de una corrida de [factura global](/docs/facturacion-global-mensual) | Correo de contacto de la tienda en Shopify o, si no hay, correo de la tienda | Sí |
 | [Cancelación de factura global](/docs/facturacion-global-mensual#cancelar-una-factura-global) terminada | Correo de contacto de la tienda en Shopify o, si no hay, correo de la tienda | Sí |
 | [Actualización masiva de productos](/docs/carga-masiva-productos-csv) completada | Correo de contacto de la tienda en Shopify | Sí |
 | Cambio de proveedor de timbrado de tu tienda | Correo de la tienda en Shopify | Sí |
 
-Si llenas el [correo del responsable fiscal](/docs/correo-del-responsable-fiscal) en [Configuraciones](/docs/configuraciones), ese correo recibe copia de los avisos marcados con «Sí». Los avisos de CSD llegan solo al correo de la tienda. El responsable no recibe los correos que van a tus clientes.
+Si llenas el [correo del responsable fiscal](/docs/correo-del-responsable-fiscal) en [Configuraciones](/docs/configuraciones), ese correo recibe copia de los avisos marcados con «Sí», además del destinatario de siempre. Si no lo llenas, cada aviso llega solo a quien indica la columna «A quién llega». Los avisos de CSD son, sobre todo, para tu contador: con responsable llegan a ese correo y al de la tienda; sin responsable, solo al correo de la tienda. El responsable no recibe los correos que van a tus clientes.
 
 ## Correos internos (no al cliente)
 

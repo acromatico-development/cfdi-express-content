@@ -12,7 +12,7 @@ Tu **Certificado de Sello Digital (CSD)** tiene fecha de vencimiento. El día qu
 Para que no te tome por sorpresa, la app te avisa de dos formas:
 
 - Un **banner** en la app, desde 30 días antes del vencimiento.
-- **Correos** al correo de tu tienda en Shopify, antes y después del vencimiento.
+- **Correos** antes y después del vencimiento: al [correo del responsable fiscal](/docs/correo-del-responsable-fiscal), si lo guardaste, y al correo de tu tienda en Shopify.
 
 Aplica a las tiendas en [Modo PAC](/docs/modo-flow-cfdi-express-para-usar-tu-propio-pac-de-facturacion), que son las que tienen un CSD cargado. En Modo Flow no hay CSD, así que no hay banner ni correos de vigencia.
 
@@ -42,9 +42,13 @@ El banner no sigue el calendario de los correos: está visible todos los días m
 
 ### Quién los recibe
 
-Los avisos llegan al **correo de tu tienda en Shopify** (el que tienes en los datos de la tienda en tu admin de Shopify). Revisa que sea un buzón que alguien lea.
+Estos avisos son, sobre todo, para tu contador o quien renueva el CSD. Llegan así:
 
-Estos avisos no se envían al [correo del responsable fiscal](/docs/correo-del-responsable-fiscal). Si tu contador o tu equipo de facturación necesita enterarse, reenvíaselos o asegúrate de que el correo de tu tienda llegue a quien renueva el CSD.
+- **Si guardaste el [correo del responsable fiscal](/docs/correo-del-responsable-fiscal)**: llegan a ese correo y al **correo de tu tienda en Shopify** (el que tienes en los datos de la tienda en tu admin de Shopify).
+- **Si no lo guardaste**: llegan solo al correo de tu tienda en Shopify.
+- **Si los dos son el mismo correo** (aunque cambien mayúsculas o espacios), llega una sola vez.
+
+Revisa que el correo de tu tienda sea un buzón que alguien lea. El banner no cambia: lo ve cualquiera que abra la app en el admin.
 
 ### Cuándo llegan
 
@@ -104,11 +108,11 @@ No. Mientras no subas uno vigente, CFDI Express no timbra facturas, notas de cr�
 
 ### ¿Puedo cambiar a quién le llegan los avisos?
 
-Llegan al correo de tu tienda en Shopify. Si cambias ese correo en tu admin de Shopify, los siguientes avisos llegan al nuevo.
+Siempre llegan al correo de tu tienda en Shopify; si cambias ese correo en tu admin de Shopify, los siguientes avisos llegan al nuevo. Además, puedes agregar, cambiar o borrar el [correo del responsable fiscal](/docs/correo-del-responsable-fiscal) en **Configuraciones → Datos fiscales**.
 
 ### ¿Le llegan a mi contador?
 
-No. El [correo del responsable fiscal](/docs/correo-del-responsable-fiscal) recibe copia de otros avisos de la tienda, pero no de los de CSD. Estos llegan solo al correo de la tienda en Shopify.
+Sí, si guardaste su correo como [correo del responsable fiscal](/docs/correo-del-responsable-fiscal). Los avisos llegan a ese correo y al correo de tu tienda en Shopify. Si no lo has guardado, siguen llegando solo al correo de la tienda: agrégalo en **Configuraciones → Datos fiscales**.
 
 ### Ya subí mi CSD nuevo y sigo viendo el banner
 
