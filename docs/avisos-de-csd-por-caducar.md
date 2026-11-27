@@ -40,6 +40,8 @@ El banner no sigue el calendario de los correos: está visible todos los días m
 
 En Configuraciones, en el bloque **Certificado de Sello Digital**, también puedes ver la fecha de vencimiento del CSD que tienes cargado, aunque le queden más de 30 días. Ahí aparece **Vence el DD/MM/AAAA (en N días)** (o **en 1 día**, o **hoy**). Si faltan 30 días o menos y todavía está vigente, el texto se pone en ámbar; si ya venció, dice **Venció el DD/MM/AAAA** en rojo. Es el mismo criterio de color que el banner. El onboarding no muestra esta fecha.
 
+![Fecha de vencimiento del CSD en Configuraciones: «Vence el 18/05/2027 (en 172 días)», en el bloque Certificado de Sello Digital, con la llave y el certificado cargados y el logo debajo](https://videos.acromatico.dev/api/images/assets/d22b24cb-7068-4cdf-8597-10396b946c06.png?w=1600&format=webp)
+
 ## Los correos
 
 ### Quién los recibe
