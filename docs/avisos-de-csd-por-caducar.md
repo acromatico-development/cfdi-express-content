@@ -18,7 +18,7 @@ Aplica a las tiendas en [Modo PAC](/docs/modo-flow-cfdi-express-para-usar-tu-pro
 
 ## El banner en la app
 
-Cuando a tu CSD le quedan **30 días o menos**, la app muestra un banner arriba de todas las pantallas. No se puede cerrar: se quita solo cuando subes un CSD vigente.
+Cuando a tu CSD le quedan **30 días o menos**, la app muestra un banner arriba de todas las pantallas. No se puede cerrar: se quita cuando subes un CSD vigente al que le quedan más de 30 días.
 
 **Si tu CSD está por vencer** (banner de advertencia):
 

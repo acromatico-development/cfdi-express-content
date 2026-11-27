@@ -39,7 +39,7 @@ Estos se registran/cambian ante el PAC al guardar. Si cambias tu CSD, vuelve a c
 
 Cuando a tu CSD le quedan 30 días o menos, o ya venció, la app muestra un banner en todas las pantallas con el botón **Actualizar CSD**, que te trae a esta sección. Además, te mandamos recordatorios por correo al correo de tu tienda en Shopify, antes y después del vencimiento. Con el CSD vencido no se puede timbrar.
 
-El banner se quita cuando subes aquí un CSD vigente. El calendario de los correos y qué dicen está en [Avisos de CSD por caducar](/docs/avisos-de-csd-por-caducar).
+El banner se quita cuando subes aquí un CSD vigente al que le quedan más de 30 días. El calendario de los correos y qué dicen está en [Avisos de CSD por caducar](/docs/avisos-de-csd-por-caducar).
 
 ## Selección de modo: PAC o Flow
 
