@@ -132,8 +132,8 @@ La API se paga **solo por lo que timbras**, sin mensualidad, sin mínimos y sin 
 - **Sandbox gratis** e ilimitado con tu llave `sk_test_`.
 - **$1 MXN por timbre** en producción, con saldo prepagado.
 - Recargas de **$100 a $50,000 MXN** con tarjeta vía Stripe.
-- **Descuentos por volumen** automáticos: entre más timbras, menos pagas por timbre.
-- Complementos de pago, cancelaciones, multi-CSD y catálogos **sin costo extra**.
+- Si timbras mucho volumen, escríbenos a [hola@cfdi.express](mailto:hola@cfdi.express).
+- Multi-CSD y catálogos SAT sin costo extra. Cada CFDI que se timbra consume un timbre: facturas, complementos de pago (REP), notas de crédito, nómina, retenciones y también las cancelaciones.
 
 Cada compra de saldo incluye su propia factura (expedida por CFDI Express) — porque también somos nuestros propios primeros clientes.
 

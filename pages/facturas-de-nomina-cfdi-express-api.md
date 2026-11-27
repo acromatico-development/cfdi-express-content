@@ -147,7 +147,7 @@ Si no quieres pollar el 202 ni el acuse, suscríbete a `nomina.stamped`, `nomina
 
 OpenAPI no publica una tarifa aparte para nómina. Un recibo consume el **mismo saldo prepagado** que una factura de ingreso (`GET /v1/balance` expone `pricePerTimbreCentavos` y `timbresRemaining`). Si no hay créditos, `POST /v1/nominas` responde **402**.
 
-En la [landing de la API](https://cfdi.express/api) el precio publicado sigue siendo **$1 MXN por timbre** en producción, con descuento por volumen, sandbox ilimitado con `sk_test_` y recargas de **$100 a $50,000 MXN** por Stripe. Un empleado × un periodo = un timbre. La `Idempotency-Key` evita que un retry te cobre el doble.
+En la [landing de la API](https://cfdi.express/api) el precio publicado sigue siendo **$1 MXN por timbre** en producción, sandbox ilimitado con `sk_test_` y recargas de **$100 a $50,000 MXN** por Stripe. Un empleado × un periodo = un timbre. La `Idempotency-Key` evita que un retry te cobre el doble.
 
 ## También desde un agente de IA
 
